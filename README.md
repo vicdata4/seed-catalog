@@ -9,7 +9,7 @@ npm install
 npm run storybook
 
 
-## Add as project dependency
+##  Add as project dependency
 
 from package.json
 
