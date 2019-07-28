@@ -1,9 +1,18 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 export class BasicButton extends LitElement {
+    static get styles() {
+        return css`
+            button {
+                background-color: red;
+            }
+        `;
+    }
     render() {
         return html`
-            <button>Vicdata4-Hi</button>
+            <button>
+                <slot></slot>
+            </button>
         `;
     }
 }
