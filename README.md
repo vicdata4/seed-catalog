@@ -1,4 +1,4 @@
-# WebComponents Suite
+# Seed Catalog
 
 ## Project installation
 
