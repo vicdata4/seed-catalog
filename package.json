@@ -1,5 +1,5 @@
 {
-  "name": "webcomponentslibrary",
+  "name": "seed-catalog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vicdata4/web-components-library.git"
+    "url": "git+https://github.com/vicdata4/seed-catalog.git"
   },
   "author": "vicdata",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vicdata4/web-components-library/issues"
+    "url": "https://github.com/vicdata4/seed-catalog/issues"
   },
   "homepage": "https://github.com/vicdata4/web-components-library#readme",
   "devDependencies": {
