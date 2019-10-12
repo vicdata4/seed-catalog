@@ -18,8 +18,12 @@
     "url": "https://github.com/vicdata4/web-components-library/issues"
   },
   "homepage": "https://github.com/vicdata4/web-components-library#readme",
+  "devDependencies": {
+    "@open-wc/demoing-storybook": "^0.2.5"
+  },
   "dependencies": {
     "lit-element": "^2.0.1",
-    "@open-wc/demoing-storybook": "^0.2.5"
+    "font-awesome": "^4.7.0",
+    "material-icons": "^0.3.1"
   }
 }

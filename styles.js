@@ -1,11 +1,11 @@
 import { css } from 'lit-element';
 
-export const seedButtonStyle = css`
+import 'material-icons/iconfont/material-icons.css';
+import 'font-awesome/css/font-awesome.css';
 
+export const seedButtonStyle = css`
+/*
     @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
-    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-    /*@import '/font-awesome-4.7.0/css/font-awesome.css';*/
     /*** DEFAULT - WHITE ***/
     .sd-btn, .sd-btn-mix, .sd-btn-mixr {
         font-family: 'Heebo', sans-serif;
