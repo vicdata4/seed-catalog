@@ -1,7 +1,7 @@
 import { css } from 'lit-element';
 
-import 'material-icons/iconfont/material-icons.css';
-import 'font-awesome/css/font-awesome.css';
+import './fonts/material-icons/iconfont/material-icons.css';
+import './fonts/font-awesome/css/font-awesome.css';
 
 export const seedButtonStyle = css`
 /*
