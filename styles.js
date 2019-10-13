@@ -12,6 +12,7 @@ export const seedButtonStyle = css`
         font-weight: bolder;
         font-size: 1rem;
         font-weight: lighter;
+        width: fit-content;
         margin: 2px;
         padding: .4rem 1rem;
         color: #3b3b3b;
@@ -109,10 +110,4 @@ export const seedButtonStyle = css`
     .circle.lg > .material-icons {
       vertical-align: sub;
     }
-
-    
-
-
-
-    
 `;
