@@ -11,10 +11,10 @@ npm run storybook
 
 ##  Add as project dependency
 
-from package.json
+from `package.json`
 
 "dependencies": {
     ...
-    "web-components-library": "git://github.com/vicdata4/web-components-library.git"
+    "seed-catalog": "git://github.com/vicdata4/seed-catalog.git"
 }
 

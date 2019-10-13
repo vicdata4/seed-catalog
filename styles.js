@@ -1,7 +1,6 @@
 import { css } from 'lit-element';
 import { materialIcons, googleFont } from './fonts.js';
 
-
 export const seedButtonStyle = css`
     ${googleFont}
     ${materialIcons}
@@ -13,6 +12,7 @@ export const seedButtonStyle = css`
         font-size: 1rem;
         font-weight: lighter;
         width: fit-content;
+        width: -moz-fit-content;
         margin: 2px;
         padding: .4rem 1rem;
         color: #3b3b3b;
