@@ -6,7 +6,7 @@ export const seedButtonStyle = css`
     ${googleFont}
     ${materialIcons}
 
-    .sd-btn, .sd-btn-mix, .sd-btn-mixr {
+    .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
         font-family: 'Heebo', sans-serif;
         background-color: white;
         font-weight: bolder;
@@ -23,7 +23,13 @@ export const seedButtonStyle = css`
         line-height: initial;
     }
 
-    .sd-btn > i {
+    .sd-icon {
+      font-size: 1rem;
+      padding: .4rem .6rem;
+      line-height: 1;
+    }
+
+    .sd-icon > i {
         vertical-align: middle;
     }
 
@@ -73,8 +79,8 @@ export const seedButtonStyle = css`
         vertical-align: baseline;
     }
 
-    .sm { font-size: .8rem; padding: .200rem .50rem; }
-    .lg { font-size: 1.7rem; padding: .200rem .80rem; }
+    .sm { font-size: .8rem; padding: .180rem .30rem; }
+    .lg { font-size: 1.6rem; padding: .300rem .70rem; }
 
     .sm > .material-icons { font-size: .9rem; font-weight: bold; }
     .lg > .material-icons { font-size: 2rem; }
