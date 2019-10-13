@@ -81,6 +81,11 @@ export const seedButtonStyle = css`
     .blue-mate:focus { outline: 4px solid #2dabb445; }
     .blue-mate:hover:enabled { background-color: rgb(51, 121, 120);}
 
+    /*** RED MATE ***/
+    .red-mate { background-color: #bf4545; color: white;}
+    .red-mate:focus { outline: 4px solid #ff00184d; }
+    .red-mate:hover:enabled { background-color: rgb(176, 63, 63);}
+
     .sd-btn.lg > .fa {
         vertical-align: baseline;
     }
