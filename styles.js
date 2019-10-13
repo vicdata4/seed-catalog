@@ -1,61 +1,31 @@
 import { css } from 'lit-element';
+import { materialIcons, googleFont } from './fonts.js';
 
-const materials = css`
-    /* fallback */
-    @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
-    }
 
-    .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-    }
-
-`;
 export const seedButtonStyle = css`
-${materials}
-/*
-    @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
-    /*** DEFAULT - WHITE ***/
+    ${googleFont}
+    ${materialIcons}
+
     .sd-btn, .sd-btn-mix, .sd-btn-mixr {
         font-family: 'Heebo', sans-serif;
         background-color: white;
         font-weight: bolder;
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: lighter;
         margin: 2px;
-        padding: .6rem 1rem;
-        /*padding: .380rem .80rem;*/
+        padding: .4rem 1rem;
         color: #3b3b3b;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         text-decoration: none;
         transition: background-color .1s;
-        line-height: 1;
+        line-height: initial;
     }
 
     .sd-btn > i {
         vertical-align: middle;
     }
-
-    .fa {
-    }
-
 
     .sd-btn-mix > * { margin-right: 7px; }
     .sd-btn-mixr > * { margin-left: 7px; }
@@ -99,12 +69,6 @@ ${materials}
     .orange:focus { outline: 4px solid #e09e2057; }
     .orange:hover:enabled { background-color: #b46e06;}
 
-
-    
-
-   
-    
-
     .sd-btn.lg > .fa {
         vertical-align: baseline;
     }
@@ -114,6 +78,10 @@ ${materials}
 
     .sm > .material-icons { font-size: .9rem; font-weight: bold; }
     .lg > .material-icons { font-size: 2rem; }
+
+    i:only-child {
+      color: white !important;
+    }
 
     .circle {
         border-radius: 100%;
@@ -133,8 +101,10 @@ ${materials}
     }
 
     .circle.lg > .material-icons {
-        vertical-align: sub;
+      vertical-align: sub;
     }
+
+    
 
 
 
