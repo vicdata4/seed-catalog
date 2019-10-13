@@ -76,15 +76,20 @@ export const seedButtonStyle = css`
     .orange:focus { outline: 4px solid #e09e2057; }
     .orange:hover:enabled { background-color: #b46e06;}
 
-    /*** BLUE MATE ***/
-    .blue-mate { background-color: #1C8281; color: white;}
-    .blue-mate:focus { outline: 4px solid #2dabb445; }
-    .blue-mate:hover:enabled { background-color: rgb(51, 121, 120);}
+    /*** GREEN MATE ***/
+    .green-mate { background-color: #1C8281; color: white;}
+    .green-mate:focus { outline: 4px solid #2dabb445; }
+    .green-mate:hover:enabled { background-color: rgb(51, 121, 120);}
 
     /*** RED MATE ***/
     .red-mate { background-color: #bf4545; color: white;}
     .red-mate:focus { outline: 4px solid #ff00184d; }
     .red-mate:hover:enabled { background-color: rgb(176, 63, 63);}
+
+    /*** BLUE MATE ***/
+    .blue-mate { background-color: rgb(63, 118, 182); color: white;}
+    .blue-mate:focus { outline: 4px solid #2dabb445; }
+    .blue-mate:hover:enabled { background-color: rgb(53, 98, 149);}
 
     .sd-btn.lg > .fa {
         vertical-align: baseline;
