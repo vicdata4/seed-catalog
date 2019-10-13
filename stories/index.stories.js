@@ -41,6 +41,7 @@ storiesOf('Seed Library', module)
       <button class="sd-btn red">Red</button>
       <button class="sd-btn green">Success</button>
       <button class="sd-btn blue">Submit</button>
+      <button class="sd-btn blue-mate">Mate</button>
       <button class="sd-btn yellow">Yellow</button>
       <button class="sd-btn purple">Purple</button>
       <button class="sd-btn black">Black</button>
