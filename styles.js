@@ -7,6 +7,7 @@ export const seedButtonStyle = css`
 
     /* sd-btn [class="sd-btn"] */
     .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
+        font-family: 'Ubuntu', sans-serif;
         display: inline-block;
         font-weight: 400;
         text-align: center;
@@ -33,10 +34,10 @@ export const seedButtonStyle = css`
     }
 
     .sd-icon {
+      display: inline-block;
       font-size: 1rem;
       padding: .4rem .6rem;
       line-height: 1;
-      vertical-align: bottom;
     }
 
     .sd-btn-mix > * { margin-right: 7px; }
@@ -96,10 +97,6 @@ export const seedButtonStyle = css`
     .blue-mate:focus { outline: 4px solid #2dabb445; }
     .blue-mate:hover:enabled { background-color: rgb(53, 98, 149);}
 
-    .sd-btn.lg > .fa {
-        vertical-align: baseline;
-    }
-
     .sm { font-size: .8rem; padding: .180rem .30rem; }
     .lg { font-size: 1.2rem; padding: .400rem .90rem; }
 
@@ -108,6 +105,15 @@ export const seedButtonStyle = css`
 
     i:only-child {
       color: white !important;
+    }
+
+    .sd-icon.lg {
+      padding: .1rem .4rem;
+    }
+
+    .sd-icon.lg > i{
+      font-size: 35px;
+      padding: 0;
     }
 
     .circle {
@@ -129,17 +135,12 @@ export const seedButtonStyle = css`
 
     .circle.lg > .material-icons{
       font-size: 1.8rem;
-      vertical-align: sub;
     }
 
     .circle.sm > i {
         font-size: 13px;
     }
-
-    .sd-icon > i {
-        vertical-align: sub;
-    }
-
+    
     .sd-btn-mix > i, .sd-btn-mixr > i {
       font-size: 20px;
     }
