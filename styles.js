@@ -7,22 +7,6 @@ export const seedButtonStyle = css`
 
     /* sd-btn [class="sd-btn"] */
     .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
-        /*font-family: 'Heebo', sans-serif;
-        background-color: white;
-        font-weight: bolder;
-        font-size: 1rem;
-        font-weight: lighter;
-        width: fit-content;
-        width: -moz-fit-content;
-        margin: 2px;
-        padding: .4rem 1rem;
-        color: #3b3b3b;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: background-color .1s;
-        line-height: initial;*/
         display: inline-block;
         font-weight: 400;
         text-align: center;
@@ -37,13 +21,14 @@ export const seedButtonStyle = css`
         font-size: 1rem;
         line-height: 1.5;
         border-radius: .25rem;
-        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-
-        
+        transition: background-color .1s;
+        text-decoration: none;
+        cursor: pointer;
     }
     
     /* sd-btn [class="sd-btn"] */
-    .sd-btn-mix {
+    .sd-btn-mix, .sd-btn-mixr {
+      padding: .2rem .75rem;
       vertical-align: baseline;
     }
 
@@ -162,5 +147,5 @@ export const seedButtonStyle = css`
     .sd-btn-mix.sm > i, .sd-btn-mixr.sm > i {
       font-size: 15px;
       margin-right: 3px;
-      }
+    }
 `;
