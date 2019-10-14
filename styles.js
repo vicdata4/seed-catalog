@@ -5,6 +5,7 @@ export const seedButtonStyle = css`
     ${googleFont}
     ${materialIcons}
 
+    /* sd-btn [class="sd-btn"] */
     .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
         font-family: 'Heebo', sans-serif;
         background-color: white;
@@ -23,7 +24,8 @@ export const seedButtonStyle = css`
         transition: background-color .1s;
         line-height: initial;
     }
-
+    
+    /* sd-btn [class="sd-btn"] */
     .sd-btn-mix {
       vertical-align: baseline;
     }
@@ -32,6 +34,7 @@ export const seedButtonStyle = css`
       font-size: 1rem;
       padding: .4rem .6rem;
       line-height: 1;
+      vertical-align: bottom;
     }
 
     
@@ -40,7 +43,7 @@ export const seedButtonStyle = css`
     .sd-btn-mixr > * { margin-left: 7px; }
 
     .sd-btn:focus { outline: 4px solid #ffffff40; }
-    .sd-btn:disabled { opacity: .8; }
+    .sd-btn:disabled, .sd-btn-mix:disabled { opacity: .8; }
     .sd-btn:hover:enabled { background-color: #dedede; }
 
     /*** RED ***/
@@ -98,20 +101,20 @@ export const seedButtonStyle = css`
     }
 
     .sm { font-size: .8rem; padding: .180rem .30rem; }
-    .lg { font-size: 1.6rem; padding: .300rem .70rem; }
+    .lg { font-size: 1.2rem; padding: .400rem .90rem; }
 
-    .sm > .material-icons { font-size: .9rem; font-weight: bold; }
-    .lg > .material-icons { font-size: 2rem; }
+    .sm > i { font-size: .9rem; font-weight: bold; }
+    .lg > i { font-size: 23px; }
 
     i:only-child {
       color: white !important;
     }
 
     .circle {
-        border-radius: 100%;
-        padding: .3rem .3rem;
         width: 2.1rem;
         height: 2.1rem;
+        border-radius: 100%;
+        padding: 0;
     }
 
     .circle.sm {
@@ -125,14 +128,24 @@ export const seedButtonStyle = css`
     }
 
     .circle.lg > .material-icons{
+      font-size: 1.8rem;
       vertical-align: sub;
     }
 
-    .circle.sm > i{
+    .circle.sm > i {
         font-size: 13px;
     }
 
     .sd-icon > i {
         vertical-align: sub;
     }
+
+    .sd-btn-mix > i, .sd-btn-mixr > i {
+      font-size: 20px;
+    }
+
+    .sd-btn-mix.sm > i, .sd-btn-mixr.sm > i {
+      font-size: 15px;
+      margin-right: 3px;
+      }
 `;
