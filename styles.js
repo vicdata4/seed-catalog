@@ -2,9 +2,52 @@ import { css } from 'lit-element';
 import { materialIcons, googleFont } from './fonts.js';
 
 export const seedButtonStyle = css`
+
     ${googleFont}
     ${materialIcons}
 
+    html {
+      --seed-color-red: #de3d4c;
+      --seed-color-red-focus: #ff00184d;
+      --seed-color-red-hover: #bb3440;
+
+      --seed-color-green: #22ac41;
+      --seed-color-green-focus: #7fc72a45;
+      --seed-color-green-hover: #199936;
+
+      --seed-color-blue: #2dabb4;
+      --seed-color-blue-focus: #2dabb445;
+      --seed-color-blue-hover: #239aa3;
+
+      --seed-color-yellow: #e6af0e;
+      --seed-color-yellow-focus: #c89a0c3d;
+      --seed-color-yellow-hover: #d5a927;
+
+      --seed-color-purple: #903e8d;
+      --seed-color-purple-focus: #903e8d5e;
+      --seed-color-purple-hover: #663564;
+
+      --seed-color-black: #2f2d2d;
+      --seed-color-black-focus: #43434387;
+      --seed-color-black-hover: #434343;
+
+      --seed-color-orange: #d58309;
+      --seed-color-orange-focus: #e09e2057;
+      --seed-color-orange-hover: #b46e06;
+
+      --seed-color-green-mate: #1C8281;
+      --seed-color-green-mate-focus: #2dabb445;
+      --seed-color-green-mate-hover: rgb(51, 121, 120);
+
+      --seed-color-red-mate: #bf4545;
+      --seed-color-red-mate-focus: #ff00184d;
+      --seed-color-red-mate-hover: rgb(176, 63, 63);
+
+      --seed-color-blue-mate: rgb(63, 118, 182);
+      --seed-color-blue-mate-focus: #2dabb445;
+      --seed-color-blue-mate-hover: rgb(53, 98, 149);
+    }
+    
     /* sd-btn [class="sd-btn"] */
     .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
         font-family: 'Ubuntu', sans-serif;
@@ -48,54 +91,54 @@ export const seedButtonStyle = css`
     .sd-btn:hover:enabled { background-color: #dedede; }
 
     /*** RED ***/
-    .red { background-color: #de3d4c; color: white; }
-    .red:focus { outline: 4px solid #ff00184d; }
-    .red:hover:enabled { background-color: #bb3440; }
+    .red { background-color: var(--seed-color-red); color: white; }
+    .red:focus { outline: 4px solid var(--seed-color-red-focus); }
+    .red:hover:enabled { background-color: var(--seed-color-red-hover); }
 
     /*** GREEN ***/
-    .green { background-color: #22ac41; color: white; }
-    .green:focus { outline: 4px solid #7fc72a45; }
-    .green:hover:enabled { background-color: #199936; }
+    .green { background-color: var(--seed-color-green); color: white; }
+    .green:focus { outline: 4px solid var(--seed-color-green-focus); }
+    .green:hover:enabled { background-color: var(--seed-color-green-hover); }
 
     /*** BLUE ***/
-    .blue { background-color: #2dabb4; color: white; }
-    .blue:focus { outline: 4px solid #2dabb445; }
-    .blue:hover:enabled { background-color: #239aa3; }
+    .blue { background-color: var(--seed-color-blue); color: white; }
+    .blue:focus { outline: 4px solid var(--seed-color-blue-focus); }
+    .blue:hover:enabled { background-color: var(--seed-color-blue-hover); }
 
     /*** YELLOW ***/
-    .yellow { background-color: #e6af0e; color: #434343;}
-    .yellow:focus { outline: 4px solid #c89a0c3d; }
-    .yellow:hover:enabled { background-color: #d5a927; }
+    .yellow { background-color: var(--seed-color-yellow); color: #434343;}
+    .yellow:focus { outline: 4px solid var(--seed-color-yellow); }
+    .yellow:hover:enabled { background-color: var(--seed-color-yellow-hover); }
 
     /*** PURPLE ***/
-    .purple { background-color: #903e8d; color: white; }
-    .purple:focus { outline: 4px solid #903e8d5e; }
-    .purple:hover:enabled { background-color: #663564; }
+    .purple { background-color: var(--seed-color-purple); color: white; }
+    .purple:focus { outline: 4px solid var(--seed-color-purple-focus); }
+    .purple:hover:enabled { background-color: var(--seed-color-purple-hover); }
 
     /*** BLACK ***/
-    .black { background-color: #2f2d2d; color: white; }
-    .black:focus { outline: 4px solid #43434387; }
-    .black:hover:enabled { background-color: #434343; }
+    .black { background-color: var(--seed-color-black); color: white; }
+    .black:focus { outline: 4px solid var(--seed-color-black-focus); }
+    .black:hover:enabled { background-color: var(--seed-color-black-hover); }
 
     /*** ORANGE ***/
-    .orange { background-color: #d58309; color: white;}
-    .orange:focus { outline: 4px solid #e09e2057; }
-    .orange:hover:enabled { background-color: #b46e06;}
+    .orange { background-color: var(--seed-color-orange); color: white; }
+    .orange:focus { outline: 4px solid var(--seed-color-orange-focus); }
+    .orange:hover:enabled { background-color: var(--seed-color-orange-hover); }
 
     /*** GREEN MATE ***/
-    .green-mate { background-color: #1C8281; color: white;}
-    .green-mate:focus { outline: 4px solid #2dabb445; }
-    .green-mate:hover:enabled { background-color: rgb(51, 121, 120);}
+    .green-mate { background-color: var(--seed-color-green-mate); color: white; }
+    .green-mate:focus { outline: 4px solid var(--seed-color-green-mate-focus); }
+    .green-mate:hover:enabled { background-color: var(--seed-color-green-mate-hover); }
 
     /*** RED MATE ***/
-    .red-mate { background-color: #bf4545; color: white;}
-    .red-mate:focus { outline: 4px solid #ff00184d; }
-    .red-mate:hover:enabled { background-color: rgb(176, 63, 63);}
+    .red-mate { background-color: var(--seed-color-red-mate); color: white; }
+    .red-mate:focus { outline: 4px solid var(--seed-color-red-mate-focus); }
+    .red-mate:hover:enabled { background-color: var(--seed-color-red-mate-hover); }
 
     /*** BLUE MATE ***/
-    .blue-mate { background-color: rgb(63, 118, 182); color: white;}
-    .blue-mate:focus { outline: 4px solid #2dabb445; }
-    .blue-mate:hover:enabled { background-color: rgb(53, 98, 149);}
+    .blue-mate { background-color: var(--seed-color-blue-mate); color: white; }
+    .blue-mate:focus { outline: 4px solid var(--seed-color-blue-mate-focus); }
+    .blue-mate:hover:enabled { background-color: var(--seed-color-blue-mate-hover); }
 
     .sm { font-size: .8rem; padding: .180rem .30rem; }
     .lg { font-size: 1.2rem; padding: .400rem .90rem; }
@@ -149,4 +192,15 @@ export const seedButtonStyle = css`
       font-size: 15px;
       margin-right: 3px;
     }
+
+    i.red { background-color: unset; color: var(--seed-color-red); }
+    i.green { background-color: unset; color: var(--seed-color-green); }
+    i.blue { background-color: unset; color: var(--seed-color-blue); }
+    i.yellow { background-color: unset; color: var(--seed-color-yellow); }
+    i.purple { background-color: unset; color: var(--seed-color-purple); }
+    i.black { background-color: unset; color: var(--seed-color-black); }
+    i.orange { background-color: unset; color: var(--seed-color-orange); }
+    i.green-mate { background-color: unset; color: var(--seed-color-green-mate); }
+    i.red-mate { background-color: unset; color: var(--seed-color-red-mate); }
+    i.blue-mate { background-color: unset; color: var(--seed-color-blue-mate); }
 `;
