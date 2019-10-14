@@ -7,7 +7,7 @@ export const seedButtonStyle = css`
 
     /* sd-btn [class="sd-btn"] */
     .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
-        font-family: 'Heebo', sans-serif;
+        /*font-family: 'Heebo', sans-serif;
         background-color: white;
         font-weight: bolder;
         font-size: 1rem;
@@ -22,7 +22,24 @@ export const seedButtonStyle = css`
         cursor: pointer;
         text-decoration: none;
         transition: background-color .1s;
-        line-height: initial;
+        line-height: initial;*/
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+        
     }
     
     /* sd-btn [class="sd-btn"] */
@@ -36,8 +53,6 @@ export const seedButtonStyle = css`
       line-height: 1;
       vertical-align: bottom;
     }
-
-    
 
     .sd-btn-mix > * { margin-right: 7px; }
     .sd-btn-mixr > * { margin-left: 7px; }
