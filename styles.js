@@ -8,7 +8,6 @@ export const seedButtonStyle = css`
     /* sd-btn [class="sd-btn"] */
     .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
         display: inline-block;
-        font-family: 'Heebo', sans-serif;
         font-weight: 400;
         text-align: center;
         white-space: nowrap;
