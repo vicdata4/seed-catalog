@@ -41,6 +41,7 @@ export const materialIcons = css`
         white-space: nowrap;
         word-wrap: normal;
         direction: ltr;
+        vertical-align: sub;
         -webkit-font-smoothing: antialiased;
     }
 

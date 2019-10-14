@@ -24,15 +24,17 @@ export const seedButtonStyle = css`
         line-height: initial;
     }
 
+    .sd-btn-mix {
+      vertical-align: baseline;
+    }
+
     .sd-icon {
       font-size: 1rem;
       padding: .4rem .6rem;
       line-height: 1;
     }
 
-    .sd-icon > i {
-        vertical-align: middle;
-    }
+    
 
     .sd-btn-mix > * { margin-right: 7px; }
     .sd-btn-mixr > * { margin-left: 7px; }
@@ -113,8 +115,8 @@ export const seedButtonStyle = css`
     }
 
     .circle.sm {
-        width: 1.7rem;
-        height: 1.7rem;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .circle.lg {
@@ -122,7 +124,15 @@ export const seedButtonStyle = css`
         height: 3rem;
     }
 
-    .circle.lg > .material-icons {
+    .circle.lg > .material-icons{
       vertical-align: sub;
+    }
+
+    .circle.sm > i{
+        font-size: 13px;
+    }
+
+    .sd-icon > i {
+        vertical-align: sub;
     }
 `;

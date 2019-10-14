@@ -86,8 +86,8 @@ storiesOf('Seed Library', module)
       <br/><br/><br/><br/>
       <h2 class="sd-btn black">Class <span class="light">sd-btn-mix</span> for ${'buttons with icons and text'}. <span class="decorator">Support fa and material icons</span></h2>
       <button class="sd-btn-mix red sm"><i class="material-icons">close</i>Cancel payment</button>
-      <button class="sd-btn-mix red"><i class="material-icons">close</i>Cancel payment</button>
-      <button class="sd-btn-mix red lg"><i class="material-icons">close</i>Cancel payment</button>
+      <button class="sd-btn-mix blue"><i class="material-icons">folder</i>Cancel payment</button>
+      <button class="sd-btn-mix red lg"><i class="material-icons">lock</i>Lock</button>
       <button class="sd-btn-mix yellow"><i class="material-icons">warning</i>Warning message</button>
       <button class="sd-btn-mix black"><i class="material-icons">lock</i>Lock account</button>
       <br/><br/><br/><br/>
