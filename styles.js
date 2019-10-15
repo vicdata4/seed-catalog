@@ -206,4 +206,6 @@ export const seedButtonStyle = css`
     
     i.lg { font-size: 2.5rem; padding: 0; }
     i.sm { font-size: 1rem; padding: 0; }
+
+    .yellow > i { color: #434343 !important; }
 `;
