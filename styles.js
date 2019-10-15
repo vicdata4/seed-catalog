@@ -76,7 +76,6 @@ export const seedButtonStyle = css`
       vertical-align: baseline;
     }
 
-
     .sd-btn-mixr > i { margin-left: 5px; }
 
     .sd-icon {
