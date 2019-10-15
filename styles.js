@@ -83,9 +83,6 @@ export const seedButtonStyle = css`
       line-height: 1;
     }
 
-    .sd-btn-mix > * { margin-right: 7px; }
-    .sd-btn-mixr > * { margin-left: 7px; }
-
     .sd-btn:focus { outline: 4px solid #ffffff40; }
     .sd-btn:disabled, .sd-btn-mix:disabled { opacity: .8; }
     .sd-btn:hover:enabled { background-color: #dedede; }
@@ -107,7 +104,7 @@ export const seedButtonStyle = css`
 
     /*** YELLOW ***/
     .yellow { background-color: var(--seed-color-yellow); color: #434343;}
-    .yellow:focus { outline: 4px solid var(--seed-color-yellow); }
+    .yellow:focus { outline: 4px solid var(--seed-color-yellow-focus); }
     .yellow:hover:enabled { background-color: var(--seed-color-yellow-hover); }
 
     /*** PURPLE ***/

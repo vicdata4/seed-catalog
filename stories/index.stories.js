@@ -32,6 +32,8 @@ storiesOf('Seed Library', module)
         color: #989898;
         text-decoration: none;
       }
+
+      .sd-btn-mix > * , .sd-btn-mixr > *{ margin-right: 7px; }
     
     </style>
     <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
@@ -46,7 +48,7 @@ storiesOf('Seed Library', module)
 
       <button class="sd-btn sm red-mate">red-mate</button>
       <button class="sd-btn sm blue-mate">blue-mate</button>
-      <button class="sd-btn sm green-mate">orange</button>
+      <button class="sd-btn sm green-mate">green-mate</button>
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn</span></h2><button class="sd-btn red-mate">Classic</button><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-mix</span></h2><button class="sd-btn-mix green"><i class="material-icons">flight</i>Flight</button><br>
@@ -61,7 +63,7 @@ storiesOf('Seed Library', module)
       <button class="sd-icon blue-mate"><i class="material-icons">folder</i></button>
       <button class="sd-icon green circle"><i class="material-icons">face</i></button>
       <button class="sd-btn red-mate">Red Mate</button>
-      <button class="sd-icon red-mate circle"><i class="material-icons">close</i></button>
+      <button class="sd-icon orange circle"><i class="material-icons">pie_chart</i></button>
       <button class="sd-btn green">success</button>
       <button class="sd-btn-mix green"><i class="material-icons">folder</i>Success</button>
       <button class="sd-btn-mix blue" disabled><i class="material-icons">face</i>Disabled</button>
@@ -92,25 +94,19 @@ storiesOf('Seed Library', module)
       <button class="sd-btn blue" disabled>Blue</button>
       <button class="sd-icon red circle"><i class="material-icons">close</i></button>
       <button class="sd-icon green"><i class="material-icons">home</i></button>
-      <button class="sd-icon blue circle"><i class="material-icons">remove</i></button>
+      <button class="sd-icon blue circle"><i class="material-icons">navigation</i></button>
       <button class="sd-icon green circle"><i class="material-icons">chevron_right</i></button>
-      <button class="sd-icon green yellow circle"><i class="material-icons">expand_more</i></button>
+      <button class="sd-icon green yellow circle"><i class="material-icons">public</i></button>
       <button class="sd-icon blue circle"><i class="material-icons">menu</i></button>
       
       <button class="sd-icon green lg circle"><i class="material-icons">people</i></button>
       <button class="sd-icon blue lg"><i class="material-icons">flight</i></button>
+      <button class="sd-icon green lg"><i class="material-icons">palette</i></button>
+      <button class="sd-icon red lg"><i class="material-icons">timer</i></button>
 
-      <button class="sd-icon red sm"><i class="material-icons">close</i></button>
-      <button class="sd-icon red sm circle"><i class="material-icons">close</i></button>
+      <button class="sd-icon red sm"><i class="material-icons">pie_chart</i></button>
+      <button class="sd-icon red sm circle"><i class="material-icons">cloud_done</i></button>
       <button class="sd-icon yellow sm"><i class="material-icons">face</i></button>
-
-      
-
-
-
-
-
-
 
       <button class="sd-btn">Apple</button>
       <button class="sd-btn red">Santander</button>
@@ -119,7 +115,7 @@ storiesOf('Seed Library', module)
       <button class="sd-icon blue-mate"><i class="material-icons">gps_fixed</i></button>
       <button class="sd-icon green circle"><i class="material-icons">face</i></button>
       <button class="sd-btn red-mate">Red Mate</button>
-      <button class="sd-icon red-mate circle"><i class="material-icons">close</i></button>
+      <button class="sd-icon red-mate circle"><i class="material-icons">audiotrack</i></button>
       <button class="sd-btn black">Black</button>
       <button class="sd-btn green">send</button>
       <button class="sd-icon blue lg"><i class="material-icons">menu</i></button>
@@ -139,7 +135,7 @@ storiesOf('Seed Library', module)
       <button class="sd-btn-mix yellow"><i class="material-icons">credit_card</i>Credit card</button>
       <button class="sd-btn sm purple">Example</button>
       <button class="sd-btn sm black">Dark</button>
-      <button class="sd-btn-mix red sm"><i class="material-icons">close</i>Cancel payment</button>
+      <button class="sd-btn-mix red sm"><i class="material-icons">archive</i>Inbox</button>
       <button class="sd-btn sm blue">Log in</button>
       <button class="sd-icon green"><i class="material-icons">home</i></button>
       <button class="sd-btn-mix red lg"><i class="material-icons">flight</i>Flight</button>
@@ -156,10 +152,10 @@ storiesOf('Seed Library', module)
       <button class="sd-icon yellow sm"><i class="material-icons">search</i></button>
       <button class="sd-icon green circle"><i class="material-icons">chevron_right</i></button>
       <button class="sd-btn red" disabled>Red</button>
-      <button class="sd-btn lg green">Green</button>
+      <button class="sd-btn lg green">Window</button>
       <button class="sd-icon red sm"><i class="material-icons">close</i></button>
       <button class="sd-icon red circle"><i class="material-icons">mouse</i></button>
-      <button class="sd-icon blue circle"><i class="material-icons">menu</i></button>
+      <button class="sd-icon blue"><i class="material-icons">casino</i></button>
       
       <button class="sd-icon blue sm circle"><i class="material-icons">cloud</i></button>
 
