@@ -6,7 +6,7 @@ export const seedButtonStyle = css`
     ${googleFont}
     ${materialIcons}
 
-    html {
+    :host {
       --seed-color-red: #de3d4c;
       --seed-color-red-focus: #ff00184d;
       --seed-color-red-hover: #bb3440;
