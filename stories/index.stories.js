@@ -10,6 +10,48 @@ storiesOf('Seed Library', module)
     <style>
       ${seedButtonStyle}
 
+      html {
+      --seed-color-red: #de3d4c;
+      --seed-color-red-focus: #ff00184d;
+      --seed-color-red-hover: #bb3440;
+
+      --seed-color-green: #22ac41;
+      --seed-color-green-focus: #7fc72a45;
+      --seed-color-green-hover: #199936;
+
+      --seed-color-blue: #2dabb4;
+      --seed-color-blue-focus: #2dabb445;
+      --seed-color-blue-hover: #239aa3;
+
+      --seed-color-yellow: #e6af0e;
+      --seed-color-yellow-focus: #c89a0c3d;
+      --seed-color-yellow-hover: #d5a927;
+
+      --seed-color-purple: #903e8d;
+      --seed-color-purple-focus: #903e8d5e;
+      --seed-color-purple-hover: #663564;
+
+      --seed-color-black: #2f2d2d;
+      --seed-color-black-focus: #43434387;
+      --seed-color-black-hover: #434343;
+
+      --seed-color-orange: #d58309;
+      --seed-color-orange-focus: #e09e2057;
+      --seed-color-orange-hover: #b46e06;
+
+      --seed-color-green-mate: #1C8281;
+      --seed-color-green-mate-focus: #2dabb445;
+      --seed-color-green-mate-hover: rgb(51, 121, 120);
+
+      --seed-color-red-mate: #bf4545;
+      --seed-color-red-mate-focus: #ff00184d;
+      --seed-color-red-mate-hover: rgb(176, 63, 63);
+
+      --seed-color-blue-mate: rgb(63, 118, 182);
+      --seed-color-blue-mate-focus: #2dabb445;
+      --seed-color-blue-mate-hover: rgb(53, 98, 149);
+    }
+
       h2, p {
         color: red;
       }
@@ -33,11 +75,11 @@ storiesOf('Seed Library', module)
         text-decoration: none;
       }
 
-      .sd-btn-mix > * , .sd-btn-mixr > *{ margin-right: 7px; }
+      .sd-btn-mix > * { margin-right: 7px; }
     
     </style>
-    <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
-    <h2 class="sd-btn black sm"><span class="light">Color list</span></h2>
+      <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
+      <h2 class="sd-btn black sm"><span class="light">Color list</span></h2>
       <button class="sd-btn sm red">red</button>
       <button class="sd-btn sm blue">blue</button>
       <button class="sd-btn sm green">green</button>
@@ -57,6 +99,7 @@ storiesOf('Seed Library', module)
     <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons orange sm">folder</i><br>
 
     <div class="container" style="background-color: #292929;">
+      <button class="sd-btn-mixr purple">Auth<i class="material-icons">lock</i></button>
       <button class="sd-btn">Submit</button>
       <button class="sd-btn red">Red</button>
       <button class="sd-icon blue"><i class="material-icons">add</i></button>
