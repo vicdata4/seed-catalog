@@ -5,4 +5,5 @@
 /build
 firebase.json
 .firebaserc
-.firebase/hosting.YnVpbGQ.cache
+
+/.firebase
