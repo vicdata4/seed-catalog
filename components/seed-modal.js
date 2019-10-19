@@ -18,6 +18,7 @@ export class SeedModal extends LitElement {
                 left: 0;
                 background-color: transparent;
                 transition: background-color .5s;
+                color: black;
                 z-index: 1;
             }
 
