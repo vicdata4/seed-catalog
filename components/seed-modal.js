@@ -6,6 +6,10 @@ export class SeedModal extends LitElement {
         return [
             seedButtonStyle,
             css`
+                :host {
+                    overflow: hidden;
+                }
+                
                 .modal {
                     display: flex;
                     justify-content: center;
@@ -22,7 +26,6 @@ export class SeedModal extends LitElement {
                     overflow: auto;
                     
                     z-index: 1;
-                    overflow: hidden;
                 }
 
                 .modal-content {
