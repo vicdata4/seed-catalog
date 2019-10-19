@@ -55,6 +55,7 @@ export const seedButtonStyle = css`
         font-weight: 400;
         text-align: center;
         white-space: nowrap;
+        width: fit-content;
         vertical-align: middle;
         -webkit-user-select: none;
         -moz-user-select: none;

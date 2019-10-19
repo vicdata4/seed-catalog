@@ -32,7 +32,7 @@ export class SeedModal extends LitElement {
                     margin-top: -50px;
                 }
 
-                .content{
+                .content {
                     display: block;
                     padding: .8rem 1rem;
                 }
@@ -45,6 +45,7 @@ export class SeedModal extends LitElement {
                 .header {
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
                     padding: .8rem 1rem;
                 }
 
@@ -59,7 +60,11 @@ export class SeedModal extends LitElement {
                 }
 
                 .title {
-                    font-weight: bolder;
+                    font-weight: bold;
+                }
+
+                .modal-content div p {
+                    margin: 0 !important;
                 }
 
                 @media (min-width: 768px) {
@@ -115,7 +120,10 @@ export class SeedModal extends LitElement {
             <slot name="button" @click="${this.openModal}"></slot>
             <div class="modal closed">
                 <div class="modal-content">
-                    <slot name="header" class="header"></slot>
+                    <div class="header">
+                        <slot name="title" class="title"></slot>
+                        <slot name="close-btn"></slot>
+                    </div>
                     <slot name="content" class="content"></slot>
                     <slot name="footer" class="footer"></slot>
                 </div>

@@ -51,6 +51,18 @@ from `package.json`
 ```js
     // import seed-modal
     import 'seed-catalog/seed-modal.js';
+    // and combine with sd-btn class to improve your performance
+    import { seedButtonStyle } from 'seed-catalog/styles.js';
+
+    // lit element example
+    static get styles() {
+        return [
+            seedButtonStyle,
+            css`
+                ...
+            `
+        ];
+    }
 
     <seed-modal>
         <button slot="button" class="sd-btn-mix red">
