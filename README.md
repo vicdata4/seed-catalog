@@ -14,10 +14,12 @@ npm run storybook
 
 from `package.json`
 
+```js
 "dependencies": {
     ...
     "seed-catalog": "git://github.com/vicdata4/seed-catalog.git"
 }
+```
 
 ## Components
 
