@@ -11,6 +11,7 @@ export class SeedModal extends LitElement {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                align-items: flex-start;
 
                 top: 0;
                 bottom: 0;
@@ -20,6 +21,8 @@ export class SeedModal extends LitElement {
                 transition: background-color .3s;
                 color: black;
                 z-index: 1;
+
+                overflow: auto;
             }
 
             .modal-content {

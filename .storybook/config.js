@@ -56,7 +56,7 @@ addParameters({
          * show/hide tool bar
          * @type {Boolean}
          */
-        isToolshown: true,
+        isToolshown: false,
         /**
          * theme storybook, see link below
          */
