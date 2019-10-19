@@ -2,7 +2,7 @@
 
 ## Project installation
 
-git clone https://github.com/vicdata4/web-components-library.git
+git clone https://github.com/vicdata4/seed-catalog.git
 
 npm install
 

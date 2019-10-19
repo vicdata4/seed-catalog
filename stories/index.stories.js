@@ -3,6 +3,7 @@ import { html } from 'lit-html';
 
 import '../components/basic-button';
 import { seedButtonStyle } from '../styles';
+import '../components/seed-modal';
 
 storiesOf('Seed Library', module)
   //.add('BasicButton', () => html`<basic-button>Submit</basic-button>`)
@@ -204,4 +205,22 @@ storiesOf('Seed Library', module)
 
       <button class="sd-btn lg">Clear</button>
       </div>
+  `)
+  .add('Modal', () => html`
+  <style>
+      ${seedButtonStyle}
+
+      html {
+        --seed-color-red: #de3d4c;
+        --seed-color-red-focus: #ff00184d;
+        --seed-color-red-hover: #bb3440;
+      }
+      </style>
+
+      <seed-modal>
+        <button slot="button" class="sd-btn red">Open modal</button>
+        <div slot="header">Building Web Components</div>
+        <div slot="content">Open modal content ..</div>
+        <div slot="footer">Footer ..</div>
+      </seed-modal>
   `);
