@@ -17,7 +17,7 @@ export class SeedModal extends LitElement {
                 right: 0;
                 left: 0;
                 background-color: transparent;
-                transition: background-color .5s;
+                transition: background-color .3s;
                 color: black;
                 z-index: 1;
             }
@@ -25,6 +25,8 @@ export class SeedModal extends LitElement {
             .modal-content {
                 background-color: white;
                 width: 80%;
+                transition: margin-top .3s;
+                margin-top: -50px;
             }
 
             .closed {
@@ -39,12 +41,25 @@ export class SeedModal extends LitElement {
                 padding: .8rem 1rem;
             }
 
+            .footer {
+                display: flex;
+                justify-content: flex-end;
+                padding: .8rem 1rem;
+            }
+            
+
             .close {
                 height: fit-content;
             }
 
             .content {
                 background-color: yellow;
+            }
+
+            @media (min-width: 768px) {
+                .modal-content {
+                    width: 50%;
+                }
             }
         `]
     }
@@ -57,46 +72,47 @@ export class SeedModal extends LitElement {
 
     firstUpdated() {
         this.modal = this.shadowRoot.querySelector('.modal');
+        const content = this.shadowRoot.querySelector('.modal-content');
 
         this.modal.addEventListener('click', function(e){
             if (e.target === this) {
                 this.className = 'modal closed';
                 this.style.backgroundColor = 'transparent';
+                content.style.marginTop = '-50px';
             }
         });
     }
 
     openModal() {
         this.modal.className = 'modal';
-        setTimeout(x => {
+        setTimeout(() => {
             this.modal.style.backgroundColor = 'rgba(0, 0, 0, .6)';
+            this.shadowRoot.querySelector('.modal-content').style.marginTop = '0';
         })
     }
 
     closeModal() {
         this.modal.className = 'modal closed';
         this.modal.style.backgroundColor = 'transparent';
+        this.shadowRoot.querySelector('.modal-content').style.marginTop = '-50px';
     }
 
     render() {
         return html`
-            <div>
-                <slot name="button" @click="${this.openModal}"></slot>
-                <div class="modal closed">
-                    <div class="modal-content">
-                        <div class="header">
-                            <slot name="header"></slot>
-                            <button class="sd-btn red sm close" @click="${this.closeModal}">Close</button>
-                        </div>
-                        <div class="header">
-                            <slot name="content"></slot>
-                        </div>
-                        <div class="header">
-                            <slot name="footer"></slot>
-                        </div>
+            <slot name="button" @click="${this.openModal}"></slot>
+            <div class="modal closed">
+                <div class="modal-content">
+                    <div class="header">
+                        <slot name="header"></slot>
+                        <button class="sd-btn-empty" @click="${this.closeModal}"><slot name="icon"></slot></button>
                     </div>
+          
+                    <slot class="header" name="content"></slot>
+                    <slot name="footer" class="footer"></slot>
+  
                 </div>
             </div>
+     
         `;
     }
 }

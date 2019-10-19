@@ -76,6 +76,14 @@ export const seedButtonStyle = css`
       vertical-align: baseline;
     }
 
+    .sd-btn-empty {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+    }
+
     .sd-btn-mixr > i { margin-left: 5px; }
 
     .sd-icon {
