@@ -9,7 +9,6 @@ export class SeedModal extends LitElement {
                 .modal {
                     display: flex;
                     justify-content: center;
-                    align-items: flex-start;
 
                     position: fixed;
                     top: 0;
@@ -46,6 +45,7 @@ export class SeedModal extends LitElement {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    border-bottom: 1px solid #dedede;
                     padding: .8rem 1rem;
                 }
 
@@ -53,6 +53,7 @@ export class SeedModal extends LitElement {
                     display: flex;
                     justify-content: flex-end;
                     padding: .8rem 1rem;
+                    border-top: 1px solid #dedede;
                 }
                 
                 .close {
@@ -77,14 +78,15 @@ export class SeedModal extends LitElement {
 
     static get properties() {
         return {
-            modalBackground: { type: String }
+            modalBackground: { type: String },
+            alignWindow: { type: String }
         };
     }
 
     constructor() {
         super();
         this.modalBackground = this.modalBackground || 'rgba(0, 0, 0, .4)';
-        this.background = 'red';
+        this.alignWindow = this.alignWindow || 'flex-start';
     }
 
     firstUpdated() {
@@ -118,7 +120,7 @@ export class SeedModal extends LitElement {
     render() {
         return html`
             <slot name="button" @click="${this.openModal}"></slot>
-            <div class="modal closed">
+            <div class="modal closed" style="align-items: ${this.alignWindow}">
                 <div class="modal-content">
                     <div class="header">
                         <slot name="title" class="title"></slot>

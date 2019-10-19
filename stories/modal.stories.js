@@ -24,10 +24,10 @@ storiesOf('Seed Library', module)
           </div> 
         </seed-modal>
 
-        <seed-modal>
+        <seed-modal alignWindow="center">
           <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Open modal</button>
           <span slot="title">Building Web Components</span>
-          <button slot="close-btn" class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
+          <button slot="close-btn" class="sd-btn-empty"><i class="material-icons red-mate">close</i></button>
           
           <div slot="content">
             Ut pellentesque, enim lobortis pellentesque egestas, libero nibh sodales sapien, eu dignissim tortor massa id neque. Ut at dui viverra, efficitur lectus sed, sagittis risus.

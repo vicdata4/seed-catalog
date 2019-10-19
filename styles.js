@@ -201,15 +201,15 @@ export const seedButtonStyle = css`
       margin-right: 3px;
     }
 
-    i.red { background-color: unset; color: var(--seed-color-red); }
-    i.green { background-color: unset; color: var(--seed-color-green); }
-    i.blue { background-color: unset; color: var(--seed-color-blue); }
-    i.yellow { background-color: unset; color: var(--seed-color-yellow); }
-    i.purple { background-color: unset; color: var(--seed-color-purple); }
-    i.black { background-color: unset; color: var(--seed-color-black); }
-    i.orange { background-color: unset; color: var(--seed-color-orange); }
-    i.green-mate { background-color: unset; color: var(--seed-color-green-mate); }
-    i.red-mate { background-color: unset; color: var(--seed-color-red-mate); }
+    i.red { background-color: unset; color: var(--seed-color-red) !important; }
+    i.green { background-color: unset; color: var(--seed-color-green) !important; }
+    i.blue { background-color: unset; color: var(--seed-color-blue) !important; }
+    i.yellow { background-color: unset; color: var(--seed-color-yellow) !important; }
+    i.purple { background-color: unset; color: var(--seed-color-purple) !important; }
+    i.black { background-color: unset; color: var(--seed-color-black) !important; }
+    i.orange { background-color: unset; color: var(--seed-color-orange) !important; }
+    i.green-mate { background-color: unset; color: var(--seed-color-green-mate) !important; }
+    i.red-mate { background-color: unset; color: var(--seed-color-red-mate) !important; }
     i.blue-mate { background-color: unset; color: var(--seed-color-blue-mate) !important; }
     
     i.lg { font-size: 2.5rem; padding: 0; }
