@@ -209,7 +209,7 @@ export const seedButtonStyle = css`
     i.orange { background-color: unset; color: var(--seed-color-orange); }
     i.green-mate { background-color: unset; color: var(--seed-color-green-mate); }
     i.red-mate { background-color: unset; color: var(--seed-color-red-mate); }
-    i.blue-mate { background-color: unset; color: var(--seed-color-blue-mate); }
+    i.blue-mate { background-color: unset; color: var(--seed-color-blue-mate) !important; }
     
     i.lg { font-size: 2.5rem; padding: 0; }
     i.sm { font-size: 1rem; padding: 0; }

@@ -6,71 +6,81 @@ export class SeedModal extends LitElement {
         return [
             seedButtonStyle,
             css`
-            .modal {
-                position: fixed;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                align-items: flex-start;
+                .modal {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
 
-                top: 0;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                background-color: transparent;
-                transition: background-color .3s;
-                color: black;
-                z-index: 1;
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
 
-                overflow: auto;
-            }
-
-            .modal-content {
-                background-color: white;
-                width: 80%;
-                transition: margin-top .3s;
-                margin-top: -50px;
-            }
-
-            .closed {
-                display: none;
-                background-color: transparent;
-            }
-
-            .header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: .8rem 1rem;
-            }
-
-            .footer {
-                display: flex;
-                justify-content: flex-end;
-                padding: .8rem 1rem;
-            }
-            
-
-            .close {
-                height: fit-content;
-            }
-
-            .content {
-                background-color: yellow;
-            }
-
-            @media (min-width: 768px) {
-                .modal-content {
-                    width: 50%;
+                    background-color: transparent;
+                    transition: background-color .3s;
+                    color: black;
+                    overflow: auto;
+                    
+                    z-index: 1;
                 }
-            }
+
+                .modal-content {
+                    background-color: white;
+                    width: 80%;
+                    transition: margin-top .3s;
+                    margin-top: -50px;
+                }
+
+                .content{
+                    display: block;
+                    padding: .8rem 1rem;
+                }
+
+                .closed {
+                    display: none;
+                    background-color: transparent;
+                }
+
+                .header {
+                    padding: .8rem 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .footer {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding: .8rem 1rem;
+                }
+                
+                .close {
+                    height: fit-content;
+                }
+
+                .title {
+                    font-weight: bolder;
+                }
+
+                @media (min-width: 768px) {
+                    .modal-content {
+                        width: 50%;
+                    }
+                }
         `]
     }
 
     static get properties() {
         return {
-          alert: { type: String, attribute: false }
+            modalBackground: { type: String }
         };
+    }
+
+    constructor() {
+        super();
+        this.modalBackground = this.modalBackground || 'rgba(0, 0, 0, .4)';
+        this.background = 'red';
     }
 
     firstUpdated() {
@@ -89,8 +99,8 @@ export class SeedModal extends LitElement {
     openModal() {
         this.modal.className = 'modal';
         setTimeout(() => {
-            this.modal.style.backgroundColor = 'rgba(0, 0, 0, .6)';
-            this.shadowRoot.querySelector('.modal-content').style.marginTop = '0';
+            this.modal.style.backgroundColor = this.modalBackground;
+            this.shadowRoot.querySelector('.modal-content').style.marginTop = '20px';
         })
     }
 
@@ -105,14 +115,9 @@ export class SeedModal extends LitElement {
             <slot name="button" @click="${this.openModal}"></slot>
             <div class="modal closed">
                 <div class="modal-content">
-                    <div class="header">
-                        <slot name="header"></slot>
-                        <button class="sd-btn-empty" @click="${this.closeModal}"><slot name="icon"></slot></button>
-                    </div>
-          
-                    <slot class="header" name="content"></slot>
+                    <slot name="header" class="header"></slot>
+                    <slot name="content" class="content"></slot>
                     <slot name="footer" class="footer"></slot>
-  
                 </div>
             </div>
      
