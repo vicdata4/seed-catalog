@@ -216,4 +216,7 @@ export const seedButtonStyle = css`
     i.sm { font-size: 1rem; padding: 0; }
 
     .yellow > i { color: #434343 !important; }
+
+    .sd-btn-mix > * { margin-right: 5px; }
+    .sd-btn-mix r> * { margin-left: 5px; }
 `;

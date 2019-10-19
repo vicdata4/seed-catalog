@@ -72,7 +72,7 @@ storiesOf('Seed Library', module)
         text-decoration: none;
       }
 
-      .sd-btn-mix > * { margin-right: 7px; }
+      
     
     </style>
     <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
