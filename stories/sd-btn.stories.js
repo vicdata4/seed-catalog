@@ -1,12 +1,8 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
-
-import '../components/basic-button';
 import { seedButtonStyle } from '../styles';
-import '../components/seed-modal';
 
 storiesOf('Seed Library', module)
-  //.add('BasicButton', () => html`<basic-button>Submit</basic-button>`)
   .add('Buttons', () => html`
     <style>
       ${seedButtonStyle}
@@ -79,26 +75,25 @@ storiesOf('Seed Library', module)
       .sd-btn-mix > * { margin-right: 7px; }
     
     </style>
-      <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
-      <h2 class="sd-btn black sm"><span class="light">Color list</span></h2>
-      <button class="sd-btn sm red">red</button>
-      <button class="sd-btn sm blue">blue</button>
-      <button class="sd-btn sm green">green</button>
-      <button class="sd-btn sm yellow">yellow</button>
-      <button class="sd-btn sm purple">purple</button>
-      <button class="sd-btn sm black">black</button>
-      <button class="sd-btn sm orange">orange</button>
-
-      <button class="sd-btn sm red-mate">red-mate</button>
-      <button class="sd-btn sm blue-mate">blue-mate</button>
-      <button class="sd-btn sm green-mate">green-mate</button>
+    <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
+    <h2 class="sd-btn black sm"><span class="light">Color list</span></h2>
+    <button class="sd-btn sm red">red</button>
+    <button class="sd-btn sm blue">blue</button>
+    <button class="sd-btn sm green">green</button>
+    <button class="sd-btn sm yellow">yellow</button>
+    <button class="sd-btn sm purple">purple</button>
+    <button class="sd-btn sm black">black</button>
+    <button class="sd-btn sm orange">orange</button>
+    <button class="sd-btn sm red-mate">red-mate</button>
+    <button class="sd-btn sm blue-mate">blue-mate</button>
+    <button class="sd-btn sm green-mate">green-mate</button>
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn</span></h2><button class="sd-btn red-mate">Classic</button><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-mix</span></h2><button class="sd-btn-mix green"><i class="material-icons">flight</i>Flight</button><br>
     <h2 class="sd-btn black sm"><span class="light">sd-icon</span></h2><button class="sd-icon yellow"><i class="material-icons">create</i></button><button class="sd-icon green"><i class="material-icons">call</i></button><button class="sd-icon red"><i class="material-icons">home</i></button><button class="sd-icon blue"><i class="material-icons">lock</i></button><br>
     <h2 class="sd-btn black sm"><span class="light">sd-icon circle</span></h2><button class="sd-icon circle blue"><i class="material-icons">face</i></button><button class="sd-icon circle red"><i class="material-icons">star</i></button><button class="sd-icon circle green"><i class="material-icons">lock</i></button><br>
-    <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons orange sm">folder</i><br>
-
+    <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons orange sm">folder</i>
+    <br>
     <div class="container" style="background-color: #292929;">
       <button class="sd-btn-mixr purple">Auth<i class="material-icons">lock</i></button>
       <button class="sd-btn">Submit</button>
@@ -141,17 +136,14 @@ storiesOf('Seed Library', module)
       <button class="sd-icon blue circle"><i class="material-icons">navigation</i></button>
       <button class="sd-icon green circle"><i class="material-icons">chevron_right</i></button>
       <button class="sd-icon green yellow circle"><i class="material-icons">public</i></button>
-      <button class="sd-icon blue circle"><i class="material-icons">menu</i></button>
-      
+      <button class="sd-icon blue circle"><i class="material-icons">menu</i></button>  
       <button class="sd-icon green lg circle"><i class="material-icons">people</i></button>
       <button class="sd-icon blue lg"><i class="material-icons">flight</i></button>
       <button class="sd-icon green lg"><i class="material-icons">palette</i></button>
       <button class="sd-icon red lg"><i class="material-icons">timer</i></button>
-
       <button class="sd-icon red sm"><i class="material-icons">pie_chart</i></button>
       <button class="sd-icon red sm circle"><i class="material-icons">cloud_done</i></button>
       <button class="sd-icon yellow sm"><i class="material-icons">face</i></button>
-
       <button class="sd-btn">Apple</button>
       <button class="sd-btn red">Santander</button>
       <button class="sd-icon blue"><i class="material-icons">add</i></button>
@@ -200,39 +192,7 @@ storiesOf('Seed Library', module)
       <button class="sd-icon red sm"><i class="material-icons">close</i></button>
       <button class="sd-icon red circle"><i class="material-icons">mouse</i></button>
       <button class="sd-icon blue"><i class="material-icons">casino</i></button>
-      
       <button class="sd-icon blue sm circle"><i class="material-icons">cloud</i></button>
-
       <button class="sd-btn lg">Clear</button>
-      </div>
-  `)
-  .add('Modal', () => html`
-  <style>
-      ${seedButtonStyle}
-
-      html {
-        --seed-color-red: #de3d4c;
-        --seed-color-red-focus: #ff00184d;
-        --seed-color-red-hover: #bb3440;
-
-        --seed-color-blue-mate: rgb(63, 118, 182);
-        --seed-color-blue-mate-focus: #2dabb445;
-        --seed-color-blue-mate-hover: rgb(53, 98, 149);
-      }
-      </style>
-
-      <seed-modal>
-        <button slot="button" class="sd-btn-mix red"><i class="material-icons">people</i>Open modal</button>
-        <div slot="header">
-          <span>Building Web Components</span>
-          <button class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
-        </div>
-        <div slot="content">
-          <p>Duis sit amet sollicitudin nulla, sit amet molestie magna. Aenean interdum justo id iaculis hendrerit. Nullam sed tellus pretium, mattis dui vitae, placerat diam. <br><br>Nulla faucibus lacus sed mauris facilisis, a condimentum risus lobortis. Nunc egestas vehicula libero, non condimentum enim semper in. Donec efficitur convallis felis nec malesuada. Morbi ornare massa diam, ac ultrices magna suscipit a. Integer tempus sagittis ligula, ut fermentum magna suscipit a. Sed pellentesque consequat velit, ut convallis tellus. Mauris eget felis tortor. Aliquam sed consectetur ipsum. Praesent vel tortor consectetur sem mollis tincidunt vitae nec purus. Nullam ac scelerisque est, vitae iaculis magna. Ut pellentesque, enim lobortis pellentesque egestas, libero nibh sodales sapien, eu dignissim tortor massa id neque. Ut at dui viverra, efficitur lectus sed, sagittis risus.</p>
-        </div>
-        <div slot="footer">
-          <button class="sd-btn black">Close</button>
-          <button class="sd-btn blue-mate">Send</button>
-        </div> 
-      </seed-modal>
+    </div>
   `);

@@ -43,10 +43,9 @@ export class SeedModal extends LitElement {
                 }
 
                 .header {
-                    padding: .8rem 1rem;
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
+                    padding: .8rem 1rem;
                 }
 
                 .footer {
@@ -85,6 +84,7 @@ export class SeedModal extends LitElement {
 
     firstUpdated() {
         this.modal = this.shadowRoot.querySelector('.modal');
+
         const content = this.shadowRoot.querySelector('.modal-content');
 
         this.modal.addEventListener('click', function(e){
@@ -120,7 +120,6 @@ export class SeedModal extends LitElement {
                     <slot name="footer" class="footer"></slot>
                 </div>
             </div>
-     
         `;
     }
 }
