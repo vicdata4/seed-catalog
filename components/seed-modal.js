@@ -128,7 +128,7 @@ export class SeedModal extends LitElement {
                 <div class="modal-content">
                     <div class="header">
                         <slot name="title" class="title"></slot>
-                        <slot name="close-btn"></slot>
+                        <slot name="close-btn" @click="${this.closeModal}"></slot>
                     </div>
                     <slot name="content" class="content"></slot>
                     <slot name="footer" class="footer"></slot>

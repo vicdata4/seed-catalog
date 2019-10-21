@@ -85,8 +85,6 @@ export const seedButtonStyle = css`
       cursor: pointer;
     }
 
-    .sd-btn-mixr > i { margin-left: 5px; }
-
     .sd-icon {
       display: inline-block;
       font-size: 1rem;
