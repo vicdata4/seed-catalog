@@ -19,6 +19,7 @@ export class SeedDropdown extends LitElement {
                     transition: height .2s ease-in-out;
                     z-index: 999;
                     font-size: 15px;
+                    background-color: white;
                     
                 }
 
@@ -59,6 +60,7 @@ export class SeedDropdown extends LitElement {
             width: { type: String },
             position: { type: String },
             mode: { type: String },
+            maxWidth: { type: String }
         };
     }
 
@@ -67,6 +69,7 @@ export class SeedDropdown extends LitElement {
         this.rotate = this.rotate || false;
         this.position = this.position || 'absolute';
         this.mode = this.mode || 'default';
+        this.maxWidth = this.maxWidth || 'unset';
     }
 
     firstUpdated() {
@@ -75,10 +78,12 @@ export class SeedDropdown extends LitElement {
         const rotate = this.rotateIcon.bind(this);
         document.addEventListener('click', function(e){
             if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
-                    dropdown.className = 'dropdown hide';
+                    dropdown.style.height = 'unset';
+                    dropdown.style.maxHeight = '0';
                     rotate('0');
             } else if(e.target === this){
-                dropdown.className = 'dropdown show'; 
+                    dropdown.style.height = 'auto';
+                    dropdown.style.maxHeight = '600px';
             }
         });
     }
@@ -91,12 +96,15 @@ export class SeedDropdown extends LitElement {
     }
 
     openCollapse() {
-        let classx = this.shadowRoot.querySelector('.dropdown').className;
-        if(classx === 'dropdown show') {
-            this.shadowRoot.querySelector('.dropdown').className = 'dropdown hide';
-            this.rotateIcon('0');    
-        }else {
-            this.shadowRoot.querySelector('.dropdown').className = 'dropdown show';
+        const dropdown = this.shadowRoot.querySelector('.dropdown');
+        if(dropdown.style.height === 'auto') {
+            dropdown.style.height = 'unset';
+            dropdown.style.maxHeight = '0';
+            this.rotateIcon('0'); 
+               
+        } else {
+            dropdown.style.height = 'auto';
+            dropdown.style.maxHeight = '600px';
             this.rotateIcon('180');
         }
     }
@@ -104,7 +112,12 @@ export class SeedDropdown extends LitElement {
     render() {
         return html`
             <slot name="button" @click="${this.openCollapse}"></slot>
-            <div class="dropdown" style="position: ${this.position}; transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;">
+            <div
+                class="dropdown"
+                style="
+                    position: ${this.position};
+                    max-width: ${this.maxWidth}px;
+                    transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;">
                 <slot name="content"></slot>
             </div>
         `;

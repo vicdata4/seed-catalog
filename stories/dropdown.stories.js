@@ -47,14 +47,14 @@ storiesOf('Seed Library', module)
             </div>
         </seed-dropdown>
 
-         <seed-dropdown mode="collapse" rotate="true">
+         <seed-dropdown mode="collapse" rotate="true" maxWidth="300">
             <button id="paragrap" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse mode</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
         </seed-dropdown>
 
-        <seed-dropdown>
+        <seed-dropdown maxWidth="300">
             <button id="lorem" slot="button" class="sd-btn-mix green"><i class="material-icons">local_library</i>Default dropdown</button>
             <p slot="content" class="content">
             Space Exploration Technologies Corp., doing business as SpaceX, is a private American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars.[7][8][9] SpaceX has developed the Falcon launch vehicle family and the Dragon spacecraft family.
@@ -72,28 +72,28 @@ storiesOf('Seed Library', module)
             </div>
         </seed-dropdown>
         <br>
-        <h2 class="sd-btn black sm">position relative ACCORDION EXAMPLE</h2>
+        <h2 class="sd-btn black sm">Collapse</h2>
         <br><br>
         <seed-dropdown mode="collapse" position="relative" rotate="true">
-            <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>LitElement</button>
+            <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
         </seed-dropdown>
         <seed-dropdown mode="collapse" position="relative" rotate="true">
-            <button id="lock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Redux</button>
+            <button id="lock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 2</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
         </seed-dropdown>
         <seed-dropdown mode="collapse" position="relative" rotate="true">
-            <button id="drot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Vue</button>
+            <button id="drot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 3</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
         </seed-dropdown>
         <seed-dropdown mode="collapse" position="relative" rotate="true">
-            <button id="lops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Angular</button>
+            <button id="lops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 4</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
