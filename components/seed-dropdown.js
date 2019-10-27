@@ -20,6 +20,7 @@ export class SeedDropdown extends LitElement {
                     z-index: 999;
                     font-size: 15px;
                     background-color: white;
+                    color: black;
                     
                 }
 
@@ -103,21 +104,18 @@ export class SeedDropdown extends LitElement {
             this.rotateIcon('0'); 
                
         } else {
-            dropdown.style.height = 'auto';
-            dropdown.style.maxHeight = '600px';
-            this.rotateIcon('180');
+            setTimeout(() => {
+                dropdown.style.height = 'auto';
+                dropdown.style.maxHeight = '600px';
+                this.rotateIcon('180');
+            });
         }
     }
 
     render() {
         return html`
             <slot name="button" @click="${this.openCollapse}"></slot>
-            <div
-                class="dropdown"
-                style="
-                    position: ${this.position};
-                    max-width: ${this.maxWidth}px;
-                    transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;">
+            <div class="dropdown" style="position: ${this.position}; max-width: ${this.maxWidth}px; transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;">
                 <slot name="content"></slot>
             </div>
         `;
