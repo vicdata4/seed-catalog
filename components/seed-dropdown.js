@@ -6,7 +6,6 @@ export class SeedDropdown extends LitElement {
         return [
             seedButtonStyle,
             css`
-
                 :host {
                     display: inline-block;
                 }
@@ -16,12 +15,10 @@ export class SeedDropdown extends LitElement {
                     height: 0;
                     max-height: 0;
                     overflow: hidden;
-                    transition: height .2s ease-in-out;
                     z-index: 999;
                     font-size: 15px;
                     background-color: white;
                     color: black;
-                    
                 }
 
                 ::slotted(div) {
@@ -33,8 +30,6 @@ export class SeedDropdown extends LitElement {
                     margin: 0;
                     padding: 15px;
                 }
-
-                
 
                 .show {
                     height: auto;
@@ -58,7 +53,6 @@ export class SeedDropdown extends LitElement {
         return {
             modalBackground: { type: String },
             rotate: { type: String },
-            width: { type: String },
             position: { type: String },
             mode: { type: String },
             maxWidth: { type: String }
@@ -74,25 +68,26 @@ export class SeedDropdown extends LitElement {
     }
 
     firstUpdated() {
-        let dropdown = this.shadowRoot.querySelector('.dropdown');
-        let button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
+        const dropdown = this.shadowRoot.querySelector('.dropdown');
+        const button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
         const rotate = this.rotateIcon.bind(this);
         document.addEventListener('click', function(e){
             if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
-                    dropdown.style.height = 'unset';
-                    dropdown.style.maxHeight = '0';
-                    rotate('0');
+                dropdown.style.height = 'unset';
+                dropdown.style.maxHeight = '0';
+                rotate('0');
             } else if(e.target === this){
-                    dropdown.style.height = 'auto';
-                    dropdown.style.maxHeight = '600px';
+                dropdown.style.height = 'auto';
+                dropdown.style.maxHeight = '600px';
             }
         });
     }
 
     rotateIcon(value) {
+        const icon = this.shadowRoot.querySelector('slot').assignedNodes()[0].querySelector('i');
         if(this.rotate) {
-            this.shadowRoot.querySelector('slot').assignedNodes()[0].querySelector('i').style.transition = 'transform .2s ease-in';
-            this.shadowRoot.querySelector('slot').assignedNodes()[0].querySelector('i').style.transform = `rotate(${value}deg)`;
+            icon.style.transition = 'transform .2s ease-in';
+            icon.style.transform = `rotate(${value}deg)`;
         }
     }
 
@@ -101,8 +96,7 @@ export class SeedDropdown extends LitElement {
         if(dropdown.style.height === 'auto') {
             dropdown.style.height = 'unset';
             dropdown.style.maxHeight = '0';
-            this.rotateIcon('0'); 
-               
+            this.rotateIcon('0');       
         } else {
             setTimeout(() => {
                 dropdown.style.height = 'auto';
@@ -115,7 +109,12 @@ export class SeedDropdown extends LitElement {
     render() {
         return html`
             <slot name="button" @click="${this.openCollapse}"></slot>
-            <div class="dropdown" style="position: ${this.position}; max-width: ${this.maxWidth}px; transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;">
+            <div class="dropdown"
+                style="
+                    position: ${this.position};
+                    max-width: ${this.maxWidth}px;
+                    transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;
+                ">
                 <slot name="content"></slot>
             </div>
         `;
