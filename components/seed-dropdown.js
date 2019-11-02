@@ -17,7 +17,6 @@ export class SeedDropdown extends LitElement {
                     overflow: hidden;
                     z-index: 999;
                     font-size: 15px;
-                    background-color: white;
                     color: black;
                 }
 
@@ -51,7 +50,7 @@ export class SeedDropdown extends LitElement {
 
     static get properties() {
         return {
-            modalBackground: { type: String },
+            backgroundColor: { type: String },
             rotate: { type: String },
             position: { type: String },
             mode: { type: String },
@@ -65,6 +64,7 @@ export class SeedDropdown extends LitElement {
         this.position = this.position || 'absolute';
         this.mode = this.mode || 'default';
         this.maxWidth = this.maxWidth || 'unset';
+        this.backgroundColor = this.backgroundColor || 'white';
     }
 
     firstUpdated() {
@@ -113,6 +113,7 @@ export class SeedDropdown extends LitElement {
                 style="
                     position: ${this.position};
                     max-width: ${this.maxWidth}px;
+                    background-color: ${this.backgroundColor};
                     transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;
                 ">
                 <slot name="content"></slot>
