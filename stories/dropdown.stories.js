@@ -74,25 +74,25 @@ storiesOf('Seed Library', module)
         <br>
         <h2 class="sd-btn black sm">Collapse</h2>
         <br><br>
-        <seed-dropdown mode="collapse" position="relative" rotate="true">
+        <seed-dropdown mode="collapse" position="relative" rotate="true" speed=".8">
             <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
         </seed-dropdown>
-        <seed-dropdown mode="collapse" position="relative" rotate="true">
+        <seed-dropdown mode="collapse" position="relative" rotate="true" speed=".8">
             <button id="lock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 2</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
         </seed-dropdown>
-        <seed-dropdown mode="collapse" position="relative" rotate="true">
+        <seed-dropdown mode="collapse" position="relative" rotate="true" speed=".8">
             <button id="drot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 3</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
             </p>
         </seed-dropdown>
-        <seed-dropdown mode="collapse" position="relative" rotate="true">
+        <seed-dropdown mode="collapse" position="relative" rotate="true" speed=".8">
             <button id="lops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 4</button>
             <p slot="content" class="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.

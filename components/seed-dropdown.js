@@ -54,7 +54,8 @@ export class SeedDropdown extends LitElement {
             rotate: { type: String },
             position: { type: String },
             mode: { type: String },
-            maxWidth: { type: String }
+            maxWidth: { type: String },
+            speed: { type: String }
         };
     }
 
@@ -65,6 +66,7 @@ export class SeedDropdown extends LitElement {
         this.mode = this.mode || 'default';
         this.maxWidth = this.maxWidth || 'unset';
         this.backgroundColor = this.backgroundColor || 'white';
+        this.speed = this.speed || '.5';
     }
 
     firstUpdated() {
@@ -110,11 +112,11 @@ export class SeedDropdown extends LitElement {
         return html`
             <slot name="button" @click="${this.openCollapse}"></slot>
             <div class="dropdown"
-                style="
+                 style="
                     position: ${this.position};
                     max-width: ${this.maxWidth}px;
                     background-color: ${this.backgroundColor};
-                    transition: max-height ${this.mode === 'collapse' ? '.5' : '0'}s ease-in-out;
+                    transition: max-height ${this.mode === 'collapse' ? this.speed : '0'}s ease-in-out;
                 ">
                 <slot name="content"></slot>
             </div>
