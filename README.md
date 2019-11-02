@@ -74,3 +74,45 @@ from `package.json`
     </seed-modal>
 ```
 
+### `Dropdown / Collapse`
+
+```js
+    // import seed-dropdown
+    import 'seed-catalog/seed-dropdown.js';
+    // and combine with sd-btn class to improve your performance
+    import { seedButtonStyle } from 'seed-catalog/styles.js';
+
+    // lit element example
+    static get styles() {
+        return [
+            seedButtonStyle,
+            css`
+                ...
+            `
+        ];
+    }
+
+    // dropdown with links
+    <seed-dropdown>
+        <button id="menu" slot="button" class="sd-btn-mix blue-mate">Dropwdown Links</button>
+        <div slot="content" class="content dropdown-links">
+            <a href="/"><i class="material-icons blue-mate sm">home</i>Home</a>
+            <a href="/aboutus"><i class="material-icons blue-mate sm">info</i>About us</a>
+            <a href="/products"><i class="material-icons blue-mate sm">web</i>Products</a>
+            <a href="/shop"><i class="material-icons blue-mate sm">shop</i>Shop</a>
+            <a href="/contact"><i class="material-icons blue-mate sm">contact_mail</i>Contact</a>
+        </div>
+    </seed-dropdown>
+
+    // dropdown with paragraph
+    <seed-dropdown
+        mode="collapse"
+        position="relative"
+        rotate="true">
+        <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
+        <p slot="content" class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+        </p>
+    </seed-dropdown>
+```
+
