@@ -100,9 +100,13 @@ export class SeedModal extends LitElement {
 
         this.modal.addEventListener('click', function(e){
             if (e.target === this) {
-                this.className = 'modal closed';
+                this.style.opacity = '0';
                 this.style.backgroundColor = 'transparent';
                 content.style.marginTop = '-50px';
+                setTimeout(() => {
+                    this.className = 'modal closed';
+                    this.style.opacity = '1';
+                }, 300);
             }
         });
     }
