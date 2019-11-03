@@ -21,7 +21,7 @@ export class SeedModal extends LitElement {
                     left: 0;
 
                     background-color: transparent;
-                    transition: background-color .3s;
+                    transition: all .3s;
                     color: black;
                     overflow: auto;
                     
@@ -116,9 +116,13 @@ export class SeedModal extends LitElement {
     }
 
     closeModal() {
-        this.modal.className = 'modal closed';
         this.modal.style.backgroundColor = 'transparent';
+        this.modal.style.opacity = '0';
         this.shadowRoot.querySelector('.modal-content').style.marginTop = '-50px';
+        setTimeout(() => {
+            this.modal.className = 'modal closed';
+            this.modal.style.opacity = '1';
+        }, 300);
     }
 
     render() {
