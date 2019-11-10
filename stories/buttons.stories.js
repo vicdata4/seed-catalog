@@ -2,7 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedButtonStyle } from '../styles';
 
-storiesOf('Seed Library', module)
+storiesOf('Seed Catalog', module)
   .add('Buttons', () => html`
     <style>
       ${seedButtonStyle}

@@ -4,7 +4,7 @@ import { html } from 'lit-html';
 import { seedButtonStyle } from '../styles';
 import '../components/seed-modal';
 
-storiesOf('Seed Library', module)
+storiesOf('Seed Catalog', module)
   .add('Modal', () => html`
         <style>
             ${seedButtonStyle}
