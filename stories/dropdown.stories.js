@@ -50,7 +50,7 @@ storiesOf('Seed Catalog', module)
         </seed-dropdown>
 
         <seed-dropdown>
-            <button id="menu" slot="button" class="sd-btn-mix blue-mate">Dropwdown Links</button>
+            <button id="menu" slot="button" class="sd-btn-mix blue-mate">Dropdown Links</button>
             <div slot="content" class="content dropdown-links">
                 <a href="/"><i class="material-icons blue-mate sm">home</i>Home</a>
                 <a href="/"><i class="material-icons blue-mate sm">info</i>About us</a>

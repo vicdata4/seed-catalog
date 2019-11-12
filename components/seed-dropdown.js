@@ -35,11 +35,13 @@ export class SeedDropdown extends LitElement {
                     width: auto;
                     background-color: white;
                     max-height: 600px;
+                    transition: 250ms ease-out;
                 }
 
                 .hide {
                     height: 0;
-                    max-height: 0;
+                    max-height: 0 !important;
+                    transition: 250ms ease-in;
                 }
 
                 .house {
@@ -116,7 +118,7 @@ export class SeedDropdown extends LitElement {
                     position: ${this.position};
                     max-width: ${this.maxWidth}px;
                     background-color: ${this.backgroundColor};
-                    transition: max-height ${this.mode === 'collapse' ? this.speed : '0'}s ease-in-out;
+                    ${this.mode === 'collapse' ? `transition: max-height ${this.speed || '0'}s ease-in-out` : ''};
                 ">
                 <slot name="content"></slot>
             </div>

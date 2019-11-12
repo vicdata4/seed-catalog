@@ -66,6 +66,7 @@ export const seedButtonStyle = css`
         font-size: 1rem;
         line-height: 1.5;
         border-radius: .25rem;
+        background-color: white;
         transition: background-color .1s;
         text-decoration: none;
         cursor: pointer;
