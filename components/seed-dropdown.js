@@ -18,6 +18,7 @@ export class SeedDropdown extends LitElement {
                     z-index: 999;
                     font-size: 15px;
                     color: black;
+                    
                 }
 
                 ::slotted(div) {
@@ -64,27 +65,38 @@ export class SeedDropdown extends LitElement {
     constructor() {
         super();
         this.rotate = this.rotate || false;
-        this.position = this.position || 'absolute';
         this.mode = this.mode || 'default';
+        this.position = this.position || 'absolute';
         this.maxWidth = this.maxWidth || 'unset';
         this.backgroundColor = this.backgroundColor || 'white';
         this.speed = this.speed || '.5';
+
+        
     }
 
     firstUpdated() {
         const dropdown = this.shadowRoot.querySelector('.dropdown');
         const button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
         const rotate = this.rotateIcon.bind(this);
-        document.addEventListener('click', function(e){
-            if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
-                dropdown.style.height = 'unset';
-                dropdown.style.maxHeight = '0';
-                rotate('0');
-            } else if(e.target === this){
-                dropdown.style.height = 'auto';
-                dropdown.style.maxHeight = '600px';
-            }
-        });
+
+        if(this.mode !== 'collapse'){
+            document.addEventListener('click', function(e){
+                if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
+                    dropdown.style.height = 'unset';
+                    dropdown.style.maxHeight = '0';
+                    rotate('0');
+                } else if(e.target === this){
+                    dropdown.style.height = 'auto';
+                    dropdown.style.maxHeight = '600px';
+                }
+            });
+        }
+
+        if (this.mode === 'collapse') {
+            this.position = this.mode === 'collapse' ? 'relative' : 'absolute';
+            this.rotate = true;
+            this.speed = '.8';
+        }
     }
 
     rotateIcon(value) {
@@ -110,9 +122,18 @@ export class SeedDropdown extends LitElement {
         }
     }
 
+    openCol(event) {
+        //this.openCollapse();
+        this.dispatchEvent(new CustomEvent('set-collapse', {
+            bubbles: true,
+            composed: true,
+            detail: { event }
+        }));
+    }
+
     render() {
         return html`
-            <slot name="button" @click="${this.openCollapse}"></slot>
+            <slot name="button" @click="${this.mode !== 'collapse' ? this.openCollapse : this.openCol}"></slot>
             <div class="dropdown"
                  style="
                     position: ${this.position};
