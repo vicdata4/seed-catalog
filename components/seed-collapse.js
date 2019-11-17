@@ -28,13 +28,13 @@ export class SeedCollapse extends LitElement {
 
     setCollapse(collapseList, type, time_) {
         this.shadowRoot.addEventListener('set-collapse', (e) => {
-            const evElement = e.path[0].shadowRoot.querySelector('.dropdown');
+            const evElement = e.target.shadowRoot.querySelector('.dropdown');
             const time = time_;
             const cubicTransition = `max-height ${time}s cubic-bezier(0, 1, 0, 1)`;
 
             if(evElement.style.maxHeight === '600px') {
                 this.setParams(evElement, cubicTransition, 'unset', '0');
-                e.path[0].rotateIcon('0'); 
+                e.target.rotateIcon('0'); 
             } else {
                 collapseList.forEach(x => {
                     const dropdown = x.shadowRoot.querySelector('.dropdown');
