@@ -4,7 +4,7 @@ import './seed-dropdown.js';
 export class SeedCollapse extends LitElement {
     static get properties() {
         return {
-            id: { type: String },
+            speed: { type: String },
         };
     }
 
@@ -16,7 +16,7 @@ export class SeedCollapse extends LitElement {
 
     setCollapse(type, time_) {
         this.shadowRoot.addEventListener('set-collapse', (e) => {
-            const collapseList = document.querySelector(`#${this.id}`).querySelectorAll('seed-dropdown');
+            const collapseList = this.querySelectorAll('seed-dropdown');
             const evElement = e.path[0].shadowRoot.querySelector('.dropdown');
             const time = time_;
             const cubicTransition = `max-height ${time}s cubic-bezier(0, 1, 0, 1)`;
@@ -29,7 +29,7 @@ export class SeedCollapse extends LitElement {
                     const dropdown = x.shadowRoot.querySelector('.dropdown');
                     if(dropdown.style.maxHeight === '600px' || evElement === dropdown) {
                         setTimeout(() => {
-                            this.setParams(dropdown, `max-height 2s cubic-bezier(0, 1.09, 0, 1)`, 'unset', '0');
+                            this.setParams(dropdown, `max-height .8s cubic-bezier(0, 1, 0, 1)`, 'unset', '0');
                             x.rotateIcon('0'); 
                             setTimeout(() => {
                                 if(evElement === dropdown){
@@ -45,7 +45,7 @@ export class SeedCollapse extends LitElement {
     }
 
     firstUpdated() {
-        const collapseList = document.querySelector(`#${this.id}`).querySelectorAll('seed-dropdown');
+        const collapseList = this.querySelectorAll('seed-dropdown');
         if (collapseList.length === 1) {
             this.setCollapse('ease-in-out', '.8');
         } else {

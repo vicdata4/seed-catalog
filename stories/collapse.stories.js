@@ -34,7 +34,7 @@ storiesOf('Seed Catalog', module)
         </style>
         <h2 class="sd-btn black sm">Collapse</h2>
         <br>
-        <seed-collapse id="collapse-example0">
+        <seed-collapse>
             <seed-dropdown mode="collapse" rotate="true" maxWidth="300">
                 <button id="paragrap" slot="button" class="sd-btn-mix green"><i class="material-icons">keyboard_arrow_down</i>Collapse mode</button>
                 <p slot="content" class="content">
@@ -45,7 +45,7 @@ storiesOf('Seed Catalog', module)
         <br><br>
         
         <br><br>
-        <seed-collapse id="collapse-example">
+        <seed-collapse>
             <seed-dropdown mode="collapse">
                 <button id="lol" slot="button" class="sd-btn-mix red"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
                 <p slot="content" class="content">
@@ -81,7 +81,7 @@ storiesOf('Seed Catalog', module)
         </seed-collapse>
 
         <br><br>
-        <seed-collapse id="collapse-example2">
+        <seed-collapse>
             <seed-dropdown mode="collapse">
                 <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
                 <p slot="content" class="content">
