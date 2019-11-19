@@ -12,11 +12,14 @@ npm run storybook
 
 ##  Add as project dependency
 
+LitElement is required.
+
 from `package.json`
 
 ```js
 "dependencies": {
     ...
+    "lit-element": "^2.0.1",
     "seed-catalog": "git://github.com/vicdata4/seed-catalog.git"
 }
 ```
