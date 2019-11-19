@@ -1,10 +1,32 @@
 import { css } from 'lit-element';
 import { materialIcons, googleFont } from './fonts.js';
 
+const dropDown = css`
+  .dropdown-links > a {
+    color: #483f3f;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  .dropdown-links > a:hover {
+      background-color: #f9f9f9;
+  }
+
+  .dropdown-links > a > i{
+      margin-right: 15px;
+  }
+`;
+
 export const seedButtonStyle = css`
 
     ${googleFont}
     ${materialIcons}
+    ${dropDown}
 
     :host {
       --seed-color-red: #de3d4c;
