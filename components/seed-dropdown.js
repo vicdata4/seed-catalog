@@ -71,21 +71,23 @@ export class SeedDropdown extends LitElement {
         this.backgroundColor = this.backgroundColor || 'white';
         this.speed = this.speed || '.5';
 
-        
+
     }
 
     firstUpdated() {
-        const dropdown = this.shadowRoot.querySelector('.dropdown');
-        const button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
-        const rotate = this.rotateIcon.bind(this);
+        this.dropdown = this.shadowRoot.querySelector('.dropdown');
 
-        if(this.mode !== 'collapse'){
-            document.addEventListener('click', function(e){
+        if (this.mode !== 'collapse') {
+            const dropdown = this.dropdown;
+            const rotate = this.rotateIcon.bind(this);
+            const button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
+
+            document.addEventListener('click', function (e) {
                 if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
                     dropdown.style.height = 'unset';
                     dropdown.style.maxHeight = '0';
                     rotate('0');
-                } else if(e.target === this){
+                } else if (e.target === this) {
                     dropdown.style.height = 'auto';
                     dropdown.style.maxHeight = '600px';
                 }
@@ -101,29 +103,27 @@ export class SeedDropdown extends LitElement {
 
     rotateIcon(value) {
         const icon = this.shadowRoot.querySelector('slot').assignedNodes()[0].querySelector('i');
-        if(this.rotate) {
+        if (this.rotate) {
             icon.style.transition = 'transform .2s ease-in';
             icon.style.transform = `rotate(${value}deg)`;
         }
     }
 
     openCollapse() {
-        const dropdown = this.shadowRoot.querySelector('.dropdown');
-        if(dropdown.style.height === 'auto') {
-            dropdown.style.height = 'unset';
-            dropdown.style.maxHeight = '0';
-            this.rotateIcon('0');       
+        if (this.dropdown.style.height === 'auto') {
+            this.dropdown.style.height = 'unset';
+            this.dropdown.style.maxHeight = '0';
+            this.rotateIcon('0');
         } else {
             setTimeout(() => {
-                dropdown.style.height = 'auto';
-                dropdown.style.maxHeight = '600px';
+                this.dropdown.style.height = 'auto';
+                this.dropdown.style.maxHeight = '600px';
                 this.rotateIcon('180');
             });
         }
     }
 
     openCol(event) {
-        //this.openCollapse();
         this.dispatchEvent(new CustomEvent('set-collapse', {
             bubbles: true,
             composed: true,
