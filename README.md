@@ -69,51 +69,97 @@ Material icons is integrated as dependency of this class, so you can create more
 
         render() {
             return html`
-                <button class="sd-btn red">Submit</button>
+                <button class="sd-btn red">Red</button>
+                <button class="sd-btn black sm">Black</button>
+                <button class="sd-btn blue-mate">Submit</button>
+                <button class="sd-btn purple">Purple</button>
                 <button class="sd-btn-mix blue"><i class="material-icons">folder</i>Folder</button>
+                <button class="sd-btn-mixr blue">Profile<i class="material-icons">face</i></button>
                 <button class="sd-icon red"><i class="material-icons">folder</i></button>
                 <button class="sd-icon circle red"><i class="material-icons">face</i></button>
+                <button class="sd-icon circle blue sm"><i class="material-icons">lock</i></button>
                 <button class="sd-icon lg green"><i class="material-icons">face</i></button>
+                <i class="material-icons green">home</i>
+                <i class="material-icons blue sm">face</i>
+                <i class="material-icons red-mate">cloud</i>
             `;
         }
     }
 ```
 
-### classes: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-btn-empty`
+#### classes: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-btn-empty`
 
-### colors: `red`, `green`, `blue`, `yellow`, `purple`, `black`, `orange`, `green-mate`, `red-mate`, `blue-mate`
+#### colors: `red`, `green`, `blue`, `yellow`, `purple`, `black`, `orange`, `green-mate`, `red-mate`, `blue-mate`
 
-### size: `sm`, `lg`
+#### size: `sm`, `lg`
 
-### `Modal`
+## Carousel
 
 ```js
     // import seed-modal
-    import 'seed-catalog/seed-modal.js';
+    import 'seed-catalog/seed-carousel.js';
     // and combine with sd-btn class to improve your performance
     import { seedStyle } from 'seed-catalog/styles.js';
 
     // lit element example
     static get styles() {
         return [
-            seedStyle,
-            css`
-                ...
-            `
+            seedStyle
         ];
     }
 
-    <seed-modal>
-        <button slot="button" class="sd-btn-mix red">
-            <i class="material-icons">people</i>Open modal
-        </button>
-        <div slot="header">...header content</div>
-        <div slot="content">...content</div>
-        <div slot="footer">...footer content</div> 
-    </seed-modal>
+    <seed-carousel arrows stepper>
+        <div class="black">Black</div> 
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>    
+    </seed-carousel>
 ```
 
-### `Dropdown`
+## Collapse
+
+```js
+    // import seed-modal
+    import 'seed-catalog/seed-collapse.js';
+    // and combine with sd-btn class to improve your performance
+    import { seedStyle } from 'seed-catalog/styles.js';
+
+    // lit element example
+    static get styles() {
+        return [
+            seedStyle
+        ];
+    }
+
+    <seed-collapse>
+        <seed-dropdown mode="collapse">
+            <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
+            <p slot="content" class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
+            </p>
+        </seed-dropdown>
+        <seed-dropdown mode="collapse">
+            <button id="lock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 2</button>
+            <p slot="content" class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
+            </p>
+        </seed-dropdown>
+        <seed-dropdown mode="collapse">
+            <button id="drot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 3</button>
+            <p slot="content" class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam-
+            </p>
+        </seed-dropdown>
+        <seed-dropdown mode="collapse">
+            <button id="lops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 4</button>
+            <p slot="content" class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
+            </p>
+        </seed-dropdown>
+    </seed-collapse>
+```
+
+## Dropdown
 
 ```js
     // import seed-dropdown
@@ -131,27 +177,77 @@ Material icons is integrated as dependency of this class, so you can create more
         ];
     }
 
-    // dropdown with links
-    <seed-dropdown>
-        <button id="menu" slot="button" class="sd-btn-mix blue-mate">Dropwdown Links</button>
-        <div slot="content" class="content dropdown-links">
-            <a href="/"><i class="material-icons blue-mate sm">home</i>Home</a>
-            <a href="/aboutus"><i class="material-icons blue-mate sm">info</i>About us</a>
-            <a href="/products"><i class="material-icons blue-mate sm">web</i>Products</a>
-            <a href="/shop"><i class="material-icons blue-mate sm">shop</i>Shop</a>
-            <a href="/contact"><i class="material-icons blue-mate sm">contact_mail</i>Contact</a>
+    <seed-dropdown rotate="true">
+        <button id="restaurant" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">arrow_drop_down</i>Menu</button>
+        <div slot="content" class="dropdown-links">
+            <a href="/">Select type</a>
+            <a href="/"><i class="material-icons green-mate sm">fastfood</i>Burgers</a>
+            <a href="/"><i class="material-icons green-mate sm">local_dining</i>Salads</a>
+            <a href="/"><i class="material-icons green-mate sm">local_cafe</i>Desserts</a>
+            <a href="/"><i class="material-icons red sm">local_bar</i>Drinks</a>
         </div>
     </seed-dropdown>
 
-    // dropdown with paragraph
-    <seed-dropdown
-        mode="collapse"
-        position="relative"
-        rotate="true">
-        <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
+    <seed-dropdown maxWidth="300">
+        <button id="lorem" slot="button" class="sd-btn-mix green"><i class="material-icons">local_library</i>Default dropdown</button>
         <p slot="content" class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
         </p>
     </seed-dropdown>
 ```
+
+## Modal
+
+```js
+    // import seed-modal
+    import 'seed-catalog/seed-modal.js';
+    // and combine with sd-btn class to improve your performance
+    import { seedStyle } from 'seed-catalog/styles.js';
+
+    // lit element example
+    static get styles() {
+        return [
+            seedStyle,
+            css`
+                ...
+            `
+        ];
+    }
+
+    <seed-modal alignWindow="center">
+        <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Open modal</button>
+        <button slot="close-btn" class="sd-btn-empty"><i class="material-icons red-mate">close</i></button>
+        <span slot="title">Building Web Components</span>
+        
+        <div slot="content">
+        Ut pellentesque, enim lobortis pellentesque egestas, libero nibh sodales sapien, eu dignissim tortor massa id neque. Ut at dui viverra, efficitur lectus sed, sagittis risus.
+        </div>
+        <div slot="footer">
+        <button class="sd-btn green-mate">Ok</button>
+        <button class="sd-btn red-mate">Deny</button>
+        </div> 
+    </seed-modal>
+```
+
+## Stepper
+
+```js
+    // import seed-modal
+    import 'seed-catalog/seed-stepper.js';
+    // and combine with sd-btn class to improve your performance
+    import { seedStyle } from 'seed-catalog/styles.js';
+
+    // lit element example
+    static get styles() {
+        return [
+            seedStyle,
+            css`
+                ...
+            `
+        ];
+    }
+
+    <seed-stepper .index="${2}" .nElements="${5}"></seed-stepper>
+```
+
 
