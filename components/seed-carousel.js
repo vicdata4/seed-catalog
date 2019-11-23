@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { touchGestures } from './utils/carouselUtils';
 import { seedButtonStyle } from '../styles';
+import './seed-stepper.js';
 
 /** */
 export class SeedCarousel extends LitElement {
@@ -10,23 +11,18 @@ export class SeedCarousel extends LitElement {
       seedButtonStyle,
       css`
         :host {
-        
-            
+          position: relative;
           display: flex;
           flex-flow: row nowrap;
-          height: auto;
           width: 100%;
+          height: auto;
           margin: 0;
           overflow: hidden;
-          min-height: 200px;
-          
-        }
-
-        :host > * {
           max-width: 100%;
+          min-height: 200px;
         }
 
-        .slider-container {
+        .container {
             flex: 1 1 0;
             width: inherit;
             display: flex;
@@ -48,60 +44,43 @@ export class SeedCarousel extends LitElement {
           transition: transform .8s;
         }
 
-        .arrow-container {
+        ::slotted(img) {
+            max-width: 100%;
+        }
+
+        .arrow-btn {
           display: none;
-          justify-content: center;
-          z-index: 1;
-          background-color: black;
-        }
-
-        .arrow {
-          width: 100%;
-          background: rgba(179, 79, 92, .6);
-          border-color: white;
-          border: none;
-          cursor: pointer;
-        }
-
-        .rotate-left {
-          transform: rotate(90deg);
-        }
-
-        .rotate-right {
-          transform: rotate(-90deg);
+          height: 100%;
         }
 
         button:active {
           border: none;
         }
 
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0,0,0,0);
-          border: 0;
+        seed-stepper {
+            position: absolute;
+            bottom: 0;
         }
 
         @media screen and (min-width: 768px) {
-          
-          .arrow-container {
-            display: grid;
+          .arrow-btn {
+            position: absolute;
+            display: flex;
+            right: 0;
+            justify-content: center;
             align-items: center;
-            flex-basis: 40px;
-            height: auto;
-          }
+            z-index: 1;
+            background-color: transparent;
+            border: 1px solid green;
+            min-height: inherit;
+            cursor: pointer;
+            border: none;
         }
 
-        @media screen and (min-width: 1050px) {
-          slide-dots {
-            z-index: 1;
-            position: relative;
-            margin-bottom: -50px;
-          }
+        .arrow-btn-left {
+            left: 0;
+            right: unset;
+        }
         }
       `,
     ];
@@ -111,11 +90,12 @@ export class SeedCarousel extends LitElement {
     return {
       coordinate: { type: Number },
       index: { type: Number },
-      card: { type: String },
+      nCards: { type: Number },
       speed: { type: String },
-      auto: { type: Boolean },
+      auto: { type: Boolean, attribute: 'auto' },
+      arrows: { type: Boolean, attribute: 'arrows' },
+      stepper: { type: Boolean, attribute: 'stepper' },
       interval: { type: Number },
-      isRunning: { type: Boolean },
       minTouchLength: { type: Number },
       minTouchAngle: { type: Number },
     };
@@ -125,12 +105,10 @@ export class SeedCarousel extends LitElement {
     super();
     this.coordinate = 0;
     this.index = 0;
-    this.cards = [{},{},{},{}];
+    this.nCards = 0;
     this.animationSpeed = 0.8;
-    this.auto = true;
-    this.interval = 8000;
+    this.interval = 5000;
     this.intervalRef = null;
-    this.isRunning = false;
     this.minTouchLength = 70;
     this.minTouchAngle = 30;
     this._focusEventsActive = [];
@@ -141,94 +119,96 @@ export class SeedCarousel extends LitElement {
       focusout: 'focus',
     };
 
-    this.addEventListener('stopInterval', () => {
-      clearInterval(this.intervalRef);
-      this.isRunning = false;
-    });
-
-    this.addEventListener('resetInterval', () => {
-      this.isRunning = true;
-      if (this.auto) this._startAutoplay();
-    });
-
-    this.addEventListener('setPosition', this.setNewPosition);
-
+    this.addEventListener('set-dot', this.setNewPosition);
     this.addEventListener('focusin', this._stopAutoplay.bind(this));
     this.addEventListener('mouseenter', this._stopAutoplay.bind(this));
     this.addEventListener('mouseleave', this.startInterval.bind(this));
     this.addEventListener('focusout', this.startInterval.bind(this));
   }
 
-  render() {
-    return html`
-            <div class="arrow-container">
-              <button id="left" aria-label="left" class="sd-icon circle black" @click="${() => this.showNext(false)}"><i class="material-icons">keyboard_arrow_left</i></button>
-            </div>
-                
-            <div
-              id="slide"
-              class="slider-container"
-              .style="${`transform: translateX(${this.coordinate}px); transition: transform ${this.animationSpeed}s`}"
-            >
-              <slot></slot>
-            </div>
+  showArrows() {
+      return this.arrows
+      ? html`
+          <button
+              id="left"
+              aria-label="left"
+              class="arrow-btn arrow-btn-left"
+              @click="${this._prev}">
+              <i class="material-icons lg">keyboard_arrow_left</i>
+          </button>
+          <button
+              id="right"
+              aria-label="right"
+              class="arrow-btn"
+              @click="${this._next}">
+              <i class="material-icons lg">keyboard_arrow_right</i>
+          </button>
+       `
+      : '';
+  }
 
-            <div class="arrow-container">
-              <button id="right" aria-label="right" class="sd-icon circle black" @click="${() => this.showNext(true)}"><i class="material-icons">keyboard_arrow_right</i></button>
-            </div>
+  showStepper() {
+    return this.stepper ? html`
+        <seed-stepper .nElements="${this.nCards}" .index="${this.index}" .colorBack="${'rgba(255,255,255,.5)'}"></seed-stepper>
+     ` : '';
+  }
+
+  render() {
+    return html` 
+      ${this.showArrows()}
+      <div
+        id="slide"
+        class="container"
+        .style="${`
+            transform: translateX(${this.coordinate}px);
+            transition: transform ${this.animationSpeed}s`}"
+      >
+        <slot></slot>
+      </div>
+      ${this.showStepper()}
     `;
   }
 
   firstUpdated() {
     touchGestures(this, '#slide');
 
+    this.nCards = this.getNCards();
+
     window.addEventListener('resize', this.setCoordinate.bind(this));
     if (this.auto) this.setAutoInterval();
   }
 
-  /* eslint-enable require-jsdoc */
-
-  /**
-    * Show next card
-    *  @param {Boolean} way set index and coordinate to show the next card (true = way/right, false = way/left)
-    */
   showNext(way) {
     this.setIndex(way);
     this.setCard();
   }
 
-  /**
-    * Show next card
-    */
   _next() {
     this.showNext(true);
   }
 
-  /**
-    * Show prev card
-    */
   _prev() {
     this.showNext(false);
   }
 
-  /**
-    * Show next card
-    */
   setCard() {
-    if (!this.isRunning) this.isRunning = true;
     this.setCoordinate();
     if (this.auto) this._startAutoplay();
   }
 
-  /**
-    * Set current index
-    *  @param {Boolean} way set current index (array index / current element)
-    */
+  getNCards() {
+    const divs = this.querySelectorAll('div');
+    const imgs = this.querySelectorAll('img');
+    return divs.length + imgs.length
+  }
+
   setIndex(way) {
-    if (this.index === this.cards.length - 1 && way) {
+    const cards = this.getNCards();
+
+    if (this.index === cards - 1 && way) {
       this.index = 0;
     } else if (this.index === 0 && !way) {
-      this.index = this.cards.length - 1;
+      this.index = cards - 1;
     } else if (way) {
       this.index++;
     } else {
@@ -248,9 +228,7 @@ export class SeedCarousel extends LitElement {
     */
   setAutoInterval() {
     this.intervalRef = setInterval(() => {
-      if (this._isIntersecting) {
         this.showNext(true);
-      }
     }, this.interval);
   }
 
@@ -277,8 +255,6 @@ export class SeedCarousel extends LitElement {
   _stopAutoplay(event) {
     this._focusEventsActive.push(this.EVENTS[event.type]);
     clearInterval(this.intervalRef);
-    this.isRunning = false;
-    this.auto = false;
   }
 
   /**
@@ -287,9 +263,8 @@ export class SeedCarousel extends LitElement {
    */
   startInterval(event) {
     this._focusEventsActive = this._focusEventsActive.filter((ev) => ev !== this.EVENTS[event.type]);
-    if (this._focusEventsActive.length === 0) {
+    if (this._focusEventsActive.length === 0 && this.auto) {
       this._startAutoplay();
-      this.auto = true;
     }
   }
 }

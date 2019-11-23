@@ -15,16 +15,17 @@ class SeedStepper extends LitElement {
       }
 
       .dot {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         margin: 5px;
         border-radius: 100%;
         border: none;
         cursor: pointer;
+        transition: background-color .7s;
       }
 
       .active {
-        background-color: #d8336d !important;
+        background-color: white !important;
       }
     `;
   }
@@ -45,7 +46,7 @@ class SeedStepper extends LitElement {
     this.nElements = 0;
     this.dotsArray = [];
     this.colorActive = this.colorActive ||  '#d8336d';
-    this.colorBack = this.colorBack || '#8e3b52';
+    this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
   }
 
   firstUpdated() {
@@ -107,7 +108,7 @@ class SeedStepper extends LitElement {
     * @param {Number} index  Selected index
     */
   setPosition(index) {
-    this.dispatchEvent(new CustomEvent('set-index-value', { detail: index, composed: true }));
+    this.dispatchEvent(new CustomEvent('set-dot', { detail: index, composed: true }));
   }
 }
 customElements.define('seed-stepper', SeedStepper);
