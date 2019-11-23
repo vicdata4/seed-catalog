@@ -72,26 +72,14 @@ Material icons is integrated as dependency of this class, so you can create more
                 <button class="sd-btn red">Submit</button>
                 <button class="sd-btn-mix blue"><i class="material-icons">folder</i>Folder</button>
                 <button class="sd-icon red"><i class="material-icons">folder</i></button>
-                <button class="sd-icon circle green"><i class="material-icons">face</i></button>
+                <button class="sd-icon circle red"><i class="material-icons">face</i></button>
+                <button class="sd-icon lg green"><i class="material-icons">face</i></button>
             `;
         }
     }
 ```
 
 ### classes: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-btn-empty`
-
-### colors:
-
-<div style="display: inline-block; width: fit-content; background-color: #de3d4c; padding: 5px 15px; margin: 2px;">red</div>
-<div style="display: inline-block; width: fit-content; background-color: #22ac41; padding: 5px 15px; margin: 2px;">green</div>
-<div style="display: inline-block; width: fit-content; background-color: #2dabb4; padding: 5px 15px; margin: 2px;">blue</div>
-<div style="display: inline-block; width: fit-content; background-color: #e6af0e; padding: 5px 15px; margin: 2px;">yellow</div>
-<div style="display: inline-block; width: fit-content; background-color: #903e8d; padding: 5px 15px; margin: 2px;">purple</div>
-<div style="display: inline-block; width: fit-content; background-color: #2f2d2d; padding: 5px 15px; margin: 2px;">black</div>
-<div style="display: inline-block; width: fit-content; background-color: #d58309; padding: 5px 15px; margin: 2px;">orange</div>
-<div style="display: inline-block; width: fit-content; background-color: #1C8281; padding: 5px 15px; margin: 2px;">green-mate</div>
-<div style="display: inline-block; width: fit-content; background-color: #bf4545; padding: 5px 15px; margin: 2px;">red-mate</div>
-<div style="display: inline-block; width: fit-content; background-color: rgb(63, 118, 182); padding: 5px 15px; margin: 2px;">blue-mate</div>
 
 ### colors: `red`, `green`, `blue`, `yellow`, `purple`, `black`, `orange`, `green-mate`, `red-mate`, `blue-mate`
 
