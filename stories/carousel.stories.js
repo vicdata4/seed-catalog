@@ -22,19 +22,20 @@ storiesOf('Seed Catalog', module)
 
             .due-card {
                 display: flex;
+                flex-flow: row wrap;
             }
 
-            .due-card > div {
+            .card {
                 width: 100%;
             }
 
             @media screen and (min-width: 768px) {
-                .due-card {
-                display: flex;
-            }
+                .card {
+                    width: 50%;
+                }
             }
         </style>
-        <h2 class="sd-btn black sm">Carousel Standard</h2>
+        <h2 class="black">· Carousel - mobile touch</h2>
         <seed-carousel arrows stepper>
             <div class="black">Black</div> 
             <div class="red">Red</div>
@@ -42,76 +43,50 @@ storiesOf('Seed Catalog', module)
             <div class="green">Green</div>    
         </seed-carousel>
         <br><br>
-        <h2 class="sd-btn black sm">Carousel small version</h2>
+        <h2 class="black">· Carousel combinations</h2>
         <div class="due-card">
-            <div style="
-                display: flex;
-                flex: 1 1;
-                margin: 0;">
-                <seed-carousel stepper>
-                    <div class="green-mate">Green mate</div>      
-                    <div class="blue">Blue</div>
-                    <div class="purple">Purple</div>
-                </seed-carousel>
-            </div>
-            <div style="
-                display: flex;
-                flex: 1 1;
-                height: auto;
-                margin: 0;">
-                <seed-carousel arrows>
-                    <div class="red-mate">Red</div>
-                    <div class="green">Green</div>
-                    <div class="black">Black</div>
-                    <div class="purple">Purple</div>
-                    <div class="orange">Orange</div>      
-                </seed-carousel>
-            </div>
+            <seed-carousel class="card" stepper>
+                <div class="green-mate">Green mate</div>      
+                <div class="blue">Blue</div>
+                <div class="purple">Purple</div>
+            </seed-carousel>
+            <seed-carousel class="card" arrows>
+                <div class="red-mate">Red</div>
+                <div class="green">Green</div>
+                <div class="black">Black</div>
+                <div class="purple">Purple</div>
+                <div class="orange">Orange</div>      
+            </seed-carousel>
         </div>
         <div class="due-card">
-            <div style="
-                display: flex;
-                flex: 1 1;
-                height: auto;
-                margin: 0;">
-                <seed-carousel>
-                    <div class="green">Green</div>      
-                    <div class="blue">Blue</div>
-                    <div class="purple">Purple</div>
-                </seed-carousel>
-            </div>
-            <div style="
-                display: flex;
-                flex: 1 1;
-                height: auto;
-                margin: 0;">
-                <seed-carousel arrows stepper>
-                    <div class="black">Black</div>
-                    <div class="green">Green</div>
-                    <div class="red">Red</div>
-                    <div class="purple">Purple</div>
-                    <div class="orange">Orange</div>      
-                </seed-carousel>
-            </div>
+            <seed-carousel class="card">
+                <div class="green">Green</div>      
+                <div class="blue">Blue</div>
+                <div class="purple">Purple</div>
+            </seed-carousel>
+            <seed-carousel class="card" arrows stepper>
+                <div class="black">Black</div>
+                <div class="green">Green</div>
+                <div class="red">Red</div>
+                <div class="purple">Purple</div>
+                <div class="orange">Orange</div>      
+            </seed-carousel>
         </div>
         <br><br>
-        <h2 class="sd-btn black sm">Carousel photos</h2>
+        <h2 class="black">· Carousel with images</h2>
         <seed-carousel arrows stepper>
+            <img src="${carousel3}" alt="carousel3">
             <img src="${carousel1}" alt="carousel1">
             <img src="${carousel2}" alt="carousel2">
-            <img src="${carousel3}" alt="carousel3">
             <img src="${carousel4}" alt="carousel4">  
         </seed-carousel>
         <br><br>
-        <h2 class="sd-btn black sm">Carousel auto</h2>
+        <h2 class="black">· Carousel auto</h2>
         <seed-carousel auto stepper>
             <div class="green">Green</div>
             <div class="red">Red</div>
             <div class="blue">Blue</div>
             <div class="purple">Purple</div>
             <div class="orange">Orange</div>      
-        </seed-carousel>
-        
-      
-        
+        </seed-carousel> 
     `);
