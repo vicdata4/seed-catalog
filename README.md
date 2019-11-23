@@ -13,8 +13,8 @@ Seed-catalog is a free and open-source `web-components library`. It contains CSS
 `npm run storybook`
 
 ### Dependencies:
-- [Storybook](https://rollupjs.org) WC Interface
-- [LitElement](https://lit-element.polymer-project.org) WebComponents
+- [Storybook](https://storybook.js.org) WC Interface
+- [LitElement](https://lit-element.polymer-project.org) Web Components
 - [ESLint](https://eslint.org) Coding style
 
 
@@ -34,17 +34,41 @@ from `package.json`
 
 ## Catalog
 
-- [Button classes](https://rollupjs.org)
-- [Carousel](https://rollupjs.org)
-- [Collapse](https://eslint.org)
-- [Dropdown](https://eslint.org)
-- [Modal](https://eslint.org)
-- [Stepper](https://eslint.org)
+- [Button classes](#button-classes)
+- [Carousel](#carousel)
+- [Collapse](#collapse)
+- [Dropdown](#dropdown)
+- [Modal](#modal)
+- [Stepper](#stepper)
+
+## Button classes
 
 ```js
+    // example using lit-element
     // import style.js file
 
+    import { LitElement, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
+
+    class MyClass extends LitElement {
+        static get styles() {
+            return [
+                seedStyle,
+                css`
+                    /** your css **/
+                `
+            ];
+        }
+
+        render() {
+            return html`
+                <button class="sd-btn red">Submit</button>
+                <button class="sd-btn-mix blue"><i class="material-icons">folder</i>Folder</button>
+                <button class="sd-icon red"><i class="material-icons">folder</i></button>
+                <button class="sd-icon circle green"><i class="material-icons">face</i></button>
+            `;
+        }
+    }
 ```
 
 #### `sd-btn class`
@@ -92,7 +116,7 @@ from `package.json`
     </seed-modal>
 ```
 
-### `Dropdown / Collapse`
+### `Dropdown`
 
 ```js
     // import seed-dropdown
