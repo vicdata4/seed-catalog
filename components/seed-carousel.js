@@ -1,14 +1,25 @@
 import { LitElement, html, css } from 'lit-element';
 import { touchGestures } from './utils/carouselUtils';
+import { seedButtonStyle } from '../styles';
 
 /** */
 export class SeedCarousel extends LitElement {
 /* eslint-disable require-jsdoc */
   static get styles() {
     return [
+      seedButtonStyle,
       css`
         :host {
-            display: flex;
+        
+            
+          display: flex;
+          flex-flow: row nowrap;
+          height: auto;
+          width: 100%;
+          margin: 0;
+          overflow: hidden;
+          min-height: 200px;
+          
         }
 
         :host > * {
@@ -16,17 +27,17 @@ export class SeedCarousel extends LitElement {
         }
 
         .slider-container {
-          flex: 1 1 0;
-          display: flex;
-          flex-flow: row nowrap;
-          height: auto;
-          width: 100%;
-          margin: 0;
-          overflow: hidden;
-          border: 1px solid green;
+            flex: 1 1 0;
+            width: inherit;
+            display: flex;
+            flex-flow: row nowrap;
+            height: auto;
+            width: 100%;
+            margin: 0;
+            min-height: 200px;
         }
 
-        .slider-container div {
+        ::slotted(div) {
           min-width: 100%;
           color: white;
           display: flex;
@@ -39,25 +50,17 @@ export class SeedCarousel extends LitElement {
 
         .arrow-container {
           display: none;
-          border: 1px solid red;
+          justify-content: center;
+          z-index: 1;
+          background-color: black;
         }
 
         .arrow {
           width: 100%;
-          height: 80px;
           background: rgba(179, 79, 92, .6);
           border-color: white;
-          margin-bottom: 150px;
           border: none;
           cursor: pointer;
-        }
-
-        .arrow-right {
-          border-radius: 0 100px 100px 0;
-        }
-
-        .arrow-left {
-          border-radius: 100px 0 0 100px;
         }
 
         .rotate-left {
@@ -122,7 +125,7 @@ export class SeedCarousel extends LitElement {
     super();
     this.coordinate = 0;
     this.index = 0;
-    this.cards = [{},{},{}];
+    this.cards = [{},{},{},{}];
     this.animationSpeed = 0.8;
     this.auto = true;
     this.interval = 8000;
@@ -159,23 +162,19 @@ export class SeedCarousel extends LitElement {
   render() {
     return html`
             <div class="arrow-container">
-              <button id="left" aria-label="left" class="arrow arrow-left" @click="${() => this.showNext(false)}"><div class="rotate-left">L</div></button>
+              <button id="left" aria-label="left" class="sd-icon circle black" @click="${() => this.showNext(false)}"><i class="material-icons">keyboard_arrow_left</i></button>
             </div>
                 
-            <div id="slide" class="slider-container">
-              ${this.cards.map((x, i) => html `
-                <div class="single-card"
-                    .style="${'transform: translateX(' + this.coordinate + 'px); transition: transform ' + this.animationSpeed + 's'}">
-                  ${i}
-                </div>
-              `)}
-              <div aria-live="polite" class="sr-only" tabindex="-1">
-                ${(this.index + 1) + ' ' + 'de' + ' ' + Math.ceil(this.cards.length)}
-              </div>
+            <div
+              id="slide"
+              class="slider-container"
+              .style="${`transform: translateX(${this.coordinate}px); transition: transform ${this.animationSpeed}s`}"
+            >
+              <slot></slot>
             </div>
 
             <div class="arrow-container">
-              <button id="right" aria-label="right" class="arrow arrow-right" @click="${() => this.showNext(true)}"><div class="rotate-right">R</div></button>
+              <button id="right" aria-label="right" class="sd-icon circle black" @click="${() => this.showNext(true)}"><i class="material-icons">keyboard_arrow_right</i></button>
             </div>
     `;
   }

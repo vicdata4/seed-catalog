@@ -11,18 +11,27 @@ storiesOf('Seed Catalog', module)
             * {
                 font-family: 'Ubuntu', sans-serif;
             }
+
+            .single-card {
+                color: white;
+            }
         </style>
         <h2 class="sd-btn black sm">Stepper / Dots component</h2>
         <seed-carousel>
-        
-      
-                <div slot="carousel">
-                  <div>Hello</div>
-                  <div>Hello1</div>
-                  <div>Hello2</div>
-                  <div>Hello3</div>
-                  <div>Hello4</div>
-                </div>
-   
+            <div class="single-card" style="background-color: red;">
+                Red
+            </div>
+            <div class="single-card" style="background-color: blue">
+                Blue
+            </div>
+            <div class="single-card" style="background-color: green">
+                Green
+            </div>
+            <div class="single-card" style="background-color: purple">
+                Purple
+            </div>
+            <div class="single-card" class="single-card" style="background-color: orange">
+                Orange
+            </div>      
         </seed-carousel>
     `);
