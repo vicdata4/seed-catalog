@@ -75,14 +75,14 @@ export class SeedCarousel extends LitElement {
             min-height: inherit;
             cursor: pointer;
             border: none;
-        }
+          }
 
-        .arrow-btn-left {
-            left: 0;
-            right: unset;
+          .arrow-btn-left {
+              left: 0;
+              right: unset;
+          }
         }
-        }
-      `,
+      `
     ];
   }
 
@@ -97,7 +97,7 @@ export class SeedCarousel extends LitElement {
       stepper: { type: Boolean, attribute: 'stepper' },
       interval: { type: Number },
       minTouchLength: { type: Number },
-      minTouchAngle: { type: Number },
+      minTouchAngle: { type: Number }
     };
   }
 
@@ -116,7 +116,7 @@ export class SeedCarousel extends LitElement {
       mouseenter: 'mouse',
       mouseleave: 'mouse',
       focusin: 'focus',
-      focusout: 'focus',
+      focusout: 'focus'
     };
 
     this.addEventListener('set-dot', this.setNewPosition);
@@ -127,7 +127,7 @@ export class SeedCarousel extends LitElement {
   }
 
   showArrows() {
-      return this.arrows
+    return this.arrows
       ? html`
           <button
               id="left"
@@ -199,7 +199,7 @@ export class SeedCarousel extends LitElement {
   getNCards() {
     const divs = this.querySelectorAll('div');
     const imgs = this.querySelectorAll('img');
-    return divs.length + imgs.length
+    return divs.length + imgs.length;
   }
 
   setIndex(way) {
@@ -228,7 +228,7 @@ export class SeedCarousel extends LitElement {
     */
   setAutoInterval() {
     this.intervalRef = setInterval(() => {
-        this.showNext(true);
+      this.showNext(true);
     }, this.interval);
   }
 

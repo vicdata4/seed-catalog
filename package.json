@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -s ./build -p 9001",
-    "storybook:build": "build-storybook -o build -s storybook-static"
+    "storybook:build": "build-storybook -o build -s storybook-static",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,13 @@
   },
   "homepage": "https://github.com/vicdata4/seed-catalog#readme",
   "devDependencies": {
-    "@open-wc/demoing-storybook": "^0.2.5"
+    "@open-wc/demoing-storybook": "^0.2.5",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
     "lit-element": "^2.0.1"

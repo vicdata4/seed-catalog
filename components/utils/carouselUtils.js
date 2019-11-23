@@ -1,4 +1,3 @@
-/* eslint-disable no-invalid-this*/
 /**
   * @param {Component} component (this)
   * @param {String} container Container reference
@@ -108,7 +107,7 @@ export const _supportsPassive = () => {
       get: function() {
         supportsPassive = true;
         return supportsPassive;
-      },
+      }
     });
     window.addEventListener('testPassive', null, opts);
     window.removeEventListener('testPassive', null, opts);

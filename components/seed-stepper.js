@@ -45,29 +45,23 @@ class SeedStepper extends LitElement {
     this.index = 0;
     this.nElements = 0;
     this.dotsArray = [];
-    this.colorActive = this.colorActive ||  '#d8336d';
+    this.colorActive = this.colorActive || '#d8336d';
     this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
-  }
-
-  firstUpdated() {
-
   }
 
   render() {
     return html`
-      ${this.dotsArray.map((x, i) =>
-        html`
-            <button
-                tabindex="0"
-                @click="${() => this.setPosition(i)}" id="${'a' + i}"
-                class="dot"
-                .style="
-                    background-color: ${this.colorBack}
-                "
-                aria-label="${i}">
-            </button>
-        `)
-       }
+      ${this.dotsArray.map((x, i) => html`
+        <button
+            tabindex="0"
+            @click="${() => this.setPosition(i)}" id="${'a' + i}"
+            class="dot"
+            .style="
+                background-color: ${this.colorBack}
+            "
+            aria-label="${i}">
+        </button>
+      `)}
     `;
   }
 
