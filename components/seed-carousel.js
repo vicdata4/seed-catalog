@@ -1,12 +1,17 @@
 import { LitElement, html, css } from 'lit-element';
 import { touchGestures } from './utils/carouselUtils';
+
 /** */
-class SeedCarousel extends LitElement {
+export class SeedCarousel extends LitElement {
 /* eslint-disable require-jsdoc */
   static get styles() {
     return [
       css`
-        section > * {
+        :host {
+            display: flex;
+        }
+
+        :host > * {
           max-width: 100%;
         }
 
@@ -18,6 +23,7 @@ class SeedCarousel extends LitElement {
           width: 100%;
           margin: 0;
           overflow: hidden;
+          border: 1px solid green;
         }
 
         .slider-container div {
@@ -33,6 +39,7 @@ class SeedCarousel extends LitElement {
 
         .arrow-container {
           display: none;
+          border: 1px solid red;
         }
 
         .arrow {
@@ -43,10 +50,6 @@ class SeedCarousel extends LitElement {
           margin-bottom: 150px;
           border: none;
           cursor: pointer;
-        }
-
-        .container {
-          display: flex;
         }
 
         .arrow-right {
@@ -81,9 +84,6 @@ class SeedCarousel extends LitElement {
         }
 
         @media screen and (min-width: 768px) {
-          section {
-            padding-bottom: 36px;
-          }
           
           .arrow-container {
             display: grid;
@@ -113,6 +113,8 @@ class SeedCarousel extends LitElement {
       auto: { type: Boolean },
       interval: { type: Number },
       isRunning: { type: Boolean },
+      minTouchLength: { type: Number },
+      minTouchAngle: { type: Number },
     };
   }
 
@@ -120,7 +122,7 @@ class SeedCarousel extends LitElement {
     super();
     this.coordinate = 0;
     this.index = 0;
-    this.cards = [{value: 'hola'},{value: 'hola1'},{value: 'hola2'},{value: 'hola3'}];
+    this.cards = [{},{},{}];
     this.animationSpeed = 0.8;
     this.auto = true;
     this.interval = 8000;
@@ -128,68 +130,63 @@ class SeedCarousel extends LitElement {
     this.isRunning = false;
     this.minTouchLength = 70;
     this.minTouchAngle = 30;
+    this._focusEventsActive = [];
+    this.EVENTS = {
+      mouseenter: 'mouse',
+      mouseleave: 'mouse',
+      focusin: 'focus',
+      focusout: 'focus',
+    };
+
+    this.addEventListener('stopInterval', () => {
+      clearInterval(this.intervalRef);
+      this.isRunning = false;
+    });
+
+    this.addEventListener('resetInterval', () => {
+      this.isRunning = true;
+      if (this.auto) this._startAutoplay();
+    });
 
     this.addEventListener('setPosition', this.setNewPosition);
+
+    this.addEventListener('focusin', this._stopAutoplay.bind(this));
+    this.addEventListener('mouseenter', this._stopAutoplay.bind(this));
+    this.addEventListener('mouseleave', this.startInterval.bind(this));
+    this.addEventListener('focusout', this.startInterval.bind(this));
   }
 
   render() {
     return html`
-        <div>
-          <div class="container">
             <div class="arrow-container">
-              <button id="left" aria-label="left_arrow" class="arrow arrow-left" @click="${() => this.showNext(false)}"><div class="rotate-left">L</div></button>
+              <button id="left" aria-label="left" class="arrow arrow-left" @click="${() => this.showNext(false)}"><div class="rotate-left">L</div></button>
             </div>
                 
             <div id="slide" class="slider-container">
-            <div><div>d</div></div>
-            <div><div>ds</div></div>
-            <div><div>dd</div></div>
-            <div><div>dd</div></div>
+              ${this.cards.map((x, i) => html `
+                <div class="single-card"
+                    .style="${'transform: translateX(' + this.coordinate + 'px); transition: transform ' + this.animationSpeed + 's'}">
+                  ${i}
+                </div>
+              `)}
+              <div aria-live="polite" class="sr-only" tabindex="-1">
+                ${(this.index + 1) + ' ' + 'de' + ' ' + Math.ceil(this.cards.length)}
+              </div>
             </div>
 
             <div class="arrow-container">
-              <button id="right" aria-label="right_arrow" class="arrow arrow-right" @click="${() => this.showNext(true)}"><div class="rotate-right">R</div></button>
+              <button id="right" aria-label="right" class="arrow arrow-right" @click="${() => this.showNext(true)}"><div class="rotate-right">R</div></button>
             </div>
-          </div>
-        </div>
     `;
   }
 
   firstUpdated() {
-
-    const list = this.shadowRoot.querySelector('slot').querySelectorAll('div');
-    list.forEach(x => {
-        x.style.transform = `translateX(${this.coordinate}px)`;
-        x.style.transition = `transform ${this.animationSpeed}s`;
-    })
-
     touchGestures(this, '#slide');
 
     window.addEventListener('resize', this.setCoordinate.bind(this));
     if (this.auto) this.setAutoInterval();
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    if (window.IntersectionObserver) {
-      this.dispatchEvent(new CustomEvent('start-observing-intersection', {
-        bubbles: true,
-        composed: true,
-        detail: { element: this, threshold: 0.3, callback: ([{ isIntersecting }]) => this._isIntersecting = isIntersecting },
-      }));
-    }
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    if (window.IntersectionObserver) {
-      this.dispatchEvent(new CustomEvent('stop-observing-intersection', {
-        bubbles: true,
-        composed: true,
-        detail: { element: this, threshold: 0.3 },
-      }));
-    }
-  }
   /* eslint-enable require-jsdoc */
 
   /**
@@ -279,6 +276,7 @@ class SeedCarousel extends LitElement {
     * @param {Event} event Event object
     */
   _stopAutoplay(event) {
+    this._focusEventsActive.push(this.EVENTS[event.type]);
     clearInterval(this.intervalRef);
     this.isRunning = false;
     this.auto = false;
