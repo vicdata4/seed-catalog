@@ -4,13 +4,6 @@
 
 Seed-catalog is a free and open-source `web-components library`. It contains CSS-styles and standard-web based templates such as buttons, modals, dropdowns and other interface components.
 
-### Run Storybook
-
-`git clone https://github.com/vicdata4/seed-catalog.git`
-
-`npm install`
-
-`npm run storybook`
 
 ### Dependencies:
 - [Storybook](https://storybook.js.org) WC Interface
@@ -32,6 +25,14 @@ from `package.json`
 }
 ```
 
+### Run Storybook
+
+`git clone https://github.com/vicdata4/seed-catalog.git`
+
+`npm install`
+
+`npm run storybook`
+
 ## Catalog
 
 - [Button classes](#button-classes)
@@ -43,9 +44,15 @@ from `package.json`
 
 ## Button classes
 
+You can play with different combinations of colors, types and sizes according with the requirements of your application or website.
+
+- [Material Icons](https://material.io/resources/icons) Crafted symbols
+
+Material icons is integrated as dependency of this class, so you can create more complex and dynamic buttons, easy and fast just importing `seedStyle` class.
+
 ```js
     // example using lit-element
-    // import style.js file
+    // import styles.js file
 
     import { LitElement, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
