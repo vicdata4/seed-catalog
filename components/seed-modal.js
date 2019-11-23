@@ -1,10 +1,10 @@
 import { LitElement, html, css } from 'lit-element';
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 
 export class SeedModal extends LitElement {
     static get styles() {
         return [
-            seedButtonStyle,
+            seedStyle,
             css`
                 :host {
                     overflow: hidden;

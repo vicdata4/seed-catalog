@@ -22,7 +22,7 @@ const dropDown = css`
   }
 `;
 
-export const seedButtonStyle = css`
+export const seedStyle = css`
 
     ${googleFont}
     ${materialIcons}

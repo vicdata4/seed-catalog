@@ -1,13 +1,13 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 import '../components/seed-modal';
 
 storiesOf('Seed Catalog', module)
   .add('Modal', () => html`
         <style>
-            ${seedButtonStyle}
+            ${seedStyle}
         </style>
   
         <seed-modal>

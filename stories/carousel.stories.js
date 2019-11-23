@@ -1,7 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import '../components/seed-carousel';
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 import carousel1 from '../assets/images/carousel_1.jpg';
 import carousel2 from '../assets/images/carousel_2.jpg';
 import carousel3 from '../assets/images/carousel_3.jpg';
@@ -10,7 +10,7 @@ import carousel4 from '../assets/images/carousel_4.jpg';
 storiesOf('Seed Catalog', module)
   .add('Carousel', () => html`
         <style>
-            ${seedButtonStyle}
+            ${seedStyle}
 
             * {
                 font-family: 'Ubuntu', sans-serif;

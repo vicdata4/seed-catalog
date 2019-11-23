@@ -1,10 +1,10 @@
 import { LitElement, html, css } from 'lit-element';
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 
 export class SeedDropdown extends LitElement {
     static get styles() {
         return [
-            seedButtonStyle,
+            seedStyle,
             css`
                 :host {
                     display: inline-block;

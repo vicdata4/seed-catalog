@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { touchGestures } from './utils/carouselUtils';
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 import './seed-stepper.js';
 
 /** */
@@ -8,7 +8,7 @@ export class SeedCarousel extends LitElement {
 /* eslint-disable require-jsdoc */
   static get styles() {
     return [
-      seedButtonStyle,
+      seedStyle,
       css`
         :host {
           position: relative;

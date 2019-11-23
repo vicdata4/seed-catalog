@@ -29,7 +29,7 @@ from `package.json`
 ```js
     // import style.js file
 
-    import { seedButtonStyle } from 'seed-catalog/styles.js';
+    import { seedStyle } from 'seed-catalog/styles.js';
 ```
 
 #### `sd-btn class`
@@ -55,12 +55,12 @@ from `package.json`
     // import seed-modal
     import 'seed-catalog/seed-modal.js';
     // and combine with sd-btn class to improve your performance
-    import { seedButtonStyle } from 'seed-catalog/styles.js';
+    import { seedStyle } from 'seed-catalog/styles.js';
 
     // lit element example
     static get styles() {
         return [
-            seedButtonStyle,
+            seedStyle,
             css`
                 ...
             `
@@ -83,12 +83,12 @@ from `package.json`
     // import seed-dropdown
     import 'seed-catalog/seed-dropdown.js';
     // and combine with sd-btn class to improve your performance
-    import { seedButtonStyle } from 'seed-catalog/styles.js';
+    import { seedStyle } from 'seed-catalog/styles.js';
 
     // lit element example
     static get styles() {
         return [
-            seedButtonStyle,
+            seedStyle,
             css`
                 ...
             `

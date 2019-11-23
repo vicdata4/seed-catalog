@@ -1,13 +1,13 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 import '../components/seed-dropdown';
 
 storiesOf('Seed', module)
   .add('Intro', () => html`
         <style>
-      ${seedButtonStyle}
+      ${seedStyle}
 
       html {
       --seed-color-red: #de3d4c;

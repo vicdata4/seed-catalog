@@ -1,12 +1,12 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import '../components/seed-stepper';
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 
 storiesOf('Seed Catalog', module)
   .add('Stepper', () => html`
         <style>
-            ${seedButtonStyle}
+            ${seedStyle}
 
             * {
                 font-family: 'Ubuntu', sans-serif;

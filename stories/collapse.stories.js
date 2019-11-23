@@ -1,14 +1,14 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 
-import { seedButtonStyle } from '../styles';
+import { seedStyle } from '../styles';
 import '../components/seed-dropdown';
 import '../components/seed-collapse';
 
 storiesOf('Seed Catalog', module)
   .add('Collapse', () => html`
         <style>
-            ${seedButtonStyle}
+            ${seedStyle}
 
             * {
                 font-family: 'Ubuntu', sans-serif;
