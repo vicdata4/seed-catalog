@@ -1,18 +1,26 @@
-# Seed Catalog
+![](assets/logo_md.png?v=4&s=100)
 
-[Storybook - Seed Catalog](https://seed-catalog.web.app)
+## Seed Catalog [Storybook](https://seed-catalog.web.app)
 
-## Project installation
+Seed-catalog is a free and open-source `web-components library`. It contains CSS-styles and standard-web based templates such as buttons, modals, dropdowns and other interface components.
 
-git clone https://github.com/vicdata4/seed-catalog.git
+### Run Storybook
 
-npm install
+`git clone https://github.com/vicdata4/seed-catalog.git`
 
-npm run storybook
+`npm install`
 
-##  Add as project dependency
+`npm run storybook`
 
-LitElement is required.
+### Dependencies:
+- [Storybook](https://rollupjs.org) WC Interface
+- [LitElement](https://lit-element.polymer-project.org) WebComponents
+- [ESLint](https://eslint.org) Coding style
+
+
+###  Add as project dependency
+
+`LitElement is required.`
 
 from `package.json`
 
@@ -24,7 +32,14 @@ from `package.json`
 }
 ```
 
-## Components
+## Catalog
+
+- [Button classes](https://rollupjs.org)
+- [Carousel](https://rollupjs.org)
+- [Collapse](https://eslint.org)
+- [Dropdown](https://eslint.org)
+- [Modal](https://eslint.org)
+- [Stepper](https://eslint.org)
 
 ```js
     // import style.js file
