@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element';
-import '../dropdown.js';
 
 export class SeedCollapse extends LitElement {
   static get styles() {

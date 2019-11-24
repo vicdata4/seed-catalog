@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import { touchGestures } from './utils/carouselUtils';
+import { touchGestures } from './utils/carousel';
 import { seedStyle } from '../styles';
 import './seed-stepper.js';
 
