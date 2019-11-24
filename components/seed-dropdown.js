@@ -149,5 +149,3 @@ export class SeedDropdown extends LitElement {
     `;
   }
 }
-
-window.customElements.define('seed-dropdown', SeedDropdown);

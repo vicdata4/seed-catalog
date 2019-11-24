@@ -1,7 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
-import '../components/seed-stepper';
 import { seedStyle } from '../styles';
+import '../stepper';
 
 storiesOf('Seed Catalog', module)
   .add('Stepper', () => html`

@@ -2,8 +2,8 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 
 import { seedStyle } from '../styles';
-import '../components/seed-dropdown';
-import '../components/seed-collapse';
+import '../dropdown';
+import '../collapse';
 
 storiesOf('Seed Catalog', module)
   .add('Collapse', () => html`

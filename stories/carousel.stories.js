@@ -1,6 +1,6 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
-import '../components/seed-carousel';
+import '../carousel';
 import { seedStyle } from '../styles';
 import carousel1 from '../assets/images/carousel_1.jpg';
 import carousel2 from '../assets/images/carousel_2.jpg';

@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import './seed-dropdown.js';
+import '../dropdown.js';
 
 export class SeedCollapse extends LitElement {
   static get styles() {
@@ -80,5 +80,3 @@ export class SeedCollapse extends LitElement {
     `;
   }
 }
-
-window.customElements.define('seed-collapse', SeedCollapse);

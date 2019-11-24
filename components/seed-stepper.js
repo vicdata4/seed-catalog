@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 
 /** */
-class SeedStepper extends LitElement {
+export class SeedStepper extends LitElement {
 /* eslint-disable require-jsdoc */
   static get styles() {
     return css`
@@ -114,4 +114,3 @@ class SeedStepper extends LitElement {
     this.dispatchEvent(new CustomEvent('set-dot', { detail: index, composed: true }));
   }
 }
-customElements.define('seed-stepper', SeedStepper);

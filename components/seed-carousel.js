@@ -274,4 +274,3 @@ export class SeedCarousel extends LitElement {
     }
   }
 }
-customElements.define('seed-carousel', SeedCarousel);

@@ -146,5 +146,3 @@ export class SeedModal extends LitElement {
     `;
   }
 }
-
-window.customElements.define('seed-modal', SeedModal);
