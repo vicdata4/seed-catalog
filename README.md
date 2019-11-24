@@ -87,167 +87,184 @@ Material icons is integrated as dependency of this class, so you can create more
     }
 ```
 
-#### classes: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-btn-empty`
+##### classes: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-btn-empty`
 
-#### colors: `red`, `green`, `blue`, `yellow`, `purple`, `black`, `orange`, `green-mate`, `red-mate`, `blue-mate`
+##### colors: `red`, `green`, `blue`, `yellow`, `purple`, `black`, `orange`, `green-mate`, `red-mate`, `blue-mate`
 
-#### size: `sm`, `lg`
+##### size: `sm`, `lg`
+
+## How to use it
 
 ## Carousel
 
 ```js
-    // import seed-modal
-    import 'seed-catalog/seed-carousel.js';
-    // and combine with sd-btn class to improve your performance
+    import { LitElement, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
-    // lit element example
-    static get styles() {
-        return [
-            seedStyle
-        ];
+    class MyClass extends LitElement {
+        static get styles() {
+            return [
+                seedStyle
+            ];
+        }
+        
+        render() {
+            return html`
+                <seed-carousel arrows stepper>
+                    <div class="black">Black</div> 
+                    <div class="red">Red</div>
+                    <div class="blue">Blue</div>
+                    <div class="green">Green</div>    
+                </seed-carousel>
+            `;
+        }
     }
-
-    <seed-carousel arrows stepper>
-        <div class="black">Black</div> 
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>    
-    </seed-carousel>
 ```
 
 ## Collapse
 
 ```js
-    // import seed-modal
-    import 'seed-catalog/seed-collapse.js';
-    // and combine with sd-btn class to improve your performance
+    import { LitElement, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
-    // lit element example
-    static get styles() {
-        return [
-            seedStyle
-        ];
+    class MyClass extends LitElement {
+        static get styles() {
+            return [
+                seedStyle
+            ];
+        }
+        
+        render() {
+            return html`
+                <seed-collapse>
+                    <seed-dropdown mode="collapse">
+                        <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
+                        <p slot="content" class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </seed-dropdown>
+                    <seed-dropdown mode="collapse">
+                        <button id="lock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 2</button>
+                        <p slot="content" class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </seed-dropdown>
+                    <seed-dropdown mode="collapse">
+                        <button id="drot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 3</button>
+                        <p slot="content" class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </seed-dropdown>
+                    <seed-dropdown mode="collapse">
+                        <button id="lops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 4</button>
+                        <p slot="content" class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </seed-dropdown>
+                </seed-collapse>
+            `;
+        }
     }
-
-    <seed-collapse>
-        <seed-dropdown mode="collapse">
-            <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
-            <p slot="content" class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
-            </p>
-        </seed-dropdown>
-        <seed-dropdown mode="collapse">
-            <button id="lock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 2</button>
-            <p slot="content" class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
-            </p>
-        </seed-dropdown>
-        <seed-dropdown mode="collapse">
-            <button id="drot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 3</button>
-            <p slot="content" class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam-
-            </p>
-        </seed-dropdown>
-        <seed-dropdown mode="collapse">
-            <button id="lops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 4</button>
-            <p slot="content" class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
-            </p>
-        </seed-dropdown>
-    </seed-collapse>
 ```
 
 ## Dropdown
 
 ```js
-    // import seed-dropdown
-    import 'seed-catalog/seed-dropdown.js';
-    // and combine with sd-btn class to improve your performance
+    import { LitElement, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
-    // lit element example
-    static get styles() {
-        return [
-            seedStyle,
-            css`
-                ...
-            `
-        ];
+    class MyClass extends LitElement {
+        static get styles() {
+            return [
+                seedStyle,
+                css`
+                    ...
+                `
+            ];
+        }
+
+        render() {
+            return html`
+                <seed-dropdown rotate="true">
+                    <button id="restaurant" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">arrow_drop_down</i>Menu</button>
+                    <div slot="content" class="dropdown-links">
+                        <a href="/">Select type</a>
+                        <a href="/"><i class="material-icons green-mate sm">fastfood</i>Burgers</a>
+                        <a href="/"><i class="material-icons green-mate sm">local_dining</i>Salads</a>
+                        <a href="/"><i class="material-icons green-mate sm">local_cafe</i>Desserts</a>
+                        <a href="/"><i class="material-icons red sm">local_bar</i>Drinks</a>
+                    </div>
+                </seed-dropdown>
+
+                <seed-dropdown maxWidth="300">
+                    <button id="lorem" slot="button" class="sd-btn-mix green"><i class="material-icons">local_library</i>Default dropdown</button>
+                    <p slot="content" class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
+                    </p>
+                </seed-dropdown>
+            `;
+        }
     }
-
-    <seed-dropdown rotate="true">
-        <button id="restaurant" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">arrow_drop_down</i>Menu</button>
-        <div slot="content" class="dropdown-links">
-            <a href="/">Select type</a>
-            <a href="/"><i class="material-icons green-mate sm">fastfood</i>Burgers</a>
-            <a href="/"><i class="material-icons green-mate sm">local_dining</i>Salads</a>
-            <a href="/"><i class="material-icons green-mate sm">local_cafe</i>Desserts</a>
-            <a href="/"><i class="material-icons red sm">local_bar</i>Drinks</a>
-        </div>
-    </seed-dropdown>
-
-    <seed-dropdown maxWidth="300">
-        <button id="lorem" slot="button" class="sd-btn-mix green"><i class="material-icons">local_library</i>Default dropdown</button>
-        <p slot="content" class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
-        </p>
-    </seed-dropdown>
 ```
 
 ## Modal
 
 ```js
-    // import seed-modal
-    import 'seed-catalog/seed-modal.js';
-    // and combine with sd-btn class to improve your performance
+    import { LitElement, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
-    // lit element example
-    static get styles() {
-        return [
-            seedStyle,
-            css`
-                ...
-            `
-        ];
-    }
+    class MyClass extends LitElement {
+        static get styles() {
+            return [
+                seedStyle,
+                css`
+                    ...
+                `
+            ];
+        }
 
-    <seed-modal alignWindow="center">
-        <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Open modal</button>
-        <button slot="close-btn" class="sd-btn-empty"><i class="material-icons red-mate">close</i></button>
-        <span slot="title">Building Web Components</span>
-        
-        <div slot="content">
-        Ut pellentesque, enim lobortis pellentesque egestas, libero nibh sodales sapien, eu dignissim tortor massa id neque. Ut at dui viverra, efficitur lectus sed, sagittis risus.
-        </div>
-        <div slot="footer">
-        <button class="sd-btn green-mate">Ok</button>
-        <button class="sd-btn red-mate">Deny</button>
-        </div> 
-    </seed-modal>
+        render() {
+            return html`
+                <seed-modal alignWindow="center">
+                    <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Open modal</button>
+                    <button slot="close-btn" class="sd-btn-empty"><i class="material-icons red-mate">close</i></button>
+                    <span slot="title">Building Web Components</span>
+                    
+                    <div slot="content">
+                    Ut pellentesque, enim lobortis pellentesque egestas, libero nibh sodales sapien, eu dignissim tortor massa id neque. Ut at dui viverra, efficitur lectus sed, sagittis risus.
+                    </div>
+                    <div slot="footer">
+                    <button class="sd-btn green-mate">Ok</button>
+                    <button class="sd-btn red-mate">Deny</button>
+                    </div> 
+                </seed-modal>
+            `;
+        }
+    }
 ```
 
 ## Stepper
 
 ```js
-    // import seed-modal
-    import 'seed-catalog/seed-stepper.js';
-    // and combine with sd-btn class to improve your performance
+    import { LitElement, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
-    // lit element example
-    static get styles() {
-        return [
-            seedStyle,
-            css`
-                ...
-            `
-        ];
-    }
+    class MyClass extends LitElement {
+        static get styles() {
+            return [
+                seedStyle,
+                css`
+                    ...
+                `
+            ];
+        }
 
-    <seed-stepper .index="${2}" .nElements="${5}"></seed-stepper>
+        render() {
+            return html`
+                <seed-stepper .index="${2}" .nElements="${5}"></seed-stepper>
+            `;
+        }
+    }
 ```
 
 
