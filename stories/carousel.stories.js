@@ -50,7 +50,7 @@ storiesOf('Seed Catalog', module)
                 <div class="blue">Blue</div>
                 <div class="purple">Purple</div>
             </seed-carousel>
-            <seed-carousel class="card" arrows>
+            <seed-carousel class="card" arrows stepper>
                 <div class="red-mate">Red</div>
                 <div class="green">Green</div>
                 <div class="black">Black</div>
@@ -59,16 +59,30 @@ storiesOf('Seed Catalog', module)
             </seed-carousel>
         </div>
         <div class="due-card">
-            <seed-carousel class="card">
+            <seed-carousel class="card" stepper square>
                 <div class="green">Green</div>      
                 <div class="blue">Blue</div>
                 <div class="purple">Purple</div>
             </seed-carousel>
-            <seed-carousel class="card" arrows stepper>
+            <seed-carousel class="card" arrows stepper square>
                 <div class="black">Black</div>
                 <div class="green">Green</div>
                 <div class="red">Red</div>
                 <div class="purple">Purple</div>
+                <div class="orange">Orange</div>      
+            </seed-carousel>
+        </div>
+        <div class="due-card">
+            <seed-carousel class="card" stepper>
+                <div class="blue">Blue</div>
+                <div class="purple">Purple</div>
+                <div class="green-mate">Green mate</div>      
+            </seed-carousel>
+            <seed-carousel class="card" arrows>
+                <div class="purple">Purple</div>
+                <div class="red-mate">Red</div>
+                <div class="green">Green</div>
+                <div class="black">Black</div>
                 <div class="orange">Orange</div>      
             </seed-carousel>
         </div>
@@ -88,5 +102,5 @@ storiesOf('Seed Catalog', module)
             <div class="blue">Blue</div>
             <div class="purple">Purple</div>
             <div class="orange">Orange</div>      
-        </seed-carousel> 
+        </seed-carousel>
     `);

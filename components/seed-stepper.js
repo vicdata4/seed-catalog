@@ -24,6 +24,11 @@ class SeedStepper extends LitElement {
         transition: background-color .7s;
       }
 
+      .square {
+        margin: 0;
+        border-radius: unset;
+      }
+
       .active {
         background-color: white !important;
       }
@@ -36,13 +41,15 @@ class SeedStepper extends LitElement {
       nElements: { type: Number, reflect: true },
       dotsArray: { type: Array },
       colorActive: { type: String },
-      colorBack: { type: String }
+      colorBack: { type: String },
+      square: { type: Boolean }
     };
   }
 
   constructor() {
     super();
     this.index = 0;
+    this.square = false;
     this.nElements = 0;
     this.dotsArray = [];
     this.colorActive = this.colorActive || '#d8336d';
@@ -55,7 +62,7 @@ class SeedStepper extends LitElement {
         <button
             tabindex="0"
             @click="${() => this.setPosition(i)}" id="${'a' + i}"
-            class="dot"
+            class="dot ${this.square ? 'square' : ''}"
             .style="
                 background-color: ${this.colorBack}
             "
@@ -66,7 +73,8 @@ class SeedStepper extends LitElement {
   }
 
   firstUpdated() {
-    this.setActive(this.index, 'dot active');
+    const square = this.square ? ' square' : '';
+    this.setActive(this.index, `dot${square} active`);
   }
 
   /**
@@ -74,9 +82,10 @@ class SeedStepper extends LitElement {
   * @param {Number} changedProps Update active class when the index changes
   */
   updated(changedProps) {
+    const square = this.square ? ' square' : '';
     if (this.index || changedProps.get('index')) {
-      this.setActive(this.index, 'dot active');
-      this.setActive(changedProps.get('index'), 'dot');
+      this.setActive(this.index, `dot${square} active`);
+      this.setActive(changedProps.get('index'), `dot${square}`);
     }
   }
 

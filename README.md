@@ -89,16 +89,34 @@ Material icons is integrated as dependency of this class, so you can create more
 
 ##### classes: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-btn-empty`
 
-##### colors: `red`, `green`, `blue`, `yellow`, `purple`, `black`, `orange`, `green-mate`, `red-mate`, `blue-mate`
-
+##### colors:
+- ![#de3d4c](https://placehold.it/15/de3d4c/000000?text=+) `red`
+- ![#22ac41](https://placehold.it/15/22ac41/000000?text=+) `green`
+- ![#2dabb4](https://placehold.it/15/2dabb4/000000?text=+) `blue`
+- ![#e6af0e](https://placehold.it/15/e6af0e/000000?text=+) `yellow`
+- ![#903e8d](https://placehold.it/15/903e8d/000000?text=+) `purple`
+- ![#2f2d2d](https://placehold.it/15/2f2d2d/000000?text=+) `black`
+- ![#d58309](https://placehold.it/15/d58309/000000?text=+) `orange`
+- ![#bf4545](https://placehold.it/15/bf4545/000000?text=+) `red-mate`
+- ![#1C8281](https://placehold.it/15/1C8281/000000?text=+) `green-mate`
+- ![#3f76b6](https://placehold.it/15/3f76b6/000000?text=+) `blue-mate`
 ##### size: `sm`, `lg`
 
 ## How to use it
 
 ## Carousel
 
+Options
+
+- arrows
+- stepper
+- auto
+- square
+- speed (property Number) ej .3  .7  1  2
+- interval (property Number) milliseconds ej 2000
+
 ```js
-    import { LitElement, css } from 'lit-element';
+    import { LitElement, html, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
     class MyClass extends LitElement {
@@ -116,6 +134,18 @@ Material icons is integrated as dependency of this class, so you can create more
                     <div class="blue">Blue</div>
                     <div class="green">Green</div>    
                 </seed-carousel>
+
+                <seed-carousel stepper square>
+                    <div class="green">Green</div>      
+                    <div class="blue">Blue</div>
+                    <div class="purple">Purple</div>
+                </seed-carousel>
+
+                <seed-carousel auto>
+                    <div class="green">Green</div>      
+                    <div class="blue">Blue</div>
+                    <div class="purple">Purple</div>
+                </seed-carousel>
             `;
         }
     }
@@ -124,7 +154,7 @@ Material icons is integrated as dependency of this class, so you can create more
 ## Collapse
 
 ```js
-    import { LitElement, css } from 'lit-element';
+    import { LitElement, html, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
     class MyClass extends LitElement {
@@ -170,7 +200,7 @@ Material icons is integrated as dependency of this class, so you can create more
 ## Dropdown
 
 ```js
-    import { LitElement, css } from 'lit-element';
+    import { LitElement, html, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
     class MyClass extends LitElement {
@@ -210,7 +240,7 @@ Material icons is integrated as dependency of this class, so you can create more
 ## Modal
 
 ```js
-    import { LitElement, css } from 'lit-element';
+    import { LitElement, html, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
     class MyClass extends LitElement {
@@ -246,7 +276,7 @@ Material icons is integrated as dependency of this class, so you can create more
 ## Stepper
 
 ```js
-    import { LitElement, css } from 'lit-element';
+    import { LitElement, html, css } from 'lit-element';
     import { seedStyle } from 'seed-catalog/styles.js';
 
     class MyClass extends LitElement {

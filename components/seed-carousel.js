@@ -91,10 +91,11 @@ export class SeedCarousel extends LitElement {
       coordinate: { type: Number },
       index: { type: Number },
       nCards: { type: Number },
-      speed: { type: String },
+      speed: { type: Number },
       auto: { type: Boolean, attribute: 'auto' },
       arrows: { type: Boolean, attribute: 'arrows' },
       stepper: { type: Boolean, attribute: 'stepper' },
+      square: { type: Boolean, attribute: 'square' },
       interval: { type: Number },
       minTouchLength: { type: Number },
       minTouchAngle: { type: Number }
@@ -106,7 +107,7 @@ export class SeedCarousel extends LitElement {
     this.coordinate = 0;
     this.index = 0;
     this.nCards = 0;
-    this.animationSpeed = 0.8;
+    this.speed = 0.8;
     this.interval = 5000;
     this.intervalRef = null;
     this.minTouchLength = 70;
@@ -149,7 +150,12 @@ export class SeedCarousel extends LitElement {
 
   showStepper() {
     return this.stepper ? html`
-        <seed-stepper .nElements="${this.nCards}" .index="${this.index}" .colorBack="${'rgba(255,255,255,.5)'}"></seed-stepper>
+        <seed-stepper
+          .nElements="${this.nCards}"
+          .index="${this.index}"
+          .colorBack="${'rgba(255,255,255,.5)'}"
+          .square="${this.square}">
+        </seed-stepper>
      ` : '';
   }
 
@@ -161,7 +167,7 @@ export class SeedCarousel extends LitElement {
         class="container"
         .style="${`
             transform: translateX(${this.coordinate}px);
-            transition: transform ${this.animationSpeed}s`}"
+            transition: transform ${this.speed}s`}"
       >
         <slot></slot>
       </div>

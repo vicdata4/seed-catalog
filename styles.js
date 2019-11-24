@@ -65,7 +65,7 @@ export const seedStyle = css`
       --seed-color-red-mate-focus: #ff00184d;
       --seed-color-red-mate-hover: rgb(176, 63, 63);
 
-      --seed-color-blue-mate: rgb(63, 118, 182);
+      --seed-color-blue-mate: #3f76b6;
       --seed-color-blue-mate-focus: #2dabb445;
       --seed-color-blue-mate-hover: rgb(53, 98, 149);
     }
