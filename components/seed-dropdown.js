@@ -54,9 +54,9 @@ export class SeedDropdown extends LitElement {
   static get properties() {
     return {
       backgroundColor: { type: String },
-      rotate: { type: String },
+      rotate: { type: Boolean, attribute: 'rotate' },
       position: { type: String },
-      mode: { type: String },
+      collapse: { type: Boolean, attribute: 'collapse' },
       maxWidth: { type: String },
       speed: { type: String }
     };
@@ -64,8 +64,6 @@ export class SeedDropdown extends LitElement {
 
   constructor() {
     super();
-    this.rotate = this.rotate || false;
-    this.mode = this.mode || 'default';
     this.position = this.position || 'absolute';
     this.maxWidth = this.maxWidth || 'unset';
     this.backgroundColor = this.backgroundColor || 'white';
@@ -75,7 +73,7 @@ export class SeedDropdown extends LitElement {
   firstUpdated() {
     this.dropdown = this.shadowRoot.querySelector('.dropdown');
 
-    if (this.mode !== 'collapse') {
+    if (!this.collapse) {
       const dropdown = this.dropdown;
       const rotate = this.rotateIcon.bind(this);
       const button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
@@ -95,8 +93,8 @@ export class SeedDropdown extends LitElement {
       });
     }
 
-    if (this.mode === 'collapse') {
-      this.position = this.mode === 'collapse' ? 'relative' : 'absolute';
+    if (this.collapse) {
+      this.position = this.collapse ? 'relative' : 'absolute';
       this.rotate = true;
       this.speed = '.8';
     }
@@ -139,12 +137,12 @@ export class SeedDropdown extends LitElement {
 
   render() {
     return html`
-      <slot name="button" @click='${this.mode !== 'collapse' ? this.openCollapse : this.openCol}'></slot>
+      <slot name="button" @click='${!this.collapse ? this.openCollapse : this.openCol}'></slot>
       <div class="dropdown" style="
             position: ${this.position};
             max-width: ${this.maxWidth}px;
             background-color: ${this.backgroundColor};
-            ${this.mode === 'collapse' ? `transition: max-height ${this.speed || '0'}s ease-in-out` : ''};"
+            ${this.collapse ? `transition: max-height ${this.speed || '0'}s ease-in-out` : ''};"
       >
         <slot name="content"></slot>
       </div>

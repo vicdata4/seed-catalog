@@ -31,7 +31,7 @@ storiesOf('Seed Catalog', module)
                 margin-right: 15px;
             }
         </style>
-        <seed-dropdown rotate="true">
+        <seed-dropdown rotate>
             <button id="restaurant" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">arrow_drop_down</i>Menu</button>
             <div slot="content" class="dropdown-links">
                 <a href="/">Select type</a>
