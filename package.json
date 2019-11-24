@@ -2,7 +2,10 @@
   "name": "seed-catalog",
   "version": "1.0.0",
   "description": "Seed-catalog is a free and open-source web-components library. It contains CSS-styles and standard-web based templates such as buttons, modals, dropdowns and other interface components.",
+  "author": "vghaya@gmail.com",
   "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/vicdata4/seed-catalog#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -s ./build -p 9001",
@@ -13,12 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/vicdata4/seed-catalog.git"
   },
-  "author": "vghaya@gmail.com",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/vicdata4/seed-catalog/issues"
   },
-  "homepage": "https://github.com/vicdata4/seed-catalog#readme",
   "devDependencies": {
     "@open-wc/demoing-storybook": "^0.2.5",
     "eslint": "^6.0.1",
