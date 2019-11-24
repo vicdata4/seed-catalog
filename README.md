@@ -127,6 +127,7 @@ Options
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
+import 'seed-catalog/carousel.js';
 
 class MyClass extends LitElement {
     static get styles() {
@@ -165,6 +166,8 @@ class MyClass extends LitElement {
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
+import 'seed-catalog/collapse.js';
+import 'seed-catalog/dropdown.js';
 
 class MyClass extends LitElement {
     static get styles() {
@@ -211,6 +214,7 @@ class MyClass extends LitElement {
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
+import 'seed-catalog/dropdown.js';
 
 class MyClass extends LitElement {
     static get styles() {
@@ -251,6 +255,7 @@ class MyClass extends LitElement {
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
+import 'seed-catalog/modal.js';
 
 class MyClass extends LitElement {
     static get styles() {
@@ -287,6 +292,7 @@ class MyClass extends LitElement {
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
+import 'seed-catalog/stepper.js';
 
 class MyClass extends LitElement {
     static get styles() {
