@@ -52,8 +52,8 @@ export class SeedStepper extends LitElement {
     this.square = false;
     this.nElements = 0;
     this.dotsArray = [];
-    this.colorActive = this.colorActive || '#d8336d';
-    this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
+    this.colorActive = '#d8336d';
+    this.colorBack = 'rgba(255,255,255,.5)';
   }
 
   render() {
@@ -61,7 +61,7 @@ export class SeedStepper extends LitElement {
       ${this.dotsArray.map((x, i) => html`
         <button
             tabindex="0"
-            @click="${() => this.setPosition(i)}" id="${'a' + i}"
+            @click="${() => this.setPosition(i)}" id="${`a${i}`}"
             class="dot ${this.square ? 'square' : ''}"
             .style="
                 background-color: ${this.colorBack}
@@ -102,7 +102,7 @@ export class SeedStepper extends LitElement {
     * @param {String} mod Assign active class (dot active)
     */
   setActive(i, mod) {
-    const currentDot = this.shadowRoot.querySelector('#a' + i);
+    const currentDot = this.shadowRoot.querySelector(`#a${i}`);
     if (currentDot) currentDot.classList = mod;
   }
 

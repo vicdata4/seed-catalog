@@ -179,25 +179,25 @@ class MyClass extends LitElement {
     render() {
         return html`
             <seed-collapse>
-                <seed-dropdown mode="collapse">
+                <seed-dropdown collapse>
                     <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
                     <p slot="content" class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
                 </seed-dropdown>
-                <seed-dropdown mode="collapse">
+                <seed-dropdown collapse>
                     <button id="lock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 2</button>
                     <p slot="content" class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
                 </seed-dropdown>
-                <seed-dropdown mode="collapse">
+                <seed-dropdown collapse>
                     <button id="drot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 3</button>
                     <p slot="content" class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
                 </seed-dropdown>
-                <seed-dropdown mode="collapse">
+                <seed-dropdown collapse>
                     <button id="lops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 4</button>
                     <p slot="content" class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
