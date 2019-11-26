@@ -15,7 +15,8 @@ export class SeedCollapse extends LitElement {
 
   static get properties() {
     return {
-      speed: { type: String }
+      speed: { type: String },
+      accordion: { type: Boolean, attribute: 'accordion' }
     };
   }
 
@@ -67,8 +68,14 @@ export class SeedCollapse extends LitElement {
   firstUpdated() {
     const collapseList = this.querySelectorAll('seed-dropdown');
     if (collapseList.length === 1) {
+      collapseList[0].collapse = true;
       this.setCollapse(collapseList, 'ease-in-out', '.8');
     } else {
+      if (this.accordion) {
+        collapseList.forEach(x => {
+          x.collapse = true;
+        });
+      }
       this.setCollapse(collapseList, 'linear', '1');
     }
   }
