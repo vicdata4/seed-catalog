@@ -8,10 +8,28 @@ storiesOf('Seed Catalog', module)
   .add('Modal', () => html`
         <style>
             ${seedStyle}
+
+            .title {
+                width: 100%;
+                text-align: left;
+            }
+
+            .yellow {
+              --seed-color-yellow: #e6af0e;
+              --seed-color-yellow-focus: #c89a0c3d;
+              --seed-color-yellow-hover: #d5a927;
+            }
+
+            .black {
+                --seed-color-black: #2f2d2d;
+                --seed-color-black-focus: #43434387;
+                --seed-color-black-hover: #434343;
+            }
         </style>
-  
+        <button class="sd-btn-mix black title"><i class="material-icons yellow">web_asset</i>Modal</button>
+        <br><br>
         <seed-modal>
-          <button slot="button" class="sd-btn-mix red"><i class="material-icons">people</i>Open modal</button>
+          <button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
           <button slot="close-btn" class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
           <span slot="title">Building Web Components</span>
           
@@ -25,7 +43,7 @@ storiesOf('Seed Catalog', module)
         </seed-modal>
 
         <seed-modal alignWindow="center">
-          <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Open modal</button>
+          <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Centered modal</button>
           <button slot="close-btn" class="sd-btn-empty"><i class="material-icons red-mate">close</i></button>
           <span slot="title">Building Web Components</span>
           

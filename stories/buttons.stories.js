@@ -72,9 +72,15 @@ storiesOf('Seed Catalog', module)
         text-decoration: none;
       }
 
+      .title {
+        width: 100%;
+        text-align: left;
+      }
+
       
     
     </style>
+    <button class="sd-btn-mix black title"><i class="material-icons green">touch_app</i>Buttons</button>
     <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
     <h2 class="sd-btn black sm"><span class="light">Color list</span></h2>
     <button class="sd-btn sm red">red</button>

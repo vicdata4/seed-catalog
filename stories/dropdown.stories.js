@@ -30,8 +30,27 @@ storiesOf('Seed Catalog', module)
             .dropdown-links > a > i{
                 margin-right: 15px;
             }
+
+            .title {
+                width: 100%;
+                text-align: left;
+            }
+
+            .blue-mate {
+                --seed-color-blue-mate: rgb(63, 118, 182);
+                --seed-color-blue-mate-focus: #2dabb445;
+                --seed-color-blue-mate-hover: rgb(53, 98, 149);
+            }
+
+            .black {
+                --seed-color-black: #2f2d2d;
+                --seed-color-black-focus: #43434387;
+                --seed-color-black-hover: #434343;
+            }
         </style>
 
+        <button class="sd-btn-mix black title"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
+        <br><br>
         <seed-dropdown position="relative">
             <button id="lorem" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">local_library</i>Dropdown relative</button>
             <p slot="content" class="content">

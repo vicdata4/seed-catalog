@@ -95,10 +95,11 @@ storiesOf('Seed', module)
     <a href="https://github.com/vicdata4/seed-catalog" target="_blank" class="sd-btn sm blue-mate">GitHub repository</a>
     <br><br>
     <button class="sd-btn-mix sm black"><i class="material-icons blue-mate">list</i>List of components</button><br><br>
+    <button class="sd-btn-mix sm black"><i class="material-icons blue">menu</i>Accordion</button>
     <button class="sd-btn-mix sm black"><i class="material-icons red">web_asset</i>Carousel</button>
     <button class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Buttons</button>
-    <button class="sd-btn-mix sm black"><i class="material-icons blue">web_asset</i>Modals</button>
-    <button class="sd-btn-mix sm black"><i class="material-icons yellow">keyboard_arrow_down</i>Dropdown</button>
+    <button class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modals</button>
+    <button class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
     <button class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
     <button class="sd-btn-mix sm black"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
     `);

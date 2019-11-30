@@ -1,39 +1,43 @@
 import { LitElement, html, css } from 'lit-element';
 import { empty } from './utils/constants';
+import { seedStyle } from '../styles';
 
 /** */
 export class SeedStepper extends LitElement {
 /* eslint-disable require-jsdoc */
   static get styles() {
-    return css`
-      :host {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-flow: row nowrap;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
+    return [
+      seedStyle,
+      css`
+        :host {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          flex-flow: row nowrap;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
 
-      .dot {
-        width: 15px;
-        height: 15px;
-        margin: 5px;
-        border-radius: 100%;
-        border: none;
-        cursor: pointer;
-        transition: background-color .7s;
-      }
+        .dot {
+          width: 15px;
+          height: 15px;
+          margin: 5px;
+          border-radius: 100%;
+          border: none;
+          cursor: pointer;
+          transition: background-color .7s;
+        }
 
-      .square {
-        margin: 0;
-        border-radius: unset;
-      }
+        .square {
+          margin: 0;
+          border-radius: unset;
+        }
 
-      .active {
-        background-color: white !important;
-      }
-    `;
+        .active {
+          background-color: white !important;
+        }
+      `
+    ];
   }
 
   static get properties() {

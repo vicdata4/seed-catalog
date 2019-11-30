@@ -14,8 +14,23 @@ storiesOf('Seed Catalog', module)
             * {
                 font-family: 'Ubuntu', sans-serif;
             }
+
+            .title {
+                width: 100%;
+                text-align: left;
+            }
+
+            html {
+                --seed-color-blue: #2dabb4;
+                --seed-color-blue-focus: #2dabb445;
+                --seed-color-blue-hover: #239aa3;
+
+                --seed-color-black: #2f2d2d;
+                --seed-color-black-focus: #43434387;
+                --seed-color-black-hover: #434343;
+            }
         </style>
-        <h2 class="sd-btn black sm">Accordion</h2>
+        <button class="sd-btn-mix black title"><i class="material-icons blue">menu</i>Accordion</button>
         <br><br>
         <seed-accordion>
             <seed-dropdown>

@@ -29,13 +29,31 @@ storiesOf('Seed Catalog', module)
                 width: 100%;
             }
 
+            .title {
+                width: 100%;
+                text-align: left;
+            }
+
+            .red {
+                --seed-color-red: #de3d4c;
+                --seed-color-red-focus: #ff00184d;
+                --seed-color-red-hover: #bb3440;
+            }
+
+            .black {
+                --seed-color-black: #2f2d2d;
+                --seed-color-black-focus: #43434387;
+                --seed-color-black-hover: #434343;
+            }
+
             @media screen and (min-width: 768px) {
                 .card {
                     width: 50%;
                 }
             }
         </style>
-        <h2 class="black">· Carousel - mobile touch</h2>
+        <button class="sd-btn-mix black title"><i class="material-icons red">web_asset</i>Carousel</button>
+        <h4 style="color:white;">Carousel - mobile touch</h4>
         <seed-carousel arrows stepper>
             <div class="black">Black</div> 
             <div class="red">Red</div>
@@ -43,7 +61,7 @@ storiesOf('Seed Catalog', module)
             <div class="green">Green</div>    
         </seed-carousel>
         <br><br>
-        <h2 class="black">· Carousel combinations</h2>
+        <h4 style="color:white;">Carousel combinations</h4>
         <div class="due-card">
             <seed-carousel class="card" stepper>
                 <div class="green-mate">Green mate</div>      
@@ -87,7 +105,7 @@ storiesOf('Seed Catalog', module)
             </seed-carousel>
         </div>
         <br><br>
-        <h2 class="black">· Carousel with images</h2>
+        <h4 style="color:white;">Carousel with images</h4>
         <seed-carousel arrows stepper>
             <img src="${carousel3}" alt="carousel3">
             <img src="${carousel1}" alt="carousel1">
@@ -95,7 +113,7 @@ storiesOf('Seed Catalog', module)
             <img src="${carousel4}" alt="carousel4">  
         </seed-carousel>
         <br><br>
-        <h2 class="black">· Carousel auto</h2>
+        <h4 style="color:white;">Carousel auto</h4>
         <seed-carousel auto stepper>
             <div class="green">Green</div>
             <div class="red">Red</div>
