@@ -56,9 +56,7 @@ storiesOf('Seed Catalog', module)
                 <a href="/"><i class="material-icons green-mate sm">local_cafe</i>Desserts</a>
                 <a href="/"><i class="material-icons red sm">local_bar</i>Drinks</a>
             </div>
-        </seed-dropdown>
-
-        
+        </seed-dropdown>    
 
         <seed-dropdown maxWidth="300" clickout>
             <button id="lorem" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">local_library</i>Dropdown Width</button>

@@ -38,6 +38,7 @@ from `package.json`
 
 ## Catalog
 
+- [Accordion](#accordion)
 - [Button classes](#button-classes)
 - [Carousel](#carousel)
 - [Collapse](#collapse)
