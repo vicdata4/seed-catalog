@@ -152,7 +152,7 @@ export class SeedCarousel extends LitElement {
   showStepper() {
     return this.stepper ? html`
         <seed-stepper
-          .nElements="${this.nCards}"
+          .size="${this.nCards}"
           .index="${this.index}"
           .colorBack="${'rgba(255,255,255,.5)'}"
           .square="${this.square}">

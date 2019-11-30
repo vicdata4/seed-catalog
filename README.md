@@ -118,12 +118,12 @@ class MyClass extends LitElement {
 
 Options
 
-- arrows
-- stepper
-- auto
-- square
-- speed (property Number) ej .3  .7  1  2
-- interval (property Number) milliseconds ej 2000
+- `arrows`
+- `stepper`
+- `auto`
+- `square`
+- `speed` Number ej .3  .7  1  2
+- `interval` Number milliseconds ej 2000
 
 ```js
 import { LitElement, html, css } from 'lit-element';
@@ -163,6 +163,11 @@ class MyClass extends LitElement {
 ```
 
 ## Collapse
+
+Options
+
+- `speed` String
+- `accordion`
 
 ```js
 import { LitElement, html, css } from 'lit-element';
@@ -214,13 +219,13 @@ class MyClass extends LitElement {
                 <seed-dropdown>
                     <button id="lolv" slot="button" class="sd-btn-mix red"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
                     <p slot="content" class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
                 </seed-dropdown>
                 <seed-dropdown>
                     <button id="lockv" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 2</button>
                     <p slot="content" class="content">
-                        Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo.
+                        Fusce convallis lacus enim, eget ultricies neque tristique vel.
                     </p>
                 </seed-dropdown>
                 <seed-dropdown>
@@ -232,7 +237,7 @@ class MyClass extends LitElement {
                 <seed-dropdown>
                     <button id="lopsv" slot="button" class="sd-btn-mix purple"><i class="material-icons">keyboard_arrow_down</i>Accordion 4</button>
                     <p slot="content" class="content">
-                        Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                        Fusce convallis lacus enim, eget ultricies neque tristique vel.
                     </p>
                     <p slot="content" class="content">
                         Lorem ipsum dolor sit amet.
@@ -246,6 +251,16 @@ class MyClass extends LitElement {
 
 
 ## Dropdown
+
+Options
+
+- `backgroundColor` String
+- `rotate` String
+- `position` String
+- `collapse` (attribute)
+- `clickout` (attribute)
+- `maxWidth` String
+- `speed` String
 
 ```js
 import { LitElement, html, css } from 'lit-element';
@@ -288,6 +303,11 @@ class MyClass extends LitElement {
 
 ## Modal
 
+Options
+
+- `modalBackground` String
+- `alignWindow` String
+
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
@@ -325,6 +345,11 @@ class MyClass extends LitElement {
 
 ## Stepper
 
+Options
+
+- `index` Number
+- `size` Number
+
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
@@ -342,7 +367,7 @@ class MyClass extends LitElement {
 
     render() {
         return html`
-            <seed-stepper .index="${2}" .nElements="${5}"></seed-stepper>
+            <seed-stepper .index="${2}" .size="${5}"></seed-stepper>
         `;
     }
 }

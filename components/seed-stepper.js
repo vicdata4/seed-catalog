@@ -39,7 +39,7 @@ export class SeedStepper extends LitElement {
   static get properties() {
     return {
       index: { type: Number },
-      nElements: { type: Number, reflect: true },
+      size: { type: Number, reflect: true },
       dotsArray: { type: Array },
       colorActive: { type: String },
       colorBack: { type: String },
@@ -51,7 +51,7 @@ export class SeedStepper extends LitElement {
     super();
     this.index = 0;
     this.square = false;
-    this.nElements = 0;
+    this.size = 0;
     this.dotsArray = [];
     this.colorActive = '#d8336d';
     this.colorBack = 'rgba(255,255,255,.5)';
@@ -91,7 +91,7 @@ export class SeedStepper extends LitElement {
   }
 
   attributeChangedCallback() {
-    const n = this.nElements;
+    const n = this.size;
     const abc = new Array(n).fill(empty);
     this.dotsArray = abc;
   }

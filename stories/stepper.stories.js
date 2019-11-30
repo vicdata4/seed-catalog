@@ -13,9 +13,9 @@ storiesOf('Seed Catalog', module)
             }
         </style>
         <h2 class="sd-btn black sm">Stepper / Dots component</h2>
-        <seed-stepper .index="${0}" .nElements="${5}"></seed-stepper>
-        <seed-stepper .index="${1}" .nElements="${5}"></seed-stepper>
-        <seed-stepper .index="${2}" .nElements="${5}"></seed-stepper>
-        <seed-stepper .index="${3}" .nElements="${5}"></seed-stepper>
-        <seed-stepper .index="${4}" .nElements="${5}"></seed-stepper>
+        <seed-stepper .index="${0}" .size="${5}"></seed-stepper>
+        <seed-stepper .index="${1}" .size="${5}"></seed-stepper>
+        <seed-stepper .index="${2}" .size="${5}"></seed-stepper>
+        <seed-stepper .index="${3}" .size="${5}"></seed-stepper>
+        <seed-stepper .index="${4}" .size="${5}"></seed-stepper>
     `);
