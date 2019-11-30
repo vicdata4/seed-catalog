@@ -1,5 +1,6 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css, unsafeCSS } from 'lit-element';
 import { seedStyle } from '../styles';
+import { mediaQueryTablet } from './utils/constants';
 
 export class SeedModal extends LitElement {
   static get styles() {
@@ -72,7 +73,7 @@ export class SeedModal extends LitElement {
           margin: 0 !important;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: ${unsafeCSS(mediaQueryTablet)}) {
           .modal-content {
             width: 50%;
           }

@@ -65,13 +65,12 @@ export class SeedStepper extends LitElement {
     return html`
       ${this.dotsArray.map((x, i) => html`
         <button
-            tabindex="0"
-            @click="${() => this.setPosition(i)}" id="${`a${i}`}"
-            class="dot ${this.square ? 'square' : empty}"
-            .style="
-                background-color: ${this.colorBack}
-            "
-            aria-label="${i}">
+          class="dot${this.square ? ' square' : empty}"
+          @click="${() => this.setPosition(i)}" id="${`a${i}`}"
+          .style="background-color: ${this.colorBack}"
+          aria-label="${i}"
+          tabindex="0"
+        >
         </button>
       `)}
     `;

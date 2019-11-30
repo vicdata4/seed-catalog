@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css, unsafeCSS } from 'lit-element';
 import { touchGestures } from './utils/carousel';
-import { empty } from './utils/constants';
+import { empty, mediaQueryTablet } from './utils/constants';
 import { seedStyle } from '../styles';
 import './seed-stepper.js';
 
@@ -63,7 +63,7 @@ export class SeedCarousel extends LitElement {
             bottom: 0;
         }
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {
           .arrow-btn {
             position: absolute;
             display: flex;
