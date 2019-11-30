@@ -21,71 +21,56 @@ export class SeedCollapse extends LitElement {
     };
   }
 
-  setParams(element, transition, height, maxHeight) {
+  setParams(element, transition, height, maxHeight, icon, rotate) {
     element.style.transition = transition;
     element.style.height = height;
     element.style.maxHeight = maxHeight;
+    icon.rotateIcon(rotate);
   }
 
-  setCollapse(collapseList, type, time_) {
+  listIterator(list, element, time, type) {
+    list.forEach(x => {
+      const dropdown = x.shadowRoot.querySelector('.dropdown');
+      if (dropdown.style.maxHeight === MAX_DROP_HEIGHT || element === dropdown) {
+        this.setParams(dropdown, `max-height ${time}s cubic-bezier(0, .6, 0, 1)`, 'unset', '0', x, '0');
+        if (element === dropdown) {
+          this.setParams(dropdown, `max-height ${time}s ${type}`, 'auto', MAX_DROP_HEIGHT, x, '180');
+        }
+      }
+    });
+  }
+
+  setCollapse(list, type, time_) {
     this.shadowRoot.addEventListener('set-collapse', e => {
-      const evElement = e.target.shadowRoot.querySelector('.dropdown');
+      const element = e.target.shadowRoot.querySelector('.dropdown');
       const time = time_;
       const cubicTransition = `max-height ${time}s cubic-bezier(0, 1, 0, 1)`;
 
-      if (evElement.style.maxHeight === MAX_DROP_HEIGHT) {
-        this.setParams(evElement, cubicTransition, 'unset', '0');
-        e.target.rotateIcon('0');
+      if (element.style.maxHeight === MAX_DROP_HEIGHT) {
+        this.setParams(element, cubicTransition, 'unset', '0', e.target, '0');
       } else {
-        collapseList.forEach(x => {
-          const dropdown = x.shadowRoot.querySelector('.dropdown');
-          if (dropdown.style.maxHeight === MAX_DROP_HEIGHT || evElement === dropdown) {
-            setTimeout(() => {
-              this.setParams(
-                dropdown,
-                `max-height ${time}s cubic-bezier(0, .6, 0, 1)`,
-                'unset',
-                '0'
-              );
-              x.rotateIcon('0');
-              setTimeout(() => {
-                if (evElement === dropdown) {
-                  this.setParams(
-                    dropdown,
-                    `max-height ${time}s ${type}`,
-                    'auto',
-                    MAX_DROP_HEIGHT
-                  );
-                  x.rotateIcon('180');
-                }
-              });
-            });
-          }
-        });
+        this.listIterator(list, element, time, type);
       }
     });
   }
 
   firstUpdated() {
+    let list = [];
     const dropdownList = this.querySelectorAll('seed-dropdown');
-
-    let collapseList = [];
     let slottedList = this.querySelector('slot');
     slottedList = (slottedList) ? slottedList.assignedElements() : [];
 
-    if (dropdownList.length > 0) collapseList = dropdownList;
-    if (slottedList.length > 0) collapseList = slottedList;
+    if (dropdownList.length > 0) list = dropdownList;
+    if (slottedList.length > 0) list = slottedList;
 
-    if (collapseList.length === 1) {
-      collapseList[0].collapse = true;
-      this.setCollapse(collapseList, 'ease-in-out', '.8');
+    if (list.length === 1) {
+      list[0].collapse = true;
+      this.setCollapse(list, 'ease-in-out', '.8');
     } else {
-      if (this.accordion && collapseList.length > 0) {
-        collapseList.forEach(x => {
-          x.collapse = true;
-        });
+      if (this.accordion && list.length > 0) {
+        list.forEach(x => { x.collapse = true; });
       }
-      this.setCollapse(collapseList, 'linear', '1');
+      this.setCollapse(list, 'linear', '1');
     }
   }
 

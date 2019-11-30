@@ -365,7 +365,7 @@ class MyComponent extends LitElement {
     constructor() {
         super();
         this.index = 0;
-        this.size = 5
+        this.size = 5;
     }
 
     render() {
