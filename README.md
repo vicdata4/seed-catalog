@@ -352,22 +352,25 @@ Options
 
 ```js
 import { LitElement, html, css } from 'lit-element';
-import { seedStyle } from 'seed-catalog/styles.js';
 import 'seed-catalog/stepper.js';
 
 class MyComponent extends LitElement {
-    static get styles() {
-        return [
-            seedStyle,
-            css`
-                ...
-            `
-        ];
+    static get properties() {
+        return {
+            index: { type: Number },
+            size: { type: Number },
+        };
+    }
+
+    constructor() {
+        super();
+        this.index = 0;
+        this.size = 5
     }
 
     render() {
         return html`
-            <seed-stepper .index="${2}" .size="${5}"></seed-stepper>
+            <seed-stepper .index="${this.index}" .size="${this.size}"></seed-stepper>
         `;
     }
 }
