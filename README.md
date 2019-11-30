@@ -63,7 +63,7 @@ Material icons is integrated as dependency of this class, so you can create more
 import { LitElement, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
 
-class MyClass extends LitElement {
+class MyComponent extends LitElement {
     static get styles() {
         return [
             seedStyle,
@@ -130,7 +130,7 @@ import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
 import 'seed-catalog/carousel.js';
 
-class MyClass extends LitElement {
+class MyComponent extends LitElement {
     static get styles() {
         return [
             seedStyle
@@ -164,10 +164,10 @@ class MyClass extends LitElement {
 
 ## Collapse
 
-Options
+Options (ptional)
 
 - `speed` String
-- `accordion`
+- `accordion` attribute
 
 ```js
 import { LitElement, html, css } from 'lit-element';
@@ -175,7 +175,7 @@ import { seedStyle } from 'seed-catalog/styles.js';
 import 'seed-catalog/collapse.js';
 import 'seed-catalog/dropdown.js';
 
-class MyClass extends LitElement {
+class MyComponent extends LitElement {
     static get styles() {
         return [
             seedStyle
@@ -206,7 +206,7 @@ import { seedStyle } from 'seed-catalog/styles.js';
 import 'seed-catalog/collapse.js';
 import 'seed-catalog/dropdown.js';
 
-class MyClass extends LitElement {
+class MyComponent extends LitElement {
     static get styles() {
         return [
             seedStyle
@@ -257,8 +257,8 @@ Options
 - `backgroundColor` String
 - `rotate` String
 - `position` String
-- `collapse` (attribute)
-- `clickout` (attribute)
+- `collapse` attribute
+- `clickout` attribute
 - `maxWidth` String
 - `speed` String
 
@@ -267,7 +267,7 @@ import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
 import 'seed-catalog/dropdown.js';
 
-class MyClass extends LitElement {
+class MyComponent extends LitElement {
     static get styles() {
         return [
             seedStyle,
@@ -313,7 +313,7 @@ import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
 import 'seed-catalog/modal.js';
 
-class MyClass extends LitElement {
+class MyComponent extends LitElement {
     static get styles() {
         return [
             seedStyle,
@@ -355,7 +355,7 @@ import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
 import 'seed-catalog/stepper.js';
 
-class MyClass extends LitElement {
+class MyComponent extends LitElement {
     static get styles() {
         return [
             seedStyle,
