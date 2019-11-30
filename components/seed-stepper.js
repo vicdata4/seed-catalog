@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import { empty } from './utils/constants';
 
 /** */
 export class SeedStepper extends LitElement {
@@ -62,7 +63,7 @@ export class SeedStepper extends LitElement {
         <button
             tabindex="0"
             @click="${() => this.setPosition(i)}" id="${`a${i}`}"
-            class="dot ${this.square ? 'square' : ''}"
+            class="dot ${this.square ? 'square' : empty}"
             .style="
                 background-color: ${this.colorBack}
             "
@@ -73,7 +74,7 @@ export class SeedStepper extends LitElement {
   }
 
   firstUpdated() {
-    const square = this.square ? ' square' : '';
+    const square = this.square ? ' square' : empty;
     this.setActive(this.index, `dot${square} active`);
   }
 
@@ -82,7 +83,7 @@ export class SeedStepper extends LitElement {
   * @param {Number} changedProps Update active class when the index changes
   */
   updated(changedProps) {
-    const square = this.square ? ' square' : '';
+    const square = this.square ? ' square' : empty;
     if (this.index || changedProps.get('index')) {
       this.setActive(this.index, `dot${square} active`);
       this.setActive(changedProps.get('index'), `dot${square}`);
@@ -91,7 +92,7 @@ export class SeedStepper extends LitElement {
 
   attributeChangedCallback() {
     const n = this.nElements;
-    const abc = new Array(n).fill('');
+    const abc = new Array(n).fill(empty);
     this.dotsArray = abc;
   }
   /* eslint-enable require-jsdoc */

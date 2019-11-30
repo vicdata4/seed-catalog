@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { touchGestures } from './utils/carousel';
+import { empty } from './utils/constants';
 import { seedStyle } from '../styles';
 import './seed-stepper.js';
 
@@ -145,7 +146,7 @@ export class SeedCarousel extends LitElement {
               <i class="material-icons lg">keyboard_arrow_right</i>
           </button>
        `
-      : '';
+      : empty;
   }
 
   showStepper() {
@@ -156,7 +157,7 @@ export class SeedCarousel extends LitElement {
           .colorBack="${'rgba(255,255,255,.5)'}"
           .square="${this.square}">
         </seed-stepper>
-     ` : '';
+     ` : empty;
   }
 
   render() {

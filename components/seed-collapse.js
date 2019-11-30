@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import { MAX_DROP_HEIGHT } from './utils/constants';
 
 export class SeedCollapse extends LitElement {
   static get styles() {
@@ -32,13 +33,13 @@ export class SeedCollapse extends LitElement {
       const time = time_;
       const cubicTransition = `max-height ${time}s cubic-bezier(0, 1, 0, 1)`;
 
-      if (evElement.style.maxHeight === '600px') {
+      if (evElement.style.maxHeight === MAX_DROP_HEIGHT) {
         this.setParams(evElement, cubicTransition, 'unset', '0');
         e.target.rotateIcon('0');
       } else {
         collapseList.forEach(x => {
           const dropdown = x.shadowRoot.querySelector('.dropdown');
-          if (dropdown.style.maxHeight === '600px' || evElement === dropdown) {
+          if (dropdown.style.maxHeight === MAX_DROP_HEIGHT || evElement === dropdown) {
             setTimeout(() => {
               this.setParams(
                 dropdown,
@@ -53,7 +54,7 @@ export class SeedCollapse extends LitElement {
                     dropdown,
                     `max-height ${time}s ${type}`,
                     'auto',
-                    '600px'
+                    MAX_DROP_HEIGHT
                   );
                   x.rotateIcon('180');
                 }
@@ -66,12 +67,20 @@ export class SeedCollapse extends LitElement {
   }
 
   firstUpdated() {
-    const collapseList = this.querySelectorAll('seed-dropdown');
+    const dropdownList = this.querySelectorAll('seed-dropdown');
+
+    let collapseList = [];
+    let slottedList = this.querySelector('slot');
+    slottedList = (slottedList) ? slottedList.assignedElements() : [];
+
+    if (dropdownList.length > 0) collapseList = dropdownList;
+    if (slottedList.length > 0) collapseList = slottedList;
+
     if (collapseList.length === 1) {
       collapseList[0].collapse = true;
       this.setCollapse(collapseList, 'ease-in-out', '.8');
     } else {
-      if (this.accordion) {
+      if (this.accordion && collapseList.length > 0) {
         collapseList.forEach(x => {
           x.collapse = true;
         });
