@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import { MAX_DROP_HEIGHT, empty } from './utils/constants';
+import { MAX_DROP_HEIGHT } from './utils/constants';
 import { seedStyle } from '../styles';
 
 const setHeight = (dropdown, height, maxHeight) => {
@@ -62,7 +62,34 @@ export class SeedDropdown extends LitElement {
     this.speed = this.speed || '.5';
   }
 
-  closeOnClickOut() {
+  rotateIcon(value) {
+    const icon = this.slotted.assignedNodes()[0].querySelector('i');
+    if (this.rotate) {
+      icon.style.transition = 'transform .2s ease-in';
+      icon.style.transform = `rotate(${value}deg)`;
+    }
+  }
+
+  openDropdown() {
+    const isOpen = this.dropdown.style.height === 'auto';
+    const height = isOpen ? 'unset' : 'auto';
+    const maxHeight = isOpen ? '0' : MAX_DROP_HEIGHT;
+
+    setHeight(this.dropdown, height, maxHeight);
+    this.rotateIcon(isOpen ? '0' : '180');
+  }
+
+  openCollapse(event) {
+    this.dispatchEvent(
+      new CustomEvent('set-collapse', {
+        bubbles: true,
+        composed: true,
+        detail: { event }
+      })
+    );
+  }
+
+  dropdownClickListener() {
     if (this.clickout) {
       const dropdown = this.dropdown;
       const rotate = this.rotateIcon.bind(this);
@@ -83,54 +110,20 @@ export class SeedDropdown extends LitElement {
     this.dropdown = this.shadowRoot.querySelector('.dropdown');
     this.slotted = this.shadowRoot.querySelector('slot');
 
-    this.closeOnClickOut();
+    this.dropdownClickListener();
     if (this.collapse) {
       this.rotate = true;
       this.speed = '.8';
     }
   }
 
-  rotateIcon(value) {
-    const icon = this.slotted.assignedNodes()[0].querySelector('i');
-    if (this.rotate) {
-      icon.style.transition = 'transform .2s ease-in';
-      icon.style.transform = `rotate(${value}deg)`;
-    }
-  }
-
-  openCollapse() {
-    if (this.dropdown.style.height === 'auto') {
-      setHeight(this.dropdown, 'unset', '0');
-      this.rotateIcon('0');
-    } else {
-      setHeight(this.dropdown, 'auto', MAX_DROP_HEIGHT);
-      this.rotateIcon('180');
-    }
-  }
-
-  openCol(event) {
-    this.dispatchEvent(
-      new CustomEvent('set-collapse', {
-        bubbles: true,
-        composed: true,
-        detail: { event }
-      })
-    );
-  }
-
-  setPosition() {
-    return this.position ? this.position : this.collapse ? 'relative' : 'absolute';
-  }
-
   render() {
     return html`
-      <slot name="button" @click='${!this.collapse ? this.openCollapse : this.openCol}'></slot>
-      <div class="dropdown" style="
-        position: ${this.setPosition()};
-        max-width: ${this.maxWidth}px;
-        background-color: ${this.backgroundColor};
-        ${this.collapse ? `transition: max-height ${this.speed || '0'}s ease-in-out` : empty};"
-      >
+      <slot name="button" @click='${this.collapse ? this.openCollapse : this.openDropdown}'></slot>
+      <div class="dropdown"
+           style="position: ${this.position ? this.position : this.collapse ? 'relative' : 'absolute'};
+                  max-width: ${this.maxWidth}px;
+                  background-color: ${this.backgroundColor};">
         <slot name="content"></slot>
       </div>
     `;
