@@ -36,20 +36,6 @@ export class SeedDropdown extends LitElement {
           padding: 15px;
         }
 
-        .show {
-          height: auto;
-          width: auto;
-          background-color: white;
-          max-height: 600px;
-          transition: 250ms ease-out;
-        }
-
-        .hide {
-          height: 0;
-          max-height: 0 !important;
-          transition: 250ms ease-in;
-        }
-
         .house {
           max-width: 250px;
         }
@@ -80,7 +66,7 @@ export class SeedDropdown extends LitElement {
     if (this.clickout) {
       const dropdown = this.dropdown;
       const rotate = this.rotateIcon.bind(this);
-      const button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
+      const button = this.slotted.assignedNodes()[0];
 
       document.addEventListener('click', function(e) {
         if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
@@ -93,8 +79,10 @@ export class SeedDropdown extends LitElement {
     }
   }
 
-  clickOutListener() {
+  firstUpdated() {
     this.dropdown = this.shadowRoot.querySelector('.dropdown');
+    this.slotted = this.shadowRoot.querySelector('slot');
+
     this.closeOnClickOut();
     if (this.collapse) {
       this.rotate = true;
@@ -102,15 +90,8 @@ export class SeedDropdown extends LitElement {
     }
   }
 
-  firstUpdated() {
-    this.clickOutListener();
-  }
-
   rotateIcon(value) {
-    const icon = this.shadowRoot
-      .querySelector('slot')
-      .assignedNodes()[0]
-      .querySelector('i');
+    const icon = this.slotted.assignedNodes()[0].querySelector('i');
     if (this.rotate) {
       icon.style.transition = 'transform .2s ease-in';
       icon.style.transform = `rotate(${value}deg)`;
@@ -122,10 +103,8 @@ export class SeedDropdown extends LitElement {
       setHeight(this.dropdown, 'unset', '0');
       this.rotateIcon('0');
     } else {
-      setTimeout(() => {
-        setHeight(this.dropdown, 'auto', MAX_DROP_HEIGHT);
-        this.rotateIcon('180');
-      });
+      setHeight(this.dropdown, 'auto', MAX_DROP_HEIGHT);
+      this.rotateIcon('180');
     }
   }
 
