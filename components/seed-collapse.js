@@ -1,20 +1,11 @@
 import { LitElement, html, css } from 'lit-element';
 import { MAX_DROP_HEIGHT } from './utils/constants';
 
-const addTransition = params => {
-  const {
-    dropdown,
-    component,
-    transition,
-    height = 'unset',
-    maxHeight = '0',
-    rotate = '0'
-  } = params;
-
+const collapseTransition = params => {
+  const { dropdown, transition, height, maxHeight } = params;
   dropdown.style.transition = transition;
   dropdown.style.height = height;
   dropdown.style.maxHeight = maxHeight;
-  component.rotateIcon(rotate);
 };
 
 export class SeedCollapse extends LitElement {
@@ -37,43 +28,80 @@ export class SeedCollapse extends LitElement {
     };
   }
 
-  dropdownListIterator(list, element_, time, type) {
+  /**
+   * collapseAccordionList()
+   *
+   * This function close opened dropdowns and open closed dropdowns
+   * in order to get the accordion effect
+   *
+   * @param {Array} list seed-dropdown list
+   * @param {Tag} element seed-dropdown > .dropdown
+   * @param {String} time (max-with 5s)
+   * @param {String} type (ease-in-out, linear)
+   */
+
+  collapseAccordionList(list, element, time, type) {
     list.forEach(component => {
       const dropdown = component.shadowRoot.querySelector('.dropdown');
-      if (dropdown.style.maxHeight === MAX_DROP_HEIGHT || element_ === dropdown) {
-        addTransition({
+      const isClosed = element === dropdown;
+      const isOpened = dropdown.style.maxHeight === MAX_DROP_HEIGHT;
+
+      if (isOpened) {
+        collapseTransition({
           dropdown,
-          component,
-          transition: `max-height ${time}s cubic-bezier(0, .6, 0, 1)`
+          transition: `${time} cubic-bezier(0, .6, 0, 1)`,
+          height: 'unset',
+          maxHeight: '0'
         });
-        if (element_ === dropdown) {
-          addTransition({
-            dropdown,
-            component,
-            transition: `max-height ${time}s ${type}`,
-            height: 'auto',
-            maxHeight: MAX_DROP_HEIGHT,
-            rotate: '180'
-          });
-        }
+        component.rotateIcon('0');
+      }
+
+      if (isClosed) {
+        collapseTransition({
+          dropdown,
+          transition: `${time} ${type}`,
+          height: 'auto',
+          maxHeight: MAX_DROP_HEIGHT
+        });
+        component.rotateIcon('180');
       }
     });
   }
 
+  /**
+   * setCollapse()
+   *
+   * @param {Array} list seed-dropdown list
+   * @param {String} time (max-with 5s)
+   * @param {String} type (ease-in-out, linear)
+   */
+
   setCollapse(list, type, time) {
-    this.shadowRoot.addEventListener('set-collapse', element_ => {
-      const dropdown = element_.target.shadowRoot.querySelector('.dropdown');
-      if (dropdown.style.maxHeight === MAX_DROP_HEIGHT) {
-        addTransition({
+    this.shadowRoot.addEventListener('set-collapse', component => {
+      const dropdown = component.target.shadowRoot.querySelector('.dropdown');
+      const isOpened = dropdown.style.maxHeight === MAX_DROP_HEIGHT;
+      if (isOpened) {
+        collapseTransition({
           dropdown,
-          component: element_.target,
-          transition: `max-height ${time}s cubic-bezier(0, 1, 0, 1)`
+          transition: `${time} cubic-bezier(0, 1, 0, 1)`,
+          height: 'unset',
+          maxHeight: '0'
         });
+        component.target.rotateIcon('0');
       } else {
-        this.dropdownListIterator(list, dropdown, time, type);
+        this.collapseAccordionList(list, dropdown, time, type);
       }
     });
   }
+
+  /**
+   * getDropdownList()
+   *
+   * Return dropdown-list from collapse component
+   * or slotted-list from accordion component
+   *
+   * @return {Array}
+   */
 
   getDropdownList() {
     const dropdownList = this.querySelectorAll('seed-dropdown');
@@ -83,6 +111,11 @@ export class SeedCollapse extends LitElement {
     return (dropdownList.length > 0) ? dropdownList : (slottedList.length > 0) ? slottedList : [];
   }
 
+  /**
+   *
+   * Get dropdownList() and set transition and speed according to list length
+   */
+
   collapseDropdown() {
     const list = this.getDropdownList();
 
@@ -90,7 +123,7 @@ export class SeedCollapse extends LitElement {
       list.forEach(x => { x.collapse = true; });
       const transitionType = list.length > 1 ? 'linear' : 'ease-in-out';
       const transitionSpeed = list.length > 1 ? '1' : '.8';
-      this.setCollapse(list, transitionType, transitionSpeed);
+      this.setCollapse(list, transitionType, `max-height ${transitionSpeed}s`);
     }
   }
 
