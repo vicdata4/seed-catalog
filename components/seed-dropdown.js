@@ -2,6 +2,11 @@ import { LitElement, html, css } from 'lit-element';
 import { MAX_DROP_HEIGHT, empty } from './utils/constants';
 import { seedStyle } from '../styles';
 
+const setHeight = (dropdown, height, maxHeight) => {
+  dropdown.style.height = height;
+  dropdown.style.maxHeight = maxHeight;
+};
+
 export class SeedDropdown extends LitElement {
   static get styles() {
     return [
@@ -71,29 +76,26 @@ export class SeedDropdown extends LitElement {
     this.speed = this.speed || '.5';
   }
 
-  clickOutListener() {
-    this.dropdown = this.shadowRoot.querySelector('.dropdown');
-
+  closeOnClickOut() {
     if (this.clickout) {
       const dropdown = this.dropdown;
       const rotate = this.rotateIcon.bind(this);
       const button = this.shadowRoot.querySelector('slot').assignedNodes()[0];
 
       document.addEventListener('click', function(e) {
-        if (
-          (e.target.tagName !== 'BUTTON' || e.target.id !== button.id) &&
-          e.target.className !== 'content'
-        ) {
-          dropdown.style.height = 'unset';
-          dropdown.style.maxHeight = '0';
+        if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
+          setHeight(dropdown, 'unset', '0');
           rotate('0');
         } else if (e.target === this) {
-          dropdown.style.height = 'auto';
-          dropdown.style.maxHeight = MAX_DROP_HEIGHT;
+          setHeight(dropdown, 'auto', MAX_DROP_HEIGHT);
         }
       });
     }
+  }
 
+  clickOutListener() {
+    this.dropdown = this.shadowRoot.querySelector('.dropdown');
+    this.closeOnClickOut();
     if (this.collapse) {
       this.rotate = true;
       this.speed = '.8';
@@ -117,13 +119,11 @@ export class SeedDropdown extends LitElement {
 
   openCollapse() {
     if (this.dropdown.style.height === 'auto') {
-      this.dropdown.style.height = 'unset';
-      this.dropdown.style.maxHeight = '0';
+      setHeight(this.dropdown, 'unset', '0');
       this.rotateIcon('0');
     } else {
       setTimeout(() => {
-        this.dropdown.style.height = 'auto';
-        this.dropdown.style.maxHeight = MAX_DROP_HEIGHT;
+        setHeight(this.dropdown, 'auto', MAX_DROP_HEIGHT);
         this.rotateIcon('180');
       });
     }
@@ -140,12 +140,7 @@ export class SeedDropdown extends LitElement {
   }
 
   setPosition() {
-    let position = 'absolute';
-
-    if (this.collapse) position = 'relative';
-    if (this.position) position = this.position;
-
-    return position;
+    return this.position ? this.position : this.collapse ? 'relative' : 'absolute';
   }
 
   render() {

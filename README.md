@@ -6,7 +6,6 @@
 
 Seed-catalog is a free and open-source `web-components library`. It contains CSS-styles and standard-web based templates such as buttons, modals, dropdowns and other interface components.
 
-
 ### [Dependencies](package.json)
 
 - [Storybook](https://storybook.js.org) WC Interface
@@ -14,7 +13,7 @@ Seed-catalog is a free and open-source `web-components library`. It contains CSS
 - [ESLint](https://eslint.org) Coding style
 
 
-###  Add as project dependency
+###  Add as project dependency (98kb)
 
 `LitElement is required.`
 
