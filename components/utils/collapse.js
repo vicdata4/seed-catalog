@@ -35,6 +35,7 @@ const collapseAccordion = ({ list, element, time, type }) => {
         height: 'unset',
         maxHeight: '0'
       });
+
       component.rotateIcon('0');
     }
 
@@ -45,6 +46,7 @@ const collapseAccordion = ({ list, element, time, type }) => {
         height: 'auto',
         maxHeight: MAX_DROP_HEIGHT
       });
+
       component.rotateIcon('180');
     }
   });
@@ -59,6 +61,7 @@ const collapseAccordion = ({ list, element, time, type }) => {
 export const collapseUtils = ({ component, list, time, type }) => {
   const dropdown = component.target.shadowRoot.querySelector('.dropdown');
   const isOpened = dropdown.style.maxHeight === MAX_DROP_HEIGHT;
+
   if (isOpened) {
     transition({
       dropdown,

@@ -58,8 +58,9 @@ storiesOf('Seed Catalog', module)
                 </p>
             </seed-dropdown>
         </seed-accordion>
+        
         <br><br>
-        <seed-collapse accordion>
+        <seed-collapse>
             <seed-dropdown rotate>
                 <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
                 <p slot="content" class="content">

@@ -34,33 +34,58 @@ storiesOf('Seed Catalog', module)
         <button class="sd-btn-mix black title"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
         <br><br><br>
         <div>
+            <seed-collapse>
+                <seed-dropdown position="absolute" maxWidth="300" rotate clickout>
+                    <button id="paragrapx" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse absolute</button>
+                    <p slot="content" class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                    </p>
+                </seed-dropdown>
+            </seed-collapse>
+            <seed-collapse>
+                <seed-dropdown maxWidth="300" rotate>
+                    <button id="paragrap" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse relative</button>
+                    <p slot="content" class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                    </p>
+                </seed-dropdown>
+            </seed-collapse>
 
-        <seed-collapse>
-            <seed-dropdown position="absolute" maxWidth="300" rotate clickout>
-                <button id="paragrapx" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse absolute</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-        </seed-collapse>
-        <seed-collapse>
-            <seed-dropdown maxWidth="300" rotate>
-                <button id="paragrap" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse relative</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-        </seed-collapse>
-
-        <seed-collapse>
-            <seed-dropdown clickout>
-                <button id="paragrapx" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Default Collapse</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-        </seed-collapse>
-
-        
+            <seed-collapse>
+                <seed-dropdown clickout>
+                    <button id="paragrapx" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Default Collapse</button>
+                    <p slot="content" class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                    </p>
+                </seed-dropdown>
+            </seed-collapse>        
         </div>
+
+        <br><br>
+        <seed-collapse basic>
+            <seed-dropdown>
+                <button id="zlol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Basic mode 1</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </seed-dropdown>
+            <seed-dropdown>
+                <button id="zlock" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Basic mode 2</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </seed-dropdown>
+            <seed-dropdown>
+                <button id="zdrot" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Basic mode 3</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </seed-dropdown>
+            <seed-dropdown>
+                <button id="zlops" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Basic mode 4</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </seed-dropdown>
+        </seed-collapse>
     `);

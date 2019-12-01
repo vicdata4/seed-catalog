@@ -8,46 +8,46 @@ storiesOf('Seed Catalog', module)
       ${seedStyle}
 
       html {
-      --seed-color-red: #de3d4c;
-      --seed-color-red-focus: #ff00184d;
-      --seed-color-red-hover: #bb3440;
+        --seed-color-red: #de3d4c;
+        --seed-color-red-focus: #ff00184d;
+        --seed-color-red-hover: #bb3440;
 
-      --seed-color-green: #22ac41;
-      --seed-color-green-focus: #7fc72a45;
-      --seed-color-green-hover: #199936;
+        --seed-color-green: #22ac41;
+        --seed-color-green-focus: #7fc72a45;
+        --seed-color-green-hover: #199936;
 
-      --seed-color-blue: #2dabb4;
-      --seed-color-blue-focus: #2dabb445;
-      --seed-color-blue-hover: #239aa3;
+        --seed-color-blue: #2dabb4;
+        --seed-color-blue-focus: #2dabb445;
+        --seed-color-blue-hover: #239aa3;
 
-      --seed-color-yellow: #e6af0e;
-      --seed-color-yellow-focus: #c89a0c3d;
-      --seed-color-yellow-hover: #d5a927;
+        --seed-color-yellow: #e6af0e;
+        --seed-color-yellow-focus: #c89a0c3d;
+        --seed-color-yellow-hover: #d5a927;
 
-      --seed-color-purple: #903e8d;
-      --seed-color-purple-focus: #903e8d5e;
-      --seed-color-purple-hover: #663564;
+        --seed-color-purple: #903e8d;
+        --seed-color-purple-focus: #903e8d5e;
+        --seed-color-purple-hover: #663564;
 
-      --seed-color-black: #2f2d2d;
-      --seed-color-black-focus: #43434387;
-      --seed-color-black-hover: #434343;
+        --seed-color-black: #2f2d2d;
+        --seed-color-black-focus: #43434387;
+        --seed-color-black-hover: #434343;
 
-      --seed-color-orange: #d58309;
-      --seed-color-orange-focus: #e09e2057;
-      --seed-color-orange-hover: #b46e06;
+        --seed-color-orange: #d58309;
+        --seed-color-orange-focus: #e09e2057;
+        --seed-color-orange-hover: #b46e06;
 
-      --seed-color-green-mate: #1C8281;
-      --seed-color-green-mate-focus: #2dabb445;
-      --seed-color-green-mate-hover: rgb(51, 121, 120);
+        --seed-color-green-mate: #1C8281;
+        --seed-color-green-mate-focus: #2dabb445;
+        --seed-color-green-mate-hover: rgb(51, 121, 120);
 
-      --seed-color-red-mate: #bf4545;
-      --seed-color-red-mate-focus: #ff00184d;
-      --seed-color-red-mate-hover: rgb(176, 63, 63);
+        --seed-color-red-mate: #bf4545;
+        --seed-color-red-mate-focus: #ff00184d;
+        --seed-color-red-mate-hover: rgb(176, 63, 63);
 
-      --seed-color-blue-mate: rgb(63, 118, 182);
-      --seed-color-blue-mate-focus: #2dabb445;
-      --seed-color-blue-mate-hover: rgb(53, 98, 149);
-    }
+        --seed-color-blue-mate: rgb(63, 118, 182);
+        --seed-color-blue-mate-focus: #2dabb445;
+        --seed-color-blue-mate-hover: rgb(53, 98, 149);
+      }
 
       h2, p {
         color: red;
@@ -76,9 +76,6 @@ storiesOf('Seed Catalog', module)
         width: 100%;
         text-align: left;
       }
-
-      
-    
     </style>
     <button class="sd-btn-mix black title"><i class="material-icons green">touch_app</i>Buttons</button>
     <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
@@ -156,7 +153,7 @@ storiesOf('Seed Catalog', module)
       <button class="sd-icon blue sm"><i class="material-icons">menu</i></button>
       <button class="sd-icon blue-mate"><i class="material-icons">gps_fixed</i></button>
       <button class="sd-icon green circle"><i class="material-icons">face</i></button>
-      <button class="sd-btn red-mate">Red Mate</button>
+      <button class="sd-btn red-mate">Nestle</button>
       <button class="sd-icon red-mate circle"><i class="material-icons">audiotrack</i></button>
       <button class="sd-btn black">Black</button>
       <button class="sd-btn green">send</button>

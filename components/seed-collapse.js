@@ -17,7 +17,8 @@ export class SeedCollapse extends LitElement {
   static get properties() {
     return {
       speed: { type: String },
-      accordion: { type: Boolean, attribute: 'accordion' }
+      accordion: { type: Boolean, attribute: 'accordion' },
+      basic: { type: Boolean, attribute: 'basic' }
     };
   }
 
@@ -55,7 +56,7 @@ export class SeedCollapse extends LitElement {
           component,
           list,
           type: manyDropdowns ? 'linear' : 'ease-in-out',
-          time: `max-height ${manyDropdowns ? '1' : '.8'}s`
+          time: `max-height ${this.basic ? '0' : manyDropdowns ? '1' : '.8'}s`
         });
       });
     }
