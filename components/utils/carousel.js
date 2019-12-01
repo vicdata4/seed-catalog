@@ -2,7 +2,7 @@
   * @param {Component} component (this)
   * @param {String} container Container reference
   */
-export const touchGestures = (component, container) => {
+export const carouselUtils = (component, container) => {
   const passiveParam = _supportsPassive() ? { passive: true } : false;
   const cracksSlider = component.shadowRoot.querySelector(container);
 

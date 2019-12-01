@@ -1,5 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
-import { touchGestures } from './utils/carousel';
+import { carouselUtils } from './utils/carousel';
 import { empty, mediaQueryTablet } from './utils/constants';
 import { seedStyle } from '../styles';
 import './seed-stepper.js';
@@ -177,7 +177,7 @@ export class SeedCarousel extends LitElement {
   }
 
   firstUpdated() {
-    touchGestures(this, '#slide');
+    carouselUtils(this, '#slide');
 
     this.nCards = this.getNCards();
 

@@ -26,7 +26,7 @@ const collapseTransition = params => {
    * @param {String} type (ease-in-out, linear)
    */
 
-const collapseAccordionList = (list, element, time, type) => {
+const collapseAccordionList = ({ list, element, time, type }) => {
   list.forEach(component => {
     const dropdown = component.shadowRoot.querySelector('.dropdown');
     const isClosed = element === dropdown;
@@ -75,6 +75,6 @@ export const collapseUtils = ({ component, list, time, type }) => {
     });
     component.target.rotateIcon('0');
   } else {
-    collapseAccordionList(list, dropdown, time, type);
+    collapseAccordionList({ list, element: dropdown, time, type });
   }
 };
