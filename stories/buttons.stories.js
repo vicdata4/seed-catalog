@@ -78,8 +78,8 @@ storiesOf('Seed Catalog', module)
       }
     </style>
     <button class="sd-btn-mix black title"><i class="material-icons green">touch_app</i>Buttons</button>
-    <h2 class="sd-btn black">Class for ${'<button> && <a>'} tags</h2><br>
-    <h2 class="sd-btn black sm"><span class="light">Color list</span></h2>
+    <h2 class="sd-btn black">Combinations</h2><br>
+    <h2 class="sd-btn black sm"><span class="light">colors</span></h2>
     <button class="sd-btn sm red">red</button>
     <button class="sd-btn sm blue">blue</button>
     <button class="sd-btn sm green">green</button>
@@ -93,6 +93,24 @@ storiesOf('Seed Catalog', module)
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn</span></h2><button class="sd-btn red-mate">Classic</button><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-mix</span></h2><button class="sd-btn-mix green"><i class="material-icons">flight</i>Flight</button><br>
+    <h2 class="sd-btn black sm"><span class="light">sd-btn-empty</span></h2>
+    <button class="sd-btn-empty"><i class="material-icons red">favorite</i></button>
+    <button class="sd-btn-empty"><i class="material-icons blue">grade</i></button>
+    <button class="sd-btn-empty"><i class="material-icons green">thumb_up</i></button>
+    <button class="sd-btn-empty"><i class="material-icons purple">face</i></button>
+    <button class="sd-btn-empty"><i class="material-icons red-mate">add</i></button>
+    <button class="sd-btn-empty"><i class="material-icons yellow">cast</i></button>
+    <br>
+    <h2 class="sd-btn black sm"><span class="light">sd-btn sm</span></h2>
+    <button class="sd-btn blue sm">Favorite</button>
+    <button class="sd-icon red-mate sm"><i class="material-icons">lock</i></button>
+    <button class="sd-icon circle blue-mate sm"><i class="material-icons">face</i></button>
+    <br>
+    <h2 class="sd-btn black sm"><span class="light">sd-btn lg</span></h2>
+    <button class="sd-btn blue lg">Favorite</button>
+    <button class="sd-icon green-mate lg"><i class="material-icons">lock</i></button>
+    <button class="sd-icon circle red-mate lg"><i class="material-icons">face</i></button>
+    <br>
     <h2 class="sd-btn black sm"><span class="light">sd-icon</span></h2><button class="sd-icon yellow"><i class="material-icons">create</i></button><button class="sd-icon green"><i class="material-icons">call</i></button><button class="sd-icon red"><i class="material-icons">home</i></button><button class="sd-icon blue"><i class="material-icons">lock</i></button><br>
     <h2 class="sd-btn black sm"><span class="light">sd-icon circle</span></h2><button class="sd-icon circle blue"><i class="material-icons">face</i></button><button class="sd-icon circle red"><i class="material-icons">star</i></button><button class="sd-icon circle green"><i class="material-icons">lock</i></button><br>
     <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons orange sm">folder</i>
