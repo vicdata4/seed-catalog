@@ -97,7 +97,7 @@ export class SeedDropdown extends LitElement {
   }
 
   /**
-   * Set onCLickListener utility in order to collapse
+   * Set onCLickListener utility in order to close dropdown
    * onClick out of the component
    */
   dropdownClickListener() {

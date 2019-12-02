@@ -95,9 +95,35 @@ export class SeedModal extends LitElement {
     this.alignWindow = this.alignWindow || 'flex-start';
   }
 
-  firstUpdated() {
-    this.modal = this.shadowRoot.querySelector('.modal');
+  /**
+   * Open modal when click on modal button
+   */
+  openModal() {
+    this.modal.className = 'modal';
+    setTimeout(() => {
+      this.modal.style.backgroundColor = this.modalBackground;
+      this.shadowRoot.querySelector('.modal-content').style.marginTop = '20px';
+    });
+  }
 
+  /**
+   * Close modal when click on close button
+   */
+  closeModal() {
+    this.modal.style.backgroundColor = 'transparent';
+    this.modal.style.opacity = '0';
+    this.shadowRoot.querySelector('.modal-content').style.marginTop = '-50px';
+    setTimeout(() => {
+      this.modal.className = 'modal closed';
+      this.modal.style.opacity = '1';
+    }, 300);
+  }
+
+  /**
+   * Set onCLickListener utility in order to close modal
+   * onClick out of the modal-content
+   */
+  modalClickListener() {
     const content = this.shadowRoot.querySelector('.modal-content');
 
     this.modal.addEventListener('click', function(e) {
@@ -113,22 +139,9 @@ export class SeedModal extends LitElement {
     });
   }
 
-  openModal() {
-    this.modal.className = 'modal';
-    setTimeout(() => {
-      this.modal.style.backgroundColor = this.modalBackground;
-      this.shadowRoot.querySelector('.modal-content').style.marginTop = '20px';
-    });
-  }
-
-  closeModal() {
-    this.modal.style.backgroundColor = 'transparent';
-    this.modal.style.opacity = '0';
-    this.shadowRoot.querySelector('.modal-content').style.marginTop = '-50px';
-    setTimeout(() => {
-      this.modal.className = 'modal closed';
-      this.modal.style.opacity = '1';
-    }, 300);
+  firstUpdated() {
+    this.modal = this.shadowRoot.querySelector('.modal');
+    this.modalClickListener();
   }
 
   render() {
