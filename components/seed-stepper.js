@@ -61,45 +61,6 @@ export class SeedStepper extends LitElement {
     this.colorBack = 'rgba(255,255,255,.5)';
   }
 
-  render() {
-    return html`
-      ${this.dotsArray.map((x, i) => html`
-        <button
-          class="dot${this.square ? ' square' : empty}"
-          @click="${() => this.setPosition(i)}" id="${`a${i}`}"
-          .style="background-color: ${this.colorBack}"
-          aria-label="${i}"
-          tabindex="0"
-        >
-        </button>
-      `)}
-    `;
-  }
-
-  firstUpdated() {
-    const square = this.square ? ' square' : empty;
-    this.setActive(this.index, `dot${square} active`);
-  }
-
-  /**
-  * Update index and dots
-  * @param {Number} changedProps Update active class when the index changes
-  */
-  updated(changedProps) {
-    const square = this.square ? ' square' : empty;
-    if (this.index || changedProps.get('index')) {
-      this.setActive(this.index, `dot${square} active`);
-      this.setActive(changedProps.get('index'), `dot${square}`);
-    }
-  }
-
-  attributeChangedCallback() {
-    const n = this.size;
-    const abc = new Array(n).fill(empty);
-    this.dotsArray = abc;
-  }
-  /* eslint-enable require-jsdoc */
-
   /**
     * Set active class
     * @param {Number} i  Assign default index (0)
@@ -116,5 +77,39 @@ export class SeedStepper extends LitElement {
     */
   setPosition(index) {
     this.dispatchEvent(new CustomEvent('set-dot', { detail: index, composed: true }));
+  }
+
+  attributeChangedCallback() {
+    const n = this.size;
+    const abc = new Array(n).fill(empty);
+    this.dotsArray = abc;
+  }
+
+  firstUpdated() {
+    const square = this.square ? ' square' : empty;
+    this.setActive(this.index, `dot${square} active`);
+  }
+
+  updated(changedProps) {
+    const square = this.square ? ' square' : empty;
+    if (this.index || changedProps.get('index')) {
+      this.setActive(this.index, `dot${square} active`);
+      this.setActive(changedProps.get('index'), `dot${square}`);
+    }
+  }
+
+  render() {
+    return html`
+      ${this.dotsArray.map((x, i) => html`
+        <button
+          class="dot${this.square ? ' square' : empty}"
+          @click="${() => this.setPosition(i)}" id="${`a${i}`}"
+          .style="background-color: ${this.colorBack}"
+          aria-label="${i}"
+          tabindex="0"
+        >
+        </button>
+      `)}
+    `;
   }
 }
