@@ -23,14 +23,11 @@ export class SeedCollapse extends LitElement {
   }
 
   /**
-   * getDropdownList()
-   *
    * Return dropdown-list from collapse component
    * or slotted-list from accordion component
    *
    * @return {Array}
    */
-
   getDropdownList() {
     const dropdownList = this.querySelectorAll('seed-dropdown');
     let slottedList = this.querySelector('slot');
@@ -40,11 +37,9 @@ export class SeedCollapse extends LitElement {
   }
 
   /**
-   *
    * Get dropdown list and set collapse property to true.
    * Call to collapseUtils() with predefined type and speed
    */
-
   setCollapseUtils() {
     const list = this.getDropdownList();
 

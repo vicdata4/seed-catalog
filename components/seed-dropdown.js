@@ -56,6 +56,10 @@ export class SeedDropdown extends LitElement {
     this.backgroundColor = this.backgroundColor || 'white';
   }
 
+  /**
+   * Rotate button-icon if rotate-attribute exist
+   * @param {String} value
+   */
   rotateIcon(value) {
     const icon = this.slotted.assignedNodes()[0].querySelector('i');
     if (this.rotate) {
@@ -64,6 +68,9 @@ export class SeedDropdown extends LitElement {
     }
   }
 
+  /**
+   * Set height value when click on dropdown button
+   */
   setDropdown() {
     const isOpen = this.dropdown.style.height === 'auto';
 
@@ -75,6 +82,10 @@ export class SeedDropdown extends LitElement {
     this.rotateIcon(isOpen ? '0' : '180');
   }
 
+  /**
+   * Dispatch event when click on slotted dropdown button (collapse mode)
+   * @param {Event} event
+   */
   setCollapse(event) {
     this.dispatchEvent(
       new CustomEvent('set-collapse', {
@@ -85,6 +96,10 @@ export class SeedDropdown extends LitElement {
     );
   }
 
+  /**
+   * Set onCLickListener utility in order to collapse
+   * onClick out of the component
+   */
   dropdownClickListener() {
     if (this.clickout) {
       onClickListener(
