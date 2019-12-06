@@ -45,13 +45,12 @@ export class SeedCollapse extends LitElement {
 
     if (list.length > 0) {
       list.forEach(x => { x.collapse = true; });
+      const manyDropdowns = list.length > 1;
       this.shadowRoot.addEventListener('set-collapse', component => {
-        const manyDropdowns = list.length > 1;
         collapseUtils({
           component,
           list,
-          type: manyDropdowns ? 'linear' : 'ease-in-out',
-          time: `max-height ${this.basic ? '0' : manyDropdowns ? '1' : '.8'}s`
+          time: this.basic ? '0' : manyDropdowns ? '1' : '.8'
         });
       });
     }
