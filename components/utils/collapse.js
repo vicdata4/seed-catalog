@@ -28,7 +28,7 @@ const transition = ({ dropdown, values }) => {
  * @param {Object} { component, element }
  * @return {Object} Dropdown states
  */
-const getParams = ({ component, element }) => {
+const getCollapseState = ({ component, element }) => {
   const dropdown = component.shadowRoot.querySelector('.dropdown');
   return {
     dropdown,
@@ -47,14 +47,14 @@ const collapseAccordion = ({ list, element, time }) => {
   let closed = 0;
   let opened = 0;
   list.forEach(component => {
-    const { dropdown, isClosed, isOpened } = getParams({ component, element });
+    const { dropdown, isClosed, isOpened } = getCollapseState({ component, element });
 
     if (isOpened) opened = dropdown.scrollHeight;
     if (isClosed) closed = dropdown.scrollHeight;
   });
 
   list.forEach(component => {
-    const { dropdown, isClosed, isOpened } = getParams({ component, element });
+    const { dropdown, isClosed, isOpened } = getCollapseState({ component, element });
 
     if (isOpened) {
       transition({ dropdown, values: closeTransitionValues(time) });
