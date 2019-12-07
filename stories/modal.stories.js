@@ -1,5 +1,6 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
+import { storyCommonStyles } from '../.storybook/common-styles';
 
 import { seedStyle } from '../styles';
 import '../modal';
@@ -25,6 +26,8 @@ storiesOf('Seed Catalog', module)
                 --seed-color-black-focus: #43434387;
                 --seed-color-black-hover: #434343;
             }
+
+            ${storyCommonStyles}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons yellow">web_asset</i>Modal</button>
         <br><br>
@@ -41,6 +44,20 @@ storiesOf('Seed Catalog', module)
             <button class="sd-btn blue-mate">Send</button>
           </div> 
         </seed-modal>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-modal>`}</span>
+        ${`<button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
+        <button slot="close-btn" class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
+        <span slot="title">Building Web Components</span>
+          
+        <div slot="content">
+          Duis sit amet sollicitudin nulla, sit amet molestie magna.
+        </div>
+        <div slot="footer">
+          <button class="sd-btn black">Close</button>
+          <button class="sd-btn blue-mate">Send</button>
+        </div>`}
+<span class="light-txt">${`</seed-modal>`}</span></span>
+        </p>
 
         <seed-modal alignWindow="center">
           <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Centered modal</button>
@@ -55,4 +72,18 @@ storiesOf('Seed Catalog', module)
             <button class="sd-btn red-mate">Deny</button>
           </div> 
         </seed-modal>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-modal alignWindow="center">`}</span>
+        ${`<button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
+        <button slot="close-btn" class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
+        <span slot="title">Building Web Components</span>
+          
+        <div slot="content">
+          Duis sit amet sollicitudin nulla, sit amet molestie magna.
+        </div>
+        <div slot="footer">
+          <button class="sd-btn black">Close</button>
+          <button class="sd-btn blue-mate">Send</button>
+        </div>`}
+<span class="light-txt">${`</seed-modal>`}</span></span>
+        </p>
     `);

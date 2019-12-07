@@ -62,7 +62,7 @@ export class SeedDropdown extends LitElement {
    */
   rotateIcon(value) {
     const icon = this.slotted.assignedNodes()[0].querySelector('i');
-    if (this.rotate) {
+    if (this.rotate && icon) {
       icon.style.transition = 'transform .2s ease-in';
       icon.style.transform = `rotate(${value}deg)`;
     }
