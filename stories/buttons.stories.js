@@ -82,8 +82,8 @@ storiesOf('Seed Catalog', module)
       
     </style>
     <button class="sd-btn-mix black title"><i class="material-icons green">touch_app</i>Buttons</button>
-    <h2 class="sd-btn black">Combinations</h2><br>
-    <h2 class="sd-btn black sm"><span class="light">colors</span></h2>
+    <h2 class="sd-btn black">CSS .class Selectors</h2><br>
+    <h2 class="sd-btn black sm"><span class="light">sd-btn colors</span></h2>
     <button class="sd-btn sm red">red</button>
     <button class="sd-btn sm blue">blue</button>
     <button class="sd-btn sm green">green</button>
@@ -101,7 +101,7 @@ storiesOf('Seed Catalog', module)
       <span>${`<button class="`}<span class="light-txt">sd-btn blue-mate</span>${`">blue-mate</button>`}</span>
     </p>
     <br>
-    <h2 class="sd-btn black sm"><span class="light">sd-btn</span></h2><button class="sd-btn red-mate">Classic</button><br>
+    <button class="sd-btn red-mate">Profile</button><button class="sd-btn black">Play now</button><button class="sd-btn blue-mate">Forest</button><button class="sd-btn purple">Podcast</button><button class="sd-btn green-mate">Credit card</button><br><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-mix</span></h2><button class="sd-btn-mix green"><i class="material-icons">flight</i>Flight</button>
     <p class="tags-container">
     <span>${`<button class="`}<span class="light-txt">sd-btn-mix</span>${` green">`}<span class="light-txt">${`<i class="material-icons">flight</i>`}</span>${`Flight`}${`</button>`}</span>
