@@ -24,6 +24,20 @@ const transition = ({ dropdown, values }) => {
 };
 
 /**
+ * getParams()
+ * @param {Object} { component, element }
+ * @return {Object} Dropdown states
+ */
+const getParams = ({ component, element }) => {
+  const dropdown = component.shadowRoot.querySelector('.dropdown');
+  return {
+    dropdown,
+    isClosed: element === dropdown,
+    isOpened: dropdown.style.maxHeight === MAX_DROP_HEIGHT
+  };
+};
+
+/**
  * This function close opened dropdowns and open closed dropdowns
  * in order to get the accordion effect
  *
@@ -33,23 +47,14 @@ const collapseAccordion = ({ list, element, time }) => {
   let closed = 0;
   let opened = 0;
   list.forEach(component => {
-    const dropdown = component.shadowRoot.querySelector('.dropdown');
-    const isClosed = element === dropdown;
-    const isOpened = dropdown.style.maxHeight === MAX_DROP_HEIGHT;
+    const { dropdown, isClosed, isOpened } = getParams({ component, element });
 
-    if (isOpened) {
-      opened = dropdown.scrollHeight;
-    }
-
-    if (isClosed) {
-      closed = dropdown.scrollHeight;
-    }
+    if (isOpened) opened = dropdown.scrollHeight;
+    if (isClosed) closed = dropdown.scrollHeight;
   });
 
   list.forEach(component => {
-    const dropdown = component.shadowRoot.querySelector('.dropdown');
-    const isClosed = element === dropdown;
-    const isOpened = dropdown.style.maxHeight === MAX_DROP_HEIGHT;
+    const { dropdown, isClosed, isOpened } = getParams({ component, element });
 
     if (isOpened) {
       transition({ dropdown, values: closeTransitionValues(time) });
