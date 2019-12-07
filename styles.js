@@ -169,6 +169,8 @@ export const seedStyle = css`
     .blue-mate:focus { outline: 4px solid var(--seed-color-blue-mate-focus); }
     .blue-mate:hover:enabled { background-color: var(--seed-color-blue-mate-hover); }
 
+
+    /*** SIZES ***/
     .sm { font-size: .8rem; padding: .180rem .30rem; }
     .lg { font-size: 1.2rem; padding: .400rem .90rem; }
 
@@ -176,7 +178,7 @@ export const seedStyle = css`
     .lg > i { font-size: 23px; }
 
     i:only-child {
-      color: white !important;
+      color: white;
     }
 
     .sd-icon.lg {
@@ -188,6 +190,7 @@ export const seedStyle = css`
       padding: 0;
     }
 
+    /*** ICON CIRCLE ***/
     .circle {
         width: 2.1rem;
         height: 2.1rem;
@@ -212,7 +215,8 @@ export const seedStyle = css`
     .circle.sm > i {
         font-size: 13px;
     }
-    
+
+    /*** MIX ICONS ***/
     .sd-btn-mix > i, .sd-btn-mixr > i {
       font-size: 20px;
     }
@@ -222,22 +226,27 @@ export const seedStyle = css`
       margin-right: 3px;
     }
 
-    i.red { background-color: unset; color: var(--seed-color-red) !important; }
-    i.green { background-color: unset; color: var(--seed-color-green) !important; }
-    i.blue { background-color: unset; color: var(--seed-color-blue) !important; }
-    i.yellow { background-color: unset; color: var(--seed-color-yellow) !important; }
-    i.purple { background-color: unset; color: var(--seed-color-purple) !important; }
-    i.black { background-color: unset; color: var(--seed-color-black) !important; }
-    i.orange { background-color: unset; color: var(--seed-color-orange) !important; }
-    i.green-mate { background-color: unset; color: var(--seed-color-green-mate) !important; }
-    i.red-mate { background-color: unset; color: var(--seed-color-red-mate) !important; }
-    i.blue-mate { background-color: unset; color: var(--seed-color-blue-mate) !important; }
+    .sd-btn-mix > * { margin-right: 5px; }
+    .sd-btn-mixr > * { margin-left: 5px; }
+
+    /*** ICONS COLORS ***/
+    i.red { color: var(--seed-color-red); }
+    i.green { color: var(--seed-color-green); }
+    i.blue { color: var(--seed-color-blue); }
+    i.yellow { color: var(--seed-color-yellow); }
+    i.purple { color: var(--seed-color-purple); }
+    i.black { color: var(--seed-color-black); }
+    i.orange { color: var(--seed-color-orange); }
+    i.green-mate { color: var(--seed-color-green-mate); }
+    i.red-mate { color: var(--seed-color-red-mate); }
+    i.blue-mate { color: var(--seed-color-blue-mate); }
     
     i.lg { font-size: 2.5rem; padding: 0; }
     i.sm { font-size: 1rem; padding: 0; }
 
-    .yellow > i { color: #434343 !important; }
+    .yellow > i { color: #434343; }
 
-    .sd-btn-mix > * { margin-right: 5px; }
-    .sd-btn-mixr > * { margin-left: 5px; }
+    .material-icons {
+      background-color: unset;
+    }
 `;
