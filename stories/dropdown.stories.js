@@ -61,8 +61,8 @@ storiesOf('Seed Catalog', module)
             </p>
         </seed-dropdown>
         <p class="tags-container"><span><span class="light-txt">${`<seed-dropdown position="relative">`}</span>
-        ${`<button id="lorem" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">local_library</i>Dropdown relative</button>`}
-        ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
+        ${`<button id="lorem" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">local_library</i>Dropdown relative</button>
+        <p slot="content">Lorem ipsum dolor sit amet</p>`}
 <span class="light-txt">${`</seed-dropdown>`}</span></span>
         </p>
 
@@ -73,8 +73,8 @@ storiesOf('Seed Catalog', module)
             </p>
         </seed-dropdown>
         <p class="tags-container"><span><span class="light-txt">${`<seed-dropdown clickout>`}</span>
-        ${`<button id="loremv" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Dropdown absolute (default)</button>`}
-        ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
+        ${`<button id="loremv" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Dropdown absolute (default)</button>
+        <p slot="content">Lorem ipsum dolor sit amet</p>`}
 <span class="light-txt">${`</seed-dropdown>`}</span></span>
         </p>
         <seed-dropdown rotate clickout>
@@ -107,24 +107,24 @@ storiesOf('Seed Catalog', module)
         </seed-dropdown>
 
         <p class="tags-container"><span><span class="light-txt">${`<seed-dropdown rotate clickout>`}</span>
-        ${`<button id="menu" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Menu</button>`}
-        ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
+        ${`<button id="menu" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Menu</button>
+        <p slot="content">Lorem ipsum dolor sit amet</p>`}
 <span class="light-txt">${`</seed-dropdown>`}</span></span>
         </p>
         <p class="tags-container"><span><span class="light-txt">${`<seed-dropdown maxWidth="300" clickout>`}</span>
-        ${`<button id="width" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Dropdown width</button>`}
-        ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
+        ${`<button id="width" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Dropdown width</button>
+        <p slot="content">Lorem ipsum dolor sit amet</p>`}
 <span class="light-txt">${`</seed-dropdown>`}</span></span>
         </p>
         </p>
         <p class="tags-container"><span><span class="light-txt">${`<seed-dropdown clickout>`}</span>
-        ${`<button id="links" slot="button" class="sd-btn-mix blue">Dropdown links</button>`}
-        ${`<div slot="content" class="content dropdown-links">`}
-            ${`<a href="/"><i class="material-icons blue-mate sm">home</i>Home</a>`}
-            ${`<a href="/"><i class="material-icons blue-mate sm">info</i>About us</a>`}
-            ${`<a href="/"><i class="material-icons blue-mate sm">web</i>Products</a>`}
-            ${`<a href="/"><i class="material-icons blue-mate sm">shop</i>Shop</a>`}
-        ${`</div>`}
+        ${`<button id="links" slot="button" class="sd-btn-mix blue">Dropdown links</button>
+        <div slot="content" class="content dropdown-links">
+            <a href="/"><i class="material-icons blue-mate sm">home</i>Home</a>
+            <a href="/"><i class="material-icons blue-mate sm">info</i>About us</a>
+            <a href="/"><i class="material-icons blue-mate sm">web</i>Products</a>
+            <a href="/"><i class="material-icons blue-mate sm">shop</i>Shop</a>
+        </div>`}
 <span class="light-txt">${`</seed-dropdown>`}</span></span>
         </p>
     `);

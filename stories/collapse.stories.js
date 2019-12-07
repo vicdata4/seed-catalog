@@ -38,7 +38,7 @@ storiesOf('Seed Catalog', module)
         <br>
         <br>
         <br>
-        <div>
+ 
             <seed-collapse>
                 <seed-dropdown position="absolute" maxWidth="300" rotate clickout>
                     <button id="paragrapx" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse absolute</button>
@@ -48,10 +48,10 @@ storiesOf('Seed Catalog', module)
                 </seed-dropdown>
             </seed-collapse>
             <p class="tags-container"><span><span class="light-txt">${`<seed-collapse>`}</span>
-        ${`<seed-dropdown`}<span><span class="light-txt">${` position="absolute" maxWidth="300" rotate clickout`}</span></span>${`>`}
-            ${`<button id="drop1" slot="button" class="sd-btn blue"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
+        ${`<seed-dropdown`}<span><span class="light-txt">${` position="absolute" maxWidth="300" rotate clickout`}</span></span>${`>
+            <button id="drop1" slot="button" class="sd-btn blue"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>`}
 <span class="light-txt">${`</seed-collapse>`}</span></span>
         </p>
             <seed-collapse>
@@ -64,9 +64,9 @@ storiesOf('Seed Catalog', module)
             </seed-collapse>
             <p class="tags-container"><span><span class="light-txt">${`<seed-collapse>`}</span>
         ${`<seed-dropdown`}<span><span class="light-txt">${` maxWidth="300" rotate`}</span></span>${`>`}
-            ${`<button id="drop1" slot="button" class="sd-btn blue">Collapse 1</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
+            ${`<button id="drop1" slot="button" class="sd-btn blue">Collapse 1</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>`}
 <span class="light-txt">${`</seed-collapse>`}</span></span>
         </p>
             <seed-collapse>
@@ -78,13 +78,13 @@ storiesOf('Seed Catalog', module)
                 </seed-dropdown>
             </seed-collapse>
             <p class="tags-container"><span><span class="light-txt">${`<seed-collapse>`}</span>
-        ${`<seed-dropdown>`}
-            ${`<button id="drop1" slot="button" class="sd-btn blue">Collapse 1</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
+        ${`<seed-dropdown>
+            <button id="drop1" slot="button" class="sd-btn blue">Collapse 1</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>`}
 <span class="light-txt">${`</seed-collapse>`}</span></span>
         </p>      
-        </div>
+
 
         <br><br>
         <seed-collapse>
@@ -114,22 +114,22 @@ storiesOf('Seed Catalog', module)
             </seed-dropdown>
         </seed-collapse>
         <p class="tags-container"><span><span class="light-txt">${`<seed-collapse>`}</span>
-        ${`<seed-dropdown>`}
-            ${`<button id="drop1" slot="button" class="sd-btn black">Collapse 1</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
-        ${`<seed-dropdown>`}
-            ${`<button id="drop2" slot="button" class="sd-btn black">Collapse 2</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
-        ${`<seed-dropdown>`}
-            ${`<button id="drop3" slot="button" class="sd-btn black">Collapse 3</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
-        ${`<seed-dropdown>`}
-            ${`<button id="drop4" slot="button" class="sd-btn black">Collapse 4</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
+        ${`<seed-dropdown>
+            <button id="drop1" slot="button" class="sd-btn black">Collapse 1</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop2" slot="button" class="sd-btn black">Collapse 2</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop3" slot="button" class="sd-btn black">Collapse 3</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop4" slot="button" class="sd-btn black">Collapse 4</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>`}
 <span class="light-txt">${`</seed-collapse>`}</span></span>
         </p>
         <seed-collapse basic>
@@ -158,23 +158,23 @@ storiesOf('Seed Catalog', module)
                 </p>
             </seed-dropdown>
         </seed-collapse>
-        <p class="tags-container"><span>${`<seed-collapse`}<span class="light-txt">${` basic>`}</span>
-        ${`<seed-dropdown>`}
-            ${`<button id="drop1" slot="button" class="sd-btn black">Collapse 1</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
-        ${`<seed-dropdown>`}
-            ${`<button id="drop2" slot="button" class="sd-btn black">Collapse 2</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
-        ${`<seed-dropdown>`}
-            ${`<button id="drop3" slot="button" class="sd-btn black">Collapse 3</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
-        ${`<seed-dropdown>`}
-            ${`<button id="drop4" slot="button" class="sd-btn black">Collapse 4</button>`}
-            ${`<p slot="content">Lorem ipsum dolor sit amet</p>`}
-        ${`</seed-dropdown>`}
-${`</seed-collapse>`}</span>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-collapse basic>`}</span>
+        ${`<seed-dropdown>
+            <button id="drop1" slot="button" class="sd-btn black">Collapse 1</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop2" slot="button" class="sd-btn black">Collapse 2</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop3" slot="button" class="sd-btn black">Collapse 3</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop4" slot="button" class="sd-btn black">Collapse 4</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>`}
+<span class="light-txt">${`</seed-collapse>`}</span></span>
         </p>
     `);

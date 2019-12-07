@@ -6,6 +6,8 @@ export const storyCommonStyles = css`
     flex-direction: column;
     white-space: pre;
     font-family: 'Ubuntu', sans-serif;
+    overflow: scroll;
+    margin-bottom: 50px;
   }
 
   .tags-container > span {
