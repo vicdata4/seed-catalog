@@ -34,9 +34,7 @@ storiesOf('Seed Catalog', module)
             ${storyCommonStyles}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons blue">menu</i>Accordion (optional)</button>
-        <p class="tags-container" style="overflow:hidden;white-space: unset;"><span><span class="light-txt">Accordion is just a seed-collapse wrapper. This component gives you the possibility of using a more declarative accordion-tag
-in order to be more descriptive from the DOM.</span></span></p>
-        <br><br>
+        <p class="tags-container" style="overflow:hidden;white-space: unset;"><span><span class="light-txt">Accordion is just a seed-collapse syntax-wrapper. This component gives you the possibility of using a more descriptive accordion-tag instead of seed-collapse but anyway the behaviour is exactly the same.</span></span></p>
         <seed-accordion>
             <seed-dropdown rotate>
                 <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>

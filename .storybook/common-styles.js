@@ -7,11 +7,11 @@ export const storyCommonStyles = css`
     white-space: pre;
     font-family: 'Ubuntu', sans-serif;
     overflow: scroll;
+    font-size: 15px;
   }
 
   .tags-container > span {
     color: #688286;
-    font-size: 15px;
     padding: 10px;
     width: fit-content;
     background-color: #2f2e2e;

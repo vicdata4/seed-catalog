@@ -23,6 +23,21 @@ export class SeedSpinner extends LitElement {
     ];
   }
 
+  static get properties() {
+    return {
+      color: { type: String }
+    };
+  }
+
+  constructor() {
+    super();
+    this.color = this.color || '#fff';
+  }
+
+  firstUpdated() {
+    this.shadowRoot.querySelector('svg').style.stroke = this.color;
+  }
+
   render() {
     return html`
         ${spinner}
