@@ -1,6 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
+import { storyCommonStyles } from '../.storybook/common-styles';
 
 storiesOf('Seed Catalog', module)
   .add('Buttons', () => html`
@@ -77,25 +78,7 @@ storiesOf('Seed Catalog', module)
         text-align: left;
       }
 
-      .tags-container {
-        display: flex;
-        flex-direction: column;
-        white-space: pre;
-        font-family: 'Ubuntu', sans-serif;
-      }
-
-      .tags-container > span {
-        color: #688286;
-        font-size: 15px;
-        padding: 10px;
-        width: fit-content;
-        background-color: #2f2e2e;
-        margin-bottom: 5px;
-      }
-
-      .light-txt {
-        color: #53f7ef;
-      }
+      ${storyCommonStyles}
       
     </style>
     <button class="sd-btn-mix black title"><i class="material-icons green">touch_app</i>Buttons</button>
