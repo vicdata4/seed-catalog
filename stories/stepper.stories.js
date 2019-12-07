@@ -1,6 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
+import { storyCommonStyles } from '../.storybook/common-styles';
 import '../stepper';
 
 storiesOf('Seed Catalog', module)
@@ -32,6 +33,8 @@ storiesOf('Seed Catalog', module)
                 --seed-color-black-focus: #43434387;
                 --seed-color-black-hover: #434343;
             }
+
+            ${storyCommonStyles}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
         <br>
@@ -54,5 +57,9 @@ storiesOf('Seed Catalog', module)
                 <seed-stepper .index="${0}" .size="${4}" .square="${true}"></seed-stepper>
             </div>
         </div>
+ 
         
+        <p class="tags-container"><span><span class="light-txt">${`<seed-stepper`}</span>${` .index="\${0}" .size="\${5}">`}<span class="light-txt">${`</seed-stepper>`}</span></span></p>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-stepper`}</span>${` .index="\${0}" .size="\${5}" .square="\${true}">`}<span class="light-txt">${`</seed-stepper>`}</span></span></p>
+
     `);

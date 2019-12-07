@@ -2,6 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 
 import { seedStyle } from '../styles';
+import { storyCommonStyles } from '../.storybook/common-styles';
 import '../dropdown';
 import '../accordion';
 import '../collapse';
@@ -29,50 +30,14 @@ storiesOf('Seed Catalog', module)
                 --seed-color-black-focus: #43434387;
                 --seed-color-black-hover: #434343;
             }
+
+            ${storyCommonStyles}
         </style>
-        <button class="sd-btn-mix black title"><i class="material-icons blue">menu</i>Accordion</button>
+        <button class="sd-btn-mix black title"><i class="material-icons blue">menu</i>Accordion (optional)</button>
+        <p class="tags-container" style="overflow:hidden;white-space: unset;"><span><span class="light-txt">Accordion is just a seed-collapse wrapper. This component gives you the possibility of using a more declarative accordion-tag
+in order to be more descriptive from the DOM.</span></span></p>
         <br><br>
         <seed-accordion>
-            <seed-dropdown>
-                <button id="lolv" slot="button" class="sd-btn-mix red"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-            <seed-dropdown>
-                <button id="lockv" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 2</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-            <seed-dropdown>
-                <button id="drotv" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 3</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-            <seed-dropdown>
-                <button id="lopsv" slot="button" class="sd-btn-mix purple"><i class="material-icons">keyboard_arrow_down</i>Accordion 4</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-        </seed-accordion>
-        
-        <br><br>
-        <seed-collapse>
             <seed-dropdown rotate>
                 <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
                 <p slot="content" class="content">
@@ -97,6 +62,24 @@ storiesOf('Seed Catalog', module)
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
                 </p>
             </seed-dropdown>
-        </seed-collapse>
-
+        </seed-accordion>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-accordion>`}</span>
+        ${`<seed-dropdown>
+            <button id="drop1" slot="button" class="sd-btn black">Collapse 1</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop2" slot="button" class="sd-btn black">Collapse 2</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop3" slot="button" class="sd-btn black">Collapse 3</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button id="drop4" slot="button" class="sd-btn black">Collapse 4</button>
+            <p slot="content">Lorem ipsum dolor sit amet</p>
+        </seed-dropdown>`}
+<span class="light-txt">${`</seed-accordion>`}</span></span>
+        </p>
     `);

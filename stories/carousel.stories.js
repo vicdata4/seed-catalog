@@ -2,6 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import '../carousel';
 import { seedStyle } from '../styles';
+import { storyCommonStyles } from '../.storybook/common-styles';
 import carousel1 from '../assets/images/carousel_1.jpg';
 import carousel2 from '../assets/images/carousel_2.jpg';
 import carousel3 from '../assets/images/carousel_3.jpg';
@@ -11,7 +12,7 @@ storiesOf('Seed Catalog', module)
   .add('Carousel', () => html`
         <style>
             ${seedStyle}
-
+            ${storyCommonStyles}
             * {
                 font-family: 'Ubuntu', sans-serif;
             }
@@ -23,10 +24,6 @@ storiesOf('Seed Catalog', module)
             .due-card {
                 display: flex;
                 flex-flow: row wrap;
-            }
-
-            .card {
-                width: 100%;
             }
 
             .title {
@@ -46,11 +43,7 @@ storiesOf('Seed Catalog', module)
                 --seed-color-black-hover: #434343;
             }
 
-            @media screen and (min-width: 768px) {
-                .card {
-                    width: 50%;
-                }
-            }
+            
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons red">web_asset</i>Carousel</button>
         <h4 style="color:white;">Carousel - mobile touch</h4>
@@ -60,7 +53,13 @@ storiesOf('Seed Catalog', module)
             <div class="blue">Blue</div>
             <div class="green">Green</div>    
         </seed-carousel>
-        <br><br>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows stepper>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
         <h4 style="color:white;">Carousel combinations</h4>
         <div class="due-card">
             <seed-carousel class="card" stepper>
@@ -104,7 +103,54 @@ storiesOf('Seed Catalog', module)
                 <div class="orange">Orange</div>      
             </seed-carousel>
         </div>
-        <br><br>
+        <div class="due-card">
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel stepper>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows stepper>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
+        </div>
+        <div class="due-card">
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel stepper square>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows stepper square>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
+        </div>
+        <div class="due-card">
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel stepper>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
+        </div>
         <h4 style="color:white;">Carousel with images</h4>
         <seed-carousel arrows stepper>
             <img src="${carousel3}" alt="carousel3">
@@ -112,7 +158,13 @@ storiesOf('Seed Catalog', module)
             <img src="${carousel2}" alt="carousel2">
             <img src="${carousel4}" alt="carousel4">  
         </seed-carousel>
-        <br><br>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows>`}</span>
+        ${`<img src="assets/carousel1.jpg" alt="carousel1">
+        <img src="assets/carousel2.jpg" alt="carousel2">
+        <img src="assets/carousel3.jpg" alt="carousel3">
+        <img src="assets/carousel4.jpg" alt="carousel4">  `}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
         <h4 style="color:white;">Carousel auto</h4>
         <seed-carousel auto stepper>
             <div class="green">Green</div>
@@ -121,4 +173,11 @@ storiesOf('Seed Catalog', module)
             <div class="purple">Purple</div>
             <div class="orange">Orange</div>      
         </seed-carousel>
+        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel auto stepper>`}</span>
+        ${`<div class="black">Black</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>`}
+<span class="light-txt">${`</seed-carousel>`}</span></span>
+        </p>
     `);
