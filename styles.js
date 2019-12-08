@@ -100,19 +100,20 @@ export const seedStyle = css`
       vertical-align: baseline;
     }
 
-    .sd-btn-empty {
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-    }
-
+    /*** ICON ***/
     .sd-icon {
       display: inline-block;
       font-size: 1rem;
       padding: .4rem .6rem;
       line-height: 1;
+    }
+
+    .clear {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
     }
 
     .sd-btn:focus { outline: 4px solid #ffffff40; }
@@ -174,6 +175,8 @@ export const seedStyle = css`
     .sm { font-size: .8rem; padding: .180rem .30rem; }
     .lg { font-size: 1.2rem; padding: .400rem .90rem; }
 
+
+    /*** ICON ***/
     .sm > i { font-size: .9rem; font-weight: bold; }
     .lg > i { font-size: 23px; }
 
@@ -190,7 +193,7 @@ export const seedStyle = css`
       padding: 0;
     }
 
-    /*** ICON CIRCLE ***/
+    /*** CIRCLE ***/
     .circle {
         width: 2.1rem;
         height: 2.1rem;
@@ -216,7 +219,7 @@ export const seedStyle = css`
         font-size: 13px;
     }
 
-    /*** MIX ICONS ***/
+    /*** MIX ***/
     .sd-btn-mix > i, .sd-btn-mixr > i {
       font-size: 20px;
     }

@@ -67,17 +67,6 @@ storiesOf('Seed Catalog', module)
       <span>${`<button class="`}<span class="light-txt">sd-btn-mixr</span>${` blue">`}${`Home`}<span class="light-txt">${`<i class="material-icons">home</i>`}</span>${`</button>`}</span>
     </p>
     <br>
-    <h2 class="sd-btn black sm"><span class="light">sd-btn-empty</span></h2>
-    <button class="sd-btn-empty"><i class="material-icons red">favorite</i></button>
-    <button class="sd-btn-empty"><i class="material-icons blue">grade</i></button>
-    <button class="sd-btn-empty"><i class="material-icons green">thumb_up</i></button>
-    <button class="sd-btn-empty"><i class="material-icons purple">face</i></button>
-    <button class="sd-btn-empty"><i class="material-icons red-mate">add</i></button>
-    <button class="sd-btn-empty"><i class="material-icons yellow">cast</i></button>
-    <p class="tags-container"><span>${`<button class="`}<span class="light-txt">sd-btn-empty</span>${`"><i class="material-icons`}<span class="light-txt"> blue</span>${`">cast</i></button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-btn-empty</span>${`"><i class="material-icons`}<span class="light-txt"> red</span>${`">face</i></button>`}</span>
-    </p>
-    <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn sm</span></h2>
     <button class="sd-btn blue sm">Favorite</button>
     <button class="sd-icon red-mate sm"><i class="material-icons">lock</i></button>
@@ -100,11 +89,21 @@ storiesOf('Seed Catalog', module)
     <p class="tags-container"><span>${`<button class="`}<span class="light-txt">sd-icon circle</span>${` purple"><i class="material-icons`}<span class="light-txt"></span>${`">add</i></button>`}</span>
     <span>${`<button class="`}<span class="light-txt">sd-icon circle</span>${` orange"><i class="material-icons`}<span class="light-txt"></span>${`">face</i></button>`}</span>
     </p>
+    <h2 class="sd-btn black sm"><span class="light">sd-icon clear</span></h2>
+    <button class="sd-icon clear"><i class="material-icons red">favorite</i></button>
+    <button class="sd-icon clear"><i class="material-icons blue">grade</i></button>
+    <button class="sd-icon clear"><i class="material-icons green">thumb_up</i></button>
+    <button class="sd-icon clear"><i class="material-icons purple">face</i></button>
+    <button class="sd-icon clear"><i class="material-icons red-mate">add</i></button>
+    <button class="sd-icon clear"><i class="material-icons yellow">cast</i></button>
+    <p class="tags-container"><span>${`<button class="`}<span class="light-txt">sd-icon clear</span>${`"><i class="material-icons`}<span class="light-txt"> blue</span>${`">cast</i></button>`}</span>
+      <span>${`<button class="`}<span class="light-txt">sd-icon clear</span>${`"><i class="material-icons`}<span class="light-txt"> red</span>${`">face</i></button>`}</span>
+    </p>
     <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons orange sm">folder</i>
     <p class="tags-container"><span>${`<i class="material-icons `}<span class="light-txt">blue</span>${`">face</i>`}</span>
     <span>${`<i class="material-icons `}<span class="light-txt">red</span>${`">face</i>`}</span>
     </p>
-    <h2 class="sd-btn black sm"><span class="light">combine colors</span></h2><button class="sd-icon"><i class="material-icons red-mate">create</i></button><button class="sd-icon black"><i class="material-icons blue">invert_colors</i></button><button class="sd-icon"><i class="material-icons blue-mate">home</i></button><button class="sd-icon circle"><i class="material-icons red-mate">volume_up</i></button><button class="sd-icon circle"><i class="material-icons black">pause</i></button><button class="sd-icon circle red-mate"><i class="material-icons">play_arrow</i></button><br>
+    <h2 class="sd-btn black sm"><span class="light">combine colors</span></h2><button class="sd-icon"><i class="material-icons red-mate">create</i></button><button class="sd-icon black"><i class="material-icons blue">invert_colors</i></button><button class="sd-icon"><i class="material-icons blue-mate">home</i></button><button class="sd-icon circle"><i class="material-icons red-mate">volume_up</i></button><button class="sd-icon circle"><i class="material-icons blue-mate">pause</i></button><button class="sd-icon circle red-mate"><i class="material-icons">play_arrow</i></button><br>
     <p class="tags-container"><span>${`<button class="sd-icon `}<span class="light-txt">black</span>${`"><i class="material-icons `}<span class="light-txt">blue-mate</span>${`">add</i></button>`}</span>
     <span>${`<button class="sd-icon `}<span class="light-txt">green-mate</span>${`"><i class="material-icons `}<span class="light-txt">blue</span>${`">face</i></button>`}</span>
     </p>

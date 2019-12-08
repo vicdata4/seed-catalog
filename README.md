@@ -94,7 +94,7 @@ class MyComponent extends LitElement {
 
 ### Classes
 
-##### buttons: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-btn-empty`
+##### buttons: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-icon clear`
 
 ##### dropdown: `dropdown-links`
 
@@ -326,7 +326,7 @@ class MyComponent extends LitElement {
         return html`
             <seed-modal alignWindow="center">
                 <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Open modal</button>
-                <button slot="close-btn" class="sd-btn-empty"><i class="material-icons red-mate">close</i></button>
+                <button slot="close-btn" class="sd-icon clear"><i class="material-icons red-mate">close</i></button>
                 <span slot="title">Building Web Components</span>
                 
                 <div slot="content">

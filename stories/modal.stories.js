@@ -33,7 +33,7 @@ storiesOf('Seed Catalog', module)
         <br><br>
         <seed-modal>
           <button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
-          <button slot="close-btn" class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
+          <button slot="close-btn" class="sd-icon clear"><i class="material-icons blue-mate">close</i></button>
           <span slot="title">Building Web Components</span>
           
           <div slot="content">
@@ -46,7 +46,7 @@ storiesOf('Seed Catalog', module)
         </seed-modal>
         <p class="tags-container"><span><span class="light-txt">${`<seed-modal>`}</span>
         ${`<button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
-        <button slot="close-btn" class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
+        <button slot="close-btn" class="sd-icon clear"><i class="material-icons blue-mate">close</i></button>
         <span slot="title">Building Web Components</span>
           
         <div slot="content">
@@ -61,7 +61,7 @@ storiesOf('Seed Catalog', module)
 
         <seed-modal alignWindow="center">
           <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Centered modal</button>
-          <button slot="close-btn" class="sd-btn-empty"><i class="material-icons red-mate">close</i></button>
+          <button slot="close-btn" class="sd-icon clear"><i class="material-icons red-mate">close</i></button>
           <span slot="title">Building Web Components</span>
           
           <div slot="content">
@@ -74,7 +74,7 @@ storiesOf('Seed Catalog', module)
         </seed-modal>
         <p class="tags-container"><span><span class="light-txt">${`<seed-modal alignWindow="center">`}</span>
         ${`<button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
-        <button slot="close-btn" class="sd-btn-empty"><i class="material-icons blue-mate">close</i></button>
+        <button slot="close-btn" class="sd-icon clear"><i class="material-icons blue-mate">close</i></button>
         <span slot="title">Building Web Components</span>
           
         <div slot="content">
