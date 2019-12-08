@@ -37,8 +37,6 @@ storiesOf('Seed Catalog', module)
         <button class="sd-btn-mix black title"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
         <br>
         <br>
-        <br>
- 
             <seed-collapse>
                 <seed-dropdown position="absolute" maxWidth="300" rotate clickout>
                     <button id="paragrapx" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse absolute</button>

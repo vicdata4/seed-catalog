@@ -104,8 +104,8 @@ storiesOf('Seed Catalog', module)
     <span>${`<i class="material-icons `}<span class="light-txt">red</span>${`">face</i>`}</span>
     </p>
     <h2 class="sd-btn black sm"><span class="light">combine colors</span></h2><button class="sd-icon"><i class="material-icons red-mate">create</i></button><button class="sd-icon black"><i class="material-icons blue">invert_colors</i></button><button class="sd-icon"><i class="material-icons blue-mate">home</i></button><button class="sd-icon circle"><i class="material-icons red-mate">volume_up</i></button><button class="sd-icon circle"><i class="material-icons blue-mate">pause</i></button><button class="sd-icon circle red-mate"><i class="material-icons">play_arrow</i></button><br>
-    <p class="tags-container"><span>${`<button class="sd-icon `}<span class="light-txt">black</span>${`"><i class="material-icons `}<span class="light-txt">blue-mate</span>${`">add</i></button>`}</span>
-    <span>${`<button class="sd-icon `}<span class="light-txt">green-mate</span>${`"><i class="material-icons `}<span class="light-txt">blue</span>${`">face</i></button>`}</span>
+    <p class="tags-container"><span>${`<button class="sd-icon `}<span class="light-txt">black</span>${`"><i class="material-icons `}<span class="light-txt">green-mate</span>${`">add</i></button>`}</span>
+    <span>${`<button class="sd-icon`}${`"><i class="material-icons `}<span class="light-txt">red-mate</span>${`">face</i></button>`}</span>
     </p>
     <br>
     <div class="container" style="background-color: #292929;">

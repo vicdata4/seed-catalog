@@ -1,10 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
 import { spinner } from './utils/svg-icons';
+import { seedStyle } from '../styles';
 
 /** */
 export class SeedSpinner extends LitElement {
   static get styles() {
     return [
+      seedStyle,
       css`
         :host {
           display: flex;

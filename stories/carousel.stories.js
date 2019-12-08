@@ -45,7 +45,7 @@ storiesOf('Seed Catalog', module)
 
             
         </style>
-        <button class="sd-btn-mix black title"><i class="material-icons red">web_asset</i>Carousel</button>
+        <button class="sd-btn-mix black title"><i class="material-icons red">settings_overscan</i>Carousel</button>
         <h4 style="color:white;">Carousel - mobile touch</h4>
         <seed-carousel arrows stepper>
             <div class="black">Black</div> 
