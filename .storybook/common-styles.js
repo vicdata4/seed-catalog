@@ -1,16 +1,16 @@
 import { css } from 'lit-element';
 
 export const storyCommonStyles = css`
+  * {
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
   .tags-container {
     display: flex;
     flex-direction: column;
-    white-space: pre;
     font-family: 'Ubuntu', sans-serif;
     overflow: scroll;
     font-size: 15px;
-  }
-
-  .tags-container > span {
     color: #688286;
     padding: 10px;
     width: fit-content;
@@ -72,6 +72,19 @@ export const storyCommonStyles = css`
     --seed-color-blue-mate-focus: #2dabb445;
     --seed-color-blue-mate-hover: rgb(53, 98, 149);
     }
+
+  .onerow {
+    margin: 0;
+    padding: 0;
+    background-color: unset;
+  }
+
+  .onerow > * {
+    background-color: #2f2e2e;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
 
   @media screen and (min-width: 768px) {
     .card {

@@ -3,6 +3,7 @@ import { html } from 'lit-html';
 import '../carousel';
 import { seedStyle } from '../styles';
 import { storyCommonStyles } from '../.storybook/common-styles';
+import { codeGenerator, carouselContent } from '../.storybook/code-template';
 import carousel1 from '../assets/images/carousel_1.jpg';
 import carousel2 from '../assets/images/carousel_2.jpg';
 import carousel3 from '../assets/images/carousel_3.jpg';
@@ -13,9 +14,6 @@ storiesOf('Seed Catalog', module)
         <style>
             ${seedStyle}
             ${storyCommonStyles}
-            * {
-                font-family: 'Ubuntu', sans-serif;
-            }
 
             seed-carousel > div {
                 color: white;
@@ -34,13 +32,7 @@ storiesOf('Seed Catalog', module)
             <div class="blue">Blue</div>
             <div class="green">Green</div>    
         </seed-carousel>
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows stepper>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel arrows stepper>`, `</seed-carousel>`, carouselContent())}</p>
         <h4 style="color:white;">Carousel combinations</h4>
         <div class="due-card">
             <seed-carousel class="card" stepper>
@@ -85,52 +77,16 @@ storiesOf('Seed Catalog', module)
             </seed-carousel>
         </div>
         <div class="due-card">
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel stepper>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows stepper>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel stepper>`, `</seed-carousel>`, carouselContent())}</p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel arrows stepper>`, `</seed-carousel>`, carouselContent())}</p>
         </div>
         <div class="due-card">
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel stepper square>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows stepper square>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel stepper square>`, `</seed-carousel>`, carouselContent())}</p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel arrows stepper square>`, `</seed-carousel>`, carouselContent())}</p>
         </div>
         <div class="due-card">
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel stepper>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel stepper>`, `</seed-carousel>`, carouselContent())}</p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel arrows>`, `</seed-carousel>`, carouselContent())}</p>
         </div>
         <h4 style="color:white;">Carousel with images</h4>
         <seed-carousel arrows stepper>
@@ -139,13 +95,10 @@ storiesOf('Seed Catalog', module)
             <img src="${carousel2}" alt="carousel2">
             <img src="${carousel4}" alt="carousel4">  
         </seed-carousel>
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel arrows>`}</span>
-        ${`<img src="assets/carousel1.jpg" alt="carousel1">
+        <p class="tags-container">${codeGenerator(`<seed-carousel arrows stepper square>`, `</seed-carousel>`, `<img src="assets/carousel1.jpg" alt="carousel1">
         <img src="assets/carousel2.jpg" alt="carousel2">
         <img src="assets/carousel3.jpg" alt="carousel3">
-        <img src="assets/carousel4.jpg" alt="carousel4">  `}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
+        <img src="assets/carousel4.jpg" alt="carousel4">`)}</p>
         <h4 style="color:white;">Carousel auto</h4>
         <seed-carousel auto stepper>
             <div class="green">Green</div>
@@ -154,11 +107,5 @@ storiesOf('Seed Catalog', module)
             <div class="purple">Purple</div>
             <div class="orange">Orange</div>      
         </seed-carousel>
-        <p class="tags-container"><span><span class="light-txt">${`<seed-carousel auto stepper>`}</span>
-        ${`<div class="black">Black</div>
-        <div class="red">Red</div>
-        <div class="blue">Blue</div>
-        <div class="green">Green</div>`}
-<span class="light-txt">${`</seed-carousel>`}</span></span>
-        </p>
+        <p class="tags-container">${codeGenerator(`<seed-carousel auto stepper>`, `</seed-carousel>`, carouselContent())}</p>
     `);

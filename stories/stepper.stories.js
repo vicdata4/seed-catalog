@@ -8,17 +8,12 @@ storiesOf('Seed Catalog', module)
   .add('Stepper', () => html`
         <style>
             ${seedStyle}
-
-            * {
-                font-family: 'Ubuntu', sans-serif;
-            }
+            ${storyCommonStyles}
 
             seed-stepper {
                 justify-content: flex-start;
                 text-align: left;
             }
-
-            ${storyCommonStyles}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
         <br>
