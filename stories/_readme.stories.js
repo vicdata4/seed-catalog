@@ -39,22 +39,51 @@ storiesOf('Seed', module)
         font-size: 15px;
         font-family: monospace;
       }
+
+      * {
+        color: white;
+        font-family: monospace;
+      }
+
+      .package {
+        overflow: scroll;
+        color: white;
+        white-space: pre;
+        background-color: #272727;
+        font-size: 15px;
+      }
+
+      .yellou {
+        color: #cece65;
+      }
+
+      .gree {
+        color: #0cc782;
+      }
+
+      .blu {
+        color: #2f9dec;
+      }
+
+      .purp {
+        color: #c77ada;
+      }
+
+      .ora {
+        color: #e29d1f;
+      }
     
     </style>
     <button class="sd-btn-mix black"><i class="material-icons blue-mate">extension</i>Seed Catalog <span style="font-size: 10px;">v1.0</span></button><br>
-    <p class="paragraph">Seed Catalog is a free and open-source <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" class="sd-btn-mix sm black">web-components</a> library. It contains CSS-styles and standard-web based templates such as buttons, modals, dropdowns and other interface components.</p>
-    <p class="paragraph">We use
+    <p class="paragraph gree">Seed Catalog is a free and open-source <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" class="sd-btn-mix sm black">web-components</a> library. It contains CSS-styles and standard-web based templates such as buttons, modals, dropdowns and other interface components.</p>
+    <p class="paragraph gree">We use
       <a href="https://lit-element.polymer-project.org/" target="_blank" class="sd-btn-mix sm black">LitElement</a>,
       <a href="https://javascript.info/" target="_blank" class="sd-btn-mix sm black">Javascript ES6</a>,
       <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" class="sd-btn-mix sm black">HTML5</a>
       and
       <a href="https://developer.mozilla.org/en-US/docs/Archive/CSS3" target="_blank" class="sd-btn-mix sm black">CSS3</a>
     </p>
-      <p class="paragraph">Check out the <a href="https://github.com/vicdata4/seed-catalog/blob/master/README.md" target="_blank" class="sd-btn-mix sm black">README.md</a> file to learn more about how to use it.</p>
-      <a href="https://seed-project.dev/" target="_blank" class="sd-btn sm black">seed-project.dev</a><br><br>
-      <a href="https://github.com/vicdata4/seed-catalog" target="_blank" class="sd-btn sm blue-mate">GitHub repository</a>
-      <br><br>
-      <button class="sd-btn-mix sm black"><i class="material-icons blue-mate">list</i>List of components</button><br><br>
+      
       <button class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Buttons</button>
       <button class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
       <button class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
@@ -63,4 +92,66 @@ storiesOf('Seed', module)
       <button class="sd-btn-mix sm black"><i class="material-icons red">settings_overscan</i>Carousel</button>
       <button class="sd-btn-mix sm black"><i class="material-icons orange">filter_tilt_shift</i>Spinner</button>
       <button class="sd-btn-mix sm black"><i class="material-icons blue">menu</i>Accordion</button>
+      <br><br><br><br>
+    <button class="sd-btn-mix black"><i class="material-icons yellow">star_border</i>Quick Start</button>
+    <br><br>
+    <span>Lit-element is required</span><br><br>
+    <span class="light-txt">Add seed-catalog to your package.json as below</span>
+    <p class="package">
+    <span class="light-txt">"dependencies"</span>: {
+      ...
+
+      <span class="light-txt">"lit-element"</span>: <span class="ora">"^2.0.1"</span>,
+      <span class="light-txt">"seed-catalog"</span>: <span class="ora">"git://github.com/vicdata4/seed-catalog.git"</span>
+    }
+    </p>
+    <span>Install dependencies into your node_modules</span>
+    <p class="package">
+      <span class="gree">npm install</span>
+    </p>
+    <span>Import seed-catalog styles</span>
+    <p class="package">
+    <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
+    </p>
+    <span>Import a component</span>
+    <p class="package">
+    <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js'</span>;
+    <span class="purp">import</span> <span class="ora">'seed-catalog/collapse.js'</span>;
+    <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js'</span>;
+    <span class="purp">import</span> <span class="ora">'seed-catalog/modal.js'</span>;
+    </p>
+    <span class="light-txt">Lit-element example Carousel</span>
+    <p class="package">
+      <span class="purp">import</span> { <span class="light-txt">LitElement, html, css</span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
+      <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
+      <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js</span>';
+
+      <span class="blu">class</span> <span class="gree">MyComponent</span> <span class="blu">extends</span> <span class="gree">LitElement</span> {
+        <span class="blu">static get</span> <span class="yellou">styles</span>() {
+          <span class="purp">return</span> [
+            <span class="light-txt">seedStyle</span>,
+            <span class="yellou">css</span>\`
+              ...
+            \`
+          ];
+        }
+
+        <span class="yellou">render</span>() {
+          <span class="purp">return</span> <span class="yellou">html</span>\`
+            <<span class="blu">${`seed-carousel `}</span><span class="light-txt">${`arrows stepper`}</span>>
+              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"red"`}</span>${`>Red</`}<span class="blu">${`div`}</span>>
+              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"blue"`}</span>${`>Blue</`}<span class="blu">${`div`}</span>>
+              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"green"`}</span>${`>Green</`}<span class="blu">${`div`}</span>>
+              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"black"`}</span>${`>Black</`}<span class="blu">${`div`}</span>>
+            <<span class="blu">${`/seed-carousel`}</span>>
+         \`;
+        }
+      }
+    </p>
+
+
+
+
+    <a href="https://seed-project.dev/" target="_blank" class="sd-btn sm black">seed-project.dev</a><br><br>
+      <a href="https://github.com/vicdata4/seed-catalog" target="_blank" class="sd-btn sm blue-mate">GitHub repository</a>
     `);
