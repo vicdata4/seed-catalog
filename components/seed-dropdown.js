@@ -17,7 +17,7 @@ export class SeedDropdown extends LitElement {
           height: 0;
           max-height: 0;
           overflow: hidden;
-          z-index: 999;
+          z-index: 888;
           font-size: 15px;
           color: black;
         }

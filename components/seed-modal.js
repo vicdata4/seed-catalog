@@ -26,7 +26,7 @@ export class SeedModal extends LitElement {
           color: black;
           overflow: auto;
 
-          z-index: 1;
+          z-index: 999;
         }
 
         .modal-content {
