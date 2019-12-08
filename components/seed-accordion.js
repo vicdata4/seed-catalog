@@ -4,7 +4,7 @@ import '../collapse';
 export class SeedAccordion extends LitElement {
   render() {
     return html`
-      <seed-collapse accordion><slot></slot></seed-collapse>
+      <seed-collapse><slot></slot></seed-collapse>
     `;
   }
 }
