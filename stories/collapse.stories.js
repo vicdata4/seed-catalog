@@ -16,23 +16,6 @@ storiesOf('Seed Catalog', module)
             * {
                 font-family: 'Ubuntu', sans-serif;
             }
-
-            .title {
-                width: 100%;
-                text-align: left;
-            }
-
-            .purple {
-                --seed-color-purple: #903e8d;
-                --seed-color-purple-focus: #903e8d5e;
-                --seed-color-purple-hover: #663564;
-            }
-
-            .black {
-                --seed-color-black: #2f2d2d;
-                --seed-color-black-focus: #43434387;
-                --seed-color-black-hover: #434343;
-            }
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
         <br>

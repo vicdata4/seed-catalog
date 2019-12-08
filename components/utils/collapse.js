@@ -38,7 +38,7 @@ const getCollapseState = ({ component, element }) => {
 };
 
 /**
- * This function close opened dropdowns and open closed dropdowns
+ * This function close opened dropdowns and open the selected dropdown
  * in order to get the accordion effect
  *
  * @param {Object} { list, element, time, type }

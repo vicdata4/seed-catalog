@@ -10,23 +10,6 @@ storiesOf('Seed Catalog', module)
         <style>
             ${seedStyle}
 
-            .title {
-                width: 100%;
-                text-align: left;
-            }
-
-            .yellow {
-              --seed-color-yellow: #e6af0e;
-              --seed-color-yellow-focus: #c89a0c3d;
-              --seed-color-yellow-hover: #d5a927;
-            }
-
-            .black {
-                --seed-color-black: #2f2d2d;
-                --seed-color-black-focus: #43434387;
-                --seed-color-black-hover: #434343;
-            }
-
             ${storyCommonStyles}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons yellow">web_asset</i>Modal</button>

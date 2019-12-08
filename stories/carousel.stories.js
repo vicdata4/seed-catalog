@@ -25,25 +25,6 @@ storiesOf('Seed Catalog', module)
                 display: flex;
                 flex-flow: row wrap;
             }
-
-            .title {
-                width: 100%;
-                text-align: left;
-            }
-
-            .red {
-                --seed-color-red: #de3d4c;
-                --seed-color-red-focus: #ff00184d;
-                --seed-color-red-hover: #bb3440;
-            }
-
-            .black {
-                --seed-color-black: #2f2d2d;
-                --seed-color-black-focus: #43434387;
-                --seed-color-black-hover: #434343;
-            }
-
-            
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons red">settings_overscan</i>Carousel</button>
         <h4 style="color:white;">Carousel - mobile touch</h4>

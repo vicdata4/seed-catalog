@@ -31,11 +31,6 @@ storiesOf('Seed Catalog', module)
         text-decoration: none;
       }
 
-      .title {
-        width: 100%;
-        text-align: left;
-      }
-
       ${storyCommonStyles}
       
     </style>

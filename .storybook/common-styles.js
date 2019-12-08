@@ -26,6 +26,11 @@ export const storyCommonStyles = css`
     width: 100%;
   }
 
+  .title {
+    width: 100%;
+    text-align: left;
+  }
+
   html {
     --seed-color-red: #de3d4c;
     --seed-color-red-focus: #ff00184d;

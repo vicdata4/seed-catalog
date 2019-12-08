@@ -18,22 +18,6 @@ storiesOf('Seed Catalog', module)
                 text-align: left;
             }
 
-            .green-mate {
-                --seed-color-green-mate: #1C8281;
-                --seed-color-green-mate-focus: #2dabb445;
-                --seed-color-green-mate-hover: rgb(51, 121, 120);
-            }
-
-            .title {
-                width: 100%;
-                text-align: left;
-            }
-            .black {
-                --seed-color-black: #2f2d2d;
-                --seed-color-black-focus: #43434387;
-                --seed-color-black-hover: #434343;
-            }
-
             ${storyCommonStyles}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons green-mate">more_horiz</i>Stepper</button>

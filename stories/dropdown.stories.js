@@ -15,41 +15,7 @@ storiesOf('Seed Catalog', module)
             * {
                 font-family: 'Ubuntu', sans-serif;
             }
-            .dropdown-links > a {
-                color: #483f3f;
-                text-decoration: none;
-                
-                display: flex;
-                align-items: center;
-                padding: 8px;
-                padding-left: 20px;
-                padding-right: 50px;
-            }
 
-            .dropdown-links > a:hover {
-                background-color: #f9f9f9;
-            }
-
-            .dropdown-links > a > i{
-                margin-right: 15px;
-            }
-
-            .title {
-                width: 100%;
-                text-align: left;
-            }
-
-            .blue-mate {
-                --seed-color-blue-mate: rgb(63, 118, 182);
-                --seed-color-blue-mate-focus: #2dabb445;
-                --seed-color-blue-mate-hover: rgb(53, 98, 149);
-            }
-
-            .black {
-                --seed-color-black: #2f2d2d;
-                --seed-color-black-focus: #43434387;
-                --seed-color-black-hover: #434343;
-            }
         </style>
 
         <button class="sd-btn-mix black title"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
