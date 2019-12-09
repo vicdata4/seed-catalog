@@ -99,60 +99,55 @@ storiesOf('Seed', module)
       <br><br><br><br>
     <button class="sd-btn-mix black"><i class="material-icons yellow">star_border</i>Quick Start</button>
     <br><br>
-    <span>Lit-element is required</span><br><br>
-    <span class="light-txt">Add seed-catalog to your package.json as below</span>
+    Add seed-catalog as dependency in your <span class="ora">package.json</span>
     <p class="package">
     <span class="light-txt">"dependencies"</span>: {
       ...
-
-      <span class="light-txt">"lit-element"</span>: <span class="ora">"^2.0.1"</span>,
+      
       <span class="light-txt">"seed-catalog"</span>: <span class="ora">"git://github.com/vicdata4/seed-catalog.git"</span>
     }
     </p>
-    <span>Install dependencies into your node_modules</span>
+    <span>Execute from command line</span>
     <p class="package">
-      <span class="gree">npm install</span>
+    <span class="gree">npm install</span>
     </p>
-    <span>Import seed-catalog styles</span>
+    <span>Import styles</span>
     <p class="package">
     <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
     </p>
-    <span>Import a component</span>
+    <span>Import web-component</span>
     <p class="package">
     <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js'</span>;
-    <span class="purp">import</span> <span class="ora">'seed-catalog/collapse.js'</span>;
-    <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js'</span>;
-    <span class="purp">import</span> <span class="ora">'seed-catalog/modal.js'</span>;
     </p>
-    <span class="light-txt">Dropdown example </span>
+    <span class="ora">LitElement</span> example
     <p class="package">
-      <span class="purp">import</span> { <span class="light-txt">LitElement, html, css</span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
-      <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
-      <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js</span>';
+    <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
+    <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
+    <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js</span>';
 
-      <span class="blu">class</span> <span class="gree">MyComponent</span> <span class="blu">extends</span> <span class="gree">LitElement</span> {
-        <span class="blu">static get</span> <span class="yellou">styles</span>() {
-          <span class="purp">return</span> [
-            <span class="light-txt">seedStyle</span>,
-            <span class="yellou">css</span>\`
-              ...
-            \`
-          ];
-        }
-        <span class="gre"></span>
-        <span class="yellou">render</span>() {
-          <span class="purp">return</span> <span class="yellou">html</span>\`
-            <span class="gre"><</span><span class="blu">${`seed-dropdown `}</span><span class="light-txt">${`maxWidth=`}<span class="ora">${`"300"`}</span>${` clickout`}</span><span class="gre">></span>
-              <span class="gre"><</span><span class="blu">${`button `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"button" `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"sd-btn red"`}</span><span class="gre">></span>${`Dropdown`}<span class="gre">${`</`}</span><span class="blu">${`button`}</span><span class="gre">></span>
-              <span class="gre"><</span><span class="blu">${`p `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"content"`}</span><span class="gre">></span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam,
-                eget viverra diam. Donec euismod mattis dignissim.
-              <span class="gre">${`</`}</span><span class="blu">${`p`}</span><span class="gre">></span>
-            <span class="gre">${`</`}</span><span class="blu">${`seed-dropdown`}</span><span class="gre">></span>
-          \`;
-        }
+    <span class="blu">class</span> <span class="gree">MyComponent</span> <span class="blu">extends</span> <span class="gree">LitElement</span> {
+      <span class="blu">static get</span> <span class="yellou">styles</span>() {
+        <span class="purp">return</span> [
+          <span class="light-txt">seedStyle</span>,
+          <span class="yellou">css</span>\`
+            ...
+          \`
+        ];
       }
+
+      <span class="yellou">render</span>() {
+        <span class="purp">return</span> <span class="yellou">html</span>\`
+          <span class="gre"><</span><span class="blu">${`seed-dropdown `}</span><span class="light-txt">${`maxWidth`}</span>${`=`}<span class="ora">${`"300"`}</span><span class="light-txt">${` clickout`}</span><span class="gre">></span>
+            <span class="gre"><</span><span class="blu">${`button `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"button" `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"sd-btn red"`}</span><span class="gre">></span>${`Dropdown`}<span class="gre">${`</`}</span><span class="blu">${`button`}</span><span class="gre">></span>
+            <span class="gre"><</span><span class="blu">${`p `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"content"`}</span><span class="gre">></span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam,
+              eget viverra diam. Donec euismod mattis dignissim.
+            <span class="gre">${`</`}</span><span class="blu">${`p`}</span><span class="gre">></span>
+          <span class="gre">${`</`}</span><span class="blu">${`seed-dropdown`}</span><span class="gre">></span>
+        \`;
+      }
+    }
     </p>
     <a href="https://seed-project.dev/" target="_blank" class="sd-btn sm black">seed-project.dev</a><br><br>
     <a href="https://github.com/vicdata4/seed-catalog" target="_blank" class="sd-btn sm blue-mate">GitHub repository</a>

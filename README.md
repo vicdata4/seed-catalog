@@ -8,21 +8,18 @@ Seed-catalog is a free and open-source `web-components library`. It contains CSS
 
 ### [Dependencies](package.json)
 
-- [Storybook](https://storybook.js.org) WC Interface
+- [Storybook](https://storybook.js.org) WC Interface (dev)
 - [LitElement](https://lit-element.polymer-project.org) Web Components
-- [ESLint](https://eslint.org) Coding style
+- [ESLint](https://eslint.org) Coding style (dev)
 
 
 ###  Add as project dependency (98kb)
-
-`LitElement is required.`
 
 from `package.json`
 
 ```js
 "dependencies": {
     ...
-    "lit-element": "^2.0.1",
     "seed-catalog": "git://github.com/vicdata4/seed-catalog.git"
 }
 ```
