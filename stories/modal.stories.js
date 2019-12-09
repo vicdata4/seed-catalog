@@ -29,7 +29,7 @@ storiesOf('Seed Catalog', module)
         </seed-modal>
         <p class="package">
     <span class="gre"><</span><span class="blu">seed-modal</span><span class="gre">></span>
-      <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix blue"</span><span class="gre">></span>Open Modal<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span>Open Modal<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"close-btn" </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons blue-mate"</span><span class="gre">></span>close<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">span </span><span class="light-txt">slot</span>=<span class="ora">"title"</span><span class="gre">></span>Building Web Components<span class="gre">${`</`}</span><span class="blu">span</span><span class="gre">></span>
 

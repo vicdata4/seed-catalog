@@ -62,7 +62,7 @@ storiesOf('Seed', module)
       <br><br><br><br>
     <button class="sd-btn-mix black"><i class="material-icons yellow">star_border</i>Quick Start</button>
     <br><br>
-    Add seed-catalog as dependency in your <span class="ora">package.json</span>
+    <p class="white-txt">Add seed-catalog as dependency in your <span class="ora">package.json</span></p>
     <p class="package">
     <span class="light-txt">"dependencies"</span>: {
       ...
@@ -70,19 +70,19 @@ storiesOf('Seed', module)
       <span class="light-txt">"seed-catalog"</span>: <span class="ora">"git://github.com/vicdata4/seed-catalog.git"</span>
     }
     </p>
-    <span>Execute from command line</span>
+    <p class="white-txt">Execute from command line</p>
     <p class="package">
     <span class="gree">npm install</span>
     </p>
-    <span>Import styles</span>
+    <p class="white-txt">Import styles</p>
     <p class="package">
     <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
     </p>
-    <span>Import web-component</span>
+    <p class="white-txt">Import web-component</p>
     <p class="package">
     <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js'</span>;
     </p>
-    <span class="ora">LitElement</span> example
+    <p class="white-txt">Use example</p>
     <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
     <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;

@@ -86,6 +86,11 @@ export const storyCommonStyles = css`
     margin-bottom: 5px;
   }
 
+  .white-txt {
+    color: white;
+    font-size: 14px;
+  }
+
   @media screen and (min-width: 768px) {
     .card {
       width: 50%;
@@ -95,17 +100,18 @@ export const storyCommonStyles = css`
 
 
 export const cssTemplateColors = css`
-    * {
-      color: white;
-      font-family: monospace;
-    }
 
     .package {
+      font-family: monospace;
       overflow: scroll;
       color: white;
       white-space: pre;
       background-color: #272727;
       font-size: 15px;
+    }
+
+    .package > * {
+      font-family: monospace;
     }
 
     .yellou {
