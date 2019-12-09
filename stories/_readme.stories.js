@@ -54,7 +54,7 @@ storiesOf('Seed', module)
       }
 
       .yellou {
-        color: #cece65;
+        color: #e8e191;
       }
 
       .gree {
@@ -70,7 +70,11 @@ storiesOf('Seed', module)
       }
 
       .ora {
-        color: #e29d1f;
+        color: #e0b669;
+      }
+
+      .gre {
+        color: grey;
       }
     
     </style>
@@ -120,11 +124,11 @@ storiesOf('Seed', module)
     <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js'</span>;
     <span class="purp">import</span> <span class="ora">'seed-catalog/modal.js'</span>;
     </p>
-    <span class="light-txt">Lit-element example Carousel</span>
+    <span class="light-txt">Dropdown example </span>
     <p class="package">
       <span class="purp">import</span> { <span class="light-txt">LitElement, html, css</span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
       <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
-      <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js</span>';
+      <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js</span>';
 
       <span class="blu">class</span> <span class="gree">MyComponent</span> <span class="blu">extends</span> <span class="gree">LitElement</span> {
         <span class="blu">static get</span> <span class="yellou">styles</span>() {
@@ -135,23 +139,21 @@ storiesOf('Seed', module)
             \`
           ];
         }
-
+        <span class="gre"></span>
         <span class="yellou">render</span>() {
           <span class="purp">return</span> <span class="yellou">html</span>\`
-            <<span class="blu">${`seed-carousel `}</span><span class="light-txt">${`arrows stepper`}</span>>
-              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"red"`}</span>${`>Red</`}<span class="blu">${`div`}</span>>
-              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"blue"`}</span>${`>Blue</`}<span class="blu">${`div`}</span>>
-              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"green"`}</span>${`>Green</`}<span class="blu">${`div`}</span>>
-              <<span class="blu">${`div `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"black"`}</span>${`>Black</`}<span class="blu">${`div`}</span>>
-            <<span class="blu">${`/seed-carousel`}</span>>
-         \`;
+            <span class="gre"><</span><span class="blu">${`seed-dropdown `}</span><span class="light-txt">${`maxWidth=`}<span class="ora">${`"300"`}</span>${` clickout`}</span><span class="gre">></span>
+              <span class="gre"><</span><span class="blu">${`button `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"button" `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"sd-btn red"`}</span><span class="gre">></span>${`Dropdown`}<span class="gre">${`</`}</span><span class="blu">${`button`}</span><span class="gre">></span>
+              <span class="gre"><</span><span class="blu">${`p `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"content"`}</span><span class="gre">></span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam,
+                eget viverra diam. Donec euismod mattis dignissim.
+              <span class="gre">${`</`}</span><span class="blu">${`p`}</span><span class="gre">></span>
+            <span class="gre">${`</`}</span><span class="blu">${`seed-dropdown`}</span><span class="gre">></span>
+          \`;
         }
       }
     </p>
-
-
-
-
     <a href="https://seed-project.dev/" target="_blank" class="sd-btn sm black">seed-project.dev</a><br><br>
-      <a href="https://github.com/vicdata4/seed-catalog" target="_blank" class="sd-btn sm blue-mate">GitHub repository</a>
+    <a href="https://github.com/vicdata4/seed-catalog" target="_blank" class="sd-btn sm blue-mate">GitHub repository</a>
     `);
