@@ -1,7 +1,6 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
-import { storyCommonStyles} from '../.storybook/common-styles';
-import { codeGenerator } from '../.storybook/code-template';
+import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 
 import { seedStyle } from '../styles';
 import '../modal';
@@ -11,6 +10,7 @@ storiesOf('Seed Catalog', module)
         <style>
             ${seedStyle}
             ${storyCommonStyles}
+            ${cssTemplateColors}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons yellow">web_asset</i>Modal</button>
         <br><br>
@@ -27,20 +27,21 @@ storiesOf('Seed Catalog', module)
             <button class="sd-btn blue-mate">Send</button>
           </div> 
         </seed-modal>
+        <p class="package">
+    <span class="gre"><</span><span class="blu">seed-modal</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix blue"</span><span class="gre">></span>Open Modal<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"close-btn" </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons blue-mate"</span><span class="gre">></span>close<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">span </span><span class="light-txt">slot</span>=<span class="ora">"title"</span><span class="gre">></span>Building Web Components<span class="gre">${`</`}</span><span class="blu">span</span><span class="gre">></span>
 
-        <p class="tags-container">${codeGenerator(`<seed-modal>`, `</seed-modal>`, `<button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
-        <button slot="close-btn" class="sd-icon clear"><i class="material-icons blue-mate">close</i></button>
-        <span slot="title">Building Web Components</span>
-          
-        <div slot="content">
-          Duis sit amet sollicitudin nulla, sit amet molestie magna.
-        </div>
-        <div slot="footer">
-          <button class="sd-btn black">Close</button>
-          <button class="sd-btn blue-mate">Send</button>
-        </div>`)}</p>
-
-
+      <span class="gre"><</span><span class="blu">div </span><span class="light-txt">slot</span>=<span class="ora">"content"</span><span class="gre">></span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">div </span><span class="light-txt">slot</span>=<span class="ora">"footer"</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn black"</span><span class="gre">></span>Close<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue-mate"</span><span class="gre">></span>Send<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+      <span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
+    <span class="gre">${`</`}</span><span class="blu">seed-modal</span><span class="gre">></span>
+        </p>
         <seed-modal alignWindow="center">
           <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Centered modal</button>
           <button slot="close-btn" class="sd-icon clear"><i class="material-icons red-mate">close</i></button>
@@ -55,16 +56,7 @@ storiesOf('Seed Catalog', module)
           </div> 
         </seed-modal>
 
-
-        <p class="tags-container">${codeGenerator(`<seed-modal alignWindow="center">`, `</seed-modal>`, `<button slot="button" class="sd-btn-mix blue"><i class="material-icons">people</i>Open modal</button>
-        <button slot="close-btn" class="sd-icon clear"><i class="material-icons blue-mate">close</i></button>
-        <span slot="title">Building Web Components</span>
-          
-        <div slot="content">
-          Duis sit amet sollicitudin nulla, sit amet molestie magna.
-        </div>
-        <div slot="footer">
-          <button class="sd-btn black">Close</button>
-          <button class="sd-btn blue-mate">Send</button>
-        </div>`)}</p>
+        <p class="package">
+    <span class="gre"><</span><span class="blu">seed-modal</span> <span class="light-txt">alignWindow</span>=<span class="ora">"center"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-modal</span><span class="gre">></span>
+        </p>
     `);

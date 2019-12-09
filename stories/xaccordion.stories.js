@@ -2,8 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
 
-import { storyCommonStyles } from '../.storybook/common-styles';
-import { codeGenerator, accordionContent } from '../.storybook/code-template';
+import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../dropdown';
 import '../accordion';
 import '../collapse';
@@ -13,9 +12,10 @@ storiesOf('Seed Catalog', module)
         <style>
             ${seedStyle}
             ${storyCommonStyles}
+            ${cssTemplateColors}
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons blue">menu</i>Accordion (optional)</button>
-        <p class="tags-container" style="overflow:hidden;white-space: unset;"><span><span class="light-txt">Accordion is just a seed-collapse syntax-wrapper. This component gives you the possibility of using a more descriptive accordion-tag instead of seed-collapse but anyway the behaviour is exactly the same.</span></span></p>
+        <p class="tags-container" style="overflow:hidden;white-space: unset;"><span><span class="ora">Accordion is just a seed-collapse syntax-wrapper. This component gives you the possibility of using a more descriptive accordion-tag instead of seed-collapse but anyway the behaviour is exactly the same.</span></span></p>
         <seed-accordion>
             <seed-dropdown rotate>
                 <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
@@ -42,5 +42,33 @@ storiesOf('Seed Catalog', module)
                 </p>
             </seed-dropdown>
         </seed-accordion>
-        <p class="tags-container">${codeGenerator(`<seed-accordion>`, `</seed-accordion>`, accordionContent())}</p>
+        
+        <p class="package">
+    <span class="gre"><</span><span class="blu">seed-accordion</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix black"</span><span class="gre">></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>keyboard_arrow_down<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Accordion 1<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">p </span><span class="light-txt">slot</span>=<span class="ora">"content"</span><span class="gre">></span>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <span class="gre">${`</`}</span><span class="blu">p</span><span class="gre">></span>
+      <span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix black"</span><span class="gre">></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>keyboard_arrow_down<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Accordion 2<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">p </span><span class="light-txt">slot</span>=<span class="ora">"content"</span><span class="gre">></span>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <span class="gre">${`</`}</span><span class="blu">p</span><span class="gre">></span>
+      <span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix black"</span><span class="gre">></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>keyboard_arrow_down<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Accordion 3<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">p </span><span class="light-txt">slot</span>=<span class="ora">"content"</span><span class="gre">></span>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <span class="gre">${`</`}</span><span class="blu">p</span><span class="gre">></span>
+      <span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix black"</span><span class="gre">></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>keyboard_arrow_down<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Accordion 4<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">p </span><span class="light-txt">slot</span>=<span class="ora">"content"</span><span class="gre">></span>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <span class="gre">${`</`}</span><span class="blu">p</span><span class="gre">></span>
+      <span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+    <span class="gre">${`</`}</span><span class="blu">seed-accordion</span><span class="gre">></span>
+        </p>
     `);

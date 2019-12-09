@@ -2,7 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 
 import { seedStyle } from '../styles';
-import { storyCommonStyles } from '../.storybook/common-styles';
+import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../components/seed-dropdown';
 
 storiesOf('Seed', module)
@@ -10,6 +10,7 @@ storiesOf('Seed', module)
         <style>
       ${seedStyle}
       ${storyCommonStyles}
+      ${cssTemplateColors}
 
       h2, p {
         color: red;
@@ -35,46 +36,8 @@ storiesOf('Seed', module)
       }
 
       .paragraph {
-        color: #0eff0e;
         font-size: 15px;
         font-family: monospace;
-      }
-
-      * {
-        color: white;
-        font-family: monospace;
-      }
-
-      .package {
-        overflow: scroll;
-        color: white;
-        white-space: pre;
-        background-color: #272727;
-        font-size: 15px;
-      }
-
-      .yellou {
-        color: #e8e191;
-      }
-
-      .gree {
-        color: #0cc782;
-      }
-
-      .blu {
-        color: #2f9dec;
-      }
-
-      .purp {
-        color: #c77ada;
-      }
-
-      .ora {
-        color: #e0b669;
-      }
-
-      .gre {
-        color: grey;
       }
     
     </style>
@@ -103,7 +66,7 @@ storiesOf('Seed', module)
     <p class="package">
     <span class="light-txt">"dependencies"</span>: {
       ...
-      
+
       <span class="light-txt">"seed-catalog"</span>: <span class="ora">"git://github.com/vicdata4/seed-catalog.git"</span>
     }
     </p>
@@ -137,14 +100,14 @@ storiesOf('Seed', module)
 
       <span class="yellou">render</span>() {
         <span class="purp">return</span> <span class="yellou">html</span>\`
-          <span class="gre"><</span><span class="blu">${`seed-dropdown `}</span><span class="light-txt">${`maxWidth`}</span>${`=`}<span class="ora">${`"300"`}</span><span class="light-txt">${` clickout`}</span><span class="gre">></span>
-            <span class="gre"><</span><span class="blu">${`button `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"button" `}</span><span class="light-txt">${`class`}</span>${`=`}<span class="ora">${`"sd-btn red"`}</span><span class="gre">></span>${`Dropdown`}<span class="gre">${`</`}</span><span class="blu">${`button`}</span><span class="gre">></span>
-            <span class="gre"><</span><span class="blu">${`p `}</span><span class="light-txt">${`slot`}</span>${`=`}<span class="ora">${`"content"`}</span><span class="gre">></span>
+          <span class="gre"><</span><span class="blu">seed-dropdown </span><span class="light-txt">maxWidth</span>=<span class="ora">"300"</span><span class="light-txt"> clickout</span><span class="gre">></span>
+            <span class="gre"><</span><span class="blu">button </span><span class="light-txt">slot</span>=<span class="ora">"button" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn red"</span><span class="gre">></span>Dropdown<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+            <span class="gre"><</span><span class="blu">p </span><span class="light-txt">slot</span>=<span class="ora">"content"</span><span class="gre">></span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam,
               eget viverra diam. Donec euismod mattis dignissim.
-            <span class="gre">${`</`}</span><span class="blu">${`p`}</span><span class="gre">></span>
-          <span class="gre">${`</`}</span><span class="blu">${`seed-dropdown`}</span><span class="gre">></span>
+            <span class="gre">${`</`}</span><span class="blu">p</span><span class="gre">></span>
+          <span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
         \`;
       }
     }

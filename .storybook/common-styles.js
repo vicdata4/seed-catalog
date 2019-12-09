@@ -92,3 +92,43 @@ export const storyCommonStyles = css`
     }
 }
 `;
+
+
+export const cssTemplateColors = css`
+    * {
+      color: white;
+      font-family: monospace;
+    }
+
+    .package {
+      overflow: scroll;
+      color: white;
+      white-space: pre;
+      background-color: #272727;
+      font-size: 15px;
+    }
+
+    .yellou {
+        color: #e8e191;
+      }
+
+      .gree {
+        color: #0cc782;
+      }
+
+      .blu {
+        color: #2f9dec;
+      }
+
+      .purp {
+        color: #c77ada;
+      }
+
+      .ora {
+        color: #e0b669;
+      }
+
+      .gre {
+        color: grey;
+      }
+  `;

@@ -19,7 +19,7 @@ export class SeedCarousel extends LitElement {
           height: auto;
           margin: 0;
           overflow: hidden;
-          max-width: 100%;
+          /*max-width: 100%;*/
           min-height: 200px;
         }
 
@@ -46,7 +46,8 @@ export class SeedCarousel extends LitElement {
         }
 
         ::slotted(img) {
-            max-width: 100%;
+          max-width: 100%;
+          height: auto;
         }
 
         .arrow-btn {
