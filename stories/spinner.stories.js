@@ -1,7 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
-import { storyCommonStyles } from '../.storybook/common-styles';
+import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../spinner';
 
 storiesOf('Seed Catalog', module)
@@ -9,6 +9,7 @@ storiesOf('Seed Catalog', module)
         <style>
             ${seedStyle}
             ${storyCommonStyles}
+            ${cssTemplateColors}
 
             .bluex, .redx, .greenx {
                 visibility: hidden;
@@ -30,9 +31,13 @@ storiesOf('Seed Catalog', module)
         <seed-spinner class="bluex" color="var(--seed-color-blue)" background="#0d1314cf" @click="${() => { document.querySelector('.bluex').style.visibility = 'hidden'; }}"></seed-spinner>
         <seed-spinner class="redx" color="var(--seed-color-red)" @click="${() => { document.querySelector('.redx').style.visibility = 'hidden'; }}"></seed-spinner>
         <seed-spinner class="greenx" background="rgba(0, 0, 0, 0.2)" color="var(--seed-color-green)" @click="${() => { document.querySelector('.greenx').style.visibility = 'hidden'; }}"></seed-spinner>
-        <p class="tags-container onerow"><span><span class="light-txt">${`<seed-spinner></seed-spinner>`}</span></span>
-        <span>${`<seed-spinner `}<span class="light-txt">${`color="var(--seed-color-blue)" background="#0d1314cf"`}</span>${`></seed-spinner>`}</span>
-        <span>${`<seed-spinner `}<span class="light-txt">${`color="#2dabb4"`}</span>${`></seed-spinner>`}</span>
-        <span>${`<seed-spinner `}<span class="light-txt">${`color="rgb(255,255,255)"`}</span>${`></seed-spinner>`}</span>
+        <p class="package">
+    <span class="gre"><</span><span class="blu">seed-spinner</span><span class="gre">></span><span class="gre">${'</'}</span><span class="blu">seed-spinner</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">seed-spinner</span> <span class="light-txt">color</span>=<span class="ora">"var(--seed-color-blue)"</span> <span class="light-txt">background</span>=<span class="ora">"#0d1314cf"</span><span class="gre">></span><span class="gre">${'</'}</span><span class="blu">seed-spinner</span><span class="gre">></span>
+    
+    <span class="gre"><</span><span class="blu">seed-spinner</span> <span class="light-txt">color</span>=<span class="ora">"#2dabb4"</span><span class="gre">></span><span class="gre">${'</'}</span><span class="blu">seed-spinner</span><span class="gre">></span>
+    
+    <span class="gre"><</span><span class="blu">seed-spinner</span> <span class="light-txt">color</span>=<span class="ora">"rgb(255,255,255)"</span><span class="gre">></span><span class="gre">${'</'}</span><span class="blu">seed-spinner</span><span class="gre">></span>
         </p>
     `);

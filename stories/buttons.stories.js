@@ -1,13 +1,14 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
-import { storyCommonStyles } from '../.storybook/common-styles';
+import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 
 storiesOf('Seed Catalog', module)
   .add('Buttons', () => html`
     <style>
       ${seedStyle}
       ${storyCommonStyles}
+      ${cssTemplateColors}
 
       h2, p {
         color: red;
@@ -51,42 +52,55 @@ storiesOf('Seed Catalog', module)
     <button class="sd-btn sm red-mate">red-mate</button>
     <button class="sd-btn sm blue-mate">blue-mate</button>
     <button class="sd-btn sm green-mate">green-mate</button>
-    <p class="tags-container onerow"><span>${`<button class="`}<span class="light-txt">sd-btn red</span>${`">red</button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-btn blue</span>${`">blue</button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-btn green</span>${`">green</button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-btn purple</span>${`">purple</button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-btn blue-mate</span>${`">blue-mate</button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn red"</span><span class="gre">></span><span class="gre"></span>red<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span><span class="gre"></span>blue<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+    
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn green"</span><span class="gre">></span><span class="gre"></span>green<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+    
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn purple"</span><span class="gre">></span><span class="gre"></span>purple<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+  
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue-mate"</span><span class="gre">></span><span class="gre"></span>blue-mate<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <br>
     <button class="sd-btn red-mate">Profile</button><button class="sd-btn black">Play now</button><button class="sd-btn blue-mate">Forest</button><button class="sd-btn purple">Podcast</button><button class="sd-btn green-mate">Credit card</button><br><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-mix</span></h2><button class="sd-btn-mix green"><i class="material-icons">flight</i>Flight</button>
-    <p class="tags-container onerow">
-    <span>${`<button class="`}<span class="light-txt">sd-btn-mix</span>${` green">`}<span class="light-txt">${`<i class="material-icons">flight</i>`}</span>${`Flight`}${`</button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-btn-mix</span>${` black">`}<span class="light-txt">${`<i class="material-icons">lock</i>`}</span>${`Lock`}${`</button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-btn-mixr</span>${` blue">`}${`Home`}<span class="light-txt">${`<i class="material-icons">home</i>`}</span>${`</button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix red"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>flight<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Flight<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix blue"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>lock<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Lock<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+    
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mixr green"</span><span class="gre">></span><span class="gre"></span>Home<span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>home<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn sm</span></h2>
     <button class="sd-btn blue sm">Favorite</button>
     <button class="sd-icon red-mate sm"><i class="material-icons">lock</i></button>
     <button class="sd-icon circle blue-mate sm"><i class="material-icons">face</i></button>
-    <p class="tags-container onerow"><span>${`<button class="sd-btn `}<span class="light-txt">sm</span>${` blue">Favourite</button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn sm blue"</span><span class="gre">></span><span class="gre"></span>Favourite<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn lg</span></h2>
     <button class="sd-btn blue lg">Favorite</button>
     <button class="sd-icon green-mate lg"><i class="material-icons">lock</i></button>
     <button class="sd-icon circle red-mate lg"><i class="material-icons">face</i></button>
-    <p class="tags-container onerow"><span>${`<button class="sd-btn `}<span class="light-txt">lg</span>${` green">Profile</button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn lg green"</span><span class="gre">></span><span class="gre"></span>Profile<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-icon</span></h2><button class="sd-icon yellow"><i class="material-icons">create</i></button><button class="sd-icon green"><i class="material-icons">call</i></button><button class="sd-icon red"><i class="material-icons">home</i></button><button class="sd-icon blue"><i class="material-icons">lock</i></button><br>
-    <p class="tags-container onerow"><span>${`<button class="`}<span class="light-txt">sd-icon</span>${` black"><i class="material-icons`}<span class="light-txt"></span>${`">add</i></button>`}</span>
-    <span>${`<button class="`}<span class="light-txt">sd-icon</span>${` red-mate"><i class="material-icons`}<span class="light-txt"></span>${`">face</i></button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon black"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon red-mate"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <h2 class="sd-btn black sm"><span class="light">sd-icon circle</span></h2><button class="sd-icon circle blue"><i class="material-icons">face</i></button><button class="sd-icon circle red"><i class="material-icons">star</i></button><button class="sd-icon circle green"><i class="material-icons">lock</i></button><br>
-    <p class="tags-container onerow"><span>${`<button class="`}<span class="light-txt">sd-icon circle</span>${` purple"><i class="material-icons`}<span class="light-txt"></span>${`">add</i></button>`}</span>
-    <span>${`<button class="`}<span class="light-txt">sd-icon circle</span>${` orange"><i class="material-icons`}<span class="light-txt"></span>${`">face</i></button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon circle black"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon circle red-mate"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <h2 class="sd-btn black sm"><span class="light">sd-icon clear</span></h2>
     <button class="sd-icon clear"><i class="material-icons red">favorite</i></button>
@@ -95,16 +109,22 @@ storiesOf('Seed Catalog', module)
     <button class="sd-icon clear"><i class="material-icons purple">face</i></button>
     <button class="sd-icon clear"><i class="material-icons red-mate">add</i></button>
     <button class="sd-icon clear"><i class="material-icons yellow">cast</i></button>
-    <p class="tags-container onerow"><span>${`<button class="`}<span class="light-txt">sd-icon clear</span>${`"><i class="material-icons`}<span class="light-txt"> blue</span>${`">cast</i></button>`}</span>
-      <span>${`<button class="`}<span class="light-txt">sd-icon clear</span>${`"><i class="material-icons`}<span class="light-txt"> red</span>${`">face</i></button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons blue"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons red"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons orange sm">folder</i>
-    <p class="tags-container onerow"><span>${`<i class="material-icons `}<span class="light-txt">blue</span>${`">face</i>`}</span>
-    <span>${`<i class="material-icons `}<span class="light-txt">red</span>${`">face</i>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons blue"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons red"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>
     </p>
     <h2 class="sd-btn black sm"><span class="light">combine colors</span></h2><button class="sd-icon"><i class="material-icons red-mate">create</i></button><button class="sd-icon black"><i class="material-icons blue">invert_colors</i></button><button class="sd-icon"><i class="material-icons blue-mate">home</i></button><button class="sd-icon circle"><i class="material-icons red-mate">volume_up</i></button><button class="sd-icon circle"><i class="material-icons blue-mate">pause</i></button><button class="sd-icon circle red-mate"><i class="material-icons">play_arrow</i></button><br>
-    <p class="tags-container onerow"><span>${`<button class="sd-icon `}<span class="light-txt">black</span>${`"><i class="material-icons `}<span class="light-txt">green-mate</span>${`">add</i></button>`}</span>
-    <span>${`<button class="sd-icon`}${`"><i class="material-icons `}<span class="light-txt">red-mate</span>${`">face</i></button>`}</span>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon black"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons green-mate"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons red-mate"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <br>
     <div class="container" style="background-color: #292929;">

@@ -1,7 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
-import { storyCommonStyles } from '../.storybook/common-styles';
+import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../stepper';
 
 storiesOf('Seed Catalog', module)
@@ -9,6 +9,7 @@ storiesOf('Seed Catalog', module)
         <style>
             ${seedStyle}
             ${storyCommonStyles}
+            ${cssTemplateColors}
 
             seed-stepper {
                 justify-content: flex-start;
@@ -37,8 +38,9 @@ storiesOf('Seed Catalog', module)
             </div>
         </div>
  
-        
-        <p class="tags-container"><span><span class="light-txt">${`<seed-stepper`}</span>${` .index="\${0}" .size="\${5}">`}<span class="light-txt">${`</seed-stepper>`}</span></span></p>
-        <p class="tags-container"><span><span class="light-txt">${`<seed-stepper`}</span>${` .index="\${0}" .size="\${5}" .square="\${true}">`}<span class="light-txt">${`</seed-stepper>`}</span></span></p>
+        <p class="package">
+    <span class="gre"><</span><span class="blu">seed-spinner</span> <span class="light-txt">.index</span>=<span class="ora">"\$\{0}"</span> <span class="light-txt">.size</span>=<span class="ora">"\$\{4}"</span><span class="gre">></span><span class="gre">${'</'}</span><span class="blu">seed-spinner</span><span class="gre">></span>
 
+    <span class="gre"><</span><span class="blu">seed-spinner</span> <span class="light-txt">.index</span>=<span class="ora">"\$\{0}"</span> <span class="light-txt">.size</span>=<span class="ora">"\$\{3}"</span> <span class="light-txt">.square</span>=<span class="ora">"\$\{true}"</span><span class="gre">></span><span class="gre">${'</'}</span><span class="blu">seed-spinner</span><span class="gre">></span>
+    </p>
     `);
