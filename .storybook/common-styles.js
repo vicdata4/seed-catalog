@@ -136,4 +136,8 @@ export const cssTemplateColors = css`
   .gre {
     color: grey;
   }
+
+  .comm {
+    color: #43b05a;
+  }
 `;

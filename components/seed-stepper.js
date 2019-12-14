@@ -44,7 +44,7 @@ export class SeedStepper extends LitElement {
     return {
       index: { type: Number },
       size: { type: Number, reflect: true },
-      dotsArray: { type: Array },
+      array: { type: Array, attribute: false },
       colorActive: { type: String },
       colorBack: { type: String },
       square: { type: Boolean }
@@ -56,7 +56,7 @@ export class SeedStepper extends LitElement {
     this.index = 0;
     this.square = false;
     this.size = 0;
-    this.dotsArray = [];
+    this.array = [];
     this.colorActive = '#d8336d';
     this.colorBack = 'rgba(255,255,255,.5)';
   }
@@ -80,9 +80,8 @@ export class SeedStepper extends LitElement {
   }
 
   attributeChangedCallback() {
-    const n = this.size;
-    const abc = new Array(n).fill(empty);
-    this.dotsArray = abc;
+    super.connectedCallback();
+    this.array = new Array(this.size).fill(empty);
   }
 
   firstUpdated() {
@@ -92,15 +91,16 @@ export class SeedStepper extends LitElement {
 
   updated(changedProps) {
     const square = this.square ? ' square' : empty;
+
     if (this.index || changedProps.get('index')) {
-      this.setActive(this.index, `dot${square} active`);
       this.setActive(changedProps.get('index'), `dot${square}`);
     }
+    this.setActive(this.index, `dot${square} active`);
   }
 
   render() {
     return html`
-      ${this.dotsArray.map((x, i) => html`
+      ${this.array.map((x, i) => html`
         <button
           class="dot${this.square ? ' square' : empty}"
           @click="${() => this.setPosition(i)}" id="${`a${i}`}"

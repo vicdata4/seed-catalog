@@ -149,7 +149,7 @@ storiesOf('Seed Catalog', module)
     <span class="purp">import</span> <span class="ora">'seed-catalog/accordion.js</span>';
     <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js</span>';
 
-    <span class="light-txt">// Alternatively you can use accordion tag.</span>;
+    <span class="comm">// Alternatively you can use accordion tag</span>
 
     <span class="gre"><</span><span class="blu">seed-accordion</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
