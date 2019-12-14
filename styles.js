@@ -2,7 +2,7 @@ import { css } from 'lit-element';
 import { materialIcons, googleFont } from './fonts.js';
 
 const seedColors = css`
-  html {
+  :host, html {
     --seed-color-white: white;
     --seed-color-white-focus: rgba(255, 255, 255, .2);
     --seed-color-white-hover: #dedede;
