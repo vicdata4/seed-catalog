@@ -1,32 +1,7 @@
 import { css } from 'lit-element';
 import { materialIcons, googleFont } from './fonts.js';
 
-const dropDown = css`
-  .dropdown-links > a {
-    color: #483f3f;
-    text-decoration: none;
-    
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    padding-left: 20px;
-    padding-right: 50px;
-  }
-
-  .dropdown-links > a:hover {
-    background-color: #f9f9f9;
-  }
-
-  .dropdown-links > a > i{
-    margin-right: 15px;
-  }
-`;
-
-export const seedStyle = css`
-  ${googleFont}
-  ${materialIcons}
-  ${dropDown}
-
+const seedColors = css`
   html {
     --seed-color-white: white;
     --seed-color-white-focus: rgba(255, 255, 255, .2);
@@ -72,10 +47,35 @@ export const seedStyle = css`
     --seed-color-blue-mate-focus: #2dabb445;
     --seed-color-blue-mate-hover: rgb(53, 98, 149);
   }
+`;
 
-  *:focus { outline: 4px solid var(--seed-color-white-focus); }
+const dropDown = css`
+  .dropdown-links > a {
+    color: #483f3f;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  .dropdown-links > a:hover {
+    background-color: #f9f9f9;
+  }
+
+  .dropdown-links > a > i{
+    margin-right: 15px;
+  }
+`;
+
+export const seedStyle = css`
+  ${googleFont}
+  ${materialIcons}
+  ${dropDown}
+  ${seedColors}
   
-  /* sd-btn [class="sd-btn"] */
   .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
     font-family: 'Ubuntu', sans-serif;
     display: inline-block;
@@ -120,6 +120,8 @@ export const seedStyle = css`
     margin: 0;
     cursor: pointer;
   }
+
+  *:focus { outline: 4px solid var(--seed-color-white-focus); }
 
   .sd-btn:focus { outline: 4px solid var(--seed-color-white-focus); }
   .sd-btn:disabled, .sd-btn-mix:disabled { opacity: .8; }
