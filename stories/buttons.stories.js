@@ -52,6 +52,7 @@ storiesOf('Seed Catalog', module)
     <button class="sd-btn sm red-mate">red-mate</button>
     <button class="sd-btn sm blue-mate">blue-mate</button>
     <button class="sd-btn sm green-mate">green-mate</button>
+    <button class="sd-btn sm">default</button>
     <p class="package">
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn red"</span><span class="gre">></span><span class="gre"></span>red<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
 
