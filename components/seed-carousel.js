@@ -96,6 +96,7 @@ export class SeedCarousel extends LitElement {
       speed: { type: Number },
       auto: { type: Boolean, attribute: 'auto' },
       arrows: { type: Boolean, attribute: 'arrows' },
+      arrowsColor: { type: String },
       stepper: { type: Boolean, attribute: 'stepper' },
       square: { type: Boolean, attribute: 'square' },
       interval: { type: Number },
@@ -115,6 +116,7 @@ export class SeedCarousel extends LitElement {
     this.minTouchLength = 70;
     this.minTouchAngle = 30;
     this._focusEventsActive = [];
+    this.arrowsColor = this.arrowsColor || 'white';
     this.EVENTS = {
       mouseenter: 'mouse',
       mouseleave: 'mouse',
@@ -136,6 +138,7 @@ export class SeedCarousel extends LitElement {
               id="left"
               aria-label="left"
               class="arrow-btn arrow-btn-left"
+              .style="color: ${this.arrowsColor}"
               @click="${this._prev}">
               <i class="material-icons lg">keyboard_arrow_left</i>
           </button>
@@ -143,6 +146,7 @@ export class SeedCarousel extends LitElement {
               id="right"
               aria-label="right"
               class="arrow-btn"
+              .style="color: ${this.arrowsColor}"
               @click="${this._next}">
               <i class="material-icons lg">keyboard_arrow_right</i>
           </button>

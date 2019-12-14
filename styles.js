@@ -28,6 +28,10 @@ export const seedStyle = css`
   ${dropDown}
 
   :host {
+    --seed-color-white: white;
+    --seed-color-white-focus: rgba(255, 255, 255, .2);
+    --seed-color-white-hover: #dedede;
+
     --seed-color-red: #de3d4c;
     --seed-color-red-focus: #ff00184d;
     --seed-color-red-hover: #bb3440;
@@ -68,6 +72,8 @@ export const seedStyle = css`
     --seed-color-blue-mate-focus: #2dabb445;
     --seed-color-blue-mate-hover: rgb(53, 98, 149);
   }
+
+  *:focus { outline: 4px solid rgba(255, 255, 255, .2); }
   
   /* sd-btn [class="sd-btn"] */
   .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
@@ -118,6 +124,9 @@ export const seedStyle = css`
   .sd-btn:focus { outline: 4px solid #ffffff40; }
   .sd-btn:disabled, .sd-btn-mix:disabled { opacity: .8; }
   .sd-btn:hover:enabled { background-color: #dedede; }
+
+  /*** WHITE ***/
+  .white { color: white; }
 
   /*** RED ***/
   .red { background-color: var(--seed-color-red); color: white; }
@@ -242,8 +251,4 @@ export const seedStyle = css`
   i.sm { font-size: 1rem; padding: 0; }
 
   .yellow > i { color: #434343; }
-
-  .material-icons {
-    background-color: unset;
-  }
 `;

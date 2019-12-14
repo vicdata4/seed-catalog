@@ -103,6 +103,7 @@ storiesOf('Seed Catalog', module)
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon circle red-mate"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <h2 class="sd-btn black sm"><span class="light">sd-icon clear</span></h2>
+    <button class="sd-icon clear"><i class="material-icons white">4k</i></button>
     <button class="sd-icon clear"><i class="material-icons red">favorite</i></button>
     <button class="sd-icon clear"><i class="material-icons blue">grade</i></button>
     <button class="sd-icon clear"><i class="material-icons green">thumb_up</i></button>
@@ -110,7 +111,7 @@ storiesOf('Seed Catalog', module)
     <button class="sd-icon clear"><i class="material-icons red-mate">add</i></button>
     <button class="sd-icon clear"><i class="material-icons yellow">cast</i></button>
     <p class="package">
-    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons blue"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons white"</span><span class="gre">></span>4k<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
 
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons red"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
