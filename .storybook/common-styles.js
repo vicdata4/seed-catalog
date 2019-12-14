@@ -71,7 +71,7 @@ export const storyCommonStyles = css`
     --seed-color-blue-mate: rgb(63, 118, 182);
     --seed-color-blue-mate-focus: #2dabb445;
     --seed-color-blue-mate-hover: rgb(53, 98, 149);
-    }
+  }
 
   .onerow {
     margin: 0;
@@ -95,46 +95,45 @@ export const storyCommonStyles = css`
     .card {
       width: 50%;
     }
-}
+  }
 `;
 
 
 export const cssTemplateColors = css`
+  .package {
+    font-family: monospace;
+    overflow: scroll;
+    color: white;
+    white-space: pre;
+    background-color: #272727;
+    font-size: 15px;
+  }
 
-    .package {
-      font-family: monospace;
-      overflow: scroll;
-      color: white;
-      white-space: pre;
-      background-color: #272727;
-      font-size: 15px;
-    }
+  .package > * {
+    font-family: monospace;
+  }
 
-    .package > * {
-      font-family: monospace;
-    }
+  .yellou {
+    color: #e8e191;
+  }
 
-    .yellou {
-        color: #e8e191;
-      }
+  .gree {
+    color: #0cc782;
+  }
 
-      .gree {
-        color: #0cc782;
-      }
+  .blu {
+    color: #2f9dec;
+  }
 
-      .blu {
-        color: #2f9dec;
-      }
+  .purp {
+    color: #c77ada;
+  }
 
-      .purp {
-        color: #c77ada;
-      }
+  .ora {
+    color: #e0b669;
+  }
 
-      .ora {
-        color: #e0b669;
-      }
-
-      .gre {
-        color: grey;
-      }
-  `;
+  .gre {
+    color: grey;
+  }
+`;

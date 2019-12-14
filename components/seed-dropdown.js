@@ -10,7 +10,7 @@ export class SeedDropdown extends LitElement {
       css`
         :host {
           display: inline-block;
-          width: min-content;
+          /*width: min-content;*/
         }
 
         .dropdown {
