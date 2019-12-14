@@ -76,16 +76,16 @@ storiesOf('Seed Catalog', module)
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn sm</span></h2>
     <button class="sd-btn blue sm">Favorite</button>
-    <button class="sd-icon red-mate sm"><i class="material-icons">lock</i></button>
-    <button class="sd-icon circle blue-mate sm"><i class="material-icons">face</i></button>
+    <button class="sd-btn purple sm">Select</button>
+    <button class="sd-btn orange sm">Submit</button>
     <p class="package">
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn sm blue"</span><span class="gre">></span><span class="gre"></span>Favourite<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn lg</span></h2>
-    <button class="sd-btn blue lg">Favorite</button>
-    <button class="sd-icon green-mate lg"><i class="material-icons">lock</i></button>
-    <button class="sd-icon circle red-mate lg"><i class="material-icons">face</i></button>
+    <button class="sd-btn green-mate lg">Favorite</button>
+    <button class="sd-btn red-mate lg">Send</button>
+    <button class="sd-btn blue-mate lg">Profile</button>
     <p class="package">
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn lg green"</span><span class="gre">></span><span class="gre"></span>Profile<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
