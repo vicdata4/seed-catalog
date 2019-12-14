@@ -108,6 +108,32 @@ storiesOf('Seed Catalog', module)
                 </p>
             </seed-dropdown>
         </seed-collapse>
+        <seed-collapse>
+            <div>
+                <button id="zlol" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </div>
+            <div>
+                <button id="zlock" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 2</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </div>
+            <div>
+                <button id="zdrot" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 3</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </div>
+            <div>
+                <button id="zlops" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 4</button>
+                <p slot="content" class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+                </p>
+            </div>
+        </seed-collapse>
         <p class="package">
     <span class="gre"><</span><span class="blu">seed-collapse</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span>

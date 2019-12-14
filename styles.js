@@ -27,7 +27,7 @@ export const seedStyle = css`
   ${materialIcons}
   ${dropDown}
 
-  :host {
+  html {
     --seed-color-white: white;
     --seed-color-white-focus: rgba(255, 255, 255, .2);
     --seed-color-white-hover: #dedede;
@@ -73,7 +73,7 @@ export const seedStyle = css`
     --seed-color-blue-mate-hover: rgb(53, 98, 149);
   }
 
-  *:focus { outline: 4px solid rgba(255, 255, 255, .2); }
+  *:focus { outline: 4px solid var(--seed-color-white-focus); }
   
   /* sd-btn [class="sd-btn"] */
   .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
@@ -82,7 +82,7 @@ export const seedStyle = css`
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
-    width: fit-content;
+    width: min-content; /*fit-content*/
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -93,7 +93,7 @@ export const seedStyle = css`
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-    background-color: white;
+    background-color: var(--seed-color-white);
     transition: background-color .1s;
     text-decoration: none;
     cursor: pointer;
@@ -121,60 +121,63 @@ export const seedStyle = css`
     cursor: pointer;
   }
 
-  .sd-btn:focus { outline: 4px solid #ffffff40; }
+  .sd-btn:focus { outline: 4px solid var(--seed-color-white-focus); }
   .sd-btn:disabled, .sd-btn-mix:disabled { opacity: .8; }
-  .sd-btn:hover:enabled { background-color: #dedede; }
+
+  .sd-btn:hover:enabled,
+  .sd-btn-mixr:hover:enabled,
+  .sd-btn-mix:hover:enabled { background-color: var(--seed-color-white-hover); }
 
   /*** WHITE ***/
   .white { color: white; }
 
   /*** RED ***/
-  .red { background-color: var(--seed-color-red); color: white; }
+  .red { background-color: var(--seed-color-red); color: var(--seed-color-white); }
   .red:focus { outline: 4px solid var(--seed-color-red-focus); }
   .red:hover:enabled { background-color: var(--seed-color-red-hover); }
 
   /*** GREEN ***/
-  .green { background-color: var(--seed-color-green); color: white; }
+  .green { background-color: var(--seed-color-green); color: var(--seed-color-white); }
   .green:focus { outline: 4px solid var(--seed-color-green-focus); }
   .green:hover:enabled { background-color: var(--seed-color-green-hover); }
 
   /*** BLUE ***/
-  .blue { background-color: var(--seed-color-blue); color: white; }
+  .blue { background-color: var(--seed-color-blue); color: var(--seed-color-white); }
   .blue:focus { outline: 4px solid var(--seed-color-blue-focus); }
   .blue:hover:enabled { background-color: var(--seed-color-blue-hover); }
 
   /*** YELLOW ***/
-  .yellow { background-color: var(--seed-color-yellow); color: #434343;}
+  .yellow { background-color: var(--seed-color-yellow); color: var(--seed-color-black-hover);}
   .yellow:focus { outline: 4px solid var(--seed-color-yellow-focus); }
   .yellow:hover:enabled { background-color: var(--seed-color-yellow-hover); }
 
   /*** PURPLE ***/
-  .purple { background-color: var(--seed-color-purple); color: white; }
+  .purple { background-color: var(--seed-color-purple); color: var(--seed-color-white); }
   .purple:focus { outline: 4px solid var(--seed-color-purple-focus); }
   .purple:hover:enabled { background-color: var(--seed-color-purple-hover); }
 
   /*** BLACK ***/
-  .black { background-color: var(--seed-color-black); color: white; }
+  .black { background-color: var(--seed-color-black); color: var(--seed-color-white); }
   .black:focus { outline: 4px solid var(--seed-color-black-focus); }
   .black:hover:enabled { background-color: var(--seed-color-black-hover); }
 
   /*** ORANGE ***/
-  .orange { background-color: var(--seed-color-orange); color: white; }
+  .orange { background-color: var(--seed-color-orange); color: var(--seed-color-white); }
   .orange:focus { outline: 4px solid var(--seed-color-orange-focus); }
   .orange:hover:enabled { background-color: var(--seed-color-orange-hover); }
 
   /*** GREEN MATE ***/
-  .green-mate { background-color: var(--seed-color-green-mate); color: white; }
+  .green-mate { background-color: var(--seed-color-green-mate); color: var(--seed-color-white); }
   .green-mate:focus { outline: 4px solid var(--seed-color-green-mate-focus); }
   .green-mate:hover:enabled { background-color: var(--seed-color-green-mate-hover); }
 
   /*** RED MATE ***/
-  .red-mate { background-color: var(--seed-color-red-mate); color: white; }
+  .red-mate { background-color: var(--seed-color-red-mate); color: var(--seed-color-white); }
   .red-mate:focus { outline: 4px solid var(--seed-color-red-mate-focus); }
   .red-mate:hover:enabled { background-color: var(--seed-color-red-mate-hover); }
 
   /*** BLUE MATE ***/
-  .blue-mate { background-color: var(--seed-color-blue-mate); color: white; }
+  .blue-mate { background-color: var(--seed-color-blue-mate); color: var(--seed-color-white); }
   .blue-mate:focus { outline: 4px solid var(--seed-color-blue-mate-focus); }
   .blue-mate:hover:enabled { background-color: var(--seed-color-blue-mate-hover); }
 
@@ -250,5 +253,5 @@ export const seedStyle = css`
   i.lg { font-size: 2.5rem; padding: 0; }
   i.sm { font-size: 1rem; padding: 0; }
 
-  .yellow > i { color: #434343; }
+  .yellow > i { color: var(--seed-color-black-hover); }
 `;

@@ -90,18 +90,18 @@ export class SeedCarousel extends LitElement {
 
   static get properties() {
     return {
-      coordinate: { type: Number },
-      index: { type: Number },
-      nCards: { type: Number },
       speed: { type: Number },
+      interval: { type: Number },
+      arrowsColor: { type: String },
+      minTouchLength: { type: Number, attribute: false },
+      minTouchAngle: { type: Number, attribute: false },
+      index: { type: Number, attribute: false },
+      coordinate: { type: Number, attribute: false },
+      cardsLength: { type: Number, attribute: false },
       auto: { type: Boolean, attribute: 'auto' },
       arrows: { type: Boolean, attribute: 'arrows' },
-      arrowsColor: { type: String },
       stepper: { type: Boolean, attribute: 'stepper' },
-      square: { type: Boolean, attribute: 'square' },
-      interval: { type: Number },
-      minTouchLength: { type: Number },
-      minTouchAngle: { type: Number }
+      square: { type: Boolean, attribute: 'square' }
     };
   }
 
@@ -109,8 +109,8 @@ export class SeedCarousel extends LitElement {
     super();
     this.coordinate = 0;
     this.index = 0;
-    this.nCards = 0;
-    this.speed = 0.8;
+    this.cardsLength = 0;
+    this.speed = this.speed || 0.8;
     this.interval = 5000;
     this.intervalRef = null;
     this.minTouchLength = 70;
@@ -157,37 +157,12 @@ export class SeedCarousel extends LitElement {
   showStepper() {
     return this.stepper ? html`
         <seed-stepper
-          .size="${this.nCards}"
+          .size="${this.cardsLength}"
           .index="${this.index}"
           .colorBack="${'rgba(255,255,255,.5)'}"
           .square="${this.square}">
         </seed-stepper>
      ` : empty;
-  }
-
-  render() {
-    return html` 
-      ${this.showArrows()}
-      <div
-        id="slide"
-        class="container"
-        .style="${`
-            transform: translateX(${this.coordinate}px);
-            transition: transform ${this.speed}s`}"
-      >
-        <slot></slot>
-      </div>
-      ${this.showStepper()}
-    `;
-  }
-
-  firstUpdated() {
-    carouselUtils(this, '#slide');
-
-    this.nCards = this.getNCards();
-
-    window.addEventListener('resize', this.setCoordinate.bind(this));
-    if (this.auto) this.setAutoInterval();
   }
 
   showNext(way) {
@@ -208,14 +183,14 @@ export class SeedCarousel extends LitElement {
     if (this.auto) this._startAutoplay();
   }
 
-  getNCards() {
+  getCardsLength() {
     const divs = this.querySelectorAll('div');
     const imgs = this.querySelectorAll('img');
     return divs.length + imgs.length;
   }
 
   setIndex(way) {
-    const cards = this.getNCards();
+    const cards = this.getCardsLength();
 
     if (this.index === cards - 1 && way) {
       this.index = 0;
@@ -278,5 +253,30 @@ export class SeedCarousel extends LitElement {
     if (this._focusEventsActive.length === 0 && this.auto) {
       this._startAutoplay();
     }
+  }
+
+  firstUpdated() {
+    carouselUtils(this, '#slide');
+
+    this.cardsLength = this.getCardsLength();
+
+    window.addEventListener('resize', this.setCoordinate.bind(this));
+    if (this.auto) this.setAutoInterval();
+  }
+
+  render() {
+    return html` 
+      ${this.showArrows()}
+      <div
+        id="slide"
+        class="container"
+        .style="${`
+            transform: translateX(${this.coordinate}px);
+            transition: transform ${this.speed}s`}"
+      >
+        <slot></slot>
+      </div>
+      ${this.showStepper()}
+    `;
   }
 }
