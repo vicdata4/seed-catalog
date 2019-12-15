@@ -8,9 +8,7 @@ module.exports = function(config) {
         type: 'module'
       }
     ],
-    exclude: [
-      'node_modules/@*/**'
-    ],
+    exclude: [],
     preprocessors: {},
     reporters: ['progress'],
     port: 9876,
@@ -19,7 +17,6 @@ module.exports = function(config) {
     browsers: ['ChromeHeadless'],
     autoWatch: false,
     singleRun: true,
-    // singleRun: false, // Karma captures browsers, runs the tests and exits
     concurrency: Infinity
   });
 };
