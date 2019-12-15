@@ -1,4 +1,5 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
+import { linkTo } from '@storybook/addon-links';
 import { html } from 'lit-html';
 
 import { seedStyle } from '../styles';
@@ -51,14 +52,13 @@ storiesOf('Seed', module)
       <a href="https://developer.mozilla.org/en-US/docs/Archive/CSS3" target="_blank" class="sd-btn-mix sm black">CSS3</a>
     </p>
       
-      <button class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Buttons</button>
-      <button class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
-      <button class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
-      <button class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modals</button>
-      <button class="sd-btn-mix sm black"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
-      <button class="sd-btn-mix sm black"><i class="material-icons red">settings_overscan</i>Carousel</button>
-      <button class="sd-btn-mix sm black"><i class="material-icons orange">filter_tilt_shift</i>Spinner</button>
-      <button class="sd-btn-mix sm black"><i class="material-icons blue">menu</i>Accordion</button>
+      <button @click="${linkTo('Seed Catalog', 'Buttons')}" class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Buttons</button>
+      <button @click="${linkTo('Seed Catalog', 'Dropdown')}" class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
+      <button @click="${linkTo('Seed Catalog', 'Collapse')}" class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
+      <button @click="${linkTo('Seed Catalog', 'Modal')}" class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modals</button>
+      <button @click="${linkTo('Seed Catalog', 'Stepper')}" class="sd-btn-mix sm black"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
+      <button @click="${linkTo('Seed Catalog', 'Carousel')}" class="sd-btn-mix sm black"><i class="material-icons red">settings_overscan</i>Carousel</button>
+      <button @click="${linkTo('Seed Catalog', 'Spinner')}" class="sd-btn-mix sm black"><i class="material-icons orange">filter_tilt_shift</i>Spinner</button>
       <br><br><br><br>
     <button class="sd-btn-mix black"><i class="material-icons yellow">star_border</i>Quick Start</button>
     <br><br>
