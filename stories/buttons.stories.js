@@ -62,10 +62,15 @@ storiesOf('Seed Catalog', module)
     
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn purple"</span><span class="gre">></span><span class="gre"></span>purple<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
   
-    <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue-mate"</span><span class="gre">></span><span class="gre"></span>blue-mate<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
+    
+    <span class="comm">// Also you can use ${`<a></a>`} tags, having the same behaviour</span>
+
+    <span class="gre"><</span><span class="blu">a </span><span class="light-txt">href</span>=<span class="ora">"/" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn green-mate"</span><span class="gre">></span><span class="gre"></span>Link tag<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
+
+    <span class="gre"><</span><span class="blu">a </span><span class="light-txt">href</span>=<span class="ora">"/" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span><span class="gre"></span>blue<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
     </p>
     <br>
-    <button class="sd-btn red-mate">Profile</button><button class="sd-btn black">Play now</button><button class="sd-btn blue-mate">Forest</button><button class="sd-btn purple">Podcast</button><button class="sd-btn green-mate">Credit card</button><br><br>
+    <button class="sd-btn red-mate">Profile</button><button class="sd-btn black">Play now</button><button class="sd-btn blue-mate">Forest</button><button class="sd-btn purple">Podcast</button><a href="/" class="sd-btn green-mate">Link tag</a><br><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-mix</span></h2><button class="sd-btn-mix red-mate"><i class="material-icons">flight</i>Flight</button><button class="sd-btn-mixr">Flight<i class="material-icons">flight</i></button>
     <p class="package">
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix red"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>flight<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Flight<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
@@ -116,7 +121,7 @@ storiesOf('Seed Catalog', module)
 
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons red"</span><span class="gre">></span>face<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
-    <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons orange sm">folder</i>
+    <h2 class="sd-btn black sm"><span class="light">material-icons color</span></h2><i class="material-icons yellow">face</i><i class="material-icons blue">star</i></button><i class="material-icons green lg">lock</i><i class="material-icons red lg">flight</i><i class="material-icons yellow lg">cloud</i><i class="material-icons blue sm">face</i><i class="material-icons green sm">home</i><i class="material-icons white sm">folder</i><i class="material-icons black sm">folder</i>
     <p class="package">
     <span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons blue"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>
 
