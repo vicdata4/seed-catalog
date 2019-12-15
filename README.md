@@ -53,8 +53,6 @@ You can play with different combinations of colors, types and sizes according wi
 Material icons is integrated as dependency of this class, so you can create more complex and dynamic buttons, easy and fast just importing `seedStyle` class.
 
 ```js
-// example using lit-element
-// import styles.js file
 
 import { LitElement, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
@@ -72,30 +70,14 @@ class MyComponent extends LitElement {
     render() {
         return html`
             <button class="sd-btn red">Red</button>
-            <button class="sd-btn black sm">Black</button>
-            <button class="sd-btn blue-mate">Submit</button>
-            <button class="sd-btn purple">Purple</button>
             <button class="sd-btn-mix blue"><i class="material-icons">folder</i>Folder</button>
-            <button class="sd-btn-mixr blue">Profile<i class="material-icons">face</i></button>
-            <button class="sd-icon red"><i class="material-icons">folder</i></button>
-            <button class="sd-icon circle red"><i class="material-icons">face</i></button>
-            <button class="sd-icon circle blue sm"><i class="material-icons">lock</i></button>
-            <button class="sd-icon lg green"><i class="material-icons">face</i></button>
-            <i class="material-icons green">home</i>
-            <i class="material-icons blue sm">face</i>
-            <i class="material-icons red-mate">cloud</i>
+            <button class="sd-icon circle"><i class="material-icons">face</i></button>
         `;
     }
 }
 ```
 
-### Classes
-
-##### buttons: `sd-btn`, `sd-btn-mix`, `sd-btn-mixr`, `sd-icon`, `circle`, `sd-icon clear`
-
-##### dropdown: `dropdown-links`
-
-##### color:
+##### color classes:
 - ![](https://placehold.it/15/de3d4c/000000?text=+) `red`
 - ![](https://placehold.it/15/22ac41/000000?text=+) `green`
 - ![](https://placehold.it/15/2dabb4/000000?text=+) `blue`
@@ -109,6 +91,6 @@ class MyComponent extends LitElement {
 - ![](https://placehold.it/15/fff/000000?text=+) `default`
 ##### size: `sm`, `lg`
 
-### How to use it
+### How to use
 
 We recommend to see the [storybook documentation](https://seed-catalog.web.app) to learn more about seed-components catalog and how to use them.
