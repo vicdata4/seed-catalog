@@ -34,13 +34,13 @@ from `package.json`
 
 ## Catalog
 
-- [Accordion](#accordion)
-- [Seed Style](#button-classes)
-- [Carousel](#carousel)
-- [Collapse](#collapse)
-- [Dropdown](#dropdown)
-- [Modal](#modal)
-- [Stepper](#stepper)
+- [Seed Style](https://seed-catalog.web.app/?path=/story/seed-catalog--buttons)
+- [Carousel](https://seed-catalog.web.app/?path=/story/seed-catalog--carousel)
+- [Collapse](https://seed-catalog.web.app/?path=/story/seed-catalog--collapse)
+- [Dropdown](https://seed-catalog.web.app/?path=/story/seed-catalog--dropdown)
+- [Modal](https://seed-catalog.web.app/?path=/story/seed-catalog--modal)
+- [Spinner](https://seed-catalog.web.app/?path=/story/seed-catalog--spinner)
+- [Stepper](https://seed-catalog.web.app/?path=/story/seed-catalog--stepper)
 
 ## Style classes
 
@@ -64,7 +64,7 @@ class MyComponent extends LitElement {
         return [
             seedStyle,
             css`
-                /** your css **/
+                ...
             `
         ];
     }
@@ -111,48 +111,4 @@ class MyComponent extends LitElement {
 
 ### How to use it
 
-## Carousel
-
-Options
-
-- `arrows`
-- `stepper`
-- `auto`
-- `square`
-- `speed` Number ej .3  .7  1  2
-- `interval` Number milliseconds ej 2000
-
-## Collapse
-
-Options (ptional)
-
-- `speed` String
-- `accordion` attribute
-
-## Dropdown
-
-Options
-
-- `backgroundColor` String
-- `rotate` String
-- `position` String
-- `collapse` attribute
-- `clickout` attribute
-- `maxWidth` String
-- `speed` String
-
-## Modal
-
-Options
-
-- `modalBackground` String
-- `alignWindow` String
-
-## Stepper
-
-Options
-
-- `index` Number
-- `size` Number
-
-
+We recommend to see the [storybook documentation](https://seed-catalog.web.app) to learn more about seed-components catalog and how to use them.
