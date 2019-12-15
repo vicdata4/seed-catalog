@@ -89,7 +89,6 @@ class MyComponent extends LitElement {
 - ![](https://placehold.it/15/1C8281/000000?text=+) `green-mate`
 - ![](https://placehold.it/15/3f76b6/000000?text=+) `blue-mate`
 - ![](https://placehold.it/15/fff/000000?text=+) `default`
-##### size: `sm`, `lg`
 
 ### How to use
 
