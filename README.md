@@ -122,77 +122,12 @@ Options
 - `speed` Number ej .3  .7  1  2
 - `interval` Number milliseconds ej 2000
 
-```js
-import { LitElement, html, css } from 'lit-element';
-import { seedStyle } from 'seed-catalog/styles.js';
-import 'seed-catalog/carousel.js';
-
-class MyComponent extends LitElement {
-    static get styles() {
-        return [
-            seedStyle
-        ];
-    }
-    
-    render() {
-        return html`
-            <seed-carousel arrows stepper>
-                <div class="black">Black</div> 
-                <div class="red">Red</div>
-                <div class="blue">Blue</div>
-                <div class="green">Green</div>    
-            </seed-carousel>
-
-            <seed-carousel stepper square>
-                <div class="green">Green</div>      
-                <div class="blue">Blue</div>
-                <div class="purple">Purple</div>
-            </seed-carousel>
-
-            <seed-carousel auto>
-                <div class="green">Green</div>      
-                <div class="blue">Blue</div>
-                <div class="purple">Purple</div>
-            </seed-carousel>
-        `;
-    }
-}
-```
-
 ## Collapse
 
 Options (ptional)
 
 - `speed` String
 - `accordion` attribute
-
-```js
-import { LitElement, html, css } from 'lit-element';
-import { seedStyle } from 'seed-catalog/styles.js';
-import 'seed-catalog/collapse.js';
-import 'seed-catalog/dropdown.js';
-
-class MyComponent extends LitElement {
-    static get styles() {
-        return [
-            seedStyle
-        ];
-    }
-    
-    render() {
-        return html`
-            <seed-collapse>
-                <seed-dropdown>
-                    <button id="lol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Collapse 1</button>
-                    <p slot="content" class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </seed-dropdown>
-            </seed-collapse>
-        `;
-    }
-}
-```
 
 ## Dropdown
 
@@ -206,45 +141,6 @@ Options
 - `maxWidth` String
 - `speed` String
 
-```js
-import { LitElement, html, css } from 'lit-element';
-import { seedStyle } from 'seed-catalog/styles.js';
-import 'seed-catalog/dropdown.js';
-
-class MyComponent extends LitElement {
-    static get styles() {
-        return [
-            seedStyle,
-            css`
-                ...
-            `
-        ];
-    }
-
-    render() {
-        return html`
-            <seed-dropdown rotate="true">
-                <button id="restaurant" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">arrow_drop_down</i>Menu</button>
-                <div slot="content" class="dropdown-links">
-                    <a href="/">Select type</a>
-                    <a href="/"><i class="material-icons green-mate sm">fastfood</i>Burgers</a>
-                    <a href="/"><i class="material-icons green-mate sm">local_dining</i>Salads</a>
-                    <a href="/"><i class="material-icons green-mate sm">local_cafe</i>Desserts</a>
-                    <a href="/"><i class="material-icons red sm">local_bar</i>Drinks</a>
-                </div>
-            </seed-dropdown>
-
-            <seed-dropdown maxWidth="300">
-                <button id="lorem" slot="button" class="sd-btn-mix green"><i class="material-icons">local_library</i>Default dropdown</button>
-                <p slot="content" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam.
-                </p>
-            </seed-dropdown>
-        `;
-    }
-}
-```
-
 ## Modal
 
 Options
@@ -252,72 +148,11 @@ Options
 - `modalBackground` String
 - `alignWindow` String
 
-```js
-import { LitElement, html, css } from 'lit-element';
-import { seedStyle } from 'seed-catalog/styles.js';
-import 'seed-catalog/modal.js';
-
-class MyComponent extends LitElement {
-    static get styles() {
-        return [
-            seedStyle,
-            css`
-                ...
-            `
-        ];
-    }
-
-    render() {
-        return html`
-            <seed-modal alignWindow="center">
-                <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Open modal</button>
-                <button slot="close-btn" class="sd-icon clear"><i class="material-icons red-mate">close</i></button>
-                <span slot="title">Building Web Components</span>
-                
-                <div slot="content">
-                Ut pellentesque, enim lobortis pellentesque egestas, libero nibh sodales sapien, eu dignissim tortor massa id neque. Ut at dui viverra, efficitur lectus sed, sagittis risus.
-                </div>
-                <div slot="footer">
-                <button class="sd-btn green-mate">Ok</button>
-                <button class="sd-btn red-mate">Deny</button>
-                </div> 
-            </seed-modal>
-        `;
-    }
-}
-```
-
 ## Stepper
 
 Options
 
 - `index` Number
 - `size` Number
-
-```js
-import { LitElement, html, css } from 'lit-element';
-import 'seed-catalog/stepper.js';
-
-class MyComponent extends LitElement {
-    static get properties() {
-        return {
-            index: { type: Number },
-            size: { type: Number },
-        };
-    }
-
-    constructor() {
-        super();
-        this.index = 0;
-        this.size = 5;
-    }
-
-    render() {
-        return html`
-            <seed-stepper .index="${this.index}" .size="${this.size}"></seed-stepper>
-        `;
-    }
-}
-```
 
 
