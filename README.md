@@ -194,59 +194,6 @@ class MyComponent extends LitElement {
 }
 ```
 
-
-## Accordion
-
-```js
-import { LitElement, html, css } from 'lit-element';
-import { seedStyle } from 'seed-catalog/styles.js';
-import 'seed-catalog/collapse.js';
-import 'seed-catalog/dropdown.js';
-
-class MyComponent extends LitElement {
-    static get styles() {
-        return [
-            seedStyle
-        ];
-    }
-    
-    render() {
-        return html`
-            <seed-accordion>
-                <seed-dropdown>
-                    <button id="lolv" slot="button" class="sd-btn-mix red"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
-                    <p slot="content" class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </seed-dropdown>
-                <seed-dropdown>
-                    <button id="lockv" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 2</button>
-                    <p slot="content" class="content">
-                        Fusce convallis lacus enim, eget ultricies neque tristique vel.
-                    </p>
-                </seed-dropdown>
-                <seed-dropdown>
-                    <button id="drotv" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">keyboard_arrow_down</i>Accordion 3</button>
-                    <p slot="content" class="content">
-                        Lorem ipsum dolor sit amet.
-                    </p>
-                </seed-dropdown>
-                <seed-dropdown>
-                    <button id="lopsv" slot="button" class="sd-btn-mix purple"><i class="material-icons">keyboard_arrow_down</i>Accordion 4</button>
-                    <p slot="content" class="content">
-                        Fusce convallis lacus enim, eget ultricies neque tristique vel.
-                    </p>
-                    <p slot="content" class="content">
-                        Lorem ipsum dolor sit amet.
-                    </p>
-                </seed-dropdown>
-            </seed-accordion>
-        `;
-    }
-}
-```
-
-
 ## Dropdown
 
 Options
