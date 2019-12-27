@@ -135,20 +135,20 @@ export class SeedCarousel extends LitElement {
     return this.arrows
       ? html`
           <button
-              id="left"
-              aria-label="left"
-              class="arrow-btn arrow-btn-left"
-              .style="color: ${this.arrowsColor}"
-              @click="${this._prev}">
-              <i class="material-icons lg">keyboard_arrow_left</i>
+            id="left"
+            aria-label="left"
+            class="arrow-btn arrow-btn-left"
+            .style="color: ${this.arrowsColor}"
+            @click="${this._prev}">
+            <i class="material-icons lg">keyboard_arrow_left</i>
           </button>
           <button
-              id="right"
-              aria-label="right"
-              class="arrow-btn"
-              .style="color: ${this.arrowsColor}"
-              @click="${this._next}">
-              <i class="material-icons lg">keyboard_arrow_right</i>
+            id="right"
+            aria-label="right"
+            class="arrow-btn"
+            .style="color: ${this.arrowsColor}"
+            @click="${this._next}">
+            <i class="material-icons lg">keyboard_arrow_right</i>
           </button>
        `
       : empty;

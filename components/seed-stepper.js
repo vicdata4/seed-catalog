@@ -32,10 +32,6 @@ export class SeedStepper extends LitElement {
           margin: 0;
           border-radius: unset;
         }
-
-        .active {
-          background-color: white !important;
-        }
       `
     ];
   }
@@ -45,9 +41,9 @@ export class SeedStepper extends LitElement {
       index: { type: Number },
       size: { type: Number, reflect: true },
       array: { type: Array, attribute: false },
-      colorActive: { type: String },
       colorBack: { type: String },
-      square: { type: Boolean }
+      square: { type: Boolean },
+      selectedColor: { type: String }
     };
   }
 
@@ -57,18 +53,9 @@ export class SeedStepper extends LitElement {
     this.square = false;
     this.size = 0;
     this.array = [];
-    this.colorActive = '#d8336d';
-    this.colorBack = 'rgba(255,255,255,.5)';
-  }
 
-  /**
-    * Set active class
-    * @param {Number} i  Assign default index (0)
-    * @param {String} mod Assign active class (dot active)
-    */
-  setActive(i, mod) {
-    const currentDot = this.shadowRoot.querySelector(`#a${i}`);
-    if (currentDot) currentDot.classList = mod;
+    this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
+    this.selectedColor = this.selectedColor || 'white';
   }
 
   /**
@@ -84,27 +71,13 @@ export class SeedStepper extends LitElement {
     this.array = new Array(this.size).fill(empty);
   }
 
-  firstUpdated() {
-    const square = this.square ? ' square' : empty;
-    this.setActive(this.index, `dot${square} active`);
-  }
-
-  updated(changedProps) {
-    const square = this.square ? ' square' : empty;
-
-    if (this.index || changedProps.get('index')) {
-      this.setActive(changedProps.get('index'), `dot${square}`);
-    }
-    this.setActive(this.index, `dot${square} active`);
-  }
-
   render() {
-    return html`
+    return html`${this.activeColor}
       ${this.array.map((x, i) => html`
         <button
           class="dot${this.square ? ' square' : empty}"
           @click="${() => this.setPosition(i)}" id="${`a${i}`}"
-          .style="background-color: ${this.colorBack}"
+          .style="background-color: ${i === this.index ? this.selectedColor : this.colorBack}"
           aria-label="${i}"
           tabindex="0"
         >
