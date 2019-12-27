@@ -41,9 +41,9 @@ export class SeedStepper extends LitElement {
       index: { type: Number },
       size: { type: Number, reflect: true },
       array: { type: Array, attribute: false },
-      colorBack: { type: String },
       square: { type: Boolean },
-      selectedColor: { type: String }
+      colorBack: { type: String },
+      colorActive: { type: String }
     };
   }
 
@@ -55,11 +55,11 @@ export class SeedStepper extends LitElement {
     this.array = [];
 
     this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
-    this.selectedColor = this.selectedColor || 'white';
+    this.colorActive = this.colorActive || 'white';
   }
 
   /**
-    * Set new index and dispatchEvent to smarters-reviews component
+    * Set new index and dispatchEvent(e)
     * @param {Number} index  Selected index
     */
   setPosition(index) {
@@ -77,7 +77,7 @@ export class SeedStepper extends LitElement {
         <button
           class="dot${this.square ? ' square' : empty}"
           @click="${() => this.setPosition(i)}" id="${`a${i}`}"
-          .style="background-color: ${i === this.index ? this.selectedColor : this.colorBack}"
+          .style="background-color: ${i === this.index ? this.colorActive : this.colorBack}"
           aria-label="${i}"
           tabindex="0"
         >

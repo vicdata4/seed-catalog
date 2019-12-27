@@ -22,7 +22,7 @@ storiesOf('Seed Catalog', module)
             <h6 style="color: white;">Check out Carusel section to see more examples.</h6>
         <div style="width: 30%;margin-left: 20px;display: flex;">
             <div style="margin-right: 50px;">
-                <seed-stepper .index="${0}" .size="${5}" .selectedColor="${'purple'}" .colorBack="${'yellow'}"></seed-stepper>
+                <seed-stepper .index="${0}" .size="${5}" .colorActive="${'purple'}" .colorBack="${'yellow'}"></seed-stepper>
                 <seed-stepper .index="${1}" .size="${4}"></seed-stepper>
                 <seed-stepper .index="${2}" .size="${3}"></seed-stepper>
                 <seed-stepper .index="${1}" .size="${2}"></seed-stepper>
