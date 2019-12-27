@@ -80,8 +80,7 @@ export class SeedStepper extends LitElement {
           .style="background-color: ${i === this.index ? this.colorActive : this.colorBack}"
           aria-label="${i}"
           tabindex="0"
-        >
-        </button>
+        ></button>
       `)}
     `;
   }
