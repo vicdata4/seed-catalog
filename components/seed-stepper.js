@@ -26,6 +26,7 @@ export class SeedStepper extends LitElement {
           border: none;
           cursor: pointer;
           transition: background-color .7s;
+          padding: 1px 7px 2px;
         }
 
         .square {
