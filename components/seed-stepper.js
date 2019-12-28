@@ -72,7 +72,7 @@ export class SeedStepper extends LitElement {
   }
 
   render() {
-    return html`${this.activeColor}
+    return html`
       ${this.array.map((x, i) => html`
         <button
           class="dot${this.square ? ' square' : empty}"
