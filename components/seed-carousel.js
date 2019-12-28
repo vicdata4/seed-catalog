@@ -271,11 +271,9 @@ export class SeedCarousel extends LitElement {
         id="slide"
         class="container"
         .style="${`
-            transform: translateX(${this.coordinate}px);
-            transition: transform ${this.speed}s`}"
-      >
-        <slot></slot>
-      </div>
+          transform: translateX(${this.coordinate}px);
+          transition: transform ${this.speed}s`}"
+      ><slot></slot></div>
       ${this.showStepper()}
     `;
   }

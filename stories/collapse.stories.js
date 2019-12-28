@@ -82,6 +82,7 @@ storiesOf('Seed Catalog', module)
       <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
     <span class="gre">${`</`}</span><span class="blu">seed-collapse</span><span class="gre">></span>
         </p>
+        <!--
         <seed-collapse>
             <seed-dropdown>
                 <button id="zlol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Accordion 1</button>
@@ -108,6 +109,7 @@ storiesOf('Seed Catalog', module)
                 </p>
             </seed-dropdown>
         </seed-collapse>
+        -->
         <p class="package">
     <span class="gre"><</span><span class="blu">seed-collapse</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span>
