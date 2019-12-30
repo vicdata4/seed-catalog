@@ -43,8 +43,8 @@ export class SeedStepper extends LitElement {
       size: { type: Number, reflect: true },
       array: { type: Array, attribute: false },
       square: { type: Boolean },
-      colorBack: { type: String },
-      colorActive: { type: String }
+      colorActive: { type: String },
+      colorBack: { type: String }
     };
   }
 
@@ -67,9 +67,12 @@ export class SeedStepper extends LitElement {
     this.dispatchEvent(new CustomEvent('set-dot', { detail: index, composed: true }));
   }
 
-  attributeChangedCallback() {
+  attributeChangedCallback(name, oldVal, newVal) {
     super.connectedCallback();
     this.array = new Array(this.size).fill(empty);
+
+    if (name === 'coloractive') this.colorActive = newVal;
+    if (name === 'colorback') this.colorBack = newVal;
   }
 
   render() {
@@ -78,7 +81,7 @@ export class SeedStepper extends LitElement {
         <button
           class="dot${this.square ? ' square' : empty}"
           @click="${() => this.setPosition(i)}" id="${`a${i}`}"
-          .style="background-color: ${i === this.index ? this.colorActive : this.colorBack}"
+          .style="background-color: ${i === this.index ? (this.colorActive || 'white') : this.colorBack}"
           aria-label="${i}"
           tabindex="0"
         ></button>
