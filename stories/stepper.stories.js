@@ -65,7 +65,7 @@ storiesOf('Seed Catalog', module)
             </div>
 
             <div class="stepper">
-                <seed-stepper .index="${1}" .size="${4}" colorActive="var(--seed-color-yellow)'}" colorBack="var(--seed-color-yellow-focus)"></seed-stepper>
+                <seed-stepper .index="${1}" .size="${4}" colorActive="var(--seed-color-yellow)" colorBack="var(--seed-color-yellow-focus)"></seed-stepper>
                 <seed-stepper .square="${true}" .index="${1}" .size="${4}" colorActive="var(--seed-color-yellow)" colorBack="var(--seed-color-yellow-focus)"></seed-stepper>
             </div>
 
