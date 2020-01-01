@@ -135,61 +135,61 @@ export const seedStyle = css`
 
   /*** RED ***/
   .red { background-color: var(--seed-color-red); color: var(--seed-color-white); }
-  .red:focus { outline: 4px solid var(--seed-color-red-focus); }
+  .red:focus, .red:active { outline: 4px solid var(--seed-color-red-focus); }
   .red:hover, .red:hover:enabled { background-color: var(--seed-color-red-hover); }
   .red:hover:disabled { background-color: var(--seed-color-red); }
 
   /*** GREEN ***/
   .green { background-color: var(--seed-color-green); color: var(--seed-color-white); }
-  .green:focus { outline: 4px solid var(--seed-color-green-focus); }
+  .green:focus, .green:active { outline: 4px solid var(--seed-color-green-focus); }
   .green:hover, .green:hover:enabled { background-color: var(--seed-color-green-hover); }
   .green:hover:disabled { background-color: var(--seed-color-green); }
 
   /*** BLUE ***/
   .blue { background-color: var(--seed-color-blue); color: var(--seed-color-white); }
-  .blue:focus { outline: 4px solid var(--seed-color-blue-focus); }
+  .blue:focus, .blue:active { outline: 4px solid var(--seed-color-blue-focus); }
   .blue:hover, .blue:hover:enabled { background-color: var(--seed-color-blue-hover); }
   .blue:hover:disabled { background-color: var(--seed-color-blue); }
 
   /*** YELLOW ***/
   .yellow { background-color: var(--seed-color-yellow); color: var(--seed-color-black-hover);}
-  .yellow:focus { outline: 4px solid var(--seed-color-yellow-focus); }
+  .yellow:focus, .yellow:active { outline: 4px solid var(--seed-color-yellow-focus); }
   .yellow:hover, .yellow:hover:enabled { background-color: var(--seed-color-yellow-hover); }
   .yellow:hover:disabled { background-color: var(--seed-color-yellow); }
 
   /*** PURPLE ***/
   .purple { background-color: var(--seed-color-purple); color: var(--seed-color-white); }
-  .purple:focus { outline: 4px solid var(--seed-color-purple-focus); }
+  .purple:focus, .purple:active { outline: 4px solid var(--seed-color-purple-focus); }
   .purple:hover, .purple:hover:enabled { background-color: var(--seed-color-purple-hover); }
   .purple:hover:disabled { background-color: var(--seed-color-purple); }
 
   /*** BLACK ***/
   .black { background-color: var(--seed-color-black); color: var(--seed-color-white); }
-  .black:focus { outline: 4px solid var(--seed-color-black-focus); }
+  .black:focus, .black:active { outline: 4px solid var(--seed-color-black-focus); }
   .black:hover, .black:hover:enabled { background-color: var(--seed-color-black-hover); }
   .black:hover:disabled { background-color: var(--seed-color-black); }
 
   /*** ORANGE ***/
   .orange { background-color: var(--seed-color-orange); color: var(--seed-color-white); }
-  .orange:focus { outline: 4px solid var(--seed-color-orange-focus); }
+  .orange:focus, .orange:active { outline: 4px solid var(--seed-color-orange-focus); }
   .orange:hover, .orange:hover:enabled { background-color: var(--seed-color-orange-hover); }
   .orange:hover:disabled { background-color: var(--seed-color-orange); }
 
   /*** GREEN MATE ***/
   .green-mate { background-color: var(--seed-color-green-mate); color: var(--seed-color-white); }
-  .green-mate:focus { outline: 4px solid var(--seed-color-green-mate-focus); }
+  .green-mate:focus, .green-mate:active { outline: 4px solid var(--seed-color-green-mate-focus); }
   .green-mate:hover, .green-mate:hover:enabled { background-color: var(--seed-color-green-mate-hover); }
   .green-mate:hover:disabled { background-color: var(--seed-color-green-mate); }
 
   /*** RED MATE ***/
   .red-mate { background-color: var(--seed-color-red-mate); color: var(--seed-color-white); }
-  .red-mate:focus { outline: 4px solid var(--seed-color-red-mate-focus); }
+  .red-mate:focus, .red-mate:active { outline: 4px solid var(--seed-color-red-mate-focus); }
   .red-mate:hover, .red-mate:hover:enabled { background-color: var(--seed-color-red-mate-hover); }
   .red-mate:hover:disabled { background-color: var(--seed-color-red-mate); }
 
   /*** BLUE MATE ***/
   .blue-mate { background-color: var(--seed-color-blue-mate); color: var(--seed-color-white); }
-  .blue-mate:focus { outline: 4px solid var(--seed-color-blue-mate-focus); }
+  .blue-mate:focus, .blue-mate:active { outline: 4px solid var(--seed-color-blue-mate-focus); }
   .blue-mate:hover, .blue-mate:hover:enabled { background-color: var(--seed-color-blue-mate-hover); }
   .blue-mate:hover:disabled { background-color: var(--seed-color-blue-mate); }
 
