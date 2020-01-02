@@ -1,10 +1,46 @@
-import { expect, fixture, html } from '@open-wc/testing';
+import { expect, fixture, html, aTimeout } from '@open-wc/testing';
 import '../../modal.js';
 
 describe('Modal component', () => {
-  it('render modal component', async() => {
-    const el = await fixture(html`<seed-modal></seed-modal>`);
+  let el, button, closeBtn;
+  before(async() => {
+    el = await fixture(html`
+      <seed-modal>
+        <button slot="button">Open Modal</button>
+        <button slot="close-btn"><i class="material-icons">close</i></button>
+        <span slot="title">Building Web Components</span>
 
+        <div slot="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+        <div slot="footer">
+          <button>Close</button>
+          <button>Send</button>
+        </div>
+      </seed-modal>
+    `);
+
+    button = el.shadowRoot.querySelector('slot[name=button]');
+    closeBtn = el.shadowRoot.querySelector('slot[name=close-btn]');
+  });
+
+  it('render modal component', async() => {
     expect(el.shadowRoot).not.to.be.null;
+  });
+
+  it('closed modal by default', () => {
+    expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;
+  });
+
+  it('open modal', () => {
+    button.click();
+    expect(el.shadowRoot.querySelector('.closed')).to.be.null;
+  });
+
+  it('close modal', async() => {
+    closeBtn.click();
+    await aTimeout(300);
+    await el.updateComplete;
+    expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;
   });
 });

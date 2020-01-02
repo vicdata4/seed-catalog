@@ -55,6 +55,9 @@ export class SeedDropdown extends LitElement {
     super();
     this.maxWidth = this.maxWidth ? `${this.maxWidth}px` : 'unset';
     this.backgroundColor = this.backgroundColor || 'white';
+    this.rotate = false;
+    this.collapse = false;
+    this.clickout = false;
   }
 
   /**
