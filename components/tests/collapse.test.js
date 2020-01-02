@@ -30,8 +30,4 @@ describe('Collapse component', () => {
 
     expect(submitSpy.callCount).to.equal(1);
   });
-
-  it('basic is undefined', () => {
-    expect(el.basic).to.equal(undefined);
-  });
 });
