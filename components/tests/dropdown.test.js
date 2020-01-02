@@ -1,4 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
+import { spy } from 'sinon';
 import '../../dropdown.js';
 
 describe('Dropdown component', () => {
@@ -24,11 +25,12 @@ describe('Dropdown component', () => {
     expect(el.shadowRoot).not.to.be.null;
   });
 
-  it('absolute position by default', () => {
+  it('default dropdown values', () => {
+    expect(el.maxWidth).to.equal('unset');
     expect(dropdown.style.position).equal('absolute');
   });
 
-  it('unsetted dropdown attributes', () => {
+  it('unsetted dropdown attributes by default', () => {
     expect(dropdown.style.maxHeight).to.equal('');
     expect(dropdown.style.height).to.equal('');
   });
@@ -45,5 +47,30 @@ describe('Dropdown component', () => {
 
     expect(dropdown.style.maxHeight).to.equal('0px');
     expect(dropdown.style.height).to.equal('unset');
+  });
+
+  it('collapse mode equal true', async() => {
+    el.collapse = true;
+    await el.updateComplete;
+
+    expect(dropdown.style.position).equal('relative');
+  });
+
+  it('dispatch event when click on collapse mode', async() => {
+    const submitSpy = spy();
+    const collapse = await fixture(html`
+      <seed-dropdown collapse @set-collapse=${() => submitSpy()}>
+        <button slot="button">Dropdown</button>
+        <p slot="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam,
+          eget viverra diam. Donec euismod mattis dignissim.
+        </p>
+      </seed-dropdown>
+    `);
+
+    const btn = collapse.shadowRoot.querySelector('slot[name=button]');
+    btn.click();
+    expect(submitSpy.callCount).to.equal(1);
   });
 });

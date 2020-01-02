@@ -53,7 +53,7 @@ export class SeedDropdown extends LitElement {
 
   constructor() {
     super();
-    this.maxWidth = `${this.maxWidth}px` || 'unset';
+    this.maxWidth = this.maxWidth ? `${this.maxWidth}px` : 'unset';
     this.backgroundColor = this.backgroundColor || 'white';
   }
 
