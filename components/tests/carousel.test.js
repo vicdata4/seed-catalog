@@ -1,7 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import '../../carousel.js';
 
-describe('Carousel component', () => {
+describe('Carousel default mode', () => {
   let el, stepper, arrows;
 
   before(async() => {
@@ -39,6 +39,7 @@ describe('Carousel arrows stepper', () => {
         <div class="custom-class">Carousel 2</div>
         <div class="custom-class">Carousel 3</div>
         <div class="custom-class">Carousel 4</div>
+        <div class="custom-class">Carousel 5</div>
       </seed-carousel>
     `;
 
@@ -58,7 +59,7 @@ describe('Carousel arrows stepper', () => {
 
   it('carousel length and default index', () => {
     expect(el.index).to.equal(0);
-    expect(el.cardsLength).to.equal(4);
+    expect(el.cardsLength).to.equal(5);
   });
 
   it('click arrow right and set index to 1', () => {
@@ -69,7 +70,7 @@ describe('Carousel arrows stepper', () => {
   it('click arrow left two times and go to the last element', () => {
     arrows[0].click();
     arrows[0].click();
-    expect(el.index).to.equal(3);
+    expect(el.index).to.equal(4);
   });
 
   it('click to stepper dot', () => {
