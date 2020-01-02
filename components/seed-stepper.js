@@ -83,7 +83,7 @@ export class SeedStepper extends LitElement {
           @click="${() => this.setPosition(i)}" id="${`a${i}`}"
           .style="background-color: ${i === this.index ? (this.colorActive || 'white') : this.colorBack}"
           aria-label="${i}"
-          tabindex="0"
+          tabindex="${i}"
         ></button>
       `)}
     `;
