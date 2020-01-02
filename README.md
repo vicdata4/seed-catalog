@@ -32,6 +32,10 @@ from `package.json`
 
 `npm run storybook`
 
+### Run tests
+
+`npm run test`
+
 ## Catalog
 
 - [Seed Style](https://seed-catalog.web.app/?path=/story/seed-catalog--buttons)
