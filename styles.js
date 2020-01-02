@@ -121,14 +121,10 @@ export const seedStyle = css`
     cursor: pointer;
   }
 
-  *:focus { outline: 4px solid var(--seed-color-white-focus); }
+  button:focus, button:active { outline: 4px solid var(--seed-color-white-focus);}
+  button:hover:enabled { background-color: var(--seed-color-white-hover); }
 
-  .sd-btn:focus { outline: 4px solid var(--seed-color-white-focus); }
   .sd-btn:disabled, .sd-btn-mix:disabled { opacity: .8; }
-
-  .sd-btn:hover:enabled,
-  .sd-btn-mixr:hover:enabled,
-  .sd-btn-mix:hover:enabled { background-color: var(--seed-color-white-hover); }
 
   /*** WHITE ***/
   .white { color: white; }
@@ -264,6 +260,8 @@ export const seedStyle = css`
   
   i.lg { font-size: 2.5rem; padding: 0; }
   i.sm { font-size: 1rem; padding: 0; }
+
+  button > .material-icons:active { outline: none; }
 
   .yellow > i { color: var(--seed-color-black-hover); }
 `;
