@@ -28,6 +28,10 @@ describe('Modal component', () => {
     expect(el.shadowRoot).not.to.be.null;
   });
 
+  it('default modal properties and attributes', () => {
+    expect(el.alignWindow).to.equal('flex-start');
+  });
+
   it('closed modal by default', () => {
     expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;
   });
