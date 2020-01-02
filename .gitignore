@@ -6,3 +6,5 @@
 firebase.json
 .firebaserc
 /.firebase
+
+/coverage

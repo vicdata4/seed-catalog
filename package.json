@@ -7,7 +7,7 @@
   "license": "ISC",
   "homepage": "https://github.com/vicdata4/seed-catalog#readme",
   "scripts": {
-    "test": "karma start karma.conf.js debug",
+    "test": "karma start",
     "storybook": "start-storybook -s ./build -p 9001",
     "storybook:build": "build-storybook -o build -s storybook-static",
     "lint": "eslint"
@@ -21,6 +21,9 @@
   },
   "devDependencies": {
     "@open-wc/demoing-storybook": "^0.2.5",
+    "@open-wc/testing": "^2.3.4",
+    "@open-wc/testing-karma": "^3.1.33",
+    "webpack-merge": "^4.1.5",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "eslint": "^6.0.1",
@@ -28,13 +31,7 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "karma": "^4.4.1",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-mocha": "^1.3.0",
-    "mocha": "^6.2.2",
-    "requirejs": "^2.3.6"
+    "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
     "lit-element": "^2.0.1"
