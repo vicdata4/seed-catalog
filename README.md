@@ -8,10 +8,10 @@ Seed-catalog is a free and open-source `web-components library`. It contains CSS
 
 ### [Dependencies](package.json)
 
-- [Storybook](https://storybook.js.org) WC Interface (dev)
 - [LitElement](https://lit-element.polymer-project.org) Web Components
+- [Storybook](https://storybook.js.org) WC Interface (dev)
 - [ESLint](https://eslint.org) Coding style (dev)
-- [@open-wc](https://open-wc.org/) Recomendations (testing, storybook)
+- [@open-wc](https://open-wc.org/) Recomendations (testing)
 
 
 ###  Add as project dependency (98kb)
