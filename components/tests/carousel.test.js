@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { expect, fixture, html } from '@open-wc/testing';
 import '../../carousel.js';
 

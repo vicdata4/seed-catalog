@@ -5,6 +5,7 @@ module.exports = {
     'commonjs': true,
     'node': true,
     'es6': true,
+    'mocha': true
   },
   'rules': {
     'indent': ['error', 2, { 'SwitchCase': 1 }],
@@ -16,6 +17,7 @@ module.exports = {
     'lines-between-class-members': ['error', 'always'],
     'semi': [2, 'always'],
     'space-before-function-paren': ['error', 'never'],
-    'quote-props': ['error', 'as-needed']
+    'quote-props': ['error', 'as-needed'],
+    'no-unused-expressions': 'off'
   },
 };

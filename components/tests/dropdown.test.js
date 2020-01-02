@@ -1,11 +1,10 @@
-/* eslint-disable */
 import { expect, fixture, html } from '@open-wc/testing';
 import '../../dropdown.js';
 
 describe('Dropdown component', () => {
   let el, button, dropdown;
 
-  before(async () => {
+  before(async() => {
     el = await fixture(html`
       <seed-dropdown>
         <button slot="button">Dropdown</button>
@@ -20,7 +19,7 @@ describe('Dropdown component', () => {
     button = el.shadowRoot.querySelector('slot[name=button]');
     dropdown = el.shadowRoot.querySelector('.dropdown');
   });
-    
+
   it('render dropdown component', async() => {
     expect(el.shadowRoot).not.to.be.null;
   });
@@ -29,7 +28,7 @@ describe('Dropdown component', () => {
     expect(dropdown.style.position).equal('absolute');
   });
 
-  it('hidden dropped contents', () => {
+  it('unsetted dropdown attributes', () => {
     expect(dropdown.style.maxHeight).to.equal('');
     expect(dropdown.style.height).to.equal('');
   });
