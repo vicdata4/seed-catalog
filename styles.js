@@ -121,8 +121,12 @@ export const seedStyle = css`
     cursor: pointer;
   }
 
+  .clear:hover, .clear:hover:enabled {
+    background-color: unset;
+  }
+
   button:focus, button:active { outline: 4px solid var(--seed-color-white-focus);}
-  button:hover:enabled { background-color: var(--seed-color-white-hover); }
+  button:hover, button:hover:enabled { background-color: var(--seed-color-white-hover); }
 
   .sd-btn:disabled, .sd-btn-mix:disabled { opacity: .8; }
 
