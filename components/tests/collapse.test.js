@@ -36,12 +36,12 @@ describe('Collapse component', () => {
     const component = await fixture(html`
       <seed-collapse basic>
         <seed-dropdown>
-            <button id="col1" slot="button">Collapse</button>
-            <p slot="content">Lorem ipsum</p>
+          <button id="col1" slot="button">Collapse</button>
+          <p slot="content">Lorem ipsum</p>
         </seed-dropdown>
         <seed-dropdown>
-            <button id="col2" slot="button">Collapse</button>
-            <p slot="content">Lorem ipsum</p>
+          <button id="col2" slot="button">Collapse</button>
+          <p slot="content">Lorem ipsum</p>
         </seed-dropdown>
       </seed-collapse>
   `);

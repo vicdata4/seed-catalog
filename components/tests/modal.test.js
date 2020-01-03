@@ -48,7 +48,7 @@ describe('Modal component', () => {
     expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;
   });
 
-  it('clock focus out', () => {
+  it('click on focus-out modal', () => {
     const ev = new Event('click');
     ev.changedTouches = [{ clientX: 10, clientY: 10 }];
     el.shadowRoot.querySelector('.modal').dispatchEvent(ev);
