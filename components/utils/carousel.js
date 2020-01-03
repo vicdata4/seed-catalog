@@ -3,7 +3,7 @@
   * @param {String} container Container reference
   */
 export const carouselUtils = (component, container) => {
-  const passiveParam = _supportsPassive() ? { passive: true } : false;
+  const passiveParam = supportsPassive() ? { passive: true } : false;
   const cracksSlider = component.shadowRoot.querySelector(container);
 
   cracksSlider.addEventListener('touchstart', _onTouchStart.bind(component, container), passiveParam);
@@ -100,7 +100,7 @@ export function updateXPosition(offset = 0, component, container) {
   *
   * @return {boolean}
   */
-export const _supportsPassive = () => {
+export const supportsPassive = () => {
   let supportsPassive = false;
   try {
     const opts = Object.defineProperty({}, 'passive', {

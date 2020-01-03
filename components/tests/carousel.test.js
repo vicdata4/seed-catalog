@@ -1,5 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import '../../carousel.js';
+import { updateXPosition, updateAnimationSpeed } from '../utils/carousel';
 
 describe('Carousel default mode', () => {
   let el, stepper, arrows;
@@ -76,5 +77,11 @@ describe('Carousel arrows stepper', () => {
   it('click to stepper dot', () => {
     stepper.shadowRoot.querySelectorAll('button')[2].click();
     expect(el.index).to.equal(2);
+  });
+
+  it('update x position', async() => {
+    updateXPosition(null, el, '#slide');
+    await el.updateComplete;
+    expect(el.shadowRoot).not.to.be.null;
   });
 });

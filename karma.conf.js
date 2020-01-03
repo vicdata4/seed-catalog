@@ -14,13 +14,11 @@ module.exports = config => {
       esm: {
         nodeResolve: true
       },
-
-      // TODO: improve coverage
       coverageIstanbulReporter: {
         thresholds: {
           global: {
             statements: 80,
-            branches: 50,
+            branches: 60,
             functions: 70,
             lines: 80
           }
