@@ -137,7 +137,7 @@ export class SeedCarousel extends LitElement {
           <button
             id="left"
             aria-label="left"
-            class="arrow-btn arrow-btn-left"
+            class="arrow-btn arrow-btn-left clear"
             .style="color: ${this.arrowsColor}"
             @click="${this._prev}">
             <i class="material-icons lg">keyboard_arrow_left</i>
@@ -145,7 +145,7 @@ export class SeedCarousel extends LitElement {
           <button
             id="right"
             aria-label="right"
-            class="arrow-btn"
+            class="arrow-btn clear"
             .style="color: ${this.arrowsColor}"
             @click="${this._next}">
             <i class="material-icons lg">keyboard_arrow_right</i>
