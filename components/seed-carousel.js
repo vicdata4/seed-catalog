@@ -4,9 +4,7 @@ import { empty, mediaQueryTablet } from './utils/constants';
 import { seedStyle } from '../styles';
 import './seed-stepper.js';
 
-/** */
 export class SeedCarousel extends LitElement {
-/* eslint-disable require-jsdoc */
   static get styles() {
     return [
       seedStyle,

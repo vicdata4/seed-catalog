@@ -2,9 +2,7 @@ import { LitElement, html, css } from 'lit-element';
 import { empty } from './utils/constants';
 import { seedStyle } from '../styles';
 
-/** */
 export class SeedStepper extends LitElement {
-/* eslint-disable require-jsdoc */
   static get styles() {
     return [
       seedStyle,
