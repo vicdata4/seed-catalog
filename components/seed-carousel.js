@@ -111,7 +111,7 @@ export class SeedCarousel extends LitElement {
     this.index = 0;
     this.cardsLength = 0;
     this.speed = this.speed || 0.8;
-    this.interval = 500;
+    this.interval = 5000;
     this.intervalRef = null;
     this.minTouchLength = 70;
     this.minTouchAngle = 30;

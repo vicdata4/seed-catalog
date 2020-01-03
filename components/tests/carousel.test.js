@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import '../../carousel.js';
-import { updateXPosition, updateAnimationSpeed } from '../utils/carousel';
+import { updateXPosition } from '../utils/carousel';
 
 describe('Carousel default mode', () => {
   let el, stepper, arrows;
@@ -82,6 +82,22 @@ describe('Carousel arrows stepper', () => {
   it('update x position', async() => {
     updateXPosition(null, el, '#slide');
     await el.updateComplete;
+    expect(el.shadowRoot).not.to.be.null;
+  });
+
+  it('distpatch touch events', async() => {
+    const evStart = new Event('touchstart');
+    const evEnd = new Event('touchend');
+    const evMove = new Event('touchmove');
+    const slide = el.shadowRoot.querySelector('#slide');
+
+    evStart.touches = [{ clientX: 200, clientY: 200 }];
+    evMove.touches = [{ clientX: 200, clientY: 200 }];
+    evEnd.changedTouches = [{ clientX: 100, clientY: 100 }];
+
+    slide.dispatchEvent(evStart);
+    slide.dispatchEvent(evEnd);
+    slide.dispatchEvent(evMove);
     expect(el.shadowRoot).not.to.be.null;
   });
 });

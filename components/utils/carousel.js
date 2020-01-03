@@ -82,15 +82,7 @@ export function updateAnimationSpeed(animationSpeed, component, container) {
   * @param {String} container Container reference
   */
 export function updateXPosition(offset = 0, component, container) {
-  const actualPosition = (component.index * component.sliderWidth) + offset;
-  if (component.sliderWidth) {
-    component.shadowRoot.querySelector(container).style.transform = `translate(-${actualPosition}px)`;
-  } else {
-    component.coordinate = -(component.shadowRoot.querySelector(container).clientWidth * component.index) - offset;
-  }
-  setTimeout(() => {
-    if (component.sliderWidth) component._updateItemsVisibility();
-  }, component.animationSpeed * 1000);
+  component.coordinate = -(component.shadowRoot.querySelector(container).clientWidth * component.index) - offset;
 }
 
 /**
