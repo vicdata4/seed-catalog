@@ -1,5 +1,3 @@
-import { MAX_DROP_HEIGHT } from './constants';
-
 /**
  * setHeight()
  * @param {Tag} dropdown Dropdown component
@@ -22,8 +20,6 @@ export const onClickListener = (dropdown, rotate, button) => {
     if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
       setHeight(dropdown, 'unset', '0');
       rotate('0');
-    } else if (e.target === this) {
-      setHeight(dropdown, 'auto', MAX_DROP_HEIGHT);
     }
   });
 };

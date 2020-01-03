@@ -1,6 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { spy } from 'sinon';
 import '../../collapse.js';
+import '../../accordion';
 import '../../dropdown.js';
 
 describe('Collapse component', () => {
@@ -29,5 +30,36 @@ describe('Collapse component', () => {
     button.click();
 
     expect(submitSpy.callCount).to.equal(1);
+  });
+
+  it('set basic collapse', async() => {
+    const component = await fixture(html`
+      <seed-collapse basic>
+        <seed-dropdown>
+            <button id="col1" slot="button">Collapse</button>
+            <p slot="content">Lorem ipsum</p>
+        </seed-dropdown>
+        <seed-dropdown>
+            <button  id="col2" slot="button">Collapse</button>
+            <p slot="content">Lorem ipsum</p>
+        </seed-dropdown>
+      </seed-collapse>
+  `);
+    component.querySelectorAll('seed-dropdown')[0].shadowRoot.querySelector('slot[name=button]').click();
+    component.querySelectorAll('seed-dropdown')[1].shadowRoot.querySelector('slot[name=button]').click();
+
+    expect(component.basic).to.be.true;
+  });
+
+  it('set accordion component', async() => {
+    const component = await fixture(html`
+      <seed-accordion>
+        <seed-dropdown>
+            <button slot="button">Collapse</button>
+            <p slot="content">Lorem ipsum</p>
+        </seed-dropdown>
+      </seed-accordion>
+  `);
+    expect(component).not.to.be.null;
   });
 });

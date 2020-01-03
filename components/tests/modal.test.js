@@ -47,4 +47,10 @@ describe('Modal component', () => {
     await el.updateComplete;
     expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;
   });
+
+  it('clock focus out', () => {
+    const ev = new Event('click');
+    ev.changedTouches = [{ clientX: 10, clientY: 10 }];
+    el.shadowRoot.querySelector('.modal').dispatchEvent(ev);
+  });
 });
