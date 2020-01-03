@@ -32,7 +32,7 @@ describe('Collapse component', () => {
     expect(submitSpy.callCount).to.equal(1);
   });
 
-  it('set basic collapse', async() => {
+  it('multi-dropdown collapse | click events', async() => {
     const component = await fixture(html`
       <seed-collapse basic>
         <seed-dropdown>
@@ -40,13 +40,17 @@ describe('Collapse component', () => {
             <p slot="content">Lorem ipsum</p>
         </seed-dropdown>
         <seed-dropdown>
-            <button  id="col2" slot="button">Collapse</button>
+            <button id="col2" slot="button">Collapse</button>
             <p slot="content">Lorem ipsum</p>
         </seed-dropdown>
       </seed-collapse>
   `);
-    component.querySelectorAll('seed-dropdown')[0].shadowRoot.querySelector('slot[name=button]').click();
-    component.querySelectorAll('seed-dropdown')[1].shadowRoot.querySelector('slot[name=button]').click();
+
+    const element = component.querySelectorAll('seed-dropdown');
+
+    element[0].shadowRoot.querySelector('slot[name=button]').click();
+    element[1].shadowRoot.querySelector('slot[name=button]').click();
+    element[1].shadowRoot.querySelector('slot[name=button]').click();
 
     expect(component.basic).to.be.true;
   });

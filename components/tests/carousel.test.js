@@ -69,10 +69,11 @@ describe('Carousel arrows stepper', () => {
     expect(el.index).to.equal(1);
   });
 
-  it('click arrow left two times and go to the last element', () => {
+  it('click arrow left two times and one arrow left', () => {
     arrows[0].click();
     arrows[0].click();
-    expect(el.index).to.equal(4);
+    arrows[1].click();
+    expect(el.index).to.equal(0);
   });
 
   it('click to stepper dot', () => {
@@ -114,5 +115,32 @@ describe('Carousel arrows stepper', () => {
     const ev = new Event('touchend');
     ev.changedTouches = [{ clientX: 200, clientY: 400 }];
     slide.dispatchEvent(ev);
+  });
+});
+
+describe('Carousel auto', () => {
+  let el;
+
+  before(async() => {
+    const component = html`
+      <seed-carousel auto>
+        <div class="custom-class">Carousel 1</div>
+        <div class="custom-class">Carousel 2</div>
+        <div class="custom-class">Carousel 3</div>
+        <div class="custom-class">Carousel 4</div>
+        <div class="custom-class">Carousel 5</div>
+      </seed-carousel>
+    `;
+
+    el = await fixture(component);
+  });
+
+  it('render carousel component', () => {
+    expect(el.shadowRoot).not.to.be.null;
+  });
+
+  it('mouseleave event', () => {
+    const ev = new Event('mouseleave');
+    el.dispatchEvent(ev);
   });
 });
