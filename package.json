@@ -2,9 +2,9 @@
   "name": "seed-catalog",
   "version": "1.0.0",
   "description": "Seed-catalog is a free and open-source web-components library. It contains CSS-styles and standard-web based templates such as buttons, modals, dropdowns and other interface components.",
-  "author": "vghaya@gmail.com",
+  "author": "vicdata@outlook.com",
   "main": "index.js",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/vicdata4/seed-catalog#readme",
   "scripts": {
     "test": "karma start --coverage",
