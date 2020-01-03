@@ -31,7 +31,7 @@ describe('Carousel default mode', () => {
 });
 
 describe('Carousel arrows stepper', () => {
-  let el, stepper, arrows;
+  let el, stepper, arrows, slide;
 
   before(async() => {
     const component = html`
@@ -47,6 +47,7 @@ describe('Carousel arrows stepper', () => {
     el = await fixture(component);
     stepper = el.shadowRoot.querySelector('seed-stepper');
     arrows = el.shadowRoot.querySelectorAll('.arrow-btn');
+    slide = el.shadowRoot.querySelector('#slide');
   });
 
   it('render carousel component', () => {
@@ -85,19 +86,33 @@ describe('Carousel arrows stepper', () => {
     expect(el.shadowRoot).not.to.be.null;
   });
 
-  it('distpatch touch events', async() => {
-    const evStart = new Event('touchstart');
-    const evEnd = new Event('touchend');
-    const evMove = new Event('touchmove');
-    const slide = el.shadowRoot.querySelector('#slide');
+  it('distpatch touch start event', async() => {
+    const ev = new Event('touchstart');
+    ev.touches = [{ clientX: 200, clientY: 200 }];
+    slide.dispatchEvent(ev);
+  });
 
-    evStart.touches = [{ clientX: 200, clientY: 200 }];
-    evMove.touches = [{ clientX: 200, clientY: 200 }];
-    evEnd.changedTouches = [{ clientX: 100, clientY: 100 }];
+  it('dispatch touch move event', () => {
+    const ev = new Event('touchmove');
+    ev.touches = [{ clientX: 200, clientY: 200 }];
+    slide.dispatchEvent(ev);
+  });
 
-    slide.dispatchEvent(evStart);
-    slide.dispatchEvent(evEnd);
-    slide.dispatchEvent(evMove);
-    expect(el.shadowRoot).not.to.be.null;
+  it('ditpatch touch end event', () => {
+    const ev = new Event('touchend');
+    ev.changedTouches = [{ clientX: 200, clientY: 200 }];
+    slide.dispatchEvent(ev);
+  });
+
+  it('ditpatch touch end event X higher than Y', () => {
+    const ev = new Event('touchend');
+    ev.changedTouches = [{ clientX: 400, clientY: 200 }];
+    slide.dispatchEvent(ev);
+  });
+
+  it('ditpatch touch end event Y higher than X', () => {
+    const ev = new Event('touchend');
+    ev.changedTouches = [{ clientX: 200, clientY: 400 }];
+    slide.dispatchEvent(ev);
   });
 });
