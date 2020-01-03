@@ -11,8 +11,8 @@ describe('Collapse component', () => {
     const component = html`
       <seed-collapse>
         <seed-dropdown position="absolute" maxWidth="300" @set-collapse=${() => submitSpy()} rotate clickout>
-            <button slot="button">Collapse</button>
-            <p slot="content">Lorem ipsum</p>
+          <button slot="button">Collapse</button>
+          <p slot="content">Lorem ipsum</p>
         </seed-dropdown>
       </seed-collapse>
     `;
@@ -59,11 +59,11 @@ describe('Collapse component', () => {
     const component = await fixture(html`
       <seed-accordion>
         <seed-dropdown>
-            <button slot="button">Collapse</button>
-            <p slot="content">Lorem ipsum</p>
+          <button slot="button">Collapse</button>
+          <p slot="content">Lorem ipsum</p>
         </seed-dropdown>
       </seed-accordion>
-  `);
+    `);
     expect(component).not.to.be.null;
   });
 });

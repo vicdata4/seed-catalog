@@ -19,19 +19,18 @@ export class SeedCarousel extends LitElement {
           height: auto;
           margin: 0;
           overflow: hidden;
-          /*max-width: 100%;*/
           min-height: 200px;
         }
 
         .container {
-            flex: 1 1 0;
-            width: inherit;
-            display: flex;
-            flex-flow: row nowrap;
-            height: auto;
-            width: 100%;
-            margin: 0;
-            min-height: 200px;
+          flex: 1 1 0;
+          width: inherit;
+          display: flex;
+          flex-flow: row nowrap;
+          height: auto;
+          width: 100%;
+          margin: 0;
+          min-height: 200px;
         }
 
         ::slotted(div) {
@@ -60,8 +59,8 @@ export class SeedCarousel extends LitElement {
         }
 
         seed-stepper {
-            position: absolute;
-            bottom: 0;
+          position: absolute;
+          bottom: 0;
         }
 
         @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {
@@ -80,8 +79,8 @@ export class SeedCarousel extends LitElement {
           }
 
           .arrow-btn-left {
-              left: 0;
-              right: unset;
+            left: 0;
+            right: unset;
           }
         }
       `

@@ -9,11 +9,7 @@ describe('Dropdown component', () => {
     el = await fixture(html`
       <seed-dropdown>
         <button slot="button">Dropdown</button>
-        <p slot="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam,
-          eget viverra diam. Donec euismod mattis dignissim.
-        </p>
+        <p slot="content">Lorem ipsum</p>
       </seed-dropdown>
     `);
 

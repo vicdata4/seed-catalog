@@ -44,8 +44,6 @@ export class SeedSpinner extends LitElement {
   }
 
   render() {
-    return html`
-        ${spinner}
-    `;
+    return html`${spinner}`;
   }
 }
