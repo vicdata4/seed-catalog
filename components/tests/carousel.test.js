@@ -99,19 +99,19 @@ describe('Carousel arrows stepper', () => {
     slide.dispatchEvent(ev);
   });
 
-  it('ditpatch touch end event', () => {
+  it('dispatch touch end event', () => {
     const ev = new Event('touchend');
     ev.changedTouches = [{ clientX: 200, clientY: 200 }];
     slide.dispatchEvent(ev);
   });
 
-  it('ditpatch touch end event X higher than Y', () => {
+  it('dispatch touch end event X higher than Y', () => {
     const ev = new Event('touchend');
     ev.changedTouches = [{ clientX: 400, clientY: 200 }];
     slide.dispatchEvent(ev);
   });
 
-  it('ditpatch touch end event Y higher than X', () => {
+  it('dispatch touch end event Y higher than X', () => {
     const ev = new Event('touchend');
     ev.changedTouches = [{ clientX: 200, clientY: 400 }];
     slide.dispatchEvent(ev);
