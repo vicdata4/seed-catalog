@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
 import { MAX_DROP_HEIGHT } from './utils/constants';
-import { onClickListener, setHeight } from './utils/dropdown';
 import { seedStyle } from '../styles';
 
 export class SeedDropdown extends LitElement {
@@ -77,11 +76,9 @@ export class SeedDropdown extends LitElement {
   setDropdown() {
     const isOpen = this.dropdown.style.height === 'auto';
 
-    setHeight(
-      this.dropdown,
-      isOpen ? 'unset' : 'auto',
-      isOpen ? '0' : MAX_DROP_HEIGHT
-    );
+    this.dropdown.style.height = isOpen ? 'unset' : 'auto';
+    this.dropdown.style.maxHeight = isOpen ? '0' : MAX_DROP_HEIGHT;
+
     this.rotateIcon(isOpen ? '0' : '180');
   }
 
@@ -105,11 +102,17 @@ export class SeedDropdown extends LitElement {
    */
   dropdownClickListener() {
     if (this.clickout) {
-      onClickListener(
-        this.dropdown,
-        this.rotateIcon.bind(this),
-        this.slotted.assignedNodes()[0]
-      );
+      const dropdown = this.dropdown;
+      const rotate = this.rotateIcon.bind(this);
+      const button = this.slotted.assignedNodes()[0];
+
+      document.addEventListener('click', function(e) {
+        if ((e.target.tagName !== 'BUTTON' || e.target.id !== button.id) && e.target.className !== 'content') {
+          dropdown.style.height = 'unset';
+          dropdown.style.maxHeight = '0';
+          rotate('0');
+        }
+      });
     }
   }
 
