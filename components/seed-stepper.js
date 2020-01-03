@@ -52,7 +52,6 @@ export class SeedStepper extends LitElement {
     this.square = false;
     this.size = 0;
     this.array = [];
-
     this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
     this.colorActive = this.colorActive || 'white';
   }

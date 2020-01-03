@@ -1,7 +1,7 @@
 /**
-  * @param {Component} component (this)
-  * @param {String} container Container reference
-  */
+ * @param {Component} component (this)
+ * @param {String} container Container reference
+ */
 export const carouselUtils = (component, container) => {
   const passiveParam = supportsPassive() ? { passive: true } : false;
   const cracksSlider = component.shadowRoot.querySelector(container);
@@ -12,9 +12,9 @@ export const carouselUtils = (component, container) => {
 };
 
 /**
-  * @param {String} container Container reference
-  * @param {Event} event On touch start
-  */
+ * @param {String} container Container reference
+ * @param {Event} event On touch start
+ */
 function _onTouchStart(container, event) {
   this._stopAutoplay(this);
   updateAnimationSpeed(0, this, container);
@@ -23,14 +23,14 @@ function _onTouchStart(container, event) {
 }
 
 /**
-  * Operation to be performed on touch end
-  *
-  * Calculates the angle of the touch movement and moves the X/Y position accordingly.
-  * If the move length or the angle is not enough, resets the position
-  *
-  * @param {String} container Container reference
-  * @param {Object} event The event object
-  */
+ * Operation to be performed on touch end
+ *
+ * Calculates the angle of the touch movement and moves the X/Y position accordingly.
+ * If the move length or the angle is not enough, resets the position
+ *
+ * @param {String} container Container reference
+ * @param {Object} event The event object
+ */
 function _onTouchEnd(container, event) {
   this.touchEndX = event.changedTouches[0].clientX;
   this.touchEndY = event.changedTouches[0].clientY;
@@ -53,12 +53,12 @@ function _onTouchEnd(container, event) {
 }
 
 /**
-  * Operation to be performed on touch move
-  *
-  * Moves the element in the X axis
-  * @param {String} container Container reference
-  * @param {Object} event The event object returned by the browser
-  */
+ * Operation to be performed on touch move
+ *
+ * Moves the element in the X axis
+ * @param {String} container Container reference
+ * @param {Object} event The event object returned by the browser
+ */
 function _onTouchMove(container, event) {
   const touchMoveX = event.touches[0].clientX;
   const touchLength = this.touchStartX - touchMoveX;
@@ -66,32 +66,32 @@ function _onTouchMove(container, event) {
 }
 
 /**
-  * Function to update animation speed
-  * @param {number} animationSpeed New animation speed. Defaults to this.animationSpeed
-  * @param {Component} component Component (this)
-  * @param {String} container Container reference
-  */
+ * Function to update animation speed
+ * @param {number} animationSpeed New animation speed. Defaults to this.animationSpeed
+ * @param {Component} component Component (this)
+ * @param {String} container Container reference
+ */
 export function updateAnimationSpeed(animationSpeed, component, container) {
   component.shadowRoot.querySelector(container).style.transition = `transform ${animationSpeed}s ease-in-out`;
 }
 
 /**
-  * Update X translation of the slider
-  * @param {Number} offset Number of pixels to move from actual position
-  * @param {Component} component Component (this)
-  * @param {String} container Container reference
-  */
+ * Update X translation of the slider
+ * @param {Number} offset Number of pixels to move from actual position
+ * @param {Component} component Component (this)
+ * @param {String} container Container reference
+ */
 export function updateXPosition(offset = 0, component, container) {
   component.coordinate = -(component.shadowRoot.querySelector(container).clientWidth * component.index) - offset;
 }
 
 /**
-  * Returns if the browser supports the passive property in touch events
-  *
-  * Test via a getter in the options object to see if the passive property is accessed
-  *
-  * @return {boolean}
-  */
+ * Returns if the browser supports the passive property in touch events
+ *
+ * Test via a getter in the options object to see if the passive property is accessed
+ *
+ * @return {boolean}
+ */
 export const supportsPassive = () => {
   let supportsPassive = false;
   try {

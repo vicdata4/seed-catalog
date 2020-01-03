@@ -153,12 +153,12 @@ export class SeedCarousel extends LitElement {
 
   showStepper() {
     return this.stepper ? html`
-        <seed-stepper
-          .size="${this.cardsLength}"
-          .index="${this.index}"
-          .colorBack="${'rgba(255,255,255,.5)'}"
-          .square="${this.square}">
-        </seed-stepper>
+      <seed-stepper
+        .size="${this.cardsLength}"
+        .index="${this.index}"
+        .colorBack="${'rgba(255,255,255,.5)'}"
+        .square="${this.square}">
+      </seed-stepper>
      ` : empty;
   }
 
@@ -201,15 +201,15 @@ export class SeedCarousel extends LitElement {
   }
 
   /**
-    * Set current card by coordinate
-    */
+   * Set current card by coordinate
+   */
   setCoordinate() {
     this.coordinate = -(this.shadowRoot.querySelector('#slide').clientWidth * this.index);
   }
 
   /**
-    * Set carrousel interval in milliseconds
-    */
+   * Set carrousel interval in milliseconds
+   */
   setAutoInterval() {
     this.intervalRef = setInterval(() => {
       this.showNext(true);
@@ -217,25 +217,25 @@ export class SeedCarousel extends LitElement {
   }
 
   /**
-    * Reset setIInterval()
-    */
+   * Reset setIInterval()
+   */
   _startAutoplay() {
     clearInterval(this.intervalRef);
     this.setAutoInterval();
   }
 
   /**
-    * @param {Number} index Set selected index / card
-    */
+   * @param {Number} index Set selected index / card
+   */
   setNewPosition(index) {
     this.index = index.detail;
     this.setCard();
   }
 
   /**
-    * Stop carousel interval indefinitely
-    * @param {Event} event Event object
-    */
+   * Stop carousel interval indefinitely
+   * @param {Event} event Event object
+   */
   _stopAutoplay(event) {
     this._focusEventsActive.push(this.EVENTS[event.type]);
     clearInterval(this.intervalRef);
