@@ -51,7 +51,6 @@ export class SeedDropdown extends LitElement {
 
   constructor() {
     super();
-    this.maxWidth = this.maxWidth ? `${this.maxWidth}px` : 'unset';
     this.backgroundColor = this.backgroundColor || 'white';
     this.rotate = false;
     this.collapse = false;
@@ -128,7 +127,7 @@ export class SeedDropdown extends LitElement {
       <slot name="button" @click='${this.collapse ? this.setCollapse : this.setDropdown}'></slot>
       <div class="dropdown"
            style="position: ${this.position ? this.position : this.collapse ? 'relative' : 'absolute'};
-                  max-width: ${this.maxWidth};
+                  max-width: ${this.maxWidth ? `${this.maxWidth}px` : 'unset'};
                   background-color: ${this.backgroundColor};">
         <slot name="content"></slot>
       </div>
