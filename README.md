@@ -11,7 +11,7 @@ Seed-catalog is a free and open-source `web-components library`. It contains CSS
 - [LitElement](https://lit-element.polymer-project.org) Web Components
 - [Storybook](https://storybook.js.org) WC Interface (dev)
 - [ESLint](https://eslint.org) Coding style (dev)
-- [@open-wc/testing](https://open-wc.org/) Recomendations (karma, mocha, chai)
+- [Open-wc](https://open-wc.org/) Testing recommendations (Karma, Mocha, Chai)
 
 
 ###  Add as project dependency (98kb)
