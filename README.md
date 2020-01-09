@@ -37,6 +37,8 @@ from `package.json`
 
 `npm run test`
 
+Karma coverage
+
 ## Catalog
 
 - [Seed Style](https://seed-catalog.web.app/?path=/story/seed-catalog--buttons)
