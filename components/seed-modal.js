@@ -91,8 +91,8 @@ export class SeedModal extends LitElement {
 
   constructor() {
     super();
-    this.modalBackground = this.modalBackground || 'rgba(0, 0, 0, .4)';
-    this.alignWindow = this.alignWindow || 'flex-start';
+    this.modalBackground = 'rgba(0, 0, 0, .4)';
+    this.alignWindow = 'flex-start';
   }
 
   /**

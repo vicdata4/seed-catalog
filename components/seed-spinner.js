@@ -33,8 +33,8 @@ export class SeedSpinner extends LitElement {
 
   constructor() {
     super();
-    this.color = this.color || '#fff';
-    this.background = this.background || 'rgba(0, 0, 0, 0.4)';
+    this.color = '#fff';
+    this.background = 'rgba(0, 0, 0, 0.4)';
   }
 
   firstUpdated() {

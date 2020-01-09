@@ -51,7 +51,7 @@ export class SeedDropdown extends LitElement {
 
   constructor() {
     super();
-    this.backgroundColor = this.backgroundColor || 'white';
+    this.backgroundColor = 'white';
     this.rotate = false;
     this.collapse = false;
     this.clickout = false;

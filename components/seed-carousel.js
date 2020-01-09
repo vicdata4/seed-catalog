@@ -113,7 +113,7 @@ export class SeedCarousel extends LitElement {
     this.minTouchLength = 70;
     this.minTouchAngle = 30;
     this._focusEventsActive = [];
-    this.arrowsColor = this.arrowsColor || 'white';
+    this.arrowsColor = 'white';
     this.EVENTS = {
       mouseenter: 'mouse',
       mouseleave: 'mouse',

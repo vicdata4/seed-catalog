@@ -26,7 +26,7 @@ storiesOf('Seed Catalog', module)
         
         <button class="sd-btn-mix black title"><i class="material-icons red">settings_overscan</i>Carousel</button>
         <button class="sd-btn black title">Carousel mobile touch</button>
-        <seed-carousel arrows stepper>
+        <seed-carousel arrowsColor="blue" arrows stepper>
             <div class="black">Black</div> 
             <div class="red">Red</div>
             <div class="blue">Blue</div>
