@@ -4,7 +4,7 @@
 
 ### [Storybook](https://seed-catalog.web.app)
 
-Seed-catalog is a free and open-source `web-components library`. It contains CSS-styles and web-standard based templates such as buttons, modals, dropdowns and other interface components.
+Seed-catalog is a free and open-source `web-components library`. It contains CSS-styles and standards-based web templates such as buttons, modals, dropdowns and other interface components.
 
 ### [Dependencies](package.json)
 
