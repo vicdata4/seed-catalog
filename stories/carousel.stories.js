@@ -22,6 +22,15 @@ storiesOf('Seed Catalog', module)
                 display: flex;
                 flex-flow: row wrap;
             }
+
+            .red:hover { background-color: var(--seed-color-red); }
+            .blue:hover { background-color: var(--seed-color-blue); }
+            .green:hover { background-color: var(--seed-color-green); }
+            .purple:hover { background-color: var(--seed-color-purple); }
+            .black:hover { background-color: var(--seed-color-black); }
+            .orange:hover { background-color: var(--seed-color-orange); }
+            .green-mate:hover { background-color: var(--seed-color-green-mate); }
+            .red-mate:hover { background-color: var(--seed-color-red-mate); }
         </style>
         
         <button class="sd-btn-mix black title"><i class="material-icons red">settings_overscan</i>Carousel</button>
