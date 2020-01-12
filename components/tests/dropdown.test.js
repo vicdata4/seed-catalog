@@ -26,7 +26,7 @@ describe('Dropdown component', () => {
     expect(el.rotate).to.be.false;
     expect(el.clickout).to.be.false;
     expect(el.collapse).to.be.false;
-    expect(el.maxWidth).to.equal('unset');
+    // expect(el.maxWidth).to.equal('unset');
     expect(dropdown.style.position).equal('absolute');
   });
 
