@@ -11,24 +11,13 @@ storiesOf('Seed Catalog', module)
             ${seedStyle}
             ${storyCommonStyles}
             ${cssTemplateColors}
-            seed-carousel > div {
-                color: white;
-            }
 
-            .due-card {
-              display: flex;
-              flex-flow: row wrap;
+            .title {
+                margin-bottom: 40px;
             }
-
-            .red:hover { background-color: var(--seed-color-red); }
-            .blue:hover { background-color: var(--seed-color-blue); }
-            .green:hover { background-color: var(--seed-color-green); }
-            .purple:hover { background-color: var(--seed-color-purple); }
-            .black:hover { background-color: var(--seed-color-black); }
-            .orange:hover { background-color: var(--seed-color-orange); }
-            .green-mate:hover { background-color: var(--seed-color-green-mate); }
-            .red-mate:hover { background-color: var(--seed-color-red-mate); }
         </style>
+        <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
+
         <seed-carousel-css>
           <card-examples style="background-color: #43aad7;"></card-examples>
           <card-examples style="background-color: #e18b46;"></card-examples>
