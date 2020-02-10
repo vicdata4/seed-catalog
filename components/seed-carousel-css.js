@@ -1,11 +1,9 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
 import { mediaQueryTablet } from './utils/constants';
-import { seedStyle } from '../styles';
 
 export class SeedCarouselCss extends LitElement {
   static get styles() {
     return [
-      seedStyle,
       css`
         :host {
         }
@@ -13,12 +11,12 @@ export class SeedCarouselCss extends LitElement {
         .container {
           display: flex;
           flex-flow: row nowrap;
+          width: 100%;
 
           overflow-x: scroll;
           overflow-y: hidden;
 
           scroll-snap-type: x mandatory;
-          /* scroll-padding: 0px; */
         }
 
         ::slotted(*) {
@@ -35,7 +33,8 @@ export class SeedCarouselCss extends LitElement {
   static get properties() {
     return {
       index: { type: Number, attribute: false },
-      length: { type: Number, attribute: false }
+      length: { type: Number, attribute: false },
+      cardWidth: { type: Number, attribute: false }
     };
   }
 
@@ -49,11 +48,11 @@ export class SeedCarouselCss extends LitElement {
   }
 
   setCurrentIndex() {
-    console.log('current index');
+    // console.log('current index');
   }
 
   setCurrentCardPosition() {
-    console.log('current card position');
+    // console.log('current card position');
   }
 
   renderStepper() {
@@ -70,7 +69,8 @@ export class SeedCarouselCss extends LitElement {
     this.length = this.shadowRoot.querySelector('slot').assignedElements().length;
 
     await this.waitUntilSlotRendering();
-    // this.shadowRoot.querySelector('.container').addEventListener('scroll', this.setCurrentIndex.bind(this));
+
+    this.cardWidth = this.shadowRoot.querySelector('slot').assignedElements()[0].clientWidth;
   }
 
   render() {
