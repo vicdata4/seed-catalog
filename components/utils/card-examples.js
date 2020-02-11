@@ -1,20 +1,22 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 class CardExamples extends LitElement {
-  static get styles() {
-    return [
-      css`
-        .card {
-          width: 328px;
-          height: 530px;
-        }
-      `
-    ];
+  static get properties() {
+    return {
+      width: { type: Number },
+      height: { type: Number }
+    };
+  }
+
+  constructor() {
+    super();
+    this.width = 328;
+    this.height = 530;
   }
 
   render() {
     return html`
-      <div class="card"></div>
+      <div class="card" .style="width: ${this.width}px; height: ${this.height}px;"></div>
     `;
   }
 }

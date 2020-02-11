@@ -6,9 +6,6 @@ export class SeedCarouselCss extends LitElement {
   static get styles() {
     return [
       css`
-        :host {
-        }
-
         .container {
           display: flex;
           flex-flow: row nowrap;
