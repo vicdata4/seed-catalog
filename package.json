@@ -34,6 +34,7 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
-    "lit-element": "^2.0.1"
+    "lit-element": "^2.0.1",
+    "lodash.debounce": "^4.0.8"
   }
 }

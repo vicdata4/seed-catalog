@@ -1,5 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
 import { mediaQueryTablet } from './utils/constants';
+import debounce from 'lodash.debounce';
 
 export class SeedCarouselCss extends LitElement {
   static get styles() {
@@ -24,7 +25,6 @@ export class SeedCarouselCss extends LitElement {
         }
 
         @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {
-
         }
       `
     ];
@@ -40,20 +40,32 @@ export class SeedCarouselCss extends LitElement {
 
   constructor() {
     super();
-
     this.index = 0;
     this.length = 0;
+    this.cardWidth = 0;
 
     window.addEventListener('resize', this.setCurrentCardPosition.bind(this));
   }
 
+  getCarouselParams() {
+    const cardWidth = this.shadowRoot.querySelector('slot').assignedElements()[0].clientWidth;
+    const carousel = this.shadowRoot.querySelector('.container');
+    const { scrollWidth, clientWidth, scrollLeft } = carousel;
+    const sideSpace = (clientWidth - cardWidth) / 2;
+
+    return { scrollWidth, clientWidth, cardWidth, scrollLeft, sideSpace };
+  }
+
   setCurrentIndex() {
-    // console.log('current index');
+    const { scrollLeft, cardWidth } = this.getCarouselParams();
+    this.index = Math.ceil(scrollLeft / cardWidth);
   }
 
   setCurrentCardPosition() {
     // console.log('current card position');
   }
+
+  updateCarouselState() {}
 
   renderStepper() {
     return html`
@@ -69,8 +81,7 @@ export class SeedCarouselCss extends LitElement {
     this.length = this.shadowRoot.querySelector('slot').assignedElements().length;
 
     await this.waitUntilSlotRendering();
-
-    this.cardWidth = this.shadowRoot.querySelector('slot').assignedElements()[0].clientWidth;
+    this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setCurrentIndex.bind(this), 50));
   }
 
   render() {
