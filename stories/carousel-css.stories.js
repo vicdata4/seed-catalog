@@ -8,6 +8,7 @@ import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-style
 storiesOf('Seed Catalog', module)
   .add('Carousel Css', () => html`
         <style>
+            ${seedStyle}
             ${storyCommonStyles}
             ${cssTemplateColors}
 
