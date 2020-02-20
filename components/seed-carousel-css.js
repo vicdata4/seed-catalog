@@ -59,10 +59,10 @@ export class SeedCarouselCss extends LitElement {
   }
 
   setCurrentCardPosition() {
-    // console.log('current card position');
+    // wip
   }
 
-  updateCarouselState() {}
+  updateCarouselState() { }
 
   renderStepper() {
     return html`
