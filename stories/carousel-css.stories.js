@@ -1,6 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import '../carousel-css';
+import '../carousel-stepper';
 import '../components/utils/card-examples';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
@@ -39,7 +40,7 @@ storiesOf('Seed Catalog', module)
           <card-examples class="orange"></card-examples>
           <card-examples class="green"></card-examples>
           <card-examples class="purple"></card-examples>
-          <p slot="stepper">Stepper</p>
+          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
         <br><br><br>
         <seed-carousel-css>

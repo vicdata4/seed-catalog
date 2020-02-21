@@ -56,6 +56,7 @@ export class SeedCarouselCss extends LitElement {
   setCurrentIndex() {
     const { scrollLeft, cardWidth } = this.getCarouselParams();
     this.index = Math.ceil(scrollLeft / cardWidth);
+    this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
   }
 
   setCurrentCardPosition() {
