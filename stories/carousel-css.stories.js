@@ -17,41 +17,41 @@ storiesOf('Seed Catalog', module)
               margin-bottom: 40px;
             }
 
-            .blue {
+            .blu {
               background-color: #43aad7;
             }
 
-            .orange {
+            .orang {
               background-color: #e18b46;
             }
 
-            .green {
+            .gree {
               background-color: #5dbe59;
             }
 
-            .purple {
+            .purpl {
               background-color: #b250b2;
             }
         </style>
-        <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
+        <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS **WIP**</button>
 
         <seed-carousel-css>
-          <card-examples class="blue"></card-examples>
-          <card-examples class="orange"></card-examples>
-          <card-examples class="green"></card-examples>
-          <card-examples class="purple"></card-examples>
+          <card-examples class="blu"></card-examples>
+          <card-examples class="orang"></card-examples>
+          <card-examples class="gree"></card-examples>
+          <card-examples class="purpl"></card-examples>
           <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
         <br><br><br>
         <seed-carousel-css>
-          <card-examples class="blue" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="orange" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="green" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="purple" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="blue" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="orange" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="green" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="purple" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="blu" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="orang" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="gree" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="purpl" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="blu" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="orang" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="gree" .width="${200}" .height="${200}"></card-examples>
+          <card-examples class="purpl" .width="${200}" .height="${200}"></card-examples>
           <p slot="stepper">Stepper</p>
         </seed-carousel-css>
     `);

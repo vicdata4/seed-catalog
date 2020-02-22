@@ -1,11 +1,9 @@
 import { LitElement, html, css } from 'lit-element';
 import { empty } from './utils/constants';
-import { seedStyle } from '../styles';
 
 export class SeedCarouselStepper extends LitElement {
   static get styles() {
     return [
-      seedStyle,
       css`
         :host {
           width: 100%;
@@ -37,7 +35,7 @@ export class SeedCarouselStepper extends LitElement {
 
   static get properties() {
     return {
-      index: { type: Number },
+      index: { type: Number, attribute: false },
       array: { type: Array, attribute: false },
       square: { type: Boolean },
       colorActive: { type: String },
@@ -59,7 +57,7 @@ export class SeedCarouselStepper extends LitElement {
     * @param {Number} index  Selected index
     */
   setPosition(index) {
-    this.dispatchEvent(new CustomEvent('set-dot', { detail: index, composed: true }));
+    this.dispatchEvent(new CustomEvent('set-selected-step', { detail: index, composed: true }));
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
