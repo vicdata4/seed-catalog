@@ -52,6 +52,6 @@ storiesOf('Seed Catalog', module)
           <card-examples class="orang" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="gree" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="purpl" .width="${200}" .height="${200}"></card-examples>
-          <p slot="stepper">Stepper</p>
+          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
     `);
