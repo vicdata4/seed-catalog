@@ -41,7 +41,7 @@ export class SeedCarouselCss extends LitElement {
     this.length = 0;
     this.cardWidth = 0;
 
-    window.addEventListener('resize', this.setCurrentCardPosition.bind(this));
+    // window.addEventListener('resize', this.moreThanTwoVisibleCards.bind(this));
   }
 
   getCarouselParams() {
@@ -59,8 +59,9 @@ export class SeedCarouselCss extends LitElement {
     this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
   }
 
-  setCurrentCardPosition() {
-    // wip
+  moreThanTwoVisibleCards() {
+    const { cardWidth, clientWidth } = this.getCarouselParams();
+    return (cardWidth * 2) < clientWidth;
   }
 
   renderStepper() {
@@ -78,6 +79,8 @@ export class SeedCarouselCss extends LitElement {
 
     await this.waitUntilSlotRendering();
     this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setCurrentIndex.bind(this), 50));
+
+    this.moreThanTwoVisibleCards();
   }
 
   render() {
