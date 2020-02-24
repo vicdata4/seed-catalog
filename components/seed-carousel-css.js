@@ -13,12 +13,17 @@ export class SeedCarouselCss extends LitElement {
 
           overflow-x: scroll;
           overflow-y: hidden;
+          scrollbar-width: none;
 
           scroll-snap-type: x mandatory;
         }
 
         ::slotted(*) {
           scroll-snap-align: center;
+        }
+
+        .container::-webkit-scrollbar {
+          display: none;
         }
 
         @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {
@@ -73,7 +78,7 @@ export class SeedCarouselCss extends LitElement {
   /**
    * Return true in case more than two cards are visible from the index 0
    *
-   * @return {Slot}
+   * @return {Boolean}
    */
   moreThanTwoVisibleCards() {
     const { cardWidth, clientWidth } = this.getCarouselParams();
