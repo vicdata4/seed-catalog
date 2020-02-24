@@ -58,10 +58,10 @@ export class SeedCarouselCss extends LitElement {
   getCarouselParams() {
     const cardWidth = this.shadowRoot.querySelector('slot').assignedElements()[0].clientWidth;
     const carousel = this.shadowRoot.querySelector('.container');
-    const { clientWidth, scrollLeft } = carousel;
+    const { clientWidth, scrollLeft, scrollWidth } = carousel;
     const sideSpace = (clientWidth - cardWidth) / 2;
 
-    return { clientWidth, cardWidth, scrollLeft, sideSpace };
+    return { clientWidth, cardWidth, scrollLeft, sideSpace, scrollWidth };
   }
 
   /**
@@ -70,8 +70,17 @@ export class SeedCarouselCss extends LitElement {
    *
    */
   setCurrentIndex() {
-    const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
+    const { scrollLeft, cardWidth, sideSpace, scrollWidth } = this.getCarouselParams();
     this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
+
+    const moreThanTwo = this.moreThanTwoVisibleCards();
+
+    if (moreThanTwo) {
+      if (scrollLeft === 0) this.index = 0;
+      // console.log('**scrollWidth: ', scrollWidth);
+      // console.log((scrollWidth - cardWidth) <= scrollLeft);
+    }
+
     this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
   }
 
@@ -83,17 +92,6 @@ export class SeedCarouselCss extends LitElement {
   moreThanTwoVisibleCards() {
     const { cardWidth, clientWidth } = this.getCarouselParams();
     return (cardWidth * 2) < clientWidth;
-  }
-
-  /**
-   * Render slotted stepper
-   *
-   * @return {Slot}
-   */
-  renderStepper() {
-    return html`
-      <slot name="stepper"></slot>
-    `;
   }
 
   /**
@@ -117,7 +115,7 @@ export class SeedCarouselCss extends LitElement {
       <div class="container">
         <slot></slot>
       </div>
-      ${this.renderStepper()}
+      <slot name="stepper"></slot>
     `;
   }
 }
