@@ -56,15 +56,12 @@ export class SeedCarouselCss extends LitElement {
   setCurrentIndex() {
     const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
     this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
-    // console.log(scrollLeft / cardWidth);
     this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
   }
 
   setCurrentCardPosition() {
     // wip
   }
-
-  updateCarouselState() { }
 
   renderStepper() {
     return html`
@@ -81,7 +78,6 @@ export class SeedCarouselCss extends LitElement {
 
     await this.waitUntilSlotRendering();
     this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setCurrentIndex.bind(this), 50));
-    // this.shadowRoot.querySelector('.container').addEventListener('scroll', this.setCurrentIndex.bind(this));
   }
 
   render() {
