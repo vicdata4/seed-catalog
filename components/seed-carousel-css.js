@@ -44,32 +44,56 @@ export class SeedCarouselCss extends LitElement {
     // window.addEventListener('resize', this.moreThanTwoVisibleCards.bind(this));
   }
 
+  /**
+   * Return carousel params
+   * clientWidth, cardWidth, scrollLeft and sideSpace
+   *
+   * @return {Object}
+   */
   getCarouselParams() {
     const cardWidth = this.shadowRoot.querySelector('slot').assignedElements()[0].clientWidth;
     const carousel = this.shadowRoot.querySelector('.container');
-    const { scrollWidth, clientWidth, scrollLeft } = carousel;
+    const { clientWidth, scrollLeft } = carousel;
     const sideSpace = (clientWidth - cardWidth) / 2;
 
-    return { scrollWidth, clientWidth, cardWidth, scrollLeft, sideSpace };
+    return { clientWidth, cardWidth, scrollLeft, sideSpace };
   }
 
+  /**
+   * Set current index property when carousel is scrolling
+   * and set the property to the slotted stepper.
+   *
+   */
   setCurrentIndex() {
     const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
     this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
     this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
   }
 
+  /**
+   * Return true in case more than two cards are visible from the index 0
+   *
+   * @return {Slot}
+   */
   moreThanTwoVisibleCards() {
     const { cardWidth, clientWidth } = this.getCarouselParams();
     return (cardWidth * 2) < clientWidth;
   }
 
+  /**
+   * Render slotted stepper
+   *
+   * @return {Slot}
+   */
   renderStepper() {
     return html`
       <slot name="stepper"></slot>
     `;
   }
 
+  /**
+   * Wait until slot rendering in order to get the first carousel card width
+   */
   async waitUntilSlotRendering() {
     this.shadowRoot.querySelector('slot').assignedElements()[0].updateComplete;
   }
