@@ -13,8 +13,8 @@ export class SeedCarouselCss extends LitElement {
 
           overflow-x: scroll;
           overflow-y: hidden;
-          scrollbar-width: none;
 
+          scrollbar-width: none;
           scroll-snap-type: x mandatory;
         }
 
@@ -26,8 +26,7 @@ export class SeedCarouselCss extends LitElement {
           display: none;
         }
 
-        @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {
-        }
+        @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {}
       `
     ];
   }
@@ -56,7 +55,7 @@ export class SeedCarouselCss extends LitElement {
    * @return {Object}
    */
   getCarouselParams() {
-    const cardWidth = this.shadowRoot.querySelector('slot').assignedElements()[0].clientWidth;
+    const cardWidth = this.shadowRoot.querySelector('slot:not([name])').assignedElements()[0].clientWidth;
     const carousel = this.shadowRoot.querySelector('.container');
     const { clientWidth, scrollLeft, scrollWidth } = carousel;
     const sideSpace = (clientWidth - cardWidth) / 2;
@@ -70,15 +69,14 @@ export class SeedCarouselCss extends LitElement {
    *
    */
   setCurrentIndex() {
-    const { scrollLeft, cardWidth, sideSpace, scrollWidth } = this.getCarouselParams();
+    const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
     this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
 
     const moreThanTwo = this.moreThanTwoVisibleCards();
 
     if (moreThanTwo) {
       if (scrollLeft === 0) this.index = 0;
-      // console.log('**scrollWidth: ', scrollWidth);
-      // console.log((scrollWidth - cardWidth) <= scrollLeft);
+      if (this.index === this.length - 1) this.index = this.length;
     }
 
     this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
@@ -102,7 +100,7 @@ export class SeedCarouselCss extends LitElement {
   }
 
   async firstUpdated() {
-    this.length = this.shadowRoot.querySelector('slot').assignedElements().length;
+    this.length = this.shadowRoot.querySelector('slot:not([name])').assignedElements().length;
 
     await this.waitUntilSlotRendering();
     this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setCurrentIndex.bind(this), 50));
