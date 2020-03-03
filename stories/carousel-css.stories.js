@@ -32,17 +32,22 @@ storiesOf('Seed Catalog', module)
             .purpl {
               background-color: #b250b2;
             }
+
+            .wip {
+              margin-bottom: 20px;
+            }
         </style>
-        <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS **WIP**</button>
+        <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
+        <button class="sd-btn green-mate wip">WIP</button>
 
         <seed-carousel-css>
           <card-examples class="blu"></card-examples>
           <card-examples class="orang"></card-examples>
           <card-examples class="gree"></card-examples>
           <card-examples class="purpl"></card-examples>
-          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
         <br><br><br>
+        <button class="sd-btn green-mate wip">WIP</button>
         <seed-carousel-css>
           <card-examples class="blu" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="orang" .width="${200}" .height="${200}"></card-examples>
@@ -52,6 +57,5 @@ storiesOf('Seed Catalog', module)
           <card-examples class="orang" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="gree" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="purpl" .width="${200}" .height="${200}"></card-examples>
-          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
     `);
