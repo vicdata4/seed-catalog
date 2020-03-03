@@ -9,7 +9,7 @@ import carousel3 from '../assets/images/carousel_3.jpg';
 import carousel4 from '../assets/images/carousel_4.jpg';
 
 storiesOf('Seed Catalog', module)
-  .add('Carousel', () => html`
+    .add('Carousel JS', () => html`
         <style>
             ${seedStyle}
             ${storyCommonStyles}
