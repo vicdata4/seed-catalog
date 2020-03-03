@@ -2,6 +2,9 @@ import { LitElement, html, css, unsafeCSS } from 'lit-element';
 import { mediaQueryTablet } from './utils/constants';
 import debounce from 'lodash.debounce';
 
+/****************
+WORK IN PROGRESS
+****************/
 export class SeedCarouselCss extends LitElement {
   static get styles() {
     return [
