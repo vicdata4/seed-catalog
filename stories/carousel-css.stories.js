@@ -45,6 +45,7 @@ storiesOf('Seed Catalog', module)
           <card-examples class="orang"></card-examples>
           <card-examples class="gree"></card-examples>
           <card-examples class="purpl"></card-examples>
+          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
         <br><br><br>
         <button class="sd-btn green-mate wip">WIP</button>
@@ -57,5 +58,6 @@ storiesOf('Seed Catalog', module)
           <card-examples class="orang" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="gree" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="purpl" .width="${200}" .height="${200}"></card-examples>
+          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
     `);
