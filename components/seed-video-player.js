@@ -5,18 +5,50 @@ export class SeedVideoPlayer extends LitElement {
     return [
       css`
         :host {
+          position: relative;
+        }
+
+        video {
+          width: 100%;
+        }
+
+        .controls {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 50px;
+          background-color: #0000ff52;
         }
       `
     ];
   }
 
   static get properties() {
-    return {};
+    return {
+      src: { type: String }
+    };
+  }
+
+  constructor() {
+    super();
+
+    this.src = '';
+  }
+
+  firstUpdated() {
+  }
+
+  getVideoType() {
+    return this.src.match(new RegExp('[^.]+$'));
   }
 
   render() {
     return html`
-        <h1>Video player component</h1>
+      <video controls>
+        <source src="${this.src}" type="video/${this.getVideoType()}">
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+      <div class="controls"></div>
     `;
   }
 }

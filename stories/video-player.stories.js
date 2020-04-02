@@ -11,9 +11,19 @@ storiesOf('Seed Catalog', module)
             ${storyCommonStyles}
             ${cssTemplateColors}
 
+            .small-video {
+                width: 50%;
+                margin-top: 100px;
+            }
+
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons green-mate">more_horiz</i>Video Player</button>
         <br>
-        <h6 style="color: white;">Check out Carusel section to see more examples.</h6>
+        <br>
+        <seed-video-player src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"></seed-video-player>
+
+        <div class="small-video">
+            <seed-video-player src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"></seed-video-player>
+        </div>
       
     `);
