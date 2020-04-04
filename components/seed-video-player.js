@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 
-import { videoSpinner, videPlayPreview } from './utils/svg-icons';
+import { videoSpinner, videoPlayPreview, videoPlayBtn } from './utils/svg-icons';
 
 export class SeedVideoPlayer extends LitElement {
   static get styles() {
@@ -56,6 +56,16 @@ export class SeedVideoPlayer extends LitElement {
           cursor: pointer;
         }
 
+        .btn-play {
+          display: flex;
+          background: none;
+          border: none;
+          padding: 0 3px;
+
+          outline: none;
+          cursor: pointer;
+        }
+
 
         .progress-bar-container {
           width: 100%;
@@ -76,6 +86,15 @@ export class SeedVideoPlayer extends LitElement {
           height: var(--progress-bar-height);
           background-color: rgba(255,255,255,.4);
           transition: width .2s;
+        }
+
+        .controls-case {
+          display: flex;
+          align-items: center;
+
+          padding: 0 10px;
+          width: 100%;
+          height: inherit;
         }
       `
     ];
@@ -128,9 +147,11 @@ export class SeedVideoPlayer extends LitElement {
       if (video.paused) {
         video.play();
         playPreview.style.display = 'none';
+        this.shadowRoot.querySelector('.play-path').setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z');
       } else {
         video.pause();
         playPreview.style.display = 'block';
+        this.shadowRoot.querySelector('.play-path').setAttribute('d', 'M8 5v14l11-7z');
       }
     }
   }
@@ -152,8 +173,11 @@ export class SeedVideoPlayer extends LitElement {
               <div class="progress-bar"></div>
             </div>
           </div>
+          <div class="controls-case">
+            <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
+          </div>
         </div>
-        <button class="btn-play-preview" @click="${this.switchVideo}">${videPlayPreview}</button>
+        <button class="btn-play-preview" @click="${this.switchVideo}">${videoPlayPreview}</button>
         ${videoSpinner}
       </div>
     `;

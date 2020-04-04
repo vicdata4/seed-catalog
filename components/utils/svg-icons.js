@@ -5,4 +5,5 @@ export const spinnerWaves = svg`<svg width="100" height="100" viewBox="0 0 45 45
 
 /* VIDEO PLAYER ICONS */
 export const videoSpinner = svg`<svg width="100%" height="100" class="video-spinner" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g fill="none" fill-rule="evenodd"><g transform="translate(1 1)" stroke-width="2"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></g></svg>`;
-export const videPlayPreview = svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="80px" height="auto"><path d="M8 5v14l11-7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`;
+export const videoPlayPreview = svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="80px" height="auto"><path d="M8 5v14l11-7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`;
+export const videoPlayBtn = svg`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30px" height="30px"><path class="play-path" d="M8 5v14l11-7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`;
