@@ -7,17 +7,19 @@ export class SeedVideoPlayer extends LitElement {
     return [
       css`
         :host {
-          --controls-height: 50px;
+          --control-container-height: 50px;
+          --progress-bar-height: 3px;
         }
 
         .video-container {
           position: relative;
-          background-color: red;
+          background-color: rgba(0,0,0,.5);
           display: grid;
         }
 
         video {
           width: 100%;
+          height: auto;
         }
 
         video > source {
@@ -28,15 +30,16 @@ export class SeedVideoPlayer extends LitElement {
           position: absolute;
           bottom: 0;
           width: 100%;
-          height: var(--controls-height);
+          height: var(--control-container-height);
           background-color: rgba(0,0,0,0.5);
+          background-image: linear-gradient(to top, rgba(0,0,0,.8) , rgba(0,0,0,.1));
         }
 
         .video-spinner {
           position: absolute;
           display: block;
           align-self: center;
-          margin-top: calc((var(--controls-height) / 2) * -1);
+          margin-top: calc((var(--control-container-height) / 2) * -1);
         }
 
         .btn-play-preview {
@@ -46,11 +49,33 @@ export class SeedVideoPlayer extends LitElement {
           justify-self: center;
           border-radius: 100%;
           background-color: rgba(0,0,0,.5);
-          margin-top: calc((var(--controls-height) / 2) * -1);
+          margin-top: calc((var(--control-container-height) / 2) * -1);
           border: none;
           padding: 0;
           margin: 0;
           cursor: pointer;
+        }
+
+
+        .progress-bar-container {
+          width: 100%;
+          height: var(--progress-bar-height);
+          background-color: rgba(255,255,255,.3);
+        }
+
+        .progress-bar {
+          position: absolute;
+          width: 0%;
+          height: var(--progress-bar-height);
+          background-color: red !important;
+          transition: width .2s;
+        }
+
+        .progress-bar-buffer {
+          width: 0%;
+          height: var(--progress-bar-height);
+          background-color: rgba(255,255,255,.4);
+          transition: width .2s;
         }
       `
     ];
@@ -59,7 +84,8 @@ export class SeedVideoPlayer extends LitElement {
   static get properties() {
     return {
       src: { type: String },
-      isLoadedData: { type: Boolean }
+      isLoadedData: { type: Boolean },
+      duration: { type: Number }
     };
   }
 
@@ -74,12 +100,23 @@ export class SeedVideoPlayer extends LitElement {
     const video = this.shadowRoot.querySelector('video');
     const spinner = this.shadowRoot.querySelector('.video-spinner');
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
+    const progressBar = this.shadowRoot.querySelector('.progress-bar');
+    const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
 
     video.addEventListener('loadeddata', event => {
-      // console.log('Yay! The readyState just increased to HAVE_CURRENT_DATA or greater for the first time.');
+      this.duration = event.target.duration;
       this.isLoadedData = false;
+
       spinner.style.display = 'none';
       playPreview.style.display = 'block';
+    });
+
+    video.addEventListener('timeupdate', () => {
+      const buffer = (video.buffered.end(0) / this.duration) * 100;
+      const percent = (video.currentTime * 100) / this.duration;
+
+      progressBar.style.width = `${percent}%`;
+      bufferBar.style.width = `${buffer}%`;
     });
   }
 
@@ -109,7 +146,13 @@ export class SeedVideoPlayer extends LitElement {
           <source src="${this.src}" type="video/${this.getVideoType()}">
           Sorry, your browser doesn't support embedded videos.
         </video>
-        <div class="controls"></div>
+        <div class="controls">
+          <div class="progress-bar-container">
+            <div class="progress-bar-buffer">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
         <button class="btn-play-preview" @click="${this.switchVideo}">${videPlayPreview}</button>
         ${videoSpinner}
       </div>
