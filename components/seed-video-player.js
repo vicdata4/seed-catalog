@@ -6,10 +6,15 @@ export class SeedVideoPlayer extends LitElement {
       css`
         :host {
           position: relative;
+          background-color: red;
         }
 
         video {
           width: 100%;
+        }
+
+        video > source {
+          background-color: green;
         }
 
         .controls {
@@ -38,13 +43,23 @@ export class SeedVideoPlayer extends LitElement {
   firstUpdated() {
   }
 
+  switchVideo() {
+    const video = this.shadowRoot.querySelector('video');
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
   getVideoType() {
     return this.src.match(new RegExp('[^.]+$'));
   }
 
   render() {
     return html`
-      <video controls>
+      <video @click="${this.switchVideo}">
         <source src="${this.src}" type="video/${this.getVideoType()}">
         Sorry, your browser doesn't support embedded videos.
       </video>
