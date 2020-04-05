@@ -126,8 +126,8 @@ export class SeedVideoPlayer extends LitElement {
       src: { type: String },
       isLoadedData: { type: Boolean },
       duration: { type: Number },
-      volumeValue: { type: Number },
-      volumePercent: { type: Number }
+      videoVolume: { type: Number },
+      videoVolumeInput: { type: Number }
     };
   }
 
@@ -136,8 +136,8 @@ export class SeedVideoPlayer extends LitElement {
 
     this.src = '';
     this.duration = 0;
-    this.volumePercent = 0.5;
-    this.volumeValue = 50;
+    this.videoVolumeInput = 0.5;
+    this.videoVolume = 50;
     this.isLoading = true;
   }
 
@@ -168,8 +168,8 @@ export class SeedVideoPlayer extends LitElement {
     volumeInput.addEventListener('input', e => {
       const percent = e.target.value * 0.01;
       video.volume = percent;
-      this.volumePercent = percent;
-      this.volumeValue = e.target.value;
+      this.videoVolumeInput = percent;
+      this.videoVolume = e.target.value;
     });
   }
 
@@ -181,8 +181,8 @@ export class SeedVideoPlayer extends LitElement {
       video.volume = 0;
       volume.value = 0;
     } else {
-      video.volume = this.volumePercent;
-      volume.value = this.volumeValue;
+      video.volume = this.videoVolumeInput;
+      volume.value = this.videoVolume;
     }
   }
 
