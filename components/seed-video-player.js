@@ -14,7 +14,11 @@ export class SeedVideoPlayer extends LitElement {
       css`
         :host {
           --control-container-height: 50px;
-          --progress-bar-height: 3px;
+          --progress-bar-height: 5px;
+        }
+
+        ::-webkit-media-controls {
+          display: none !important;
         }
 
         .video-container {
@@ -79,28 +83,50 @@ export class SeedVideoPlayer extends LitElement {
 
 
         .progress-bar-container {
+          position: absolute;
+          bottom: var(--control-container-height);
+
           width: 100%;
           height: var(--progress-bar-height);
+
           background-color: rgba(255,255,255,.3);
+          transition: height .1s;
           cursor: pointer;
         }
 
         .progress-bar {
           position: absolute;
-          width: 0%;
-          height: var(--progress-bar-height);
+          height: inherit;
           background-color: red !important;
-          transition: width .2s;
+          transition: width 2s;
         }
 
         .progress-bar-buffer {
+          position: absolute;
           width: 0%;
-          height: var(--progress-bar-height);
+          height: inherit;
           background-color: rgba(255,255,255,.4);
           transition: width .2s;
         }
 
-        
+        .progress-bar-pointer {
+          display: none;
+          position: absolute;
+          right: 0;
+
+          width: 3px;
+          height: 3px;
+
+          border-radius: 100%;
+          background-color: rgba(0,0,0,.5);
+          transition: all .2s;
+        }
+
+        /*
+        .progress-bar-container:hover > .progress-bar > .progress-bar-pointer {
+          width: 15px;
+          height: 15px;
+        }*/
 
         .control-box {
           display: flex;
@@ -202,6 +228,14 @@ export class SeedVideoPlayer extends LitElement {
     progressBarContainer.addEventListener('mousemove', e => {
       // console.log(e);
     });
+
+    progressBarContainer.addEventListener('mouseover', e => {
+      progressBarContainer.style.height = '7px';
+    });
+
+    progressBarContainer.addEventListener('mouseleave', e => {
+      progressBarContainer.style.height = 'var(--progress-bar-height)';
+    });
   }
 
   setVolumeButton(level = this.videoVolumeInput) {
@@ -267,6 +301,20 @@ export class SeedVideoPlayer extends LitElement {
     return `${hours}${minutes}${seconds}`;
   }
 
+  openFullscreen() {
+    const video = this.shadowRoot.querySelector('video');
+
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) { /* Firefox */
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { /* IE/Edge */
+      video.msRequestFullscreen();
+    }
+  }
+
   getVideoType() {
     return this.src.match(new RegExp('[^.]+$'));
   }
@@ -278,14 +326,13 @@ export class SeedVideoPlayer extends LitElement {
           <source src="${this.src}" type="video/${this.getVideoType()}">
           Sorry, your browser doesn't support embedded videos.
         </video>
-        <div class="controls">
-          <div class="progress-bar-container">
-            <div class="progress-bar-buffer">
-              <div class="progress-bar">
-                <div class="progress-bar-pointer"></div>
-              </div>
-            </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-buffer"></div>
+          <div class="progress-bar">
+            <div class="progress-bar-pointer"></div>
           </div>
+        </div>
+        <div class="controls">
           <div class="control-box">
             <div class="video-buttons">
               <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
@@ -296,7 +343,7 @@ export class SeedVideoPlayer extends LitElement {
               </div>
             </div>
             <div>
-              <button class="btn-play">${videoFullScreen}</button>
+              <button class="btn-play" @click="${this.openFullscreen}">${videoFullScreen}</button>
             </div>
           </div>
         </div>
