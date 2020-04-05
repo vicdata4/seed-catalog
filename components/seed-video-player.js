@@ -17,7 +17,7 @@ export class SeedVideoPlayer extends LitElement {
           --progress-bar-height: 5px;
         }
 
-        ::-webkit-media-controls {
+        ::-webkit-media-controls, video::-webkit-media-controls, video::-webkit-media-controls-enclosure {
           display: none !important;
         }
 
@@ -43,6 +43,11 @@ export class SeedVideoPlayer extends LitElement {
           height: var(--control-container-height);
           background-color: rgba(0,0,0,0.5);
           background-image: linear-gradient(to top, rgba(0,0,0,.8) , rgba(0,0,0,.1));
+          z-index: 2147483647;
+        }
+
+        .constrols:fullscreen {
+          display: block;
         }
 
         .video-spinner {
@@ -79,6 +84,7 @@ export class SeedVideoPlayer extends LitElement {
         .video-buttons {
           display: flex;
           flex-flow: row nowrap;
+          align-items: center;
         }
 
 
@@ -105,7 +111,7 @@ export class SeedVideoPlayer extends LitElement {
           position: absolute;
           width: 0%;
           height: inherit;
-          background-color: rgba(255,255,255,.4);
+          background-color: rgba(255,255,255,.7);
           transition: width .2s;
         }
 
@@ -122,11 +128,15 @@ export class SeedVideoPlayer extends LitElement {
           transition: all .2s;
         }
 
-        /*
-        .progress-bar-container:hover > .progress-bar > .progress-bar-pointer {
-          width: 15px;
-          height: 15px;
-        }*/
+        .input-range-container {
+          width: 0;
+          overflow: hidden;
+          transition: width 1s;
+        }
+
+        .input-range-container.opened, .input-range-container:hover {
+          width: 100%;
+        }
 
         .control-box {
           display: flex;
@@ -157,11 +167,6 @@ export class SeedVideoPlayer extends LitElement {
         .timer-separator {
           margin: 0 4px;
           font-size: 11px;
-        }
-
-        svg polyline, svg line, svg path {
-          -webkit-transition: 0.5s;
-          transition: 0.5s;
         }
       `
     ];
@@ -197,6 +202,8 @@ export class SeedVideoPlayer extends LitElement {
     const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
     const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
     const volumeInput = this.shadowRoot.querySelector('.input-range-volume');
+    const btnVolume = this.shadowRoot.querySelector('.btn-volume');
+    const inputRangeContainer = this.shadowRoot.querySelector('.input-range-container');
 
     video.addEventListener('loadeddata', event => {
       this.duration = event.target.duration;
@@ -225,10 +232,12 @@ export class SeedVideoPlayer extends LitElement {
       this.setVolumeButton();
     });
 
+    btnVolume.addEventListener('mouseover', () => inputRangeContainer.classList.add('opened'));
+    btnVolume.addEventListener('mouseleave', () => inputRangeContainer.classList.remove('opened'));
+
     progressBarContainer.addEventListener('mousemove', e => {
       // console.log(e);
     });
-
     progressBarContainer.addEventListener('mouseover', e => {
       progressBarContainer.style.height = '7px';
     });
@@ -275,15 +284,18 @@ export class SeedVideoPlayer extends LitElement {
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const playSvg = this.shadowRoot.querySelector('.play-path');
 
+    const playSvgCode = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+    const pauseSvgCode = 'M8 5v14l11-7z';
+
     if (!this.isLoadedData) {
       if (video.paused) {
         video.play();
         playPreview.style.display = 'none';
-        playSvg.setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z');
+        playSvg.setAttribute('d', playSvgCode);
       } else {
         video.pause();
         playPreview.style.display = 'block';
-        playSvg.setAttribute('d', 'M8 5v14l11-7z');
+        playSvg.setAttribute('d', pauseSvgCode);
       }
     }
   }
@@ -337,7 +349,9 @@ export class SeedVideoPlayer extends LitElement {
             <div class="video-buttons">
               <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
               <button class="btn-volume" @click="${this.switchVolume}">${videoVolumeUp}</button>
-              <input class="input-range-volume" type="range" min="0" max="100" step="1" value="50">
+              <div class="input-range-container">
+                <input class="input-range-volume" type="range" min="0" max="100" step="1" value="50">
+              </div>
               <div class="timer">
                 <span>${this.timeFormatter(this.videoCurrentTime)}</span><span class="timer-separator">/</span><span>${this.timeFormatter(this.duration)}</span>
               </div>
