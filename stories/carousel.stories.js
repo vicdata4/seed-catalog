@@ -137,14 +137,14 @@ storiesOf('Seed Catalog', module)
         <div class="due-card">
         </div>
         <button class="sd-btn black title">Carousel with images</button>
-        <!--
+        
         <seed-carousel arrows stepper>
-            <img src="${carousel3}" alt="carousel3">
-            <img src="${carousel1}" alt="carousel1">
-            <img src="${carousel2}" alt="carousel2">
-            <img src="${carousel4}" alt="carousel4">  
+            <img src="https://source.unsplash.com/1600x900/?random" alt="carousel3">
+            <img src="https://source.unsplash.com/1600x900/?nature" alt="carousel1">
+            <img src="https://source.unsplash.com/1600x900/?water" alt="carousel2">
+            <img src="https://source.unsplash.com/1600x900/?nature,water" alt="carousel4">  
         </seed-carousel>
-        -->
+        
         <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
     <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js</span>';
