@@ -82,6 +82,7 @@ export class SeedVideoPlayer extends LitElement {
           width: 100%;
           height: var(--progress-bar-height);
           background-color: rgba(255,255,255,.3);
+          cursor: pointer;
         }
 
         .progress-bar {
@@ -99,7 +100,9 @@ export class SeedVideoPlayer extends LitElement {
           transition: width .2s;
         }
 
-        .controls-case {
+        
+
+        .control-box {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -109,8 +112,25 @@ export class SeedVideoPlayer extends LitElement {
           height: inherit;
         }
 
-        .input-volume {
+        .input-range-volume {
           width: 80px;
+          cursor: pointer;
+        }
+
+        .timer {
+          display: flex;
+          align-items: center;
+          margin: 0 10px;
+          font-size: 11px;
+          letter-spacing: .6px;
+          font-family: sans-serif;
+          font-weight: 300;
+          color: white;
+        }
+
+        .timer-separator {
+          margin: 0 4px;
+          font-size: 11px;
         }
 
         svg polyline, svg line, svg path {
@@ -127,7 +147,8 @@ export class SeedVideoPlayer extends LitElement {
       isLoadedData: { type: Boolean },
       duration: { type: Number },
       videoVolume: { type: Number },
-      videoVolumeInput: { type: Number }
+      videoVolumeInput: { type: Number },
+      videoCurrentTime: { type: Number }
     };
   }
 
@@ -138,6 +159,7 @@ export class SeedVideoPlayer extends LitElement {
     this.duration = 0;
     this.videoVolumeInput = 0.5;
     this.videoVolume = 50;
+    this.videoCurrentTime = 0;
     this.isLoading = true;
   }
 
@@ -146,8 +168,9 @@ export class SeedVideoPlayer extends LitElement {
     const spinner = this.shadowRoot.querySelector('.video-spinner');
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const progressBar = this.shadowRoot.querySelector('.progress-bar');
+    const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
     const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
-    const volumeInput = this.shadowRoot.querySelector('.input-volume');
+    const volumeInput = this.shadowRoot.querySelector('.input-range-volume');
 
     video.addEventListener('loadeddata', event => {
       this.duration = event.target.duration;
@@ -160,6 +183,7 @@ export class SeedVideoPlayer extends LitElement {
     video.addEventListener('timeupdate', () => {
       const buffer = (video.buffered.end(0) / this.duration) * 100;
       const percent = (video.currentTime * 100) / this.duration;
+      this.videoCurrentTime = Math.round(video.currentTime);
 
       progressBar.style.width = `${percent}%`;
       bufferBar.style.width = `${buffer}%`;
@@ -168,14 +192,38 @@ export class SeedVideoPlayer extends LitElement {
     volumeInput.addEventListener('input', e => {
       const percent = e.target.value * 0.01;
       video.volume = percent;
+
       this.videoVolumeInput = percent;
       this.videoVolume = e.target.value;
+
+      this.setVolumeButton();
     });
+
+    progressBarContainer.addEventListener('mousemove', e => {
+      // console.log(e);
+    });
+  }
+
+  setVolumeButton(level = this.videoVolumeInput) {
+    const volumePath = this.shadowRoot.querySelector('.volume-path');
+    const volumeUp = 'M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z';
+    const volumeMute = 'M7 9v6h4l5 5V4l-5 5H7z';
+    const volumeDown = 'M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z';
+
+    if (level > 0) {
+      if (level < 0.5) {
+        volumePath.setAttribute('d', volumeDown);
+      } else {
+        volumePath.setAttribute('d', volumeUp);
+      }
+    } else {
+      volumePath.setAttribute('d', volumeMute);
+    }
   }
 
   switchVolume() {
     const video = this.shadowRoot.querySelector('video');
-    const volume = this.shadowRoot.querySelector('.input-volume');
+    const volume = this.shadowRoot.querySelector('.input-range-volume');
 
     if (video.volume > 0) {
       video.volume = 0;
@@ -184,23 +232,39 @@ export class SeedVideoPlayer extends LitElement {
       video.volume = this.videoVolumeInput;
       volume.value = this.videoVolume;
     }
+
+    this.setVolumeButton(video.volume);
   }
 
   switchVideo() {
     const video = this.shadowRoot.querySelector('video');
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
+    const playSvg = this.shadowRoot.querySelector('.play-path');
 
     if (!this.isLoadedData) {
       if (video.paused) {
         video.play();
         playPreview.style.display = 'none';
-        this.shadowRoot.querySelector('.play-path').setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z');
+        playSvg.setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z');
       } else {
         video.pause();
         playPreview.style.display = 'block';
-        this.shadowRoot.querySelector('.play-path').setAttribute('d', 'M8 5v14l11-7z');
+        playSvg.setAttribute('d', 'M8 5v14l11-7z');
       }
     }
+  }
+
+  timeFormatter(seconds_) {
+    const parseSeconds = parseInt(seconds_);
+    let hours = Math.floor(parseSeconds / 3600);
+    let minutes = Math.floor((parseSeconds - (hours * 3600)) / 60);
+    let seconds = parseSeconds - (hours * 3600) - (minutes * 60);
+
+    hours = (hours > 0) ? `${hours}:` : '';
+    minutes = (hours > 0 && minutes < 10) ? `0${minutes}:` : `${minutes}:`;
+    seconds = (seconds < 10) ? `0${seconds}` : `${seconds}`;
+
+    return `${hours}${minutes}${seconds}`;
   }
 
   getVideoType() {
@@ -217,14 +281,19 @@ export class SeedVideoPlayer extends LitElement {
         <div class="controls">
           <div class="progress-bar-container">
             <div class="progress-bar-buffer">
-              <div class="progress-bar"></div>
+              <div class="progress-bar">
+                <div class="progress-bar-pointer"></div>
+              </div>
             </div>
           </div>
-          <div class="controls-case">
+          <div class="control-box">
             <div class="video-buttons">
               <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
               <button class="btn-volume" @click="${this.switchVolume}">${videoVolumeUp}</button>
-              <input class="input-volume" type="range" min="0" max="100" step="1" value="50">
+              <input class="input-range-volume" type="range" min="0" max="100" step="1" value="50">
+              <div class="timer">
+                <span>${this.timeFormatter(this.videoCurrentTime)}</span><span class="timer-separator">/</span><span>${this.timeFormatter(this.duration)}</span>
+              </div>
             </div>
             <div>
               <button class="btn-play">${videoFullScreen}</button>
