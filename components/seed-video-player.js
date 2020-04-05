@@ -15,6 +15,7 @@ export class SeedVideoPlayer extends LitElement {
         :host {
           --control-container-height: 50px;
           --progress-bar-height: 5px;
+          --controller-opacity-transition: opacity .8s;
         }
 
         ::-webkit-media-controls, video::-webkit-media-controls, video::-webkit-media-controls-enclosure {
@@ -43,11 +44,11 @@ export class SeedVideoPlayer extends LitElement {
           height: var(--control-container-height);
           background-color: rgba(0,0,0,0.5);
           background-image: linear-gradient(to top, rgba(0,0,0,.8) , rgba(0,0,0,.1));
-          transition: opacity .8s;
+          transition: var(--controller-opacity-transition);
           z-index: 2147483647;
         }
 
-        .controller.hide {
+        .controller.hide, .progress-bar-container.hide {
           transition-delay: 1s;
           opacity: 0;
         }
@@ -98,13 +99,8 @@ export class SeedVideoPlayer extends LitElement {
           height: var(--progress-bar-height);
 
           background-color: rgba(255,255,255,.3);
-          transition: opacity .8s;
+          transition: var(--controller-opacity-transition);
           cursor: pointer;
-        }
-
-        .progress-bar-container.hide {
-          transition-delay: 1s;
-          opacity: 0;
         }
 
         .progress-bar {
