@@ -36,18 +36,20 @@ export class SeedVideoPlayer extends LitElement {
           background-color: green;
         }
 
-        .controls {
+        .controller {
           position: absolute;
           bottom: 0;
           width: 100%;
           height: var(--control-container-height);
           background-color: rgba(0,0,0,0.5);
           background-image: linear-gradient(to top, rgba(0,0,0,.8) , rgba(0,0,0,.1));
+          transition: opacity .8s;
           z-index: 2147483647;
         }
 
-        .constrols:fullscreen {
-          display: block;
+        .controller.hide {
+          transition-delay: 1s;
+          opacity: 0;
         }
 
         .video-spinner {
@@ -96,8 +98,13 @@ export class SeedVideoPlayer extends LitElement {
           height: var(--progress-bar-height);
 
           background-color: rgba(255,255,255,.3);
-          transition: height .1s;
+          transition: opacity .8s;
           cursor: pointer;
+        }
+
+        .progress-bar-container.hide {
+          transition-delay: 1s;
+          opacity: 0;
         }
 
         .progress-bar {
@@ -196,6 +203,8 @@ export class SeedVideoPlayer extends LitElement {
 
   firstUpdated() {
     const video = this.shadowRoot.querySelector('video');
+    const videoContainer = this.shadowRoot.querySelector('.video-container');
+    const controller = this.shadowRoot.querySelector('.controller');
     const spinner = this.shadowRoot.querySelector('.video-spinner');
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const progressBar = this.shadowRoot.querySelector('.progress-bar');
@@ -234,6 +243,18 @@ export class SeedVideoPlayer extends LitElement {
 
     btnVolume.addEventListener('mouseover', () => inputRangeContainer.classList.add('opened'));
     btnVolume.addEventListener('mouseleave', () => inputRangeContainer.classList.remove('opened'));
+
+    videoContainer.addEventListener('mouseleave', () => {
+      if (!video.paused) {
+        progressBarContainer.classList.add('hide');
+        controller.classList.add('hide');
+      }
+    });
+
+    videoContainer.addEventListener('mouseover', () => {
+      progressBarContainer.classList.remove('hide');
+      controller.classList.remove('hide');
+    });
 
     progressBarContainer.addEventListener('mousemove', e => {
       // console.log(e);
@@ -344,7 +365,7 @@ export class SeedVideoPlayer extends LitElement {
             <div class="progress-bar-pointer"></div>
           </div>
         </div>
-        <div class="controls">
+        <div class="controller">
           <div class="control-box">
             <div class="video-buttons">
               <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
