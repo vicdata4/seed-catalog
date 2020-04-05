@@ -1,6 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
 
-import { videoSpinner, videoPlayPreview, videoPlayBtn } from './utils/svg-icons';
+import {
+  videoSpinner,
+  videoPlayPreview,
+  videoPlayBtn,
+  videoFullScreen,
+  videoVolumeUp
+} from './utils/svg-icons';
 
 export class SeedVideoPlayer extends LitElement {
   static get styles() {
@@ -56,7 +62,7 @@ export class SeedVideoPlayer extends LitElement {
           cursor: pointer;
         }
 
-        .btn-play {
+        .btn-play, .btn-volume {
           display: flex;
           background: none;
           border: none;
@@ -64,6 +70,11 @@ export class SeedVideoPlayer extends LitElement {
 
           outline: none;
           cursor: pointer;
+        }
+
+        .video-buttons {
+          display: flex;
+          flex-flow: row nowrap;
         }
 
 
@@ -98,9 +109,11 @@ export class SeedVideoPlayer extends LitElement {
           height: inherit;
         }
 
+        .input-volume {
+          width: 80px;
+        }
+
         svg polyline, svg line, svg path {
-          stroke-linecap: round;
-          stroke-linejoin: round;
           -webkit-transition: 0.5s;
           transition: 0.5s;
         }
@@ -112,7 +125,9 @@ export class SeedVideoPlayer extends LitElement {
     return {
       src: { type: String },
       isLoadedData: { type: Boolean },
-      duration: { type: Number }
+      duration: { type: Number },
+      volumeValue: { type: Number },
+      volumePercent: { type: Number }
     };
   }
 
@@ -120,6 +135,9 @@ export class SeedVideoPlayer extends LitElement {
     super();
 
     this.src = '';
+    this.duration = 0;
+    this.volumePercent = 0.5;
+    this.volumeValue = 50;
     this.isLoading = true;
   }
 
@@ -129,7 +147,7 @@ export class SeedVideoPlayer extends LitElement {
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const progressBar = this.shadowRoot.querySelector('.progress-bar');
     const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
-    const volumeInput = this.shadowRoot.querySelector('.volume');
+    const volumeInput = this.shadowRoot.querySelector('.input-volume');
 
     video.addEventListener('loadeddata', event => {
       this.duration = event.target.duration;
@@ -148,8 +166,24 @@ export class SeedVideoPlayer extends LitElement {
     });
 
     volumeInput.addEventListener('input', e => {
-      video.volume = e.target.value * 0.01;
+      const percent = e.target.value * 0.01;
+      video.volume = percent;
+      this.volumePercent = percent;
+      this.volumeValue = e.target.value;
     });
+  }
+
+  switchVolume() {
+    const video = this.shadowRoot.querySelector('video');
+    const volume = this.shadowRoot.querySelector('.input-volume');
+
+    if (video.volume > 0) {
+      video.volume = 0;
+      volume.value = 0;
+    } else {
+      video.volume = this.volumePercent;
+      volume.value = this.volumeValue;
+    }
   }
 
   switchVideo() {
@@ -187,9 +221,13 @@ export class SeedVideoPlayer extends LitElement {
             </div>
           </div>
           <div class="controls-case">
-            <button class="btn-play" @oninput="${this.switchVideo}">${videoPlayBtn}</button>
+            <div class="video-buttons">
+              <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
+              <button class="btn-volume" @click="${this.switchVolume}">${videoVolumeUp}</button>
+              <input class="input-volume" type="range" min="0" max="100" step="1" value="50">
+            </div>
             <div>
-              <input class="volume" type="range" min="0" max="100" step="1">
+              <button class="btn-play">${videoFullScreen}</button>
             </div>
           </div>
         </div>
