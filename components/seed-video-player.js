@@ -90,11 +90,19 @@ export class SeedVideoPlayer extends LitElement {
 
         .controls-case {
           display: flex;
+          justify-content: space-between;
           align-items: center;
 
           padding: 0 10px;
-          width: 100%;
+          width: auto;
           height: inherit;
+        }
+
+        svg polyline, svg line, svg path {
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          -webkit-transition: 0.5s;
+          transition: 0.5s;
         }
       `
     ];
@@ -121,6 +129,7 @@ export class SeedVideoPlayer extends LitElement {
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const progressBar = this.shadowRoot.querySelector('.progress-bar');
     const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
+    const volumeInput = this.shadowRoot.querySelector('.volume');
 
     video.addEventListener('loadeddata', event => {
       this.duration = event.target.duration;
@@ -136,6 +145,10 @@ export class SeedVideoPlayer extends LitElement {
 
       progressBar.style.width = `${percent}%`;
       bufferBar.style.width = `${buffer}%`;
+    });
+
+    volumeInput.addEventListener('input', e => {
+      video.volume = e.target.value * 0.01;
     });
   }
 
@@ -174,7 +187,10 @@ export class SeedVideoPlayer extends LitElement {
             </div>
           </div>
           <div class="controls-case">
-            <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
+            <button class="btn-play" @oninput="${this.switchVideo}">${videoPlayBtn}</button>
+            <div>
+              <input class="volume" type="range" min="0" max="100" step="1">
+            </div>
           </div>
         </div>
         <button class="btn-play-preview" @click="${this.switchVideo}">${videoPlayPreview}</button>
