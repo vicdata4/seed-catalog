@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import debounce from 'lodash.debounce';
 
 import {
   videoSpinner,
@@ -48,7 +49,7 @@ export class SeedVideoPlayer extends LitElement {
         }
 
         .controller.hide, .progress-bar-container.hide {
-          transition-delay: 1s;
+          /* transition-delay: 1s; */
           opacity: 0;
         }
 
@@ -89,7 +90,6 @@ export class SeedVideoPlayer extends LitElement {
           align-items: center;
         }
 
-
         .progress-bar-container {
           position: absolute;
           bottom: var(--control-container-height);
@@ -105,8 +105,24 @@ export class SeedVideoPlayer extends LitElement {
         .progress-bar {
           position: absolute;
           height: inherit;
-          background-color: red !important;
+          background-color: red;
           transition: width 2s;
+        }
+
+        .progress-bar-container:hover > .progress-bar-hover {
+          position: absolute;
+          background-color: rgba(255,255,255,.6);
+          height: inherit;
+          width: auto;
+        }
+
+        .progress-bar-pretime {
+          display: none;
+          position: absolute;
+          right: 0;
+          background-color: red;
+          width: 20px;
+          height: 20px;
         }
 
         .progress-bar-buffer {
@@ -181,7 +197,8 @@ export class SeedVideoPlayer extends LitElement {
       duration: { type: Number },
       videoVolume: { type: Number },
       videoVolumeInput: { type: Number },
-      videoCurrentTime: { type: Number }
+      videoCurrentTime: { type: Number },
+      hoverSecond: { type: Number }
     };
   }
 
@@ -194,6 +211,14 @@ export class SeedVideoPlayer extends LitElement {
     this.videoVolume = 50;
     this.videoCurrentTime = 0;
     this.isLoading = true;
+
+    this.onMouseMove = () => {
+      const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
+      const controller = this.shadowRoot.querySelector('.controller');
+      progressBarContainer.classList.add('hide');
+      controller.classList.add('hide');
+      this.style.cursor = 'none';
+    };
   }
 
   firstUpdated() {
@@ -211,34 +236,42 @@ export class SeedVideoPlayer extends LitElement {
   }
 
   progressBarListeners(progressBarContainer) {
-    progressBarContainer.addEventListener('mouseover', e => {
+    const progressBarClientWidth = progressBarContainer.clientWidth;
+    const progressBarHover = this.shadowRoot.querySelector('.progress-bar-hover');
+
+    progressBarContainer.addEventListener('mouseover', () => {
       progressBarContainer.style.height = '7px';
     });
 
-    progressBarContainer.addEventListener('mouseleave', e => {
+    progressBarContainer.addEventListener('mouseleave', () => {
       progressBarContainer.style.height = 'var(--progress-bar-height)';
     });
 
-    /* progressBarContainer.addEventListener('mousemove', e => {
-      // console.log(e);
-    }); */
+    progressBarContainer.addEventListener('mousemove', e => {
+      const percent = (e.offsetX * 100) / progressBarClientWidth;
+
+      const second = (this.duration * parseFloat(percent.toFixed(2))) / 100;
+      this.hoverSecond = parseInt(second);
+      progressBarHover.style.width = `${percent}%`;
+    });
   }
 
   videoContainerMouseListeners(video, progressBarContainer) {
     const videoContainer = this.shadowRoot.querySelector('.video-container');
     const controller = this.shadowRoot.querySelector('.controller');
 
-    videoContainer.addEventListener('mouseleave', () => {
+    /* videoContainer.addEventListener('mouseleave', () => {
       if (!video.paused) {
         progressBarContainer.classList.add('hide');
         controller.classList.add('hide');
       }
-    });
+    }); */
 
-    videoContainer.addEventListener('mouseover', () => {
+    videoContainer.addEventListener('mousemove', debounce(() => {
       progressBarContainer.classList.remove('hide');
       controller.classList.remove('hide');
-    });
+      this.style.cursor = 'initial';
+    }, 0));
   }
 
   loadedDataListener(video) {
@@ -254,17 +287,22 @@ export class SeedVideoPlayer extends LitElement {
     });
   }
 
-  timeUpdateListener(video) {
+  setCurrentTime(video) {
     const progressBar = this.shadowRoot.querySelector('.progress-bar');
     const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
 
-    video.addEventListener('timeupdate', () => {
-      const buffer = (video.buffered.end(0) / this.duration) * 100;
-      const percent = (video.currentTime * 100) / this.duration;
-      this.videoCurrentTime = Math.round(video.currentTime);
+    const buffer = (video.buffered.end(0) / this.duration) * 100;
+    const percent = (video.currentTime * 100) / this.duration;
+    this.videoCurrentTime = Math.round(video.currentTime);
 
-      progressBar.style.width = `${percent}%`;
-      bufferBar.style.width = `${buffer}%`;
+    progressBar.style.width = `${percent}%`;
+    bufferBar.style.width = `${buffer}%`;
+    progressBar.style.transition = 'initial';
+  }
+
+  timeUpdateListener(video) {
+    video.addEventListener('timeupdate', () => {
+      this.setCurrentTime(video);
     });
   }
 
@@ -335,10 +373,12 @@ export class SeedVideoPlayer extends LitElement {
         video.play();
         playPreview.style.display = 'none';
         playSvg.setAttribute('d', playSvgCode);
+        // video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
       } else {
         video.pause();
         playPreview.style.display = 'block';
         playSvg.setAttribute('d', pauseSvgCode);
+        // video.removeEventListener('mousemove', this.onMouseMove, false);
       }
     }
   }
@@ -374,6 +414,14 @@ export class SeedVideoPlayer extends LitElement {
     return this.src.match(new RegExp('[^.]+$'));
   }
 
+  setSelectedTime() {
+    const video = this.shadowRoot.querySelector('video');
+    const progressBar = this.shadowRoot.querySelector('.progress-bar');
+    progressBar.style.transition = 'none';
+    video.currentTime = this.hoverSecond;
+    this.setCurrentTime(video);
+  }
+
   render() {
     return html`
       <div class="video-container">
@@ -381,8 +429,9 @@ export class SeedVideoPlayer extends LitElement {
           <source src="${this.src}" type="video/${this.getVideoType()}">
           Sorry, your browser doesn't support embedded videos.
         </video>
-        <div class="progress-bar-container">
+        <div class="progress-bar-container" @click="${this.setSelectedTime}">
           <div class="progress-bar-buffer"></div>
+          <div class="progress-bar-hover"><div class="progress-bar-pretime"></div></div>
           <div class="progress-bar">
             <div class="progress-bar-pointer"></div>
           </div>
