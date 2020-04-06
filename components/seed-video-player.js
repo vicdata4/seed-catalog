@@ -45,7 +45,6 @@ export class SeedVideoPlayer extends LitElement {
           background-color: rgba(0,0,0,0.5);
           background-image: linear-gradient(to top, rgba(0,0,0,.8) , rgba(0,0,0,.1));
           transition: var(--controller-opacity-transition);
-          z-index: 2147483647;
         }
 
         .controller.hide, .progress-bar-container.hide {
@@ -331,7 +330,7 @@ export class SeedVideoPlayer extends LitElement {
   }
 
   openFullscreen() {
-    const video = this.shadowRoot.querySelector('video');
+    const video = this.shadowRoot.querySelector('.video-container');
 
     if (video.requestFullscreen) {
       video.requestFullscreen();
