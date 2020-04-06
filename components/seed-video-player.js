@@ -104,25 +104,41 @@ export class SeedVideoPlayer extends LitElement {
 
         .progress-bar {
           position: absolute;
-          height: inherit;
-          background-color: red;
+          height: 100%;
+          background-color: red !important;
           transition: width 2s;
         }
 
         .progress-bar-container:hover > .progress-bar-hover {
           position: absolute;
           background-color: rgba(255,255,255,.6);
-          height: inherit;
           width: auto;
+          height: 100%;
         }
 
-        .progress-bar-pretime {
+        .progress-bar-pretime:hover {
           display: none;
           position: absolute;
           right: 0;
           background-color: red;
           width: 20px;
           height: 20px;
+        }
+
+        .hover-time-indicator {
+          position: absolute;
+          bottom: calc(var(--progress-bar-height) + var(--control-container-height) + 10px);
+          width: auto;
+          height: auto;
+          padding: 0px 10px;
+          border: 1px solid grey;
+          background-color: rgba(0,0,0,0.5);
+          font-size: 14px;
+
+          color: white;
+          border-radius: 10px;
+          opacity: 0;
+          transition: opacity .5s;
         }
 
         .progress-bar-buffer {
@@ -236,8 +252,8 @@ export class SeedVideoPlayer extends LitElement {
   }
 
   progressBarListeners(progressBarContainer) {
-    const progressBarClientWidth = progressBarContainer.clientWidth;
     const progressBarHover = this.shadowRoot.querySelector('.progress-bar-hover');
+    const hoverCurrentTime = this.shadowRoot.querySelector('.hover-time-indicator');
 
     progressBarContainer.addEventListener('mouseover', () => {
       progressBarContainer.style.height = '7px';
@@ -245,14 +261,18 @@ export class SeedVideoPlayer extends LitElement {
 
     progressBarContainer.addEventListener('mouseleave', () => {
       progressBarContainer.style.height = 'var(--progress-bar-height)';
+      hoverCurrentTime.style.opacity = '0';
     });
 
     progressBarContainer.addEventListener('mousemove', e => {
+      const progressBarClientWidth = progressBarContainer.clientWidth;
       const percent = (e.offsetX * 100) / progressBarClientWidth;
 
       const second = (this.duration * parseFloat(percent.toFixed(2))) / 100;
       this.hoverSecond = parseInt(second);
       progressBarHover.style.width = `${percent}%`;
+      hoverCurrentTime.style.opacity = '1';
+      hoverCurrentTime.style.left = `${e.offsetX}px`;
     });
   }
 
@@ -429,6 +449,7 @@ export class SeedVideoPlayer extends LitElement {
           <source src="${this.src}" type="video/${this.getVideoType()}">
           Sorry, your browser doesn't support embedded videos.
         </video>
+        <div class="hover-time-indicator"><span>${this.timeFormatter(this.hoverSecond)}</span></div>
         <div class="progress-bar-container" @click="${this.setSelectedTime}">
           <div class="progress-bar-buffer"></div>
           <div class="progress-bar-hover"><div class="progress-bar-pretime"></div></div>
