@@ -14,7 +14,7 @@ export class SeedVideoPlayer extends LitElement {
       css`
         :host {
           --control-container-height: 50px;
-          --progress-bar-height: 5px;
+          --progress-bar-height: 4px;
           --controller-opacity-transition: opacity .8s;
         }
 
@@ -198,46 +198,35 @@ export class SeedVideoPlayer extends LitElement {
 
   firstUpdated() {
     const video = this.shadowRoot.querySelector('video');
+    const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
+
+    this.loadedDataListener(video);
+    this.timeUpdateListener(video);
+
+    this.volumeInputRangeListener(video);
+    this.volumeButtonListeners();
+
+    this.videoContainerMouseListeners(video, progressBarContainer);
+    this.progressBarListeners(progressBarContainer);
+  }
+
+  progressBarListeners(progressBarContainer) {
+    progressBarContainer.addEventListener('mouseover', e => {
+      progressBarContainer.style.height = '7px';
+    });
+
+    progressBarContainer.addEventListener('mouseleave', e => {
+      progressBarContainer.style.height = 'var(--progress-bar-height)';
+    });
+
+    /* progressBarContainer.addEventListener('mousemove', e => {
+      // console.log(e);
+    }); */
+  }
+
+  videoContainerMouseListeners(video, progressBarContainer) {
     const videoContainer = this.shadowRoot.querySelector('.video-container');
     const controller = this.shadowRoot.querySelector('.controller');
-    const spinner = this.shadowRoot.querySelector('.video-spinner');
-    const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
-    const progressBar = this.shadowRoot.querySelector('.progress-bar');
-    const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
-    const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
-    const volumeInput = this.shadowRoot.querySelector('.input-range-volume');
-    const btnVolume = this.shadowRoot.querySelector('.btn-volume');
-    const inputRangeContainer = this.shadowRoot.querySelector('.input-range-container');
-
-    video.addEventListener('loadeddata', event => {
-      this.duration = event.target.duration;
-      this.isLoadedData = false;
-
-      spinner.style.display = 'none';
-      playPreview.style.display = 'block';
-    });
-
-    video.addEventListener('timeupdate', () => {
-      const buffer = (video.buffered.end(0) / this.duration) * 100;
-      const percent = (video.currentTime * 100) / this.duration;
-      this.videoCurrentTime = Math.round(video.currentTime);
-
-      progressBar.style.width = `${percent}%`;
-      bufferBar.style.width = `${buffer}%`;
-    });
-
-    volumeInput.addEventListener('input', e => {
-      const percent = e.target.value * 0.01;
-      video.volume = percent;
-
-      this.videoVolumeInput = percent;
-      this.videoVolume = e.target.value;
-
-      this.setVolumeButton();
-    });
-
-    btnVolume.addEventListener('mouseover', () => inputRangeContainer.classList.add('opened'));
-    btnVolume.addEventListener('mouseleave', () => inputRangeContainer.classList.remove('opened'));
 
     videoContainer.addEventListener('mouseleave', () => {
       if (!video.paused) {
@@ -250,16 +239,54 @@ export class SeedVideoPlayer extends LitElement {
       progressBarContainer.classList.remove('hide');
       controller.classList.remove('hide');
     });
+  }
 
-    progressBarContainer.addEventListener('mousemove', e => {
-      // console.log(e);
-    });
-    progressBarContainer.addEventListener('mouseover', e => {
-      progressBarContainer.style.height = '7px';
-    });
+  loadedDataListener(video) {
+    const spinner = this.shadowRoot.querySelector('.video-spinner');
+    const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
 
-    progressBarContainer.addEventListener('mouseleave', e => {
-      progressBarContainer.style.height = 'var(--progress-bar-height)';
+    video.addEventListener('loadeddata', event => {
+      this.duration = event.target.duration;
+      this.isLoadedData = false;
+
+      spinner.style.display = 'none';
+      playPreview.style.display = 'block';
+    });
+  }
+
+  timeUpdateListener(video) {
+    const progressBar = this.shadowRoot.querySelector('.progress-bar');
+    const bufferBar = this.shadowRoot.querySelector('.progress-bar-buffer');
+
+    video.addEventListener('timeupdate', () => {
+      const buffer = (video.buffered.end(0) / this.duration) * 100;
+      const percent = (video.currentTime * 100) / this.duration;
+      this.videoCurrentTime = Math.round(video.currentTime);
+
+      progressBar.style.width = `${percent}%`;
+      bufferBar.style.width = `${buffer}%`;
+    });
+  }
+
+  volumeButtonListeners() {
+    const btnVolume = this.shadowRoot.querySelector('.btn-volume');
+    const inputRangeContainer = this.shadowRoot.querySelector('.input-range-container');
+
+    btnVolume.addEventListener('mouseover', () => inputRangeContainer.classList.add('opened'));
+    btnVolume.addEventListener('mouseleave', () => inputRangeContainer.classList.remove('opened'));
+  }
+
+  volumeInputRangeListener(video) {
+    const volumeInput = this.shadowRoot.querySelector('.input-range-volume');
+
+    volumeInput.addEventListener('input', e => {
+      const percent = e.target.value * 0.01;
+      video.volume = percent;
+
+      this.videoVolumeInput = percent;
+      this.videoVolume = e.target.value;
+
+      this.setVolumeButton();
     });
   }
 
