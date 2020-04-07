@@ -278,7 +278,9 @@ export class SeedVideoPlayer extends LitElement {
       this.hoverSecond = parseInt(second);
       progressBarHover.style.width = `${percent}%`;
       hoverCurrentTime.style.opacity = '1';
-      hoverCurrentTime.style.left = `${e.offsetX}px`;
+
+      const isBoxTimeOverflowing = e.offsetX + hoverCurrentTime.clientWidth > progressBarClientWidth;
+      hoverCurrentTime.style.left = !isBoxTimeOverflowing ? `${e.offsetX}px` : `${e.offsetX - hoverCurrentTime.clientWidth}px`;
     });
   }
 
@@ -399,7 +401,7 @@ export class SeedVideoPlayer extends LitElement {
         video.play();
         playPreview.style.display = 'none';
         playSvg.setAttribute('d', playSvgCode);
-        // video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
+        video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
       } else {
         video.pause();
         playPreview.style.display = 'block';
