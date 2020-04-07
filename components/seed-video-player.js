@@ -288,13 +288,6 @@ export class SeedVideoPlayer extends LitElement {
     const videoContainer = this.shadowRoot.querySelector('.video-container');
     const controller = this.shadowRoot.querySelector('.controller');
 
-    /* videoContainer.addEventListener('mouseleave', () => {
-      if (!video.paused) {
-        progressBarContainer.classList.add('hide');
-        controller.classList.add('hide');
-      }
-    }); */
-
     videoContainer.addEventListener('mousemove', debounce(() => {
       progressBarContainer.classList.remove('hide');
       controller.classList.remove('hide');
