@@ -217,6 +217,7 @@ export class SeedVideoPlayer extends LitElement {
       src: { type: String },
       isLoadedData: { type: Boolean },
       duration: { type: Number },
+      paused: { type: Boolean },
       videoVolume: { type: Number },
       videoVolumeInput: { type: Number },
       videoCurrentTime: { type: Number },
@@ -229,17 +230,20 @@ export class SeedVideoPlayer extends LitElement {
 
     this.src = '';
     this.duration = 0;
-    this.videoVolumeInput = 0.5;
     this.videoVolume = 50;
+    this.videoVolumeInput = 0.5;
     this.videoCurrentTime = 0;
     this.isLoading = true;
+    this.paused = true;
 
     this.onMouseMove = () => {
-      const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
-      const controller = this.shadowRoot.querySelector('.controller');
-      progressBarContainer.classList.add('hide');
-      controller.classList.add('hide');
-      this.style.cursor = 'none';
+      if (!this.paused) {
+        const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
+        const controller = this.shadowRoot.querySelector('.controller');
+        progressBarContainer.classList.add('hide');
+        controller.classList.add('hide');
+        this.style.cursor = 'none';
+      }
     };
   }
 
@@ -395,10 +399,12 @@ export class SeedVideoPlayer extends LitElement {
         playPreview.style.display = 'none';
         playSvg.setAttribute('d', playSvgCode);
         video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
+        this.paused = false;
       } else {
         video.pause();
         playPreview.style.display = 'block';
         playSvg.setAttribute('d', pauseSvgCode);
+        this.paused = true;
         // video.removeEventListener('mousemove', this.onMouseMove, false);
       }
     }
