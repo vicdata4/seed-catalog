@@ -91,14 +91,20 @@ export class SeedVideoPlayer extends LitElement {
         }
 
         .progress-bar-container {
+          --progress-bar-border: 10px;
           position: absolute;
-          bottom: var(--control-container-height);
+          bottom: calc(var(--control-container-height) - var(--progress-bar-border));
 
           width: 100%;
           height: var(--progress-bar-height);
 
-          background-color: rgba(255,255,255,.3);
+          border-top: calc(var(--progress-bar-border) + 10px) solid transparent;
+          border-bottom: var(--progress-bar-border) solid transparent;
+          background: rgba(255,255,255,.3);
+          background-clip: content-box;
+
           transition: var(--controller-opacity-transition);
+          z-index: 99;
           cursor: pointer;
         }
 
@@ -367,14 +373,14 @@ export class SeedVideoPlayer extends LitElement {
 
   switchVolume() {
     const video = this.shadowRoot.querySelector('video');
-    const volume = this.shadowRoot.querySelector('.input-range-volume');
+    const volumeInputRange = this.shadowRoot.querySelector('.input-range-volume');
 
     if (video.volume > 0) {
       video.volume = 0;
-      volume.value = 0;
+      volumeInputRange.value = 0;
     } else {
       video.volume = this.videoVolumeInput;
-      volume.value = this.videoVolume;
+      volumeInputRange.value = this.videoVolume;
     }
 
     this.setVolumeButton(video.volume);
