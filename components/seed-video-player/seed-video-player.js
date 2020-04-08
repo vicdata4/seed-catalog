@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from './styles.js';
+import { styles } from './styles/styles.js';
 import debounce from 'lodash.debounce';
 
 import {
@@ -8,7 +8,7 @@ import {
   videoPlayBtn,
   videoFullScreen,
   videoVolumeUp
-} from '../utils/svg-icons';
+} from './styles/svg-icons';
 
 export class SeedVideoPlayer extends LitElement {
   static get styles() {
