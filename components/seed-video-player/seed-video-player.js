@@ -18,13 +18,13 @@ export class SeedVideoPlayer extends LitElement {
   static get properties() {
     return {
       src: { type: String },
-      isLoadedData: { type: Boolean },
-      duration: { type: Number },
-      showController: { type: Boolean },
-      videoVolume: { type: Number },
-      videoVolumeInput: { type: Number },
-      videoCurrentTime: { type: Number },
-      hoverSecond: { type: Number }
+      isLoadedData: { type: Boolean, attribute: false },
+      duration: { type: Number, attribute: false },
+      showController: { type: Boolean, attribute: false },
+      videoVolume: { type: Number, attribute: false },
+      videoVolumeInput: { type: Number, attribute: false },
+      videoCurrentTime: { type: Number, attribute: false },
+      hoverSecond: { type: Number, attribute: false }
     };
   }
 
