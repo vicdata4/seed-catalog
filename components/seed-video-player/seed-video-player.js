@@ -7,7 +7,8 @@ import {
   videoPlayPreview,
   videoPlayBtn,
   videoFullScreen,
-  videoVolumeUp
+  videoVolumeUp,
+  progressBarPonter
 } from './styles/svg-icons';
 
 export class SeedVideoPlayer extends LitElement {
@@ -135,10 +136,10 @@ export class SeedVideoPlayer extends LitElement {
     const buffer = (video.buffered.end(0) / this.duration) * 100;
     const percent = (video.currentTime * 100) / this.duration;
     this.videoCurrentTime = Math.round(video.currentTime);
+    const scaleXValue = percent * 0.01;
 
-    progressBar.style.width = `${percent}%`;
+    progressBar.style.transform = `scaleX(${scaleXValue})`;
     bufferBar.style.width = `${buffer}%`;
-    progressBar.style.transition = 'initial';
   }
 
   timeUpdateListener(video) {
@@ -258,9 +259,15 @@ export class SeedVideoPlayer extends LitElement {
   setSelectedTime() {
     const video = this.shadowRoot.querySelector('video');
     const progressBar = this.shadowRoot.querySelector('.progress-bar');
-    progressBar.style.transition = 'none';
+
     video.currentTime = this.hoverSecond;
+    progressBar.classList.add('hide-transition');
+
     this.setCurrentTime(video);
+
+    setTimeout(() => {
+      progressBar.classList.remove('hide-transition');
+    }, 500);
   }
 
   render() {
@@ -275,7 +282,7 @@ export class SeedVideoPlayer extends LitElement {
           <div class="progress-bar-buffer"></div>
           <div class="progress-bar-hover"><div class="progress-bar-pretime"></div></div>
           <div class="progress-bar">
-            <div class="progress-bar-pointer"></div>
+            <!--<div class="progress-bar-pointer">${progressBarPonter}</div>-->
           </div>
         </div>
         <div class="controller">

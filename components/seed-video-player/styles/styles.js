@@ -4,6 +4,7 @@ export const styles = css`
 :host {
   --control-container-height: 50px;
   --progress-bar-height: 4px;
+  --progress-bar-transition: all 2s;
   --controller-opacity-transition: opacity .8s;
 }
 
@@ -97,10 +98,16 @@ video > source {
 }
 
 .progress-bar {
-  position: absolute;
+  position: relative;
   height: 100%;
-  background-color: red !important;
-  transition: width 2s;
+  background-color: red;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: var(--progress-bar-transition);
+}
+
+.progress-bar.hide-transition {
+  transition-duration: 0s;
 }
 
 .progress-bar-container:hover > .progress-bar-hover {
@@ -144,16 +151,9 @@ video > source {
 }
 
 .progress-bar-pointer {
-  display: none;
   position: absolute;
   right: 0;
-
-  width: 3px;
-  height: 3px;
-
-  border-radius: 100%;
-  background-color: rgba(0,0,0,.5);
-  transition: all .2s;
+  top: -8px;
 }
 
 .input-range-container {
