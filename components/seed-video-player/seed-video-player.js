@@ -1,4 +1,5 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import { styles } from './styles.js';
 import debounce from 'lodash.debounce';
 
 import {
@@ -7,209 +8,11 @@ import {
   videoPlayBtn,
   videoFullScreen,
   videoVolumeUp
-} from './utils/svg-icons';
+} from '../utils/svg-icons';
 
 export class SeedVideoPlayer extends LitElement {
   static get styles() {
-    return [
-      css`
-        :host {
-          --control-container-height: 50px;
-          --progress-bar-height: 4px;
-          --controller-opacity-transition: opacity .8s;
-        }
-
-        ::-webkit-media-controls, video::-webkit-media-controls, video::-webkit-media-controls-enclosure {
-          display: none !important;
-        }
-
-        .video-container {
-          position: relative;
-          background-color: rgba(0,0,0,.5);
-          display: grid;
-        }
-
-        video {
-          width: 100%;
-          height: auto;
-        }
-
-        video > source {
-          background-color: green;
-        }
-
-        .controller {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          height: var(--control-container-height);
-          background-color: rgba(0,0,0,0.5);
-          background-image: linear-gradient(to top, rgba(0,0,0,.8) , rgba(0,0,0,.1));
-          transition: var(--controller-opacity-transition);
-        }
-
-        .controller.hide, .progress-bar-container.hide {
-          /* transition-delay: 1s; */
-          opacity: 0;
-        }
-
-        .video-spinner {
-          position: absolute;
-          display: block;
-          align-self: center;
-          margin-top: calc((var(--control-container-height) / 2) * -1);
-        }
-
-        .btn-play-preview {
-          display: none;
-          position: absolute;
-          align-self: center;
-          justify-self: center;
-          border-radius: 100%;
-          background-color: rgba(0,0,0,.5);
-          margin-top: calc((var(--control-container-height) / 2) * -1);
-          border: none;
-          padding: 0;
-          margin: 0;
-          cursor: pointer;
-        }
-
-        .btn-play, .btn-volume {
-          display: flex;
-          background: none;
-          border: none;
-          padding: 0 3px;
-
-          outline: none;
-          cursor: pointer;
-        }
-
-        .video-buttons {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-        }
-
-        .progress-bar-container {
-          --progress-bar-border: 10px;
-          position: absolute;
-          bottom: calc(var(--control-container-height) - var(--progress-bar-border));
-
-          width: 100%;
-          height: var(--progress-bar-height);
-
-          border-top: calc(var(--progress-bar-border) + 10px) solid transparent;
-          border-bottom: var(--progress-bar-border) solid transparent;
-          background: rgba(255,255,255,.3);
-          background-clip: content-box;
-
-          transition: var(--controller-opacity-transition);
-          z-index: 99;
-          cursor: pointer;
-        }
-
-        .progress-bar {
-          position: absolute;
-          height: 100%;
-          background-color: red !important;
-          transition: width 2s;
-        }
-
-        .progress-bar-container:hover > .progress-bar-hover {
-          position: absolute;
-          background-color: rgba(255,255,255,.6);
-          width: auto;
-          height: 100%;
-        }
-
-        .progress-bar-pretime:hover {
-          display: none;
-          position: absolute;
-          right: 0;
-          background-color: red;
-          width: 20px;
-          height: 20px;
-        }
-
-        .hover-time-indicator {
-          position: absolute;
-          bottom: calc(var(--progress-bar-height) + var(--control-container-height) + 10px);
-          width: auto;
-          height: auto;
-          padding: 0px 10px;
-          border: 1px solid grey;
-          background-color: rgba(0,0,0,0.5);
-          font-size: 14px;
-
-          color: white;
-          border-radius: 10px;
-          opacity: 0;
-          transition: opacity .5s;
-        }
-
-        .progress-bar-buffer {
-          position: absolute;
-          width: 0%;
-          height: inherit;
-          background-color: rgba(255,255,255,.7);
-          transition: width .2s;
-        }
-
-        .progress-bar-pointer {
-          display: none;
-          position: absolute;
-          right: 0;
-
-          width: 3px;
-          height: 3px;
-
-          border-radius: 100%;
-          background-color: rgba(0,0,0,.5);
-          transition: all .2s;
-        }
-
-        .input-range-container {
-          width: 0;
-          overflow: hidden;
-          transition: width 1s;
-        }
-
-        .input-range-container.opened, .input-range-container:hover {
-          width: 100%;
-        }
-
-        .control-box {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          padding: 0 10px;
-          width: auto;
-          height: inherit;
-        }
-
-        .input-range-volume {
-          width: 80px;
-          cursor: pointer;
-        }
-
-        .timer {
-          display: flex;
-          align-items: center;
-          margin: 0 10px;
-          font-size: 11px;
-          letter-spacing: .6px;
-          font-family: sans-serif;
-          font-weight: 300;
-          color: white;
-        }
-
-        .timer-separator {
-          margin: 0 4px;
-          font-size: 11px;
-        }
-      `
-    ];
+    return styles;
   }
 
   static get properties() {
@@ -217,7 +20,7 @@ export class SeedVideoPlayer extends LitElement {
       src: { type: String },
       isLoadedData: { type: Boolean },
       duration: { type: Number },
-      paused: { type: Boolean },
+      showController: { type: Boolean },
       videoVolume: { type: Number },
       videoVolumeInput: { type: Number },
       videoCurrentTime: { type: Number },
@@ -234,16 +37,10 @@ export class SeedVideoPlayer extends LitElement {
     this.videoVolumeInput = 0.5;
     this.videoCurrentTime = 0;
     this.isLoading = true;
-    this.paused = true;
+    this.showController = true;
 
     this.onMouseMove = () => {
-      if (!this.paused) {
-        const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
-        const controller = this.shadowRoot.querySelector('.controller');
-        progressBarContainer.classList.add('hide');
-        controller.classList.add('hide');
-        this.style.cursor = 'none';
-      }
+      if (!this.showController) this.hideControllers();
     };
   }
 
@@ -261,17 +58,29 @@ export class SeedVideoPlayer extends LitElement {
     this.progressBarListeners(progressBarContainer);
   }
 
+  hideControllers() {
+    const progressBarContainer = this.shadowRoot.querySelector('.progress-bar-container');
+    const controller = this.shadowRoot.querySelector('.controller');
+
+    progressBarContainer.classList.add('hide');
+    controller.classList.add('hide');
+
+    this.style.cursor = 'none';
+  }
+
   progressBarListeners(progressBarContainer) {
     const progressBarHover = this.shadowRoot.querySelector('.progress-bar-hover');
     const hoverCurrentTime = this.shadowRoot.querySelector('.hover-time-indicator');
 
     progressBarContainer.addEventListener('mouseover', () => {
       progressBarContainer.style.height = '7px';
+      this.showController = true;
     });
 
     progressBarContainer.addEventListener('mouseleave', () => {
       progressBarContainer.style.height = 'var(--progress-bar-height)';
       hoverCurrentTime.style.opacity = '0';
+      this.showController = false;
     });
 
     progressBarContainer.addEventListener('mousemove', e => {
@@ -292,11 +101,18 @@ export class SeedVideoPlayer extends LitElement {
     const videoContainer = this.shadowRoot.querySelector('.video-container');
     const controller = this.shadowRoot.querySelector('.controller');
 
+    controller.addEventListener('mouseover', () => { this.showController = true; });
+    controller.addEventListener('mouseleave', () => { this.showController = false; });
+
     videoContainer.addEventListener('mousemove', debounce(() => {
       progressBarContainer.classList.remove('hide');
       controller.classList.remove('hide');
       this.style.cursor = 'initial';
     }, 0));
+
+    videoContainer.addEventListener('mouseleave', () => {
+      this.hideControllers();
+    });
   }
 
   loadedDataListener(video) {
@@ -399,13 +215,11 @@ export class SeedVideoPlayer extends LitElement {
         playPreview.style.display = 'none';
         playSvg.setAttribute('d', playSvgCode);
         video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
-        this.paused = false;
+        this.showController = false;
       } else {
         video.pause();
         playPreview.style.display = 'block';
         playSvg.setAttribute('d', pauseSvgCode);
-        this.paused = true;
-        // video.removeEventListener('mousemove', this.onMouseMove, false);
       }
     }
   }
