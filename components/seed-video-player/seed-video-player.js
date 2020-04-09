@@ -211,20 +211,20 @@ export class SeedVideoPlayer extends LitElement {
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const playSvg = this.shadowRoot.querySelector('.play-path');
 
-    const playSvgCode = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
-    const pauseSvgCode = 'M8 5v14l11-7z';
+    const pauseSvgCode = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+    const playSvgCode = 'M8 5v14l11-7z';
 
     if (!this.isLoadedData) {
       if (video.paused) {
         video.play();
         playPreview.style.display = 'none';
-        playSvg.setAttribute('d', playSvgCode);
+        playSvg.setAttribute('d', pauseSvgCode);
         video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
         this.showController = false;
       } else {
         video.pause();
         playPreview.style.display = 'block';
-        playSvg.setAttribute('d', pauseSvgCode);
+        playSvg.setAttribute('d', playSvgCode);
         this.showController = true;
       }
     }
