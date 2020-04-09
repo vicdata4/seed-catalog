@@ -37,7 +37,7 @@ export class SeedVideoPlayer extends LitElement {
     this.videoVolume = 50;
     this.videoVolumeInput = 0.5;
     this.videoCurrentTime = 0;
-    this.isLoading = true;
+    this.isLoadedData = true;
     this.showController = true;
 
     this.onMouseMove = () => {
@@ -56,7 +56,7 @@ export class SeedVideoPlayer extends LitElement {
     this.volumeButtonListeners();
 
     this.videoContainerMouseListeners(video, progressBarContainer);
-    this.progressBarListeners(progressBarContainer);
+    this.progressBarListeners(video, progressBarContainer);
   }
 
   hideControllers() {
@@ -69,7 +69,7 @@ export class SeedVideoPlayer extends LitElement {
     this.style.cursor = 'none';
   }
 
-  progressBarListeners(progressBarContainer) {
+  progressBarListeners(video, progressBarContainer) {
     const progressBarHover = this.shadowRoot.querySelector('.progress-bar-hover');
     const hoverCurrentTime = this.shadowRoot.querySelector('.hover-time-indicator');
 
@@ -81,7 +81,8 @@ export class SeedVideoPlayer extends LitElement {
     progressBarContainer.addEventListener('mouseleave', () => {
       progressBarContainer.style.height = 'var(--progress-bar-height)';
       hoverCurrentTime.style.opacity = '0';
-      this.showController = false;
+
+      if (!video.paused) this.showController = false;
     });
 
     progressBarContainer.addEventListener('mousemove', e => {
@@ -104,16 +105,18 @@ export class SeedVideoPlayer extends LitElement {
     const controller = this.shadowRoot.querySelector('.controller');
 
     controller.addEventListener('mouseover', () => { this.showController = true; });
-    controller.addEventListener('mouseleave', () => { this.showController = false; });
+    controller.addEventListener('mouseleave', () => {
+      if (!video.paused) this.showController = false;
+    });
 
-    videoContainer.addEventListener('mousemove', debounce(() => {
+    videoContainer.addEventListener('mousemove', () => {
       progressBarContainer.classList.remove('hide');
       controller.classList.remove('hide');
       this.style.cursor = 'initial';
-    }, 0));
+    });
 
     videoContainer.addEventListener('mouseleave', () => {
-      this.hideControllers();
+      if (!this.showController) this.hideControllers();
     });
   }
 
@@ -222,6 +225,7 @@ export class SeedVideoPlayer extends LitElement {
         video.pause();
         playPreview.style.display = 'block';
         playSvg.setAttribute('d', pauseSvgCode);
+        this.showController = true;
       }
     }
   }
