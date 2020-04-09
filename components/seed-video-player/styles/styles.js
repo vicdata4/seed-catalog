@@ -97,6 +97,12 @@ video > source {
   cursor: pointer;
 }
 
+.progress-bar-container-relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .progress-bar {
   position: relative;
   height: 100%;
@@ -110,20 +116,19 @@ video > source {
   transition-duration: 0s;
 }
 
-.progress-bar-container:hover > .progress-bar-hover {
+.progress-bar-container:hover > .progress-bar-container-relative > .progress-bar-hover {
   position: absolute;
   background-color: rgba(255,255,255,.6);
   width: auto;
   height: 100%;
+  z-index: -1;
 }
 
-.progress-bar-pretime:hover {
-  display: none;
+.progress-bar-position {
   position: absolute;
-  right: 0;
-  background-color: red;
-  width: 20px;
-  height: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .hover-time-indicator {
@@ -148,6 +153,7 @@ video > source {
   height: inherit;
   background-color: rgba(255,255,255,.7);
   transition: width .2s;
+  z-index: -1;
 }
 
 .progress-bar-pointer {

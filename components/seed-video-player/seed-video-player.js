@@ -90,6 +90,7 @@ export class SeedVideoPlayer extends LitElement {
 
       const second = (this.duration * parseFloat(percent.toFixed(2))) / 100;
       this.hoverSecond = parseInt(second);
+
       progressBarHover.style.width = `${percent}%`;
       hoverCurrentTime.style.opacity = '1';
 
@@ -279,10 +280,14 @@ export class SeedVideoPlayer extends LitElement {
         </video>
         <div class="hover-time-indicator"><span>${this.timeFormatter(this.hoverSecond)}</span></div>
         <div class="progress-bar-container" @click="${this.setSelectedTime}">
-          <div class="progress-bar-buffer"></div>
-          <div class="progress-bar-hover"><div class="progress-bar-pretime"></div></div>
-          <div class="progress-bar">
-            <!--<div class="progress-bar-pointer">${progressBarPonter}</div>-->
+          <div class="progress-bar-container-relative">
+            <div class="progress-bar-buffer"></div>
+            <div class="progress-bar-hover"></div>
+            <div class="progress-bar-position">
+              <div class="progress-bar">
+                <!--<div class="progress-bar-pointer">${progressBarPonter}</div>-->
+              </div>
+            </div>
           </div>
         </div>
         <div class="controller">
