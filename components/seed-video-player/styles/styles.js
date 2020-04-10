@@ -5,7 +5,9 @@ export const styles = css`
   --control-container-height: 50px;
   --progress-bar-height: 4px;
   --progress-bar-transition: all 2s;
+  --progress-bar-grey: rgba(255, 255, 255, 0.6);
   --controller-opacity-transition: opacity .8s;
+  --video-main-color: red;
 }
 
 ::-webkit-media-controls, video::-webkit-media-controls, video::-webkit-media-controls-enclosure {
@@ -64,7 +66,7 @@ video > source {
   cursor: pointer;
 }
 
-.btn-play, .btn-replay, .btn-volume {
+.btn-play, .btn-replay, .btn-volume, .btn-options {
   display: flex;
   background: none;
   border: none;
@@ -92,7 +94,7 @@ video > source {
   width: 100%;
   height: var(--progress-bar-height);
 
-  border-top: calc(var(--progress-bar-border) + 10px) solid transparent;
+  border-top: calc(var(--progress-bar-border) * 2) solid transparent;
   border-bottom: var(--progress-bar-border) solid transparent;
   background: rgba(255,255,255,.3);
   background-clip: content-box;
@@ -111,7 +113,7 @@ video > source {
 .progress-bar {
   position: relative;
   height: 100%;
-  background-color: red;
+  background-color: var(--video-main-color);
   transform: scaleX(0);
   transform-origin: 0 0;
   transition: var(--progress-bar-transition);
@@ -123,7 +125,7 @@ video > source {
 
 .progress-bar-container:hover > .progress-bar-container-relative > .progress-bar-hover {
   position: absolute;
-  background-color: rgba(255,255,255,.6);
+  background-color: var(--progress-bar-grey);
   width: auto;
   height: 100%;
   z-index: -1;
@@ -168,6 +170,8 @@ video > source {
 }
 
 .input-range-container {
+  display: flex;
+  align-items: center;
   width: 0;
   overflow: hidden;
   transition: width 1s;
@@ -188,9 +192,38 @@ video > source {
 }
 
 .input-range-volume {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 5px;
   width: 80px;
+  border-radius: 10px;
+  margin: 7px 2px;
+  background: var(--progress-bar-grey);
   cursor: pointer;
 }
+
+.input-range-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 100%;
+  background: var(--video-main-color);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Firefox support */
+.input-range-volume::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 100%;
+  background: var(--video-main-color);
+  overflow: hidden;
+  cursor: pointer;
+}
+
 
 .timer {
   display: flex;
@@ -220,7 +253,7 @@ video > source {
 }
 
 .options-separator-line {
-  border-left: 1px solid red;
+  border-left: 1px solid var(--video-main-color);
   height: 100%;
 }
 

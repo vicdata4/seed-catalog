@@ -95,7 +95,7 @@ export class SeedVideoPlayer extends LitElement {
 
       playBtn.style.display = 'none';
       replayBtnPreview.style.display = 'block';
-      replayBtn.style.display = 'block';
+      replayBtn.style.display = 'flex';
 
       this.showController = true;
     });
@@ -264,7 +264,6 @@ export class SeedVideoPlayer extends LitElement {
         playSvg.setAttribute('d', pauseSvgCode);
         video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
         this.showController = false;
-        this.hideReplay();
       } else {
         video.pause();
         playPreview.style.display = 'block';
@@ -357,8 +356,8 @@ export class SeedVideoPlayer extends LitElement {
               <div>${seedLogo}</div>
               <div class="options-separator"><div class="options-separator-line"></div></div>
               <div class="controller-options-buttons">
-              <button class="btn-play">${settingsIcon}</button>
-              <button class="btn-play" @click="${this.openFullscreen}">${videoFullScreen}</button>
+              <button class="btn-options">${settingsIcon}</button>
+              <button class="btn-options" @click="${this.openFullscreen}">${videoFullScreen}</button>
               </div>
             </div>
           </div>
