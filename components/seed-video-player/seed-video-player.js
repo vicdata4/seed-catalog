@@ -8,6 +8,7 @@ import {
   videoPlayBtn,
   videoFullScreen,
   videoVolumeUp,
+  settingsIcon,
   seedLogo
 } from './styles/svg-icons';
 
@@ -310,6 +311,8 @@ export class SeedVideoPlayer extends LitElement {
             </div>
             <div class="controller-options">
               <div>${seedLogo}</div>
+              <div class="options-separator"><div class="options-separator-line"></div></div>
+              <button class="btn-play">${settingsIcon}</button>
               <button class="btn-play" @click="${this.openFullscreen}">${videoFullScreen}</button>
             </div>
           </div>

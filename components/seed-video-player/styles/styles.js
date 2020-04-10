@@ -208,4 +208,14 @@ video > source {
   flex-flow: row nowrap;
   align-items: center;
 }
+
+.options-separator {
+  height: 30px;
+  margin: 0 10px;
+}
+
+.options-separator-line {
+  border-left: 1px solid red;
+  height: 100%;
+}
 `;
