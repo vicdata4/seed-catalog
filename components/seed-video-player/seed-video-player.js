@@ -312,8 +312,10 @@ export class SeedVideoPlayer extends LitElement {
             <div class="controller-options">
               <div>${seedLogo}</div>
               <div class="options-separator"><div class="options-separator-line"></div></div>
+              <div class="controller-options-buttons">
               <button class="btn-play">${settingsIcon}</button>
               <button class="btn-play" @click="${this.openFullscreen}">${videoFullScreen}</button>
+              </div>
             </div>
           </div>
         </div>

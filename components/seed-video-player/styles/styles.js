@@ -16,6 +16,7 @@ export const styles = css`
   position: relative;
   background-color: rgba(0,0,0,.5);
   display: grid;
+  align-content: center;
 }
 
 video {
@@ -217,5 +218,12 @@ video > source {
 .options-separator-line {
   border-left: 1px solid red;
   height: 100%;
+}
+
+.controller-options-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 65px;
 }
 `;
