@@ -12,8 +12,25 @@ storiesOf('Seed Catalog', module)
             ${cssTemplateColors}
 
             .small-video {
-                width: 50%;
-                margin-top: 100px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .small-video > seed-video-player {
+                margin-top: 5px;
+            }
+
+            @media (min-width: 600px) {
+                
+                .small-video {
+                    margin-top: 0px;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .small-video > seed-video-player {
+                    margin: 0 3px;
+                }
             }
 
         </style>
@@ -26,9 +43,14 @@ storiesOf('Seed Catalog', module)
 
         <seed-video-player src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4">
         </seed-video-player>
+
+        <p class="package">
+  <span class="gre"><</span><span class="blu">seed-video-player </span><span class="light-txt">src</span>=<span class="ora">"https://url.to/download-file.mp4"</span><span class="gre">></span> <span class="light-txt">color</span>=<span class="ora">"#2f9dec"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-video-player</span><span class="gre">></span>
+        </p>
         
         <div class="small-video">
-            <seed-video-player src="https://s3.eu-central-1.amazonaws.com/pipe.public.content/short.mp4"></seed-video-player>
+            <seed-video-player src="https://s3.eu-central-1.amazonaws.com/pipe.public.content/short.mp4" color="#2f9dec"></seed-video-player>
+            <seed-video-player src="https://s3.eu-central-1.amazonaws.com/pipe.public.content/short.mp4" color="#d58309"></seed-video-player>
         </div>
       
     `);

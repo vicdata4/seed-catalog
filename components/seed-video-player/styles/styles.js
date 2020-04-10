@@ -16,9 +16,10 @@ export const styles = css`
 
 .video-container {
   position: relative;
-  background-color: rgba(0,0,0,.5);
   display: grid;
   align-content: center;
+  min-width: 300px;
+  background-color: rgba(0,0,0,.5);
 }
 
 video {
@@ -35,6 +36,8 @@ video > source {
   bottom: 0;
   width: 100%;
   height: var(--control-container-height);
+
+  overflow: hidden;
   background-color: rgba(0,0,0,0.5);
   background-image: linear-gradient(to top, rgba(0,0,0,.8) , rgba(0,0,0,.1));
   transition: var(--controller-opacity-transition);
