@@ -8,7 +8,7 @@ import {
   videoPlayBtn,
   videoFullScreen,
   videoVolumeUp,
-  progressBarPonter
+  seedLogo
 } from './styles/svg-icons';
 
 export class SeedVideoPlayer extends LitElement {
@@ -289,7 +289,7 @@ export class SeedVideoPlayer extends LitElement {
             <div class="progress-bar-hover"></div>
             <div class="progress-bar-position">
               <div class="progress-bar">
-                <!--<div class="progress-bar-pointer">${progressBarPonter}</div>-->
+                <!--<div class="progress-bar-pointer"></div>-->
               </div>
             </div>
           </div>
@@ -303,10 +303,13 @@ export class SeedVideoPlayer extends LitElement {
                 <input class="input-range-volume" type="range" min="0" max="100" step="1" value="50">
               </div>
               <div class="timer">
-                <span>${this.timeFormatter(this.videoCurrentTime)}</span><span class="timer-separator">/</span><span>${this.timeFormatter(this.duration)}</span>
+                <span>${this.timeFormatter(this.videoCurrentTime)}</span>
+                <span class="timer-separator">/</span>
+                <span>${this.timeFormatter(this.duration)}</span>
               </div>
             </div>
-            <div>
+            <div class="controller-options">
+              <div>${seedLogo}</div>
               <button class="btn-play" @click="${this.openFullscreen}">${videoFullScreen}</button>
             </div>
           </div>

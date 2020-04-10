@@ -202,4 +202,10 @@ video > source {
   margin: 0 4px;
   font-size: 11px;
 }
+
+.controller-options {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
 `;
