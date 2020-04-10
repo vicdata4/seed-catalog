@@ -25,6 +25,7 @@ export class SeedVideoPlayer extends LitElement {
   static get properties() {
     return {
       src: { type: String },
+      color: { type: String },
       isLoadedData: { type: Boolean, attribute: false },
       duration: { type: Number, attribute: false },
       showController: { type: Boolean, attribute: false },
@@ -39,6 +40,7 @@ export class SeedVideoPlayer extends LitElement {
     super();
 
     this.src = '';
+    this.color = 'red';
     this.duration = 0;
     this.videoVolume = 50;
     this.videoVolumeInput = 0.5;
@@ -65,6 +67,8 @@ export class SeedVideoPlayer extends LitElement {
     this.progressBarListeners(video, progressBarContainer);
 
     this.onEndedVideoListener(video, progressBarContainer);
+
+    this.style.setProperty('--video-main-color', this.color);
   }
 
   hideControllers() {

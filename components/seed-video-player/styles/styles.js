@@ -198,7 +198,7 @@ video > source {
   width: 80px;
   border-radius: 10px;
   margin: 7px 2px;
-  background: var(--progress-bar-grey);
+  background-color: var(--progress-bar-grey);
   cursor: pointer;
 }
 
@@ -208,22 +208,22 @@ video > source {
   height: 15px;
   border: none;
   border-radius: 100%;
-  background: var(--video-main-color);
+  background-color: var(--video-main-color);
   overflow: hidden;
   cursor: pointer;
 }
 
 /* Firefox support */
 .input-range-volume::-moz-range-thumb {
+  -moz-appearance: none;
   width: 15px;
   height: 15px;
   border: none;
   border-radius: 100%;
-  background: var(--video-main-color);
+  background-color: var(--video-main-color);
   overflow: hidden;
   cursor: pointer;
 }
-
 
 .timer {
   display: flex;
