@@ -1,3 +1,5 @@
+![](../../logo.png?v=4&s=100)
+
 ## Seed Video Player
 
 #### [Storybook link ](http://seed-catalog.com/?path=/story/seed-catalog--seed-video-player)
@@ -8,6 +10,10 @@
 import 'seed-catalog/seed-video-player.js';
 
 <seed-video-player src="https://url.to/download-file.mp4"></seed-video-player>
+
+```
+
+ ```js
 
 // Color property => Progress bar, input range thumb and controller options separator
 
