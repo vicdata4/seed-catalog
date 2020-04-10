@@ -50,7 +50,7 @@ video > source {
   margin-top: calc((var(--control-container-height) / 2) * -1);
 }
 
-.btn-play-preview {
+.btn-play-preview, .btn-replay-preview {
   display: none;
   position: absolute;
   align-self: center;
@@ -64,7 +64,7 @@ video > source {
   cursor: pointer;
 }
 
-.btn-play, .btn-volume {
+.btn-play, .btn-replay, .btn-volume {
   display: flex;
   background: none;
   border: none;
@@ -72,6 +72,10 @@ video > source {
 
   outline: none;
   cursor: pointer;
+}
+
+.btn-replay {
+  display: none;
 }
 
 .video-buttons {
@@ -224,6 +228,6 @@ video > source {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  width: 65px;
+  min-width: 65px;
 }
 `;

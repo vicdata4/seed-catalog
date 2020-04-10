@@ -9,8 +9,13 @@ import {
   videoFullScreen,
   videoVolumeUp,
   settingsIcon,
+  videoReplay,
+  videoReplayBtn,
   seedLogo
 } from './styles/svg-icons';
+
+const pauseSvgCode = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
+const playSvgCode = 'M8 5v14l11-7z';
 
 export class SeedVideoPlayer extends LitElement {
   static get styles() {
@@ -58,6 +63,8 @@ export class SeedVideoPlayer extends LitElement {
 
     this.videoContainerMouseListeners(video, progressBarContainer);
     this.progressBarListeners(video, progressBarContainer);
+
+    this.onEndedVideoListener(video, progressBarContainer);
   }
 
   hideControllers() {
@@ -68,6 +75,30 @@ export class SeedVideoPlayer extends LitElement {
     controller.classList.add('hide');
 
     this.style.cursor = 'none';
+  }
+
+  showControllers(progressBarContainer) {
+    const controller = this.shadowRoot.querySelector('.controller');
+
+    progressBarContainer.classList.remove('hide');
+    controller.classList.remove('hide');
+    this.style.cursor = 'initial';
+  }
+
+  onEndedVideoListener(video, progressBarContainer) {
+    video.addEventListener('ended', () => {
+      this.showControllers(progressBarContainer);
+
+      const playBtn = this.shadowRoot.querySelector('.btn-play');
+      const replayBtn = this.shadowRoot.querySelector('.btn-replay');
+      const replayBtnPreview = this.shadowRoot.querySelector('.btn-replay-preview');
+
+      playBtn.style.display = 'none';
+      replayBtnPreview.style.display = 'block';
+      replayBtn.style.display = 'block';
+
+      this.showController = true;
+    });
   }
 
   progressBarListeners(video, progressBarContainer) {
@@ -111,9 +142,7 @@ export class SeedVideoPlayer extends LitElement {
     });
 
     videoContainer.addEventListener('mousemove', () => {
-      progressBarContainer.classList.remove('hide');
-      controller.classList.remove('hide');
-      this.style.cursor = 'initial';
+      this.showControllers(progressBarContainer);
     });
 
     videoContainer.addEventListener('mouseleave', () => {
@@ -207,13 +236,26 @@ export class SeedVideoPlayer extends LitElement {
     this.setVolumeButton(video.volume);
   }
 
+  hideReplay() {
+    const replayBtn = this.shadowRoot.querySelector('.btn-replay-preview');
+    replayBtn.style.display = 'none';
+  }
+
+  replayVideo() {
+    this.hideReplay();
+    const playBtn = this.shadowRoot.querySelector('.btn-play');
+    const replayBtn = this.shadowRoot.querySelector('.btn-replay');
+    playBtn.style.display = 'block';
+    replayBtn.style.display = 'none';
+    this.hoverSecond = 0;
+    this.setSelectedTime();
+    this.switchVideo();
+  }
+
   switchVideo() {
     const video = this.shadowRoot.querySelector('video');
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const playSvg = this.shadowRoot.querySelector('.play-path');
-
-    const pauseSvgCode = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
-    const playSvgCode = 'M8 5v14l11-7z';
 
     if (!this.isLoadedData) {
       if (video.paused) {
@@ -222,6 +264,7 @@ export class SeedVideoPlayer extends LitElement {
         playSvg.setAttribute('d', pauseSvgCode);
         video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
         this.showController = false;
+        this.hideReplay();
       } else {
         video.pause();
         playPreview.style.display = 'block';
@@ -299,6 +342,7 @@ export class SeedVideoPlayer extends LitElement {
           <div class="control-box">
             <div class="video-buttons">
               <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
+              <button class="btn-replay" @click="${this.replayVideo}">${videoReplayBtn}</button>
               <button class="btn-volume" @click="${this.switchVolume}">${videoVolumeUp}</button>
               <div class="input-range-container">
                 <input class="input-range-volume" type="range" min="0" max="100" step="1" value="50">
@@ -320,6 +364,7 @@ export class SeedVideoPlayer extends LitElement {
           </div>
         </div>
         <button class="btn-play-preview" @click="${this.switchVideo}">${videoPlayPreview}</button>
+        <button class="btn-replay-preview" @click="${this.replayVideo}">${videoReplay}</button>
         ${videoSpinner}
       </div>
     `;
