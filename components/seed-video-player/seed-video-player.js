@@ -173,7 +173,7 @@ export class SeedVideoPlayer extends LitElement {
 
     const buffer = (video.buffered.end(0) / this.duration) * 100;
     const percent = (video.currentTime * 100) / this.duration;
-    this.videoCurrentTime = Math.round(video.currentTime);
+    this.videoCurrentTime = Math.floor(video.currentTime);
     const scaleXValue = percent * 0.01;
 
     progressBar.style.transform = `scaleX(${scaleXValue})`;
