@@ -28,7 +28,7 @@ export class SeedVideoPlayer extends LitElement {
     return {
       src: { type: String },
       color: { type: String },
-      isLoadedData: { type: Boolean, attribute: false },
+      isLoadingData: { type: Boolean, attribute: false },
       duration: { type: Number, attribute: false },
       showController: { type: Boolean, attribute: false },
       videoVolume: { type: Number, attribute: false },
@@ -47,7 +47,7 @@ export class SeedVideoPlayer extends LitElement {
     this.videoVolume = 50;
     this.videoVolumeInput = 0.5;
     this.videoCurrentTime = 0;
-    this.isLoadedData = true;
+    this.isLoadingData = true;
     this.showController = true;
 
     this.onMouseMove = () => {
@@ -97,10 +97,12 @@ export class SeedVideoPlayer extends LitElement {
     const spinner = this.shadowRoot.querySelector('.video-spinner');
 
     video.addEventListener('waiting', () => {
+      this.isLoadingData = true;
       spinner.style.display = 'block';
     });
 
     video.addEventListener('playing', () => {
+      this.isLoadingData = false;
       spinner.style.display = 'none';
     });
   }
@@ -176,7 +178,7 @@ export class SeedVideoPlayer extends LitElement {
 
     video.addEventListener('loadeddata', event => {
       this.duration = event.target.duration;
-      this.isLoadedData = false;
+      this.isLoadingData = false;
 
       spinner.style.display = 'none';
       playPreview.style.display = 'block';
@@ -286,7 +288,7 @@ export class SeedVideoPlayer extends LitElement {
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const playSvg = this.shadowRoot.querySelector('.play-path');
 
-    if (!this.isLoadedData) {
+    if (!this.isLoadingData) {
       if (video.paused) {
         video.play();
         playPreview.style.display = 'none';
