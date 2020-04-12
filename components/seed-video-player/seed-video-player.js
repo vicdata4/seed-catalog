@@ -49,10 +49,6 @@ export class SeedVideoPlayer extends LitElement {
     this.videoCurrentTime = 0;
     this.isLoadingData = true;
     this.showController = true;
-
-    this.onMouseMove = () => {
-      if (!this.showController) this.hideControllers();
-    };
   }
 
   firstUpdated() {
@@ -297,7 +293,9 @@ export class SeedVideoPlayer extends LitElement {
         playPreview.style.display = 'none';
         playSvg.setAttribute('d', pauseSvgCode);
         this.hideControllers();
-        video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
+        video.addEventListener('mousemove', debounce(() => {
+          if (!this.showController) this.hideControllers();
+        }, 2000), false);
         this.showController = false;
       } else {
         video.pause();
