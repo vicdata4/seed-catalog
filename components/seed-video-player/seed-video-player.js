@@ -266,6 +266,7 @@ export class SeedVideoPlayer extends LitElement {
         video.play();
         playPreview.style.display = 'none';
         playSvg.setAttribute('d', pauseSvgCode);
+        this.hideControllers();
         video.addEventListener('mousemove', debounce(this.onMouseMove, 2000), false);
         this.showController = false;
       } else {
@@ -335,9 +336,7 @@ export class SeedVideoPlayer extends LitElement {
             <div class="progress-bar-buffer"></div>
             <div class="progress-bar-hover"></div>
             <div class="progress-bar-position">
-              <div class="progress-bar">
-                <!--<div class="progress-bar-pointer"></div>-->
-              </div>
+              <div class="progress-bar"></div>
             </div>
           </div>
         </div>

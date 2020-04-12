@@ -44,7 +44,6 @@ video > source {
 }
 
 .controller.hide, .progress-bar-container.hide {
-  /* transition-delay: 1s; */
   opacity: 0;
 }
 
@@ -52,7 +51,7 @@ video > source {
   position: absolute;
   display: block;
   align-self: center;
-  margin-top: calc((var(--control-container-height) / 2) * -1);
+  margin-top: calc((var(--control-container-height)) * -1);
 }
 
 .btn-play-preview, .btn-replay-preview {
@@ -62,10 +61,10 @@ video > source {
   justify-self: center;
   border-radius: 100%;
   background-color: rgba(0,0,0,.5);
-  margin-top: calc((var(--control-container-height) / 2) * -1);
   border: none;
   padding: 0;
   margin: 0;
+  margin-top: calc((var(--control-container-height)) * -1);
   cursor: pointer;
 }
 
@@ -122,7 +121,7 @@ video > source {
   transition: var(--progress-bar-transition);
 }
 
-.progress-bar.hide-transition {
+.progress-bar.hide-transition, .progress-bar-pointer.hide-transition {
   transition-duration: 0s;
 }
 
@@ -166,11 +165,28 @@ video > source {
   z-index: -1;
 }
 
+/*
 .progress-bar-pointer {
   position: absolute;
-  right: 0;
-  top: -8px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  padding-left: 0;
+  transform: translateX(0);
+  transition: all .3s;
+  z-index: -1;
 }
+
+.pointer-circle {
+  transition: r .2s;
+}
+
+.progress-bar-container:hover > div > .progress-bar-pointer > svg  > circle {
+  r: 8;
+}
+*/
 
 .input-range-container {
   display: flex;
