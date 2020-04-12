@@ -242,7 +242,7 @@ export class SeedVideoPlayer extends LitElement {
     this.setVolumeButton(video.volume);
   }
 
-  onClickswitchVideo() {
+  onSwitchVolume() {
     if (!isMobileDevice) {
       this.switchVolume();
     } else {
@@ -369,7 +369,7 @@ export class SeedVideoPlayer extends LitElement {
             <div class="video-buttons">
               <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
               <button class="btn-replay" @click="${this.replayVideo}">${videoReplayBtn}</button>
-              <button class="btn-volume" @click="${this.onClickswitchVideo}">${videoVolumeUp}</button>
+              <button class="btn-volume" @click="${this.onSwitchVolume}">${videoVolumeUp}</button>
               <div class="input-range-container">
                 <input class="input-range-volume" type="range" min="0" max="100" step="1" value="50">
               </div>
