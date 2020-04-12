@@ -16,5 +16,4 @@ export const settingsIcon = svg`<svg viewBox="0 0 24 24" fill="#fff" width="22px
 export const progressBarPointer = svg`<svg height="20" width="17"><circle cx="10" cy="10" r="7" fill="red" /></svg>`;
 export const seedLogo = svg`<svg width="25" height="25" viewBox="0 0 70 70"><text fill="#fff" font-size="750px" font-family="SignPainter-HouseScript, SignPainter" transform="translate(12.415 63.822) scale(0.146)">s</text></svg>`;
 
-
 export const circleIcon = svg`<svg height="20" width="16"><circle class="pointer-circle" cx="8" cy="10" r="0" stroke="black" stroke-width="0" fill="red" /></svg>`;

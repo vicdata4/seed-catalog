@@ -70,6 +70,8 @@ export class SeedVideoPlayer extends LitElement {
 
     this.onEndedVideoListener(video, progressBarContainer);
 
+    this.waitingForLoadedDataListeners(video);
+
     this.style.setProperty('--video-main-color', this.color);
   }
 
@@ -89,6 +91,18 @@ export class SeedVideoPlayer extends LitElement {
     progressBarContainer.classList.remove('hide');
     controller.classList.remove('hide');
     this.style.cursor = 'initial';
+  }
+
+  waitingForLoadedDataListeners(video) {
+    const spinner = this.shadowRoot.querySelector('.video-spinner');
+
+    video.addEventListener('waiting', () => {
+      spinner.style.display = 'block';
+    });
+
+    video.addEventListener('playing', () => {
+      spinner.style.display = 'none';
+    });
   }
 
   onEndedVideoListener(video, progressBarContainer) {

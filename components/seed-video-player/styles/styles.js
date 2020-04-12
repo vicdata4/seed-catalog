@@ -282,4 +282,22 @@ video > source {
   justify-content: space-between;
   min-width: 65px;
 }
+
+.btn-play-preview > svg, .btn-replay-preview > svg {
+  width: 50px;
+}
+
+.video-spinner {
+  height: 60px;
+}
+
+@media (min-width: 500px) {
+  .btn-play-preview > svg, .btn-replay-preview > svg {
+    width: 80px;
+  }
+
+  .video-spinner {
+    height: 100px;
+  }
+}
 `;
