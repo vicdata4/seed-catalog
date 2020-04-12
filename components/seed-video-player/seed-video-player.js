@@ -276,9 +276,12 @@ export class SeedVideoPlayer extends LitElement {
     this.hideReplay();
     const playBtn = this.shadowRoot.querySelector('.btn-play-pause');
     const replayBtn = this.shadowRoot.querySelector('.btn-replay');
+
     playBtn.style.display = 'block';
     replayBtn.style.display = 'none';
-    this.hoverSecond = 0;
+
+    this.hoverSecond = (Math.floor(this.duration) !== this.videoCurrentTime) ? this.videoCurrentTime : 0;
+
     this.setSelectedTime();
     this.switchVideo();
   }
@@ -397,10 +400,12 @@ export class SeedVideoPlayer extends LitElement {
             </div>
             <div class="controller-options">
               <div>${seedLogo}</div>
-              <div class="options-separator"><div class="options-separator-line"></div></div>
+              <div class="options-separator">
+                <div class="options-separator-line"></div>
+              </div>
               <div class="controller-options-buttons">
-              <button class="btn-options">${settingsIcon}</button>
-              <button class="btn-options" @click="${this.openFullscreen}">${videoFullScreen}</button>
+                <button class="btn-options">${settingsIcon}</button>
+                <button class="btn-options" @click="${this.openFullscreen}">${videoFullScreen}</button>
               </div>
             </div>
           </div>
