@@ -17,6 +17,8 @@ import {
 const pauseSvgCode = 'M6 19h4V5H6v14zm8-14v14h4V5h-4z';
 const playSvgCode = 'M8 5v14l11-7z';
 
+const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 export class SeedVideoPlayer extends LitElement {
   static get styles() {
     return styles;
@@ -240,6 +242,15 @@ export class SeedVideoPlayer extends LitElement {
     this.setVolumeButton(video.volume);
   }
 
+  onClickswitchVideo() {
+    if (!isMobileDevice) {
+      this.switchVolume();
+    } else {
+      const inputRange = this.shadowRoot.querySelector('.input-range-container');
+      inputRange.style.width = (getComputedStyle(inputRange).width !== '0px') ? '0px' : '100%';
+    }
+  }
+
   hideReplay() {
     const replayBtn = this.shadowRoot.querySelector('.btn-replay-preview');
     replayBtn.style.display = 'none';
@@ -274,6 +285,19 @@ export class SeedVideoPlayer extends LitElement {
         playPreview.style.display = 'block';
         playSvg.setAttribute('d', playSvgCode);
         this.showController = true;
+      }
+    }
+  }
+
+  onTouchVideo() {
+    if (!isMobileDevice) {
+      this.switchVideo();
+    } else {
+      if (this.showController === false) {
+        this.showController = true;
+      } else {
+        this.showController = false;
+        this.hideControllers();
       }
     }
   }
@@ -326,7 +350,7 @@ export class SeedVideoPlayer extends LitElement {
   render() {
     return html`
       <div class="video-container">
-        <video @click="${this.switchVideo}">
+        <video @click="${this.onTouchVideo}">
           <source src="${this.src}" type="video/${this.getVideoType()}">
           Sorry, your browser doesn't support embedded videos.
         </video>
@@ -345,7 +369,7 @@ export class SeedVideoPlayer extends LitElement {
             <div class="video-buttons">
               <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
               <button class="btn-replay" @click="${this.replayVideo}">${videoReplayBtn}</button>
-              <button class="btn-volume" @click="${this.switchVolume}">${videoVolumeUp}</button>
+              <button class="btn-volume" @click="${this.onClickswitchVideo}">${videoVolumeUp}</button>
               <div class="input-range-container">
                 <input class="input-range-volume" type="range" min="0" max="100" step="1" value="50">
               </div>
