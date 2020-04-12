@@ -111,7 +111,7 @@ export class SeedVideoPlayer extends LitElement {
     video.addEventListener('ended', () => {
       this.showControllers(progressBarContainer);
 
-      const playBtn = this.shadowRoot.querySelector('.btn-play');
+      const playBtn = this.shadowRoot.querySelector('.btn-play-pause');
       const replayBtn = this.shadowRoot.querySelector('.btn-replay');
       const replayBtnPreview = this.shadowRoot.querySelector('.btn-replay-preview');
 
@@ -274,7 +274,7 @@ export class SeedVideoPlayer extends LitElement {
 
   replayVideo() {
     this.hideReplay();
-    const playBtn = this.shadowRoot.querySelector('.btn-play');
+    const playBtn = this.shadowRoot.querySelector('.btn-play-pause');
     const replayBtn = this.shadowRoot.querySelector('.btn-replay');
     playBtn.style.display = 'block';
     replayBtn.style.display = 'none';
@@ -383,7 +383,7 @@ export class SeedVideoPlayer extends LitElement {
         <div class="controller">
           <div class="control-box">
             <div class="video-buttons">
-              <button class="btn-play" @click="${this.switchVideo}">${videoPlayBtn}</button>
+              <button class="btn-play-pause" @click="${this.switchVideo}">${videoPlayBtn}</button>
               <button class="btn-replay" @click="${this.replayVideo}">${videoReplayBtn}</button>
               <button class="btn-volume" @click="${this.onSwitchVolume}">${videoVolumeUp}</button>
               <div class="input-range-container">

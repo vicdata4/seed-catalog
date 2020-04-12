@@ -68,7 +68,7 @@ video > source {
   cursor: pointer;
 }
 
-.btn-play, .btn-replay, .btn-volume, .btn-options {
+.btn-play-pause, .btn-replay, .btn-volume, .btn-options {
   display: flex;
   background: none;
   border: none;
