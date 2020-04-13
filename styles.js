@@ -268,4 +268,10 @@ export const seedStyle = css`
   button > .material-icons:active { outline: none; }
 
   .yellow > i { color: var(--seed-color-black-hover); }
+
+  input[type=submit] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 `;
