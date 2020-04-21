@@ -15,7 +15,13 @@ import 'seed-catalog/seed-video-player.js';
 
  ```js
 
-// Color property => Progress bar, input range thumb and controller options separator
+// Color property affect to:
+
+// Progress bar
+// Input range thumb
+// Controller options separator
+
+// Default color is 'red'
 
 <seed-video-player src="https://url.to/download-file.mp4" color="#2f9dec"></seed-video-player>
 
