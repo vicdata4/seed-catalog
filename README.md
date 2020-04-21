@@ -47,6 +47,7 @@ Karma coverage
 - [Dropdown](https://seed-catalog.web.app/?path=/story/seed-catalog--dropdown)
 - [Modal](https://seed-catalog.web.app/?path=/story/seed-catalog--modal)
 - [Spinner](https://seed-catalog.web.app/?path=/story/seed-catalog--spinner)
+- [Progress ring](https://seed-catalog.web.app/?path=/story/seed-catalog--progress-ring)
 - [Stepper](https://seed-catalog.web.app/?path=/story/seed-catalog--stepper)
 
 ## Style classes
@@ -99,4 +100,4 @@ class MyComponent extends LitElement {
 
 ### How to use
 
-We recommend to see the [storybook documentation](https://seed-catalog.web.app) to learn more about seed-components catalog and how to use them.
+We recommend to see the [storybook documentation](https://seed-catalog.com) to learn more about seed-components catalog and how to use them.
