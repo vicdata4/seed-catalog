@@ -41,14 +41,14 @@ Karma coverage
 
 ## Catalog
 
-- [Seed Style](https://seed-catalog.web.app/?path=/story/seed-catalog--buttons)
-- [Carousel](https://seed-catalog.web.app/?path=/story/seed-catalog--carousel)
-- [Collapse](https://seed-catalog.web.app/?path=/story/seed-catalog--collapse)
-- [Dropdown](https://seed-catalog.web.app/?path=/story/seed-catalog--dropdown)
-- [Modal](https://seed-catalog.web.app/?path=/story/seed-catalog--modal)
-- [Spinner](https://seed-catalog.web.app/?path=/story/seed-catalog--spinner)
-- [Progress ring](https://seed-catalog.web.app/?path=/story/seed-catalog--progress-ring)
-- [Stepper](https://seed-catalog.web.app/?path=/story/seed-catalog--stepper)
+- [Seed Style](https://seed-catalog.com/?path=/story/seed-catalog--buttons)
+- [Carousel](https://seed-catalog.com/?path=/story/seed-catalog--carousel)
+- [Collapse](https://seed-catalog.com/?path=/story/seed-catalog--collapse)
+- [Dropdown](https://seed-catalog.com/?path=/story/seed-catalog--dropdown)
+- [Modal](https://seed-catalog.com/?path=/story/seed-catalog--modal)
+- [Spinner](https://seed-catalog.com/?path=/story/seed-catalog--spinner)
+- [Progress ring](https://seed-catalog.com/?path=/story/seed-catalog--progress-ring)
+- [Stepper](https://seed-catalog.com/?path=/story/seed-catalog--stepper)
 
 ## Style classes
 
