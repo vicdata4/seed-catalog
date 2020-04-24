@@ -103,7 +103,7 @@ export class SeedModal extends LitElement {
     setTimeout(() => {
       this.modal.style.backgroundColor = this.modalBackground;
       this.shadowRoot.querySelector('.modal-content').style.marginTop = '20px';
-    });
+    }, 20);
   }
 
   /**
