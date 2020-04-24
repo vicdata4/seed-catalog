@@ -54,13 +54,6 @@ export class SeedModal extends LitElement {
           padding: 0.8rem 1rem;
         }
 
-        .footer {
-          display: flex;
-          justify-content: flex-end;
-          padding: 0.8rem 1rem;
-          border-top: 1px solid #dedede;
-        }
-
         .close {
           height: fit-content;
         }
@@ -120,7 +113,7 @@ export class SeedModal extends LitElement {
   }
 
   /**
-   * Set onCLickListener utility in order to close modal
+   * Set onClickListener utility in order to close modal
    * onClick out of the modal-content
    */
   modalClickListener() {
@@ -139,9 +132,24 @@ export class SeedModal extends LitElement {
     });
   }
 
-  firstUpdated() {
+  /**
+   * Set onClickListener to slotted buttons which contain .close class
+   */
+  async closeModalSlottedButton() {
+    const footer = this.shadowRoot.querySelector('slot[name="footer"]');
+    await footer.assignedElements()[0].updateComplete;
+
+    footer.assignedElements().forEach(element => {
+      if (element.querySelector('.close')) {
+        element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
+      }
+    });
+  }
+
+  async firstUpdated() {
     this.modal = this.shadowRoot.querySelector('.modal');
     this.modalClickListener();
+    this.closeModalSlottedButton();
   }
 
   render() {
@@ -154,7 +162,7 @@ export class SeedModal extends LitElement {
             <slot name="close-btn" @click="${this.closeModal}"></slot>
           </div>
           <slot name="content" class="content"></slot>
-          <slot name="footer" class="footer"></slot>
+          <slot name="footer"></slot>
         </div>
       </div>
     `;
