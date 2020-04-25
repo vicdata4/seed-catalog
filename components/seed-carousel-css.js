@@ -119,13 +119,6 @@ export class SeedCarouselCss extends LitElement {
 
     const container = this.shadowRoot.querySelector('.container');
 
-    const easeInOutQuad = function(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    };
-
     const linear = function(t, b, c, d) {
       return c * t / d + b;
     };
@@ -147,7 +140,6 @@ export class SeedCarouselCss extends LitElement {
    */
   setCarouselPosition(index) {
     const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
-    const container = this.shadowRoot.querySelector('.container');
     this.index = index;
 
     const position = (cardWidth * this.index) - sideSpace;
