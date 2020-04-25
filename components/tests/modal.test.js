@@ -2,14 +2,15 @@ import { expect, fixture, html, aTimeout } from '@open-wc/testing';
 import '../../modal.js';
 
 describe('Modal component', () => {
-  let el, button, closeBtn;
+  let el, button, header;
   before(async() => {
     el = await fixture(html`
       <seed-modal>
         <button slot="button">Open Modal</button>
-        <button slot="close-btn"><i class="material-icons">close</i></button>
-        <span slot="title">Building Web Components</span>
-
+        <div slot="header">
+          <span>Building Web Components</span>
+          <button class="close"><i class="material-icons">close</i></button>
+        </div>
         <div slot="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </div>
@@ -20,8 +21,9 @@ describe('Modal component', () => {
       </seed-modal>
     `);
 
+    header = el.shadowRoot.querySelector('slot[name="header"]');
     button = el.shadowRoot.querySelector('slot[name=button]');
-    closeBtn = el.shadowRoot.querySelector('slot[name=close-btn]');
+    await header.assignedElements()[0].updateComplete;
   });
 
   it('render modal component', async() => {
@@ -29,7 +31,7 @@ describe('Modal component', () => {
   });
 
   it('default modal properties and attributes', () => {
-    expect(el.alignWindow).to.equal('flex-start');
+    expect(el.centered).to.equal(false);
   });
 
   it('closed modal by default', () => {
@@ -42,7 +44,7 @@ describe('Modal component', () => {
   });
 
   it('close modal', async() => {
-    closeBtn.click();
+    header.assignedElements()[0].querySelector('.close').click();
     await aTimeout(300);
     await el.updateComplete;
     expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;
