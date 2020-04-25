@@ -57,7 +57,7 @@ export class SeedCarouselStepper extends LitElement {
     * @param {Number} index  Selected index
     */
   setPosition(index) {
-    this.dispatchEvent(new CustomEvent('set-selected-step', { detail: index, composed: true }));
+    this.dispatchEvent(new CustomEvent('set-selected-step', { detail: index, composed: true, bubbles: true }));
   }
 
   attributeChangedCallback(name, oldVal, newVal) {

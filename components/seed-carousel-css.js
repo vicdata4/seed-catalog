@@ -17,6 +17,8 @@ export class SeedCarouselCss extends LitElement {
           overflow-x: scroll;
           overflow-y: hidden;
 
+          scroll-behavior: smooth;
+
           scrollbar-width: none;
           scroll-snap-type: x mandatory;
         }
@@ -27,6 +29,10 @@ export class SeedCarouselCss extends LitElement {
 
         .container::-webkit-scrollbar {
           display: none;
+        }
+
+        .stepper::slotted(*) {
+          transition: all 1s;
         }
 
         @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {}
@@ -72,14 +78,16 @@ export class SeedCarouselCss extends LitElement {
    *
    */
   setCurrentIndex() {
-    const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
+    const { scrollLeft, cardWidth, sideSpace, scrollWidth, clientWidth } = this.getCarouselParams();
     this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
 
     const moreThanTwo = this.moreThanTwoVisibleCards();
 
     if (moreThanTwo) {
       if (scrollLeft === 0) this.index = 0;
-      if (this.index === this.length - 1) this.index = this.length;
+      if ((scrollWidth - clientWidth) === scrollLeft) {
+        this.index = this.length - 1;
+      }
     }
 
     this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
@@ -102,6 +110,20 @@ export class SeedCarouselCss extends LitElement {
     this.shadowRoot.querySelector('slot').assignedElements()[0].updateComplete;
   }
 
+  /**
+   * Set carrousel card position via javascript
+   */
+  setCarouselPosition(index) {
+    const { cardWidth, sideSpace } = this.getCarouselParams();
+    const container = this.shadowRoot.querySelector('.container');
+    this.index = index;
+
+    const position = (cardWidth * this.index) - sideSpace;
+
+    container.scrollLeft = position;
+    this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
+  }
+
   async firstUpdated() {
     this.length = this.shadowRoot.querySelector('slot:not([name])').assignedElements().length;
 
@@ -109,6 +131,10 @@ export class SeedCarouselCss extends LitElement {
     this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setCurrentIndex.bind(this), 50));
 
     this.moreThanTwoVisibleCards();
+
+    this.addEventListener('set-selected-step', e => {
+      this.setCarouselPosition(e.detail);
+    });
   }
 
   render() {
@@ -116,7 +142,7 @@ export class SeedCarouselCss extends LitElement {
       <div class="container">
         <slot></slot>
       </div>
-      <slot name="stepper"></slot>
+      <slot name="stepper" class="stepper"></slot>
     `;
   }
 }
