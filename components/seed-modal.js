@@ -80,14 +80,14 @@ export class SeedModal extends LitElement {
   static get properties() {
     return {
       modalBackground: { type: String },
-      alignWindow: { type: String }
+      centered: { type: Boolean }
     };
   }
 
   constructor() {
     super();
     this.modalBackground = 'rgba(0, 0, 0, .4)';
-    this.alignWindow = 'flex-start';
+    this.centered = false;
   }
 
   /**
@@ -164,7 +164,7 @@ export class SeedModal extends LitElement {
   render() {
     return html`
       <slot name="button" @click='${this.openModal}'></slot>
-      <div class="modal closed" style="align-items: ${this.alignWindow}">
+      <div class="modal closed" style="align-items: ${this.centered ? 'center' : 'flex-start'}">
         <div class="modal-content">
           <slot name="header" class="header"></slot>
           <slot name="content" class="content"></slot>

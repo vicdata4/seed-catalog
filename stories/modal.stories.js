@@ -69,10 +69,12 @@ storiesOf('Seed Catalog', module)
       <span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
     <span class="gre">${`</`}</span><span class="blu">seed-modal</span><span class="gre">></span>
         </p>
-        <seed-modal alignWindow="center">
+        <seed-modal centered>
           <button slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">lock</i>Centered modal</button>
-          <button slot="close-btn" class="sd-icon clear"><i class="material-icons red-mate">close</i></button>
-          <span slot="title">Building Web Components</span>
+          <div slot="header" class="header">
+            <span>Building Web Components</span>
+            <button class="sd-icon clear close"><i class="material-icons blue-mate">close</i></button>
+          </div>
           
           <div slot="content">
             Ut pellentesque, enim lobortis pellentesque egestas, libero nibh sodales sapien, eu dignissim tortor massa id neque. Ut at dui viverra, efficitur lectus sed, sagittis risus.
@@ -84,6 +86,6 @@ storiesOf('Seed Catalog', module)
         </seed-modal>
 
         <p class="package">
-    <span class="gre"><</span><span class="blu">seed-modal</span> <span class="light-txt">alignWindow</span>=<span class="ora">"center"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-modal</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">seed-modal</span> <span class="light-txt">centered</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-modal</span><span class="gre">></span>
         </p>
     `);
