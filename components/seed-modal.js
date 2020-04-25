@@ -7,6 +7,7 @@ export class SeedModal extends LitElement {
       css`
         :host {
           overflow: hidden;
+          --modal-content-padding: 0.8rem 1rem;
         }
 
         .modal {
@@ -43,8 +44,16 @@ export class SeedModal extends LitElement {
           background-color: transparent;
         }
 
-        .header::slotted(*), .footer::slotted(*), .content {
-          padding: 0.8rem 1rem;
+        .header::slotted(*) {
+          padding: var(--modal-content-padding);
+        }
+
+        .footer::slotted(*) {
+          padding: var(--modal-content-padding);
+        }
+
+        .content {
+          padding: var(--modal-content-padding);
         }
 
         .close {
