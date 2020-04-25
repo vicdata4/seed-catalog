@@ -57,7 +57,8 @@ storiesOf('Seed', module)
       <button @click="${linkTo('Seed Catalog', 'Collapse')}" class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
       <button @click="${linkTo('Seed Catalog', 'Modal')}" class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modals</button>
       <button @click="${linkTo('Seed Catalog', 'Stepper')}" class="sd-btn-mix sm black"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
-      <button @click="${linkTo('Seed Catalog', 'Carousel')}" class="sd-btn-mix sm black"><i class="material-icons red">settings_overscan</i>Carousel</button>
+      <button @click="${linkTo('Seed Catalog', 'Carousel Css')}" class="sd-btn-mix sm black"><i class="material-icons orange">settings_overscan</i>Carousel CSS</button>
+      <button @click="${linkTo('Seed Catalog', 'Carousel')}" class="sd-btn-mix sm black"><i class="material-icons red">settings_overscan</i>Carousel JS</button>
       <button @click="${linkTo('Seed Catalog', 'Progress ring')}" class="sd-btn-mix sm black"><i class="material-icons blue">panorama_fish_eye</i>Progress ring</button>
       <button @click="${linkTo('Seed Catalog', 'Spinner')}" class="sd-btn-mix sm black"><i class="material-icons orange">filter_tilt_shift</i>Spinner</button>
       <br><br><br><br>

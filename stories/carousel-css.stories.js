@@ -66,7 +66,7 @@ storiesOf('Seed Catalog', module)
 
       <span class="yellou">render</span><span>${`() {`}</span>
         <span class="purp">return</span> <span class="yellou">html</span><span>\`</span>
-          <span class="gre"><</span><span class="blu">seed-carousel-css </span><span class="light-txt">arrows stepper</span><span class="gre">></span>
+          <span class="gre"><</span><span class="blu">seed-carousel-css</span><span class="gre">></span>
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 1<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 2<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 3<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
