@@ -1,11 +1,9 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
-import { seedStyle } from '../styles';
 import { mediaQueryTablet } from './utils/constants';
 
 export class SeedModal extends LitElement {
   static get styles() {
     return [
-      seedStyle,
       css`
         :host {
           overflow: hidden;
@@ -38,7 +36,6 @@ export class SeedModal extends LitElement {
 
         .content {
           display: block;
-          padding: 0.8rem 1rem;
         }
 
         .closed {
@@ -46,11 +43,7 @@ export class SeedModal extends LitElement {
           background-color: transparent;
         }
 
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-bottom: 1px solid #dedede;
+        .header::slotted(*), .footer::slotted(*), .content {
           padding: 0.8rem 1rem;
         }
 
@@ -137,9 +130,16 @@ export class SeedModal extends LitElement {
    */
   async closeModalSlottedButton() {
     const footer = this.shadowRoot.querySelector('slot[name="footer"]');
+    const header = this.shadowRoot.querySelector('slot[name="header"]');
     await footer.assignedElements()[0].updateComplete;
 
     footer.assignedElements().forEach(element => {
+      if (element.querySelector('.close')) {
+        element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
+      }
+    });
+
+    header.assignedElements().forEach(element => {
       if (element.querySelector('.close')) {
         element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
       }
@@ -157,12 +157,9 @@ export class SeedModal extends LitElement {
       <slot name="button" @click='${this.openModal}'></slot>
       <div class="modal closed" style="align-items: ${this.alignWindow}">
         <div class="modal-content">
-          <div class="header">
-            <slot name="title" class="title"></slot>
-            <slot name="close-btn" @click="${this.closeModal}"></slot>
-          </div>
+          <slot name="header" class="header"></slot>
           <slot name="content" class="content"></slot>
-          <slot name="footer"></slot>
+          <slot name="footer" class="footer"></slot>
         </div>
       </div>
     `;

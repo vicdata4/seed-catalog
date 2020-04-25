@@ -38,7 +38,7 @@ storiesOf('Seed Catalog', module)
             }
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
-        <button class="sd-btn green-mate wip">WIP</button>
+        <button class="sd-btn red wip">WORK IN PROGRESS</button>
 
         <seed-carousel-css>
           <card-examples class="blu"></card-examples>
@@ -48,7 +48,7 @@ storiesOf('Seed Catalog', module)
           <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
         <br><br><br>
-        <button class="sd-btn green-mate wip">WIP</button>
+        <button class="sd-btn red wip">WORK IN PROGRESS</button>
         <seed-carousel-css>
           <card-examples class="blu" .width="${200}" .height="${200}"></card-examples>
           <card-examples class="orang" .width="${200}" .height="${200}"></card-examples>
