@@ -44,7 +44,8 @@ export class SeedCarouselCss extends LitElement {
     return {
       index: { type: Number, attribute: false },
       length: { type: Number, attribute: false },
-      cardWidth: { type: Number, attribute: false }
+      cardWidth: { type: Number, attribute: false },
+      speed: { type: Number }
     };
   }
 
@@ -53,6 +54,7 @@ export class SeedCarouselCss extends LitElement {
     this.index = 0;
     this.length = 0;
     this.cardWidth = 0;
+    this.speed = 200;
 
     // window.addEventListener('resize', this.moreThanTwoVisibleCards.bind(this));
   }
@@ -110,17 +112,49 @@ export class SeedCarouselCss extends LitElement {
     this.shadowRoot.querySelector('slot').assignedElements()[0].updateComplete;
   }
 
+  smoothScroll(start_, end) {
+    const distance = end - start_;
+    const duration = this.speed;
+    let start = null;
+
+    const container = this.shadowRoot.querySelector('.container');
+
+    const easeInOutQuad = function(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    const linear = function(t, b, c, d) {
+      return c * t / d + b;
+    };
+
+    const step = function(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+
+      container.scrollTo(linear(progress, start_, distance, duration), 0);
+      if (progress < duration) window.requestAnimationFrame(step);
+    };
+
+    window.requestAnimationFrame(step);
+  }
+
   /**
    * Set carrousel card position via javascript
+   * @param {Number} index  Selected index from stepper
    */
   setCarouselPosition(index) {
-    const { cardWidth, sideSpace } = this.getCarouselParams();
+    const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
     const container = this.shadowRoot.querySelector('.container');
     this.index = index;
 
     const position = (cardWidth * this.index) - sideSpace;
 
-    container.scrollLeft = position;
+    this.smoothScroll(scrollLeft, position);
+
+    // container.scrollLeft = position;
     this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
   }
 
