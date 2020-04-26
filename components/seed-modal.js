@@ -1,5 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
-import { mediaQueryTablet } from './utils/constants';
+import { mediaQueryTablet, mediaQueryDesktop, mediaQueryLaptop } from './utils/constants';
 
 export class SeedModal extends LitElement {
   static get styles() {
@@ -30,7 +30,7 @@ export class SeedModal extends LitElement {
 
         .modal-content {
           background-color: white;
-          width: 80%;
+          width: 95%;
           transition: margin-top 0.3s;
           margin-top: -50px;
         }
@@ -69,6 +69,18 @@ export class SeedModal extends LitElement {
         }
 
         @media (min-width: ${unsafeCSS(mediaQueryTablet)}) {
+          .modal-content {
+            width: 80%;
+          }
+        }
+
+        @media (min-width: ${unsafeCSS(mediaQueryLaptop)}) {
+          .modal-content {
+            width: 70%;
+          }
+        }
+
+        @media (min-width: ${unsafeCSS(mediaQueryDesktop)}) {
           .modal-content {
             width: 50%;
           }
