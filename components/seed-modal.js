@@ -152,19 +152,26 @@ export class SeedModal extends LitElement {
   async closeModalSlottedButton() {
     const footer = this.shadowRoot.querySelector('slot[name="footer"]');
     const header = this.shadowRoot.querySelector('slot[name="header"]');
-    await footer.assignedElements()[0].updateComplete;
 
-    footer.assignedElements().forEach(element => {
-      if (element.querySelector('.close')) {
-        element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
-      }
-    });
+    if (footer.assignedElements()[0]) {
+      await footer.assignedElements()[0].updateComplete;
 
-    header.assignedElements().forEach(element => {
-      if (element.querySelector('.close')) {
-        element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
-      }
-    });
+      footer.assignedElements().forEach(element => {
+        if (element.querySelector('.close')) {
+          element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
+        }
+      });
+    }
+
+    if (header.assignedElements()[0]) {
+      await header.assignedElements()[0].updateComplete;
+
+      header.assignedElements().forEach(element => {
+        if (element.querySelector('.close')) {
+          element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
+        }
+      });
+    }
   }
 
   async firstUpdated() {
