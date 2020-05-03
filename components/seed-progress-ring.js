@@ -11,7 +11,7 @@ export class SeedProgressRing extends LitElement {
             --progress-ring-background: #404040;
             --ring-background: transparent;
             --progress-ring-transition: stroke-dashoffset .5s linear;
-            --progress-ring-radius: 90;
+            --progress-ring-radius: 90px;
             --progress-ring-width: 10px;
             --progress-ring-long: calc(2 * 3.14 * var(--progress-ring-radius));
 
