@@ -46,6 +46,10 @@ storiesOf('Seed Catalog', module)
               color: #00daff;
             }
 
+            .white-color {
+              color: white;
+            }
+
         </style>
         <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
         <p class="package">
@@ -85,10 +89,18 @@ storiesOf('Seed Catalog', module)
           <card-examples class="purp-l"></card-examples>
           <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
         </seed-carousel-css>
-        <p class="w-hite">The <b>carousel stepper</b> is an optional slotted component.</p>
-        <p class="w-hite">We provide a <b>${`<carousel-css-stepper>`}</b> component but you can use wharever you want as long as you respect two rules.</p>
-        <p class="w-hite">· Slotted stepper component must contains a property called <b>'index'</b> which indicates the current step and which is setted by the carousel component when you smooth with the finger.</p>
-        <p class="w-hite">· Also dispatch an event called <b>'set-selected-step'</b> when clicking on the step-button in order to set the selected card position by the carousel component.</p>
+        <p class="w-hite">Carousel stepper <b>requirements</b></p>
+        <p class="w-hite">We provide a <b class="white-color">${`<carousel-css-stepper>`}</b> component but you can use whatever you want as long as you respect two rules.</p>
+        <p class="w-hite">· Slotted stepper component must contains a property called <b>'index'</b> which indicates the current step.</p>
+        <p class="w-hite">· Also dispatch an event called <b>'set-selected-step'</b> when clicking on the step-button as below:</p>
+        <p class="package">
+
+      <span class="blu">this</span>.<span class="yellou">dispatchEvent</span>(<span class="blu">new</span> <span class="gree">CustomEvent</span>(<span class="ora">'set-selected-step'</span>, { <span class="light-txt">detail: index, composed:</span> <span class="blu">true</span>, <span class="light-txt">bubbles:</span> <span class="blu">true</span> }));
+
+        </p>
+
+
+
         <br><br><br>
         <seed-carousel-css>
           <card-examples class="bl-u" .width="${200}" .height="${200}"></card-examples>
