@@ -1,57 +1,57 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
+import { seedStyle } from '../styles';
+import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../carousel-css';
 import '../carousel-stepper';
 import '../components/utils/card-examples';
-import { seedStyle } from '../styles';
-import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 
 storiesOf('Seed Catalog', module)
   .add('Carousel Css', () => html`
-        <style>
-            ${seedStyle}
-            ${storyCommonStyles}
-            ${cssTemplateColors}
+    <style>
+      ${seedStyle}
+      ${storyCommonStyles}
+      ${cssTemplateColors}
 
-            .title {
-              margin-bottom: 20px;
-            }
+      .title {
+        margin-bottom: 20px;
+      }
 
-            .bl-u {
-              background-color: #43aad7;
-            }
+      .bl-u {
+        background-color: #43aad7;
+      }
 
-            .oran-g {
-              background-color: #e18b46;
-            }
+      .oran-g {
+        background-color: #e18b46;
+      }
 
-            .gre-e {
-              background-color: #5dbe59;
-            }
+      .gre-e {
+        background-color: #5dbe59;
+      }
 
-            .purp-l {
-              background-color: #b250b2;
-            }
+      .purp-l {
+        background-color: #b250b2;
+      }
 
-            .w-hite {
-              font-family: sans-serif;
-              color: #dadada;
-              font-size: 15px;
-              font-weight: 300;
-              letter-spacing: 1.2px;
-              line-height: 20px;
-            }
+      .w-hite {
+        font-family: sans-serif;
+        color: #dadada;
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 1.2px;
+        line-height: 20px;
+      }
 
-            b {
-              color: #00daff;
-            }
+      b {
+        color: #00daff;
+      }
 
-            .white-color {
-              color: white;
-            }
-
-        </style>
-        <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
+      .white-color {
+        color: white;
+      }
+    </style>
+    
+    <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
         <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
     <span class="purp">import</span> <span class="ora">'seed-catalog/carousel-css.js</span>';

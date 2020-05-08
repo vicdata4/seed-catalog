@@ -6,14 +6,14 @@ import '../progress-ring';
 
 storiesOf('Seed Catalog', module)
   .add('Progress Ring', () => html`
-        <style>
-            ${seedStyle}
-            ${storyCommonStyles}
-            ${cssTemplateColors}
-        </style>
-        <button class="sd-btn-mix black title"><i class="material-icons blue">panorama_fish_eye</i>Progress ring</button>
-        <br>
-        <br>
+    <style>
+      ${seedStyle}
+      ${storyCommonStyles}
+      ${cssTemplateColors}
+    </style>
+
+    <button class="sd-btn-mix black title"><i class="material-icons blue">panorama_fish_eye</i>Progress ring</button>
+    <br><br>
         <p class="package">
     <span class="gre"><</span><span class="blu">seed-progress-ring</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
     
@@ -30,6 +30,5 @@ storiesOf('Seed Catalog', module)
             <seed-progress-ring .percent="${60}" ringColor="#22ac41"></seed-progress-ring>
             <seed-progress-ring .percent="${80}" ringColor="#e6af0e"></seed-progress-ring>
             <seed-progress-ring .percent="${100}"></seed-progress-ring>
-        </div>
-      
+        </div> 
     `);

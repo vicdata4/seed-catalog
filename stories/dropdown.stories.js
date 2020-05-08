@@ -6,20 +6,20 @@ import '../dropdown';
 
 storiesOf('Seed Catalog', module)
   .add('Dropdown', () => html`
-        <style>
-            ${seedStyle}
-            ${storyCommonStyles}
-            ${cssTemplateColors}
-        </style>
+    <style>
+      ${seedStyle}
+      ${storyCommonStyles}
+      ${cssTemplateColors}
+    </style>
 
-        <button class="sd-btn-mix black title"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
-        <br><br>
-        <seed-dropdown position="relative">
-            <button id="lorem" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">local_library</i>Dropdown relative</button>
-            <p slot="content" class="content">
-            Space Exploration Technologies Corp., doing business as SpaceX, is a private American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars.[7][8][9] SpaceX has developed the Falcon launch vehicle family and the Dragon spacecraft family.
-            </p>
-        </seed-dropdown>
+    <button class="sd-btn-mix black title"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
+    <br><br>
+    <seed-dropdown position="relative">
+        <button id="lorem" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">local_library</i>Dropdown relative</button>
+        <p slot="content" class="content">
+        Space Exploration Technologies Corp., doing business as SpaceX, is a private American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars.[7][8][9] SpaceX has developed the Falcon launch vehicle family and the Dragon spacecraft family.
+        </p>
+    </seed-dropdown>
         <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
     <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;

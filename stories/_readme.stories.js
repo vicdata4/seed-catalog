@@ -1,14 +1,13 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { linkTo } from '@storybook/addon-links';
 import { html } from 'lit-html';
-
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../components/seed-dropdown';
 
 storiesOf('Seed', module)
   .add('Intro', () => html`
-        <style>
+    <style>
       ${seedStyle}
       ${storyCommonStyles}
       ${cssTemplateColors}
@@ -40,9 +39,11 @@ storiesOf('Seed', module)
         font-size: 15px;
         font-family: monospace;
       }
-    
     </style>
-    <button class="sd-btn-mix black"><i class="material-icons blue-mate">extension</i>Seed Catalog <span style="font-size: 10px;">v1.0</span></button><br>
+    <button class="sd-btn-mix black">
+      <i class="material-icons blue-mate">extension</i>Seed Catalog <span style="font-size: 10px;">v1.0</span>
+    </button>
+    <br>
     <p class="paragraph gree">Seed Catalog is a free and open-source <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" class="sd-btn-mix sm black">web-components</a> library. It contains CSS-styles and standards-based web templates such as buttons, modals, dropdowns and other interface components.</p>
     <p class="paragraph gree">We use
       <a href="https://lit-element.polymer-project.org/" target="_blank" class="sd-btn-mix sm black">LitElement</a>,
@@ -51,7 +52,6 @@ storiesOf('Seed', module)
       and
       <a href="https://developer.mozilla.org/en-US/docs/Archive/CSS3" target="_blank" class="sd-btn-mix sm black">CSS3</a>
     </p>
-      
       <button @click="${linkTo('Seed Catalog', 'Buttons')}" class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Buttons</button>
       <button @click="${linkTo('Seed Catalog', 'Dropdown')}" class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
       <button @click="${linkTo('Seed Catalog', 'Collapse')}" class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>

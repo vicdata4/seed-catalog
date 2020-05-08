@@ -7,22 +7,22 @@ import '../collapse';
 
 storiesOf('Seed Catalog', module)
   .add('Collapse', () => html`
-        <style>
-            ${seedStyle}
-            ${storyCommonStyles}
-            ${cssTemplateColors}
-        </style>
-        <button class="sd-btn-mix black title"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
-        <br>
-        <br>
-        <seed-collapse>
-            <seed-dropdown position="absolute" maxWidth="300" rotate clickout>
-                <button id="paragrapx" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse absolute</button>
-                <p slot="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
-                </p>
-            </seed-dropdown>
-        </seed-collapse>
+    <style>
+        ${seedStyle}
+        ${storyCommonStyles}
+        ${cssTemplateColors}
+    </style>
+
+    <button class="sd-btn-mix black title"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
+    <br><br>
+    <seed-collapse>
+      <seed-dropdown position="absolute" maxWidth="300" rotate clickout>
+        <button id="paragrapx" slot="button" class="sd-btn-mix blue-mate"><i class="material-icons">keyboard_arrow_down</i>Collapse absolute</button>
+        <p slot="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam, eget viverra diam. Donec euismod mattis dignissim. Fusce convallis lacus enim, eget ultricies neque tristique vel. Fusce vehicula, elit id ultrices dignissim, nibh mauris feugiat justo, a fermentum velit diam at enim.
+        </p>
+      </seed-dropdown>
+    </seed-collapse>
         <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
     <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;

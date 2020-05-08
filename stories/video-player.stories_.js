@@ -6,41 +6,40 @@ import '../video-player';
 
 storiesOf('Seed Catalog', module)
   .add('Video Player', () => html`
-        <style>
-            ${seedStyle}
-            ${storyCommonStyles}
-            ${cssTemplateColors}
+     <style>
+        ${seedStyle}
+        ${storyCommonStyles}
+        ${cssTemplateColors}
 
+        .small-video {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .small-video > seed-video-player {
+            margin-top: 5px;
+        }
+
+        @media (min-width: 600px) {
+            
             .small-video {
-                display: flex;
-                flex-direction: column;
+                margin-top: 0px;
+                flex-direction: row;
+                justify-content: center;
             }
 
             .small-video > seed-video-player {
-                margin-top: 5px;
+                margin: 0 3px;
             }
+        }
 
-            @media (min-width: 600px) {
-                
-                .small-video {
-                    margin-top: 0px;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-
-                .small-video > seed-video-player {
-                    margin: 0 3px;
-                }
+        @media (min-width: 1200px) {
+            .medium-video {
+                width: 60%;
+                display: grid;
             }
-
-            @media (min-width: 1200px) {
-                .medium-video {
-                    width: 60%;
-                    display: grid;
-                }
-            }
-
-        </style>
+        }
+    </style>
         <button class="sd-btn-mix black title"><i class="material-icons green-mate">more_horiz</i>Video Player</button>
         <br>
         <br>

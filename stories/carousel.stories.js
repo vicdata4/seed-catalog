@@ -1,42 +1,42 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
-import '../carousel';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
+import '../carousel';
 
 storiesOf('Seed Catalog', module)
   .add('Carousel JS', () => html`
-        <style>
-            ${seedStyle}
-            ${storyCommonStyles}
-            ${cssTemplateColors}
-            seed-carousel > div {
-                color: white;
-            }
+    <style>
+      ${seedStyle}
+      ${storyCommonStyles}
+      ${cssTemplateColors}
+      seed-carousel > div {
+        color: white;
+      }
 
-            .due-card {
-                display: flex;
-                flex-flow: row wrap;
-            }
+      .due-card {
+        display: flex;
+        flex-flow: row wrap;
+      }
 
-            .red:hover { background-color: var(--seed-color-red); }
-            .blue:hover { background-color: var(--seed-color-blue); }
-            .green:hover { background-color: var(--seed-color-green); }
-            .purple:hover { background-color: var(--seed-color-purple); }
-            .black:hover { background-color: var(--seed-color-black); }
-            .orange:hover { background-color: var(--seed-color-orange); }
-            .green-mate:hover { background-color: var(--seed-color-green-mate); }
-            .red-mate:hover { background-color: var(--seed-color-red-mate); }
-        </style>
+      .red:hover { background-color: var(--seed-color-red); }
+      .blue:hover { background-color: var(--seed-color-blue); }
+      .green:hover { background-color: var(--seed-color-green); }
+      .purple:hover { background-color: var(--seed-color-purple); }
+      .black:hover { background-color: var(--seed-color-black); }
+      .orange:hover { background-color: var(--seed-color-orange); }
+      .green-mate:hover { background-color: var(--seed-color-green-mate); }
+      .red-mate:hover { background-color: var(--seed-color-red-mate); }
+    </style>
         
-        <button class="sd-btn-mix black title"><i class="material-icons red">settings_overscan</i>Carousel</button>
-        <button class="sd-btn black title">Carousel mobile touch</button>
-        <seed-carousel arrows stepper>
-            <div class="black">Black</div> 
-            <div class="red">Red</div>
-            <div class="blue">Blue</div>
-            <div class="green">Green</div>    
-        </seed-carousel>
+    <button class="sd-btn-mix black title"><i class="material-icons red">settings_overscan</i>Carousel</button>
+    <button class="sd-btn black title">Carousel mobile touch</button>
+    <seed-carousel arrows stepper>
+        <div class="black">Black</div> 
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+        <div class="green">Green</div>    
+    </seed-carousel>
 
         <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;

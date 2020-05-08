@@ -6,31 +6,31 @@ import '../spinner';
 
 storiesOf('Seed Catalog', module)
   .add('Spinner', () => html`
-        <style>
-            ${seedStyle}
-            ${storyCommonStyles}
-            ${cssTemplateColors}
+    <style>
+      ${seedStyle}
+      ${storyCommonStyles}
+      ${cssTemplateColors}
 
-            .bluex, .redx, .greenx {
-                visibility: hidden;
-            }
+      .bluex, .redx, .greenx {
+        visibility: hidden;
+      }
 
-            p > span {
-                margin: 10px;
-                margin-left: 0;
-                margin-right: 0;
-            }
-        </style>
+      p > span {
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    </style>
         
-        <button class="sd-btn-mix black title"><i class="material-icons orange">filter_tilt_shift</i>Spinner</button>
-        <br><br>
-        <button class="sd-btn blue" @click="${() => { document.querySelector('.bluex').style.visibility = 'visible'; }}">Show spinner</button>
-        <button class="sd-btn red" @click="${() => { document.querySelector('.redx').style.visibility = 'visible'; }}">Show spinner</button>
-        <button class="sd-btn green" @click="${() => { document.querySelector('.greenx').style.visibility = 'visible'; }}">Show spinner</button>
-        <br><br>
-        <seed-spinner class="bluex" color="var(--seed-color-blue)" background="#0d1314cf" @click="${() => { document.querySelector('.bluex').style.visibility = 'hidden'; }}"></seed-spinner>
-        <seed-spinner class="redx" color="var(--seed-color-red)" @click="${() => { document.querySelector('.redx').style.visibility = 'hidden'; }}"></seed-spinner>
-        <seed-spinner class="greenx" background="rgba(0, 0, 0, 0.2)" color="var(--seed-color-green)" @click="${() => { document.querySelector('.greenx').style.visibility = 'hidden'; }}"></seed-spinner>
+    <button class="sd-btn-mix black title"><i class="material-icons orange">filter_tilt_shift</i>Spinner</button>
+    <br><br>
+    <button class="sd-btn blue" @click="${() => { document.querySelector('.bluex').style.visibility = 'visible'; }}">Show spinner</button>
+    <button class="sd-btn red" @click="${() => { document.querySelector('.redx').style.visibility = 'visible'; }}">Show spinner</button>
+    <button class="sd-btn green" @click="${() => { document.querySelector('.greenx').style.visibility = 'visible'; }}">Show spinner</button>
+    <br><br>
+    <seed-spinner class="bluex" color="var(--seed-color-blue)" background="#0d1314cf" @click="${() => { document.querySelector('.bluex').style.visibility = 'hidden'; }}"></seed-spinner>
+    <seed-spinner class="redx" color="var(--seed-color-red)" @click="${() => { document.querySelector('.redx').style.visibility = 'hidden'; }}"></seed-spinner>
+    <seed-spinner class="greenx" background="rgba(0, 0, 0, 0.2)" color="var(--seed-color-green)" @click="${() => { document.querySelector('.greenx').style.visibility = 'hidden'; }}"></seed-spinner>
         <p class="package">
     <span class="gre"><</span><span class="blu">seed-spinner</span><span class="gre">></span><span class="gre">${'</'}</span><span class="blu">seed-spinner</span><span class="gre">></span>
 
