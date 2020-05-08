@@ -64,7 +64,7 @@ storiesOf('Seed Catalog', module)
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn purple"</span><span class="gre">></span><span class="gre"></span>purple<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
   
     
-    <span class="comm">// Also you can use ${`<a></a>`} tags, getting the same behaviour</span>
+    <span class="comm">// Also you can use ${`<a></a>`} tag and input[type=submit], getting the same behaviour</span>
 
     <span class="gre"><</span><span class="blu">a </span><span class="light-txt">href</span>=<span class="ora">"/" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn green-mate"</span><span class="gre">></span><span class="gre"></span>Link tag<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
 
