@@ -7,6 +7,7 @@ import {
   videoPlayPreview,
   videoPlayBtn,
   videoFullScreen,
+  videoFullScreenExit,
   videoVolumeUp,
   settingsIcon,
   videoReplay,
@@ -37,7 +38,8 @@ export class SeedVideoPlayer extends LitElement {
       videoVolume: { type: Number, attribute: false },
       videoVolumeInput: { type: Number, attribute: false },
       videoCurrentTime: { type: Number, attribute: false },
-      hoverSecond: { type: Number, attribute: false }
+      hoverSecond: { type: Number, attribute: false },
+      isFullScreen: { type: Boolean, attribute: false }
     };
   }
 
@@ -52,6 +54,7 @@ export class SeedVideoPlayer extends LitElement {
     this.videoCurrentTime = 0;
     this.isLoadingData = true;
     this.showController = true;
+    this.isFullScreen = false;
   }
 
   firstUpdated() {
@@ -338,14 +341,28 @@ export class SeedVideoPlayer extends LitElement {
   openFullscreen() {
     const video = this.shadowRoot.querySelector('.video-container');
 
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.mozRequestFullScreen) { /* Firefox */
-      video.mozRequestFullScreen();
-    } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-      video.webkitRequestFullscreen();
-    } else if (video.msRequestFullscreen) { /* IE/Edge */
-      video.msRequestFullscreen();
+    if (!this.isFullScreen) {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.mozRequestFullScreen) { /* Firefox */
+        video.mozRequestFullScreen();
+      } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) { /* IE/Edge */
+        video.msRequestFullscreen();
+      }
+      this.isFullScreen = true;
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE/Edge */
+        document.msExitFullscreen();
+      }
+      this.isFullScreen = false;
     }
   }
 
@@ -406,7 +423,9 @@ export class SeedVideoPlayer extends LitElement {
               </div>
               <div class="controller-options-buttons">
                 <button class="btn-options">${settingsIcon}</button>
-                <button class="btn-options" @click="${this.openFullscreen}">${videoFullScreen}</button>
+                <button class="btn-options" @click="${this.openFullscreen}">
+                  ${!this.isFullScreen ? videoFullScreen : videoFullScreenExit}
+                </button>
               </div>
             </div>
           </div>
