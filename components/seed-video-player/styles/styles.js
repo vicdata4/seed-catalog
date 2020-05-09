@@ -47,11 +47,12 @@ video > source {
   opacity: 0;
 }
 
-.video-spinner {
+.spinner-container {
   position: absolute;
-  display: block;
-  align-self: center;
-  margin-top: calc((var(--control-container-height)) * -1);
+  height: calc(100% - var(--control-container-height));
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .btn-play-preview, .btn-replay-preview {

@@ -68,10 +68,10 @@ storiesOf('Seed Catalog', module)
 
     <span class="gre"><</span><span class="blu">a </span><span class="light-txt">href</span>=<span class="ora">"/" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn green-mate"</span><span class="gre">></span><span class="gre"></span>Link tag<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
 
-    <span class="gre"><</span><span class="blu">a </span><span class="light-txt">href</span>=<span class="ora">"/" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span><span class="gre"></span>blue<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"submit" </span><span class="light-txt">value</span>=<span class="ora">"Submit" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span><span class="gre"></span>blue<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
     </p>
     <br>
-    <button class="sd-btn red-mate">Profile</button><button class="sd-btn black">Play now</button><button class="sd-btn blue-mate">Forest</button><button class="sd-btn purple">Podcast</button><a href="/" class="sd-btn green-mate">Link tag</a><br><br>
+    <button class="sd-btn red-mate">Profile</button><button class="sd-btn black">Play now</button><button class="sd-btn blue-mate">Forest</button><button class="sd-btn purple">Podcast</button><a href="/" class="sd-btn green-mate">Link tag</a><input type="submit" value="Submit" class="sd-btn orange"><br><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-mix</span></h2><button class="sd-btn-mix red-mate"><i class="material-icons">flight</i>Flight</button><button class="sd-btn-mixr">Flight<i class="material-icons">flight</i></button>
     <p class="package">
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix red"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>flight<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Flight<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>

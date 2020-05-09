@@ -19,6 +19,9 @@ const playSvgCode = 'M8 5v14l11-7z';
 
 const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+/****************
+WORK IN PROGRESS
+****************/
 export class SeedVideoPlayer extends LitElement {
   static get styles() {
     return styles;
@@ -90,11 +93,11 @@ export class SeedVideoPlayer extends LitElement {
   }
 
   waitingForLoadedDataListeners(video) {
-    const spinner = this.shadowRoot.querySelector('.video-spinner');
+    const spinner = this.shadowRoot.querySelector('.spinner-container');
 
     video.addEventListener('waiting', () => {
       this.isLoadingData = true;
-      spinner.style.display = 'block';
+      spinner.style.display = 'flex';
     });
 
     video.addEventListener('playing', () => {
@@ -169,10 +172,10 @@ export class SeedVideoPlayer extends LitElement {
   }
 
   loadedDataListener(video) {
-    const spinner = this.shadowRoot.querySelector('.video-spinner');
+    const spinner = this.shadowRoot.querySelector('.spinner-container');
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
 
-    video.addEventListener('loadeddata', event => {
+    video.addEventListener('loadedmetadata', event => {
       this.duration = event.target.duration;
       this.isLoadingData = false;
 
@@ -410,7 +413,7 @@ export class SeedVideoPlayer extends LitElement {
         </div>
         <button class="btn-play-preview" @click="${this.switchVideo}">${videoPlayPreview}</button>
         <button class="btn-replay-preview" @click="${this.replayVideo}">${videoReplay}</button>
-        ${videoSpinner}
+        <div class="spinner-container">${videoSpinner}</div>
       </div>
     `;
   }
