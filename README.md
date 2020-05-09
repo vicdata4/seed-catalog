@@ -47,6 +47,7 @@ Karma coverage
 - [Collapse](https://seed-catalog.com/?path=/story/seed-catalog--collapse)
 - [Dropdown](https://seed-catalog.com/?path=/story/seed-catalog--dropdown)
 - [Modal](https://seed-catalog.com/?path=/story/seed-catalog--modal)
+- [Video Player](https://seed-catalog.com/?path=/story/seed-catalog--video-player)
 - [Spinner](https://seed-catalog.com/?path=/story/seed-catalog--spinner)
 - [Progress ring](https://seed-catalog.com/?path=/story/seed-catalog--progress-ring)
 - [Stepper](https://seed-catalog.com/?path=/story/seed-catalog--stepper)

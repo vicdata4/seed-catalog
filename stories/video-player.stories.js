@@ -46,10 +46,6 @@ storiesOf('Seed Catalog', module)
         <p class="package">
   <span class="gre"><</span><span class="blu">seed-video-player </span><span class="light-txt">src</span>=<span class="ora">"https://url.to/download-file.mp4"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-video-player</span><span class="gre">></span>
         </p>
-        <video width="320" height="240" controls>
-  <source src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
         <div class="medium-video">
             <seed-video-player src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4">
             </seed-video-player>
