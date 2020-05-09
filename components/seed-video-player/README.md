@@ -7,7 +7,7 @@
  ```js
  // how tu use
 
-import 'seed-catalog/seed-video-player.js';
+import 'seed-catalog/video-player.js';
 
 <seed-video-player src="https://url.to/download-file.mp4"></seed-video-player>
 
