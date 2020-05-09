@@ -66,6 +66,7 @@ Material icons is integrated as dependency of this class, so you can create more
 
 import { LitElement, css } from 'lit-element';
 import { seedStyle } from 'seed-catalog/styles.js';
+import 'seed-catalog/dropdown.js';
 
 class MyComponent extends LitElement {
     static get styles() {
@@ -79,9 +80,14 @@ class MyComponent extends LitElement {
 
     render() {
         return html`
-            <button class="sd-btn red">Red</button>
-            <button class="sd-btn-mix blue"><i class="material-icons">folder</i>Folder</button>
-            <button class="sd-icon circle"><i class="material-icons">face</i></button>
+            <seed-dropdown maxWidth="300" clickout>
+                <button slot="button" class="sd-btn red">Dropdown</button>
+                <p slot="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras ut viverra leo, vel dapibus quam. Proin a sollicitudin quam,
+                    eget viverra diam. Donec euismod mattis dignissim.
+                </p>
+            </seed-dropdown>
         `;
     }
 }
