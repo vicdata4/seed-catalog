@@ -46,6 +46,9 @@ storiesOf('Seed Catalog', module)
         <p class="package">
   <span class="gre"><</span><span class="blu">seed-video-player </span><span class="light-txt">src</span>=<span class="ora">"https://url.to/download-file.mp4"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-video-player</span><span class="gre">></span>
         </p>
+        <p class="package">
+  <span class="gre"><</span><span class="blu">seed-video-player </span><span class="light-txt">src</span>=<span class="ora">"https://url.to/download-file.mp4"</span> <span class="light-txt">autoplay</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-video-player</span><span class="gre">></span>
+        </p>
         <div class="medium-video">
             <seed-video-player src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4">
             </seed-video-player>

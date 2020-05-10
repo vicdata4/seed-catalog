@@ -32,6 +32,7 @@ export class SeedVideoPlayer extends LitElement {
     return {
       src: { type: String },
       color: { type: String },
+      autoPlay: { type: Boolean },
       isLoadingData: { type: Boolean, attribute: false },
       duration: { type: Number, attribute: false },
       showController: { type: Boolean, attribute: false },
@@ -48,6 +49,7 @@ export class SeedVideoPlayer extends LitElement {
 
     this.src = '';
     this.color = 'red';
+    this.autoPlay = false;
     this.duration = 0;
     this.videoVolume = 50;
     this.videoVolumeInput = 0.5;
@@ -183,7 +185,11 @@ export class SeedVideoPlayer extends LitElement {
       this.isLoadingData = false;
 
       spinner.style.display = 'none';
-      playPreview.style.display = 'block';
+      if (!this.autoPlay) {
+        playPreview.style.display = 'block';
+      } else {
+        this.playPauseVideo();
+      }
     });
   }
 
@@ -285,10 +291,10 @@ export class SeedVideoPlayer extends LitElement {
     this.hoverSecond = (Math.floor(this.duration) !== this.videoCurrentTime) ? this.videoCurrentTime : 0;
 
     this.setSelectedTime();
-    this.switchVideo();
+    this.playPauseVideo();
   }
 
-  switchVideo() {
+  playPauseVideo() {
     const video = this.shadowRoot.querySelector('video');
     const playPreview = this.shadowRoot.querySelector('.btn-play-preview');
     const playSvg = this.shadowRoot.querySelector('.play-path');
@@ -314,7 +320,7 @@ export class SeedVideoPlayer extends LitElement {
 
   onTouchVideo() {
     if (!isMobileDevice) {
-      this.switchVideo();
+      this.playPauseVideo();
     } else {
       if (this.showController === false) {
         this.showController = true;
@@ -404,7 +410,7 @@ export class SeedVideoPlayer extends LitElement {
         <div class="controller">
           <div class="control-box">
             <div class="video-buttons">
-              <button class="btn-play-pause" @click="${this.switchVideo}">${videoPlayBtn}</button>
+              <button class="btn-play-pause" @click="${this.playPauseVideo}">${videoPlayBtn}</button>
               <button class="btn-replay" @click="${this.replayVideo}">${videoReplayBtn}</button>
               <button class="btn-volume" @click="${this.onSwitchVolume}">${videoVolumeUp}</button>
               <div class="input-range-container">
@@ -430,7 +436,7 @@ export class SeedVideoPlayer extends LitElement {
             </div>
           </div>
         </div>
-        <button class="btn-play-preview" @click="${this.switchVideo}">${videoPlayPreview}</button>
+        <button class="btn-play-preview" @click="${this.playPauseVideo}">${videoPlayPreview}</button>
         <button class="btn-replay-preview" @click="${this.replayVideo}">${videoReplay}</button>
         <div class="spinner-container">${videoSpinner}</div>
       </div>
