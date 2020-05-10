@@ -77,9 +77,9 @@ export class SeedProgressRing extends LitElement {
   constructor() {
     super();
     this.percent = 0;
-    this.ringColor = '';
-    this.ringBackground = '';
-    this.background = '';
+    this.ringColor = null;
+    this.ringBackground = null;
+    this.background = null;
     this.textColor = 'white';
   }
 
@@ -97,22 +97,22 @@ export class SeedProgressRing extends LitElement {
   }
 
   firstUpdated() {
-    if (this.ringColor !== '') this.style.setProperty('--progress-ring-color', this.ringColor);
-    if (this.ringBackground !== '') this.style.setProperty('--progress-ring-background', this.ringBackground);
-    if (this.background !== '') this.style.setProperty('--ring-background', this.background);
+    if (this.ringColor) this.style.setProperty('--progress-ring-color', this.ringColor);
+    if (this.ringBackground) this.style.setProperty('--progress-ring-background', this.ringBackground);
+    if (this.background) this.style.setProperty('--ring-background', this.background);
 
     this.setPercent(this.percent);
   }
 
   render() {
     return html`
-        <svg class="progress-ring" width="200" height="200" viewPort="0 0 100 100" version="1.1">
+      <svg class="progress-ring" width="200" height="200" viewPort="0 0 100 100" version="1.1">
         <circle class="progress-ring-background" cx="100" cy="100"></circle>
         <circle class="progress-ring-bar" cx="100" cy="100" fill="transparent"></circle>
-        </svg>
-        <div class="percent-progress-value">
-            <div class="percent-value" .style="color: ${this.textColor}">${this.percent}%</div>
-        </div>
+      </svg>
+      <div class="percent-progress-value">
+        <div class="percent-value" .style="color: ${this.textColor}">${this.percent}%</div>
+      </div>
     `;
   }
 }
