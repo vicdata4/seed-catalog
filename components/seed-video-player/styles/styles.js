@@ -166,29 +166,6 @@ video > source {
   z-index: -1;
 }
 
-/*
-.progress-bar-pointer {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  overflow: visible;
-  padding-left: 0;
-  transform: translateX(0);
-  transition: all .3s;
-  z-index: -1;
-}
-
-.pointer-circle {
-  transition: r .2s;
-}
-
-.progress-bar-container:hover > div > .progress-bar-pointer > svg  > circle {
-  r: 8;
-}
-*/
-
 .input-range-container {
   display: flex;
   align-items: center;

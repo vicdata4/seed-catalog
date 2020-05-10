@@ -1,8 +1,8 @@
 import { svg } from 'lit-element';
 
 export const videoSpinner = svg`<svg width="100%" height="100" class="video-spinner" viewBox="0 0 45 45" stroke="#fff"><g fill="none" fill-rule="evenodd"><g transform="translate(1 1)" stroke-width="2"><circle stroke-opacity=".5" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></g></svg>`;
-export const videoReplay = svg`<svg viewBox="0 0 24 24" fill="white" width="80px" height="auto"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>`;
-export const videoPlayPreview = svg`<svg viewBox="0 0 24 24" fill="white" width="80px" height="auto"><path d="M8 5v14l11-7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`;
+export const videoReplay = svg`<svg viewBox="0 0 24 24" fill="white" width="80px" height="80px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>`;
+export const videoPlayPreview = svg`<svg viewBox="0 0 24 24" fill="white" width="80px" height="80px"><path d="M8 5v14l11-7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`;
 export const videoReplayBtn = svg`<svg viewBox="0 0 24 24" fill="white" width="30px" height="22px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>`;
 export const videoPlayBtn = svg`<svg viewBox="0 0 24 24" fill="white" width="30px" height="30px"><path class="play-path" d="M8 5v14l11-7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`;
 export const videoFullScreen = svg`<svg viewBox="0 0 24 24" fill="white" width="30px" height="30px"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>`;
