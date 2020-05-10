@@ -33,6 +33,7 @@ export class SeedVideoPlayer extends LitElement {
       src: { type: String },
       color: { type: String },
       autoPlay: { type: Boolean },
+      mute: { type: Boolean },
       isLoadingData: { type: Boolean, attribute: false },
       duration: { type: Number, attribute: false },
       showController: { type: Boolean, attribute: false },
@@ -50,6 +51,7 @@ export class SeedVideoPlayer extends LitElement {
     this.src = '';
     this.color = 'red';
     this.autoPlay = false;
+    this.mute = false;
     this.duration = 0;
     this.videoVolume = 50;
     this.videoVolumeInput = 0.5;
@@ -222,6 +224,12 @@ export class SeedVideoPlayer extends LitElement {
 
   volumeInputRangeListener(video) {
     const volumeInput = this.shadowRoot.querySelector('.input-range-volume');
+
+    if (this.mute) {
+      volumeInput.value = 0;
+      video.volume = 0;
+      this.setVolumeButton(0);
+    }
 
     volumeInput.addEventListener('input', e => {
       const percent = e.target.value * 0.01;
