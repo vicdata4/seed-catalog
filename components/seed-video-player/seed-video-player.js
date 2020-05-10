@@ -59,6 +59,10 @@ export class SeedVideoPlayer extends LitElement {
     this.isLoadingData = true;
     this.showController = true;
     this.isFullScreen = false;
+
+    this.addEventListener('dblclick', () => {
+      this.openFullscreen();
+    });
   }
 
   firstUpdated() {
