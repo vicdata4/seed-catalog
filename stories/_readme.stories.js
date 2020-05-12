@@ -52,7 +52,7 @@ storiesOf('Seed', module)
       and
       <a href="https://developer.mozilla.org/en-US/docs/Archive/CSS3" target="_blank" class="sd-btn-mix sm black">CSS3</a>
     </p>
-      <button @click="${linkTo('Seed Catalog', 'Buttons')}" class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Buttons</button>
+      <button @click="${linkTo('Seed Catalog', 'Button')}" class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Button</button>
       <button @click="${linkTo('Seed Catalog', 'Dropdown')}" class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
       <button @click="${linkTo('Seed Catalog', 'Collapse')}" class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
       <button @click="${linkTo('Seed Catalog', 'Modal')}" class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modals</button>

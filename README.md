@@ -41,7 +41,7 @@ Karma coverage
 
 ## Catalog
 
-- [Seed Style](https://seed-catalog.com/?path=/story/seed-catalog--buttons)
+- [Seed Style](https://seed-catalog.com/?path=/story/seed-catalog--button)
 - [Carousel CSS](https://seed-catalog.com/?path=/story/seed-catalog--carousel-css)
 - [Carousel JS](https://seed-catalog.com/?path=/story/seed-catalog--carousel)
 - [Collapse](https://seed-catalog.com/?path=/story/seed-catalog--collapse)
