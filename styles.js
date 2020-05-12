@@ -98,6 +98,36 @@ export const seedStyle = css`
     text-decoration: none;
     cursor: pointer;
   }
+
+  /* Button Group Class */
+  .sd-btn-group {
+    display: flex;
+    width: fit-content;
+  }
+
+  .sd-btn-group > .sd-btn,
+  .sd-btn-group > .sd-btn-mix,
+  .sd-btn-group > .sd-btn-mixr,
+  .sd-btn-group > .sd-icon {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .sd-btn-group > .sd-btn:first-child,
+  .sd-btn-group > .sd-btn-mix:first-child,
+  .sd-btn-group > .sd-btn-mixr:first-child,
+  .sd-btn-group > .sd-icon:first-child {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+  }
+
+  .sd-btn-group > .sd-btn:last-child,
+  .sd-btn-group > .sd-btn-mix:last-child,
+  .sd-btn-group > .sd-btn-mixr:last-child,
+  .sd-btn-group > .sd-icon:last-child {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+  }
   
   /* sd-btn [class="sd-btn"] */
   .sd-btn-mix, .sd-btn-mixr {
