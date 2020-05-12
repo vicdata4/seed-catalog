@@ -70,9 +70,59 @@ storiesOf('Seed Catalog', module)
     </div>
     <br>
     <div class="sd-btn-group">
+      <button class="sd-icon blue"><i class="material-icons">local_phone</i></button>
+      <button class="sd-icon blue"><i class="material-icons">mail</i></button>
+      <button class="sd-icon blue"><i class="material-icons">near_me</i></button>
+      <button class="sd-icon blue"><i class="material-icons">bluetooth</i></button>
+      <button class="sd-icon blue"><i class="material-icons">wifi</i></button>
+      <button class="sd-icon blue"><i class="material-icons">battery_charging_full</i></button>
+    </div>
+    <br>
+    <div class="sd-btn-group">
+      <button class="sd-icon red"><i class="material-icons">fiber_manual_record</i></button>
+      <button class="sd-icon green"><i class="material-icons">skip_previous</i></button>
+      <button class="sd-icon green"><i class="material-icons">fast_rewind</i></button>
+      <button class="sd-icon green"><i class="material-icons">play_arrow</i></button>
+      <button class="sd-icon green"><i class="material-icons">fast_forward</i></button>
+      <button class="sd-icon green"><i class="material-icons">skip_next</i></button>
+    </div>
+    <br>
+    <div class="sd-btn-group">
+      <button class="sd-icon black"><i class="material-icons">add_a_photo</i></button>
+      <button class="sd-icon black"><i class="material-icons">add_photo_alternate</i></button>
+      <button class="sd-icon black"><i class="material-icons">crop</i></button>
+      <button class="sd-icon black"><i class="material-icons">palette</i></button>
+      <button class="sd-icon black"><i class="material-icons">brightness_5</i></button>
+      <button class="sd-icon black"><i class="material-icons">brush</i></button>
+      <button class="sd-icon black"><i class="material-icons">tonality</i></button>
+    </div>
+    <br>
+    <div class="sd-btn-group">
+      <button class="sd-icon black"><i class="material-icons green">thumb_up_alt</i></button>
+      <button class="sd-icon black"><i class="material-icons red">thumb_down_alt</i></button>
+    </div>
+    <br>
+    <div class="sd-btn-group">
+      <button class="sd-icon black"><i class="material-icons blue">favorite_border</i></button>
+      <button class="sd-icon black"><i class="material-icons yellow">grade</i></button>
+      <button class="sd-icon black"><i class="material-icons green">near_me</i></button>
+    </div>
+    <br>
+    <div class="sd-btn-group">
+      <button class="sd-icon black"><i class="material-icons green">add</i></button>
+      <button class="sd-icon black"><i class="material-icons red">remove</i></button>
+    </div>
+    <br>
+    <div class="sd-btn-group">
+      <button class="sd-icon green"><i class="material-icons">add</i></button>
+      <button class="sd-icon red"><i class="material-icons">remove</i></button>
+    </div>
+    <br>
+    <div class="sd-btn-group">
       <button class="sd-btn green">Accept</button>
       <button class="sd-btn red">Decline</button>
     </div>
+    <br>
     <p class="package">
     <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-group"</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon purple"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>add<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
