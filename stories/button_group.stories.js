@@ -43,6 +43,7 @@ storiesOf('Seed Catalog', module)
     <button class="sd-btn-mix black title"><i class="material-icons green">touch_app</i>Button Group</button>
     <h2 class="sd-btn black">CSS .class Selectors</h2><br>
     <h2 class="sd-btn black sm"><span class="light">sd-btn-group</span></h2>
+    <br>
     <div class="sd-btn-group">
       <button class="sd-btn-mix blue-mate"><i class="material-icons">favorite</i>Follow</button>
       <button class="sd-btn-mix blue-mate"><i class="material-icons">face</i>Profile</button>
