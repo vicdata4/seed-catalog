@@ -41,16 +41,18 @@ Karma coverage
 
 ## Catalog
 
-- [Seed Style](https://seed-catalog.com/?path=/story/seed-catalog--button)
+- [Button](https://seed-catalog.com/?path=/story/seed-catalog--button)
+- [Button Group](https://seed-catalog.com/?path=/story/seed-catalog--button-group)
+- [Button Icon](https://seed-catalog.com/?path=/story/seed-catalog--button-icon)
 - [Carousel CSS](https://seed-catalog.com/?path=/story/seed-catalog--carousel-css)
 - [Carousel JS](https://seed-catalog.com/?path=/story/seed-catalog--carousel)
 - [Collapse](https://seed-catalog.com/?path=/story/seed-catalog--collapse)
 - [Dropdown](https://seed-catalog.com/?path=/story/seed-catalog--dropdown)
 - [Modal](https://seed-catalog.com/?path=/story/seed-catalog--modal)
-- [Video Player](https://seed-catalog.com/?path=/story/seed-catalog--video-player)
-- [Spinner](https://seed-catalog.com/?path=/story/seed-catalog--spinner)
 - [Progress ring](https://seed-catalog.com/?path=/story/seed-catalog--progress-ring)
+- [Spinner](https://seed-catalog.com/?path=/story/seed-catalog--spinner)
 - [Stepper](https://seed-catalog.com/?path=/story/seed-catalog--stepper)
+- [Video Player](https://seed-catalog.com/?path=/story/seed-catalog--video-player)
 
 ## Style classes
 
@@ -93,18 +95,37 @@ class MyComponent extends LitElement {
 }
 ```
 
-##### color classes:
-- ![](https://placehold.it/15/de3d4c/000000?text=+) `red`
-- ![](https://placehold.it/15/22ac41/000000?text=+) `green`
-- ![](https://placehold.it/15/2dabb4/000000?text=+) `blue`
-- ![](https://placehold.it/15/e6af0e/000000?text=+) `yellow`
-- ![](https://placehold.it/15/903e8d/000000?text=+) `purple`
-- ![](https://placehold.it/15/2f2d2d/000000?text=+) `black`
-- ![](https://placehold.it/15/d58309/000000?text=+) `orange`
-- ![](https://placehold.it/15/bf4545/000000?text=+) `red-mate`
-- ![](https://placehold.it/15/1C8281/000000?text=+) `green-mate`
-- ![](https://placehold.it/15/3f76b6/000000?text=+) `blue-mate`
+##### Color classes:
+- ![](https://placehold.it/15/de3d4c/000000?text=+) `.red`
+- ![](https://placehold.it/15/22ac41/000000?text=+) `.green`
+- ![](https://placehold.it/15/2dabb4/000000?text=+) `.blue`
+- ![](https://placehold.it/15/e6af0e/000000?text=+) `.yellow`
+- ![](https://placehold.it/15/903e8d/000000?text=+) `.purple`
+- ![](https://placehold.it/15/2f2d2d/000000?text=+) `.black`
+- ![](https://placehold.it/15/d58309/000000?text=+) `.orange`
+- ![](https://placehold.it/15/bf4545/000000?text=+) `.red-mate`
+- ![](https://placehold.it/15/1C8281/000000?text=+) `.green-mate`
+- ![](https://placehold.it/15/3f76b6/000000?text=+) `.blue-mate`
 - ![](https://placehold.it/15/fff/000000?text=+) `default`
+
+##### Button classes
+
+- .sd-btn
+- .sd-btn-mix
+- .sd-btn-mixr
+- .sd-btn-group
+- .sd-icon
+- .clear
+- .circle
+- .sm
+- .lg
+
+##### Fonts
+
+- Material icons
+- Ubuntu, sans-serif
+
+
 
 ### How to use
 
