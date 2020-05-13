@@ -61,7 +61,7 @@ video > source {
   align-self: center;
   justify-self: center;
   border-radius: 100%;
-  background-color: rgba(0,0,0,.5);
+  background-color: transparent;
   border: none;
   padding: 0;
   margin: 0;
