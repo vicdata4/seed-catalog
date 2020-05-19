@@ -70,11 +70,36 @@ const dropDown = css`
   }
 `;
 
+const seedInput = css`
+  .sd-input-submit, .sd-input-icon {
+    width: fit-content;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .sd-input-submit > input[type=text],
+  .sd-input-icon > input[type=text],
+  input[type=password] {
+    border: none;
+  }
+
+  .sd-input-submit > input[type=submit], .sd-input-icon > button[type=submit] {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .sd-input-case > i {
+    margin: 0 5px;
+  }
+`;
+
 export const seedStyle = css`
   ${googleFont}
   ${materialIcons}
   ${dropDown}
   ${seedColors}
+  ${seedInput}
   
   .sd-btn, .sd-icon, .sd-btn-mix, .sd-btn-mixr {
     font-family: 'Ubuntu', sans-serif;
