@@ -48,7 +48,7 @@ Karma coverage
 - [Carousel JS](https://seed-catalog.com/?path=/story/seed-catalog--carousel)
 - [Collapse](https://seed-catalog.com/?path=/story/seed-catalog--collapse)
 - [Dropdown](https://seed-catalog.com/?path=/story/seed-catalog--dropdown)
-- [Input Field](https://seed-catalog.com/?path=/story/seed-catalog--input--field)
+- [Input Field](https://seed-catalog.com/?path=/story/seed-catalog--input-field)
 - [Modal](https://seed-catalog.com/?path=/story/seed-catalog--modal)
 - [Progress ring](https://seed-catalog.com/?path=/story/seed-catalog--progress-ring)
 - [Spinner](https://seed-catalog.com/?path=/story/seed-catalog--spinner)
