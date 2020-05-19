@@ -79,15 +79,36 @@ const seedInput = css`
   }
 
   .sd-input-submit > input[type=text],
-  .sd-input-icon > input[type=text],
-  input[type=password] {
-    border: none;
+  .sd-input-icon > input[type=text] {
+    padding: 0 10px;
   }
 
-  .sd-input-submit > input[type=submit], .sd-input-icon > button[type=submit] {
+  .sd-input-submit > input,
+  .sd-input-submit > button,
+  .sd-input-icon > div {
+    border: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
   }
+
+  .sd-input-icon > div {
+    cursor: auto;
+  }
+
+  .sd-input-icon:hover > div.sd-icon {
+    outline: 0px solid transparent;
+  }
+
+  .sd-input-icon:hover > div.sd-icon.red { background-color: var(--seed-color-red); }
+  .sd-input-icon:hover > div.sd-icon.green { background-color: var(--seed-color-green); }
+  .sd-input-icon:hover > div.sd-icon.blue { background-color: var(--seed-color-blue); }
+  .sd-input-icon:hover > div.sd-icon.yellow { background-color: var(--seed-color-yellow); }
+  .sd-input-icon:hover > div.sd-icon.black { background-color: var(--seed-color-black); }
+  .sd-input-icon:hover > div.sd-icon.purple { background-color: var(--seed-color-purple); }
+  .sd-input-icon:hover > div.sd-icon.orange { background-color: var(--seed-color-orange); }
+  .sd-input-icon:hover > div.sd-icon.green-mate { background-color: var(--seed-color-green-mate); }
+  .sd-input-icon:hover > div.sd-icon.blue-mate { background-color: var(--seed-color-blue-mate); }
+  .sd-input-icon:hover > div.sd-icon.red-mate { background-color: var(--seed-color-red-mate); }
 
   .sd-input-case > i {
     margin: 0 5px;
