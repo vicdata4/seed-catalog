@@ -74,6 +74,7 @@ const seedInput = css`
   .sd-input-submit, .sd-input-icon {
     width: fit-content;
     display: flex;
+    justify-content: flex-start;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -81,6 +82,7 @@ const seedInput = css`
   .sd-input-submit > input[type=text],
   .sd-input-icon > input[type=text] {
     padding: 0 10px;
+    margin: 0;
   }
 
   .sd-input-submit > input,
@@ -89,10 +91,25 @@ const seedInput = css`
     border: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    margin: 0;
   }
 
   .sd-input-icon > div {
+    -webkit-cursor: auto;
     cursor: auto;
+  }
+
+  .sd-input-icon.left > div.sd-icon {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+  }
+
+  .sd-input-icon > input, .sd-input-icon.left > input {
+    border: none;
   }
 
   .sd-input-icon:hover > div.sd-icon {
