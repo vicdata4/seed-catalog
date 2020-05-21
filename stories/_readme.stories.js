@@ -55,7 +55,7 @@ storiesOf('Seed', module)
       <button @click="${linkTo('Seed Catalog', 'Button')}" class="sd-btn-mix sm black"><i class="material-icons green">touch_app</i>Button</button>
       <button @click="${linkTo('Seed Catalog', 'Button Group')}" class="sd-btn-mix sm black"><i class="material-icons blue">touch_app</i>Button Group</button>
       <button @click="${linkTo('Seed Catalog', 'Button Icon')}" class="sd-btn-mix sm black"><i class="material-icons yellow">touch_app</i>Button Icon</button>
-      <button @click="${linkTo('Seed Catalog', 'Input Field')}" class="sd-btn-mix sm black"><i class="material-icons red">edit</i>Input Field</button>
+      <button @click="${linkTo('Seed Catalog', 'Button Input')}" class="sd-btn-mix sm black"><i class="material-icons red">edit</i>Input Field</button>
       <button @click="${linkTo('Seed Catalog', 'Dropdown')}" class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
       <button @click="${linkTo('Seed Catalog', 'Collapse')}" class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
       <button @click="${linkTo('Seed Catalog', 'Modal')}" class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modals</button>

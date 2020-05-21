@@ -71,7 +71,7 @@ const dropDown = css`
 `;
 
 const seedInput = css`
-  .sd-input-submit, .sd-input-icon {
+  .sd-input-submit, .sd-input-icon, .sd-input-label {
     width: fit-content;
     display: flex;
     justify-content: flex-start;
@@ -80,13 +80,16 @@ const seedInput = css`
   }
 
   .sd-input-submit > input[type=text],
-  .sd-input-icon > input[type=text] {
+  .sd-input-icon > input[type=text],
+  .sd-input-label > input[type=text] {
+    border-radius: 0px;
     padding: 0 10px;
     margin: 0;
   }
 
   .sd-input-submit > input,
   .sd-input-submit > button,
+  .sd-input-icon > button,
   .sd-input-icon > div {
     border: none;
     border-top-left-radius: 0px;
@@ -94,7 +97,7 @@ const seedInput = css`
     margin: 0;
   }
 
-  .sd-input-icon > div {
+  .sd-input-icon > div, .sd-input-label > div {
     -webkit-cursor: auto;
     cursor: auto;
   }
@@ -105,27 +108,57 @@ const seedInput = css`
 
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    
   }
 
-  .sd-input-icon > input, .sd-input-icon.left > input {
-    border: none;
+  .sd-input-label > div.sd-btn {
+    border-radius: 0px;
   }
 
-  .sd-input-icon:hover > div.sd-icon {
+  .sd-input-label > div:first-child {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .sd-input-label > div:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .sd-input-icon > input,
+  .sd-input-label > input,
+  .sd-input-icon.left > input {
+    border: none; 
+  }
+
+  .sd-input-icon:hover > div.sd-icon,
+  .sd-input-label:hover > div.sd-btn {
     outline: 0px solid transparent;
   }
 
-  .sd-input-icon:hover > div.sd-icon.red { background-color: var(--seed-color-red); }
-  .sd-input-icon:hover > div.sd-icon.green { background-color: var(--seed-color-green); }
-  .sd-input-icon:hover > div.sd-icon.blue { background-color: var(--seed-color-blue); }
-  .sd-input-icon:hover > div.sd-icon.yellow { background-color: var(--seed-color-yellow); }
-  .sd-input-icon:hover > div.sd-icon.black { background-color: var(--seed-color-black); }
-  .sd-input-icon:hover > div.sd-icon.purple { background-color: var(--seed-color-purple); }
-  .sd-input-icon:hover > div.sd-icon.orange { background-color: var(--seed-color-orange); }
-  .sd-input-icon:hover > div.sd-icon.green-mate { background-color: var(--seed-color-green-mate); }
-  .sd-input-icon:hover > div.sd-icon.blue-mate { background-color: var(--seed-color-blue-mate); }
-  .sd-input-icon:hover > div.sd-icon.red-mate { background-color: var(--seed-color-red-mate); }
+  .sd-input-icon:hover > div.sd-icon.red,
+  .sd-input-label:hover > div.sd-btn.red { background-color: var(--seed-color-red); }
+  .sd-input-icon:hover > div.sd-icon.green,
+  .sd-input-label:hover > div.sd-btn.green { background-color: var(--seed-color-green); }
+  .sd-input-icon:hover > div.sd-icon.blue,
+  .sd-input-label:hover > div.sd-btn.blue { background-color: var(--seed-color-blue); }
+  .sd-input-icon:hover > div.sd-icon.yellow,
+  .sd-input-label:hover > div.sd-btn.yellow { background-color: var(--seed-color-yellow); }
+  .sd-input-icon:hover > div.sd-icon.black,
+  .sd-input-label:hover > div.sd-btn.black { background-color: var(--seed-color-black); }
+  .sd-input-icon:hover > div.sd-icon.purple,
+  .sd-input-label:hover > div.sd-btn.purple { background-color: var(--seed-color-purple); }
+  .sd-input-icon:hover > div.sd-icon.orange,
+  .sd-input-label:hover > div.sd-btn.orange { background-color: var(--seed-color-orange); }
+  .sd-input-icon:hover > div.sd-icon.green-mate,
+  .sd-input-label:hover > div.sd-btn.green-mate { background-color: var(--seed-color-green-mate); }
+  .sd-input-icon:hover > div.sd-icon.blue-mate,
+  .sd-input-label:hover > div.sd-btn.blue-mate { background-color: var(--seed-color-blue-mate); }
+  .sd-input-icon:hover > div.sd-icon.red-mate,
+  .sd-input-label:hover > div.sd-btn.red-mate { background-color: var(--seed-color-red-mate); }
 
   .sd-input-case > i {
     margin: 0 5px;

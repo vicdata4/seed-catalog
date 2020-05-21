@@ -4,7 +4,7 @@ import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 
 storiesOf('Seed Catalog', module)
-  .add('Input Field', () => html`
+  .add('Button Input', () => html`
     <style>
       ${seedStyle}
       ${storyCommonStyles}
@@ -170,12 +170,73 @@ storiesOf('Seed Catalog', module)
       <input type="text" placeholder="write some text..">
     </div>
     <br>
+    <br>
+    <div class="sd-input-icon left">
+      <div class="sd-icon green">
+        <i class="material-icons">lock</i>
+      </div>
+      <input type="text" placeholder="password">
+      <button type="submit" class="sd-btn green">Save</button>
+    </div>
     <p class="package">
     <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"sd-input-icon left"</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"sd-icon blue"</span><span class="gre">></span>
         <span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>lock<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>
       <span class="gre"><</span><span class="gre">/</span><span class="blu">div</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"text"</span> <span class="light-txt">placeholder</span>=<span class="ora">"write something.."</span><span class="gre">></span>
+    <span class="gre"><</span><span class="gre">/</span><span class="blu">div</span><span class="gre">></span>
+    </p>
+
+    <h2 class="sd-btn black sm"><span class="light">sd-input-label</span></h2>
+    <br><br>
+    <br>
+    <div class="sd-input-label">
+      <div class="sd-btn green lg">
+        Password
+      </div>
+      <input type="text" placeholder="password">
+    </div>
+    <br>
+    <div class="sd-input-label">
+      <div class="sd-btn green">
+        Password
+      </div>
+      <input type="text" placeholder="password">
+    </div>
+    <br>
+    <div class="sd-input-label">
+      <div class="sd-btn green sm">
+        Password
+      </div>
+      <input type="text" placeholder="password">
+    </div>
+    <br><br>
+    <div class="sd-input-label">
+      <input type="text" placeholder="password">
+      <div class="sd-btn green lg">
+        Password
+      </div>
+    </div>
+    <br>
+    <div class="sd-input-label">
+      <input type="text" placeholder="password">
+      <div class="sd-btn green">
+        Password
+      </div>
+    </div>
+    <br>
+    <div class="sd-input-label">
+      <input type="text" placeholder="password">
+      <div class="sd-btn green sm">
+        Password
+      </div>
+    </div>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"sd-input-label"</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span>
+        Password
+      <span class="gre"><</span><span class="gre">/</span><span class="blu">div</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"text"</span> <span class="light-txt">placeholder</span>=<span class="ora">"password"</span><span class="gre">></span>
     <span class="gre"><</span><span class="gre">/</span><span class="blu">div</span><span class="gre">></span>
     </p>
   `);
