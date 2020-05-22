@@ -129,7 +129,14 @@ storiesOf('Seed Catalog', module)
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn-mix clear blue"</span><span class="gre">></span><span class="gre"></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons"</span><span class="gre">></span>lock<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span>Lock<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
     <br>
-    <h2 class="sd-btn black sm"><span class="light">disabled attribute</span></h2><button class="sd-btn red-mate" disabled>disabled</button><button class="sd-btn green-mate" disabled>disabled</button><button class="sd-btn blue-mate" disabled>disabled</button><br>
+    <h2 class="sd-btn black sm"><span class="light">disabled attribute</span></h2>
+    <button class="sd-btn red-mate" disabled>disabled</button>
+    <button class="sd-btn green-mate" disabled>disabled</button>
+    <button class="sd-btn blue-mate" disabled>disabled</button>
+    <button class="sd-btn clear purple" disabled>disabled</button>
+    <button class="sd-btn clear green" disabled>disabled</button>
+    <button class="sd-btn clear orange" disabled>disabled</button>
+    <br>
     <p class="package">
     <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn red" </span><span class="light-txt">disabled</span><span class="gre">></span>example<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
     </p>
