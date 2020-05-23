@@ -121,6 +121,14 @@ class MyComponent extends LitElement {
 - .sm
 - .lg
 
+##### Input classes
+
+- .sd-input-submit
+- .sd-input-icon
+- .sd-input-icon left
+- .sd-input-label
+
+
 ##### Fonts
 
 - Material icons
