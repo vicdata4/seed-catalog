@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 
-storiesOf('Seed Catalog', module)
+storiesOf('Seed Style', module)
   .add('Button Group', () => html`
     <style>
       ${seedStyle}

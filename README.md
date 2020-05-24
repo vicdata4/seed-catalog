@@ -39,12 +39,16 @@ from `package.json`
 
 Karma coverage
 
+## Styles
+
+- [Button](https://seed-catalog.com/?path=/story/seed-style--button)
+- [Button Group](https://seed-catalog.com/?path=/story/seed-style--button-group)
+- [Button Icon](https://seed-catalog.com/?path=/story/seed-style--button-icon)
+- [Button Input](https://seed-catalog.com/?path=/story/seed-style--button-input)
+
+
 ## Catalog
 
-- [Button](https://seed-catalog.com/?path=/story/seed-catalog--button)
-- [Button Group](https://seed-catalog.com/?path=/story/seed-catalog--button-group)
-- [Button Icon](https://seed-catalog.com/?path=/story/seed-catalog--button-icon)
-- [Button Input](https://seed-catalog.com/?path=/story/seed-catalog--button-input)
 - [Carousel CSS](https://seed-catalog.com/?path=/story/seed-catalog--carousel-css)
 - [Carousel JS](https://seed-catalog.com/?path=/story/seed-catalog--carousel)
 - [Collapse](https://seed-catalog.com/?path=/story/seed-catalog--collapse)
