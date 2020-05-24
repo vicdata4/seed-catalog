@@ -21,7 +21,7 @@ storiesOf('Seed Catalog', module)
     
     <span class="gree">Optional attributes: ringColor / ringBackground / background / textColor</span>
 
-    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt"><br>      .percent</span>=<span class="ora">"20"</span><br>      </span><span class="light-txt">ringColor</span>=<span class="ora">"f70bdd"</span><br>      </span><span class="light-txt">ringBackground</span>=<span class="ora">"rgba(0, 0, 0, 0.3)"</span><br>      </span><span class="light-txt">background</span>=<span class="ora">"grey"</span><span class="gre">></span><br>    <span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt"><br>      .percent</span>=<span class="ora">"20"</span><br>      </span><span class="light-txt">ringColor</span>=<span class="ora">"#f70bdd"</span><br>      </span><span class="light-txt">ringBackground</span>=<span class="ora">"rgba(0, 0, 0, 0.3)"</span><br>      </span><span class="light-txt">background</span>=<span class="ora">"grey"</span><span class="gre">></span><br>    <span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
         </p>
         <div>
             <seed-progress-ring></seed-progress-ring>
