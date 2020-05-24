@@ -68,7 +68,11 @@ storiesOf('Seed', module)
       <br><br><br><br>
     <button class="sd-btn-mix black"><i class="material-icons yellow">star_border</i>Quick Start</button>
     <br><br>
-    <p class="white-txt">Add seed-catalog as dependency in your <span class="ora">package.json</span></p>
+    <p class="white-txt">Copy-paste the script near the end of your pages, right before the closing <span class="ora">${`</body>`}</span> tag.</p>
+    <p class="package">
+    <span class="gre"><</span><span class="blu">script </span><span class="light-txt">src</span>=<span class="ora">"http://cdn.jsdelivr.net/gh/vicdata4/seed-catalog/dist/seed-bundle.min.js"</span><span class="gre">></span><span class="gre"></span><span class="gre">${`</`}</span><span class="blu">script</span><span class="gre">></span>
+    </p>
+    <p class="white-txt">Or add as dependency to your <span class="ora">package.json</span></p>
     <p class="package">
     <span class="light-txt">"dependencies"</span>: {
       ...
