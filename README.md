@@ -14,7 +14,7 @@ Seed-catalog is a free and open-source `web-components library`. It contains CSS
 - [Open-wc](https://open-wc.org/) Testing recommendations (Karma, Mocha, Chai)
 
 
-###  Add as project dependency (98kb)
+###  Add as project dependency
 
 from `package.json`
 
