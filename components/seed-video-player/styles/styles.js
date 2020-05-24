@@ -256,6 +256,7 @@ video > source {
 
 .controller-options-buttons {
   display: flex;
+  align-items: center;
   flex-flow: row nowrap;
   justify-content: space-between;
   min-width: 65px;
