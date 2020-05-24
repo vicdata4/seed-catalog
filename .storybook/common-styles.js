@@ -91,6 +91,13 @@ export const storyCommonStyles = css`
     font-size: 14px;
   }
 
+  .background-light {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    width: fit-content;
+  }
+
   @media screen and (min-width: 768px) {
     .card {
       width: 50%;
@@ -131,6 +138,10 @@ export const cssTemplateColors = css`
 
   .ora {
     color: #e0b669;
+  }
+
+  .reed {
+    color: #e48458;
   }
 
   .gre {

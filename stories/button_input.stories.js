@@ -46,7 +46,7 @@ storiesOf('Seed Catalog', module)
     <br><br>
     <div class="sd-input-submit">
         <input type="text" placeholder="write some text..">
-        <input type="submit" value="Search" class="sd-btn lg red">
+        <input type="submit" value="Search" class="sd-btn red">
     </div>
     <br>
     <div class="sd-input-submit">
@@ -56,9 +56,13 @@ storiesOf('Seed Catalog', module)
     <br>
     <div class="sd-input-submit">
         <input type="text" placeholder="write some text..">
-        <input type="submit" value="Search" class="sd-btn sm green">
+        <input type="submit" value="Search" class="sd-btn green">
     </div>
-
+    <br>
+    <div class="sd-input-submit">
+        <input type="text" placeholder="write some text..">
+        <input type="submit" value="Search" class="sd-btn clear blue">
+    </div>
     <p class="package">
     <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"sd-input-submit"</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"text"</span> <span class="light-txt">placeholder</span>=<span class="ora">"write something.."</span><span class="gre">></span>
@@ -71,6 +75,51 @@ storiesOf('Seed Catalog', module)
       <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"submit"</span> <span class="light-txt">class</span>=<span class="ora">"sd-btn sm green"</span> <span class="light-txt">value</span>=<span class="ora">"Buscar"</span><span class="gre">></span>
     <span class="gre"><</span><span class="gre">/</span><span class="blu">div</span><span class="gre">></span>
     </p>
+
+    <div class="background-light">
+      <div class="sd-input-submit">
+          <input type="text" style="border: 1px solid grey;" placeholder="write some text..">
+          <input type="submit" value="Search" class="sd-btn green">
+      </div>
+      <br>
+      <div class="sd-input-submit">
+          <input type="text" style="border: 1px solid grey;" placeholder="write some text..">
+          <input type="submit" value="Search" class="sd-btn red">
+      </div>
+      <br>
+      <div class="sd-input-submit">
+          <input type="text" style="border: 1px solid grey;" placeholder="write some text..">
+          <input type="submit" value="Search" class="sd-btn black">
+      </div>
+      <br>
+      <div class="sd-input-submit">
+          <input type="text" style="border: 1px solid grey;" placeholder="write some text..">
+          <input type="submit" value="Search" class="sd-btn blue-mate">
+      </div>
+      <br>
+      <div class="sd-input-submit">
+          <input type="text" style="border: 1px solid grey; color: var(--seed-color-blue-mate);" placeholder="write some text..">
+          <input type="submit" value="Search" class="sd-btn clear blue-mate">
+      </div>
+    </div>
+    <p class="package">
+    <span class="gree">// Customize your input styles</span>
+
+    <span class="ora">.custom-input</span> <span>{</span>
+      <span class="light-txt">border</span><span>: </span><span>1px </span><span class="reed">solid grey</span><span>;</span>
+      <span class="light-txt">color</span><span>: </span><span class="yellou">var</span>(<span class="light-txt">--seed-color-blue-mate</span><span>);</span>
+    <span>}</span>
+
+    <span class="ora">.custom-input</span><span class="ora">::placeholder</span> </span><span>{</span>
+      <span class="light-txt">color</span><span>: </span><span class="yellou">var</span>(<span class="light-txt">--seed-color-blue-mate</span><span>);</span>  
+    <span>}</span>
+
+    <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"sd-input-submit"</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"text"</span> <span class="light-txt">class</span>=<span class="ora">"custom-input"</span> <span class="light-txt">placeholder</span>=<span class="ora">"write something.."</span><span class="gre">></span>
+      <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"submit"</span> <span class="light-txt">class</span>=<span class="ora">"sd-btn blue-mate"</span> <span class="light-txt">value</span>=<span class="ora">"Buscar"</span><span class="gre">></span>
+    <span class="gre"><</span><span class="gre">/</span><span class="blu">div</span><span class="gre">></span>
+    </p>
+
     <br>
     <div class="sd-input-submit">
         <input type="text" placeholder="write some text..">
@@ -81,7 +130,14 @@ storiesOf('Seed Catalog', module)
     <br>
     <div class="sd-input-submit">
         <input type="text" placeholder="write some text..">
-        <button type="submit" class="sd-icon sm red">
+        <button type="submit" class="sd-icon red">
+          <i class="material-icons">search</i>
+        </button>
+    </div>
+    <br>
+    <div class="sd-input-submit">
+        <input type="text" placeholder="write some text..">
+        <button type="submit" class="sd-icon blue-mate">
           <i class="material-icons">search</i>
         </button>
     </div>
@@ -128,7 +184,7 @@ storiesOf('Seed Catalog', module)
     <br><br>
     <div class="sd-input-icon">
         <input type="text" placeholder="write some text..">
-        <div class="sd-icon lg black">
+        <div class="sd-icon red">
           <i class="material-icons">search</i>
         </div>
     </div>
@@ -136,13 +192,6 @@ storiesOf('Seed Catalog', module)
     <div class="sd-input-icon">
         <input type="text" placeholder="write some text..">
         <div class="sd-icon blue-mate">
-          <i class="material-icons">search</i>
-        </div>
-    </div>
-    <br>
-    <div class="sd-input-icon">
-        <input type="text" placeholder="write some text..">
-        <div class="sd-icon sm red">
           <i class="material-icons">search</i>
         </div>
     </div>
@@ -189,45 +238,23 @@ storiesOf('Seed Catalog', module)
 
     <h2 class="sd-btn black sm"><span class="light">sd-input-label</span></h2>
     <br><br>
-    <br>
     <div class="sd-input-label">
-      <div class="sd-btn green lg">
-        Password
+      <div class="sd-btn blue">
+        Username
       </div>
       <input type="text" placeholder="password">
     </div>
     <br>
     <div class="sd-input-label">
-      <div class="sd-btn green">
+      <div class="sd-btn blue">
         Password
       </div>
-      <input type="text" placeholder="password">
-    </div>
-    <br>
-    <div class="sd-input-label">
-      <div class="sd-btn green sm">
-        Password
-      </div>
-      <input type="text" placeholder="password">
-    </div>
-    <br><br>
-    <div class="sd-input-label">
-      <input type="text" placeholder="password">
-      <div class="sd-btn green lg">
-        Password
-      </div>
+      <input type="password" placeholder="password">
     </div>
     <br>
     <div class="sd-input-label">
       <input type="text" placeholder="password">
-      <div class="sd-btn green">
-        Password
-      </div>
-    </div>
-    <br>
-    <div class="sd-input-label">
-      <input type="text" placeholder="password">
-      <div class="sd-btn green sm">
+      <div class="sd-btn blue">
         Password
       </div>
     </div>

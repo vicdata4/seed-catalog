@@ -159,10 +159,6 @@ const seedInput = css`
   .sd-input-label:hover > div.sd-btn.blue-mate { background-color: var(--seed-color-blue-mate); }
   .sd-input-icon:hover > div.sd-icon.red-mate,
   .sd-input-label:hover > div.sd-btn.red-mate { background-color: var(--seed-color-red-mate); }
-
-  .sd-input-case > i {
-    margin: 0 5px;
-  }
 `;
 
 export const seedStyle = css`
