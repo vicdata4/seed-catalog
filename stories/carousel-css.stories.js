@@ -49,6 +49,12 @@ storiesOf('Seed Catalog', module)
       .white-color {
         color: white;
       }
+
+      @media screen and (min-width: 768px) {
+        .carousel-container {
+          width: 800px;
+        }
+      }
     </style>
     
     <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
@@ -82,13 +88,15 @@ storiesOf('Seed Catalog', module)
     }
         
         </p>
-        <seed-carousel-css>
-          <card-examples class="bl-u"></card-examples>
-          <card-examples class="oran-g"></card-examples>
-          <card-examples class="gre-e"></card-examples>
-          <card-examples class="purp-l"></card-examples>
-          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
-        </seed-carousel-css>
+        <div class="carousel-container">
+          <seed-carousel-css>
+            <card-examples class="bl-u"></card-examples>
+            <card-examples class="oran-g"></card-examples>
+            <card-examples class="gre-e"></card-examples>
+            <card-examples class="purp-l"></card-examples>
+            <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
+          </seed-carousel-css>
+        </div>
         <p class="w-hite">Carousel stepper <b>requirements</b></p>
         <p class="w-hite">We provide a <b class="white-color">${`<carousel-css-stepper>`}</b> component but you can use whatever you want as long as you respect two rules.</p>
         <p class="w-hite">· Slotted stepper component must contains a property called <b>'index'</b> which indicates the current step.</p>
@@ -102,15 +110,17 @@ storiesOf('Seed Catalog', module)
 
 
         <br><br><br>
-        <seed-carousel-css>
-          <card-examples class="bl-u" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="oran-g" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="gre-e" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="purp-l" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="bl-u" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="oran-g" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="gre-e" .width="${200}" .height="${200}"></card-examples>
-          <card-examples class="purp-l" .width="${200}" .height="${200}"></card-examples>
-          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
-        </seed-carousel-css>
+        <div class="carousel-container">
+          <seed-carousel-css>
+            <card-examples class="bl-u" .width="${200}" .height="${200}"></card-examples>
+            <card-examples class="oran-g" .width="${200}" .height="${200}"></card-examples>
+            <card-examples class="gre-e" .width="${200}" .height="${200}"></card-examples>
+            <card-examples class="purp-l" .width="${200}" .height="${200}"></card-examples>
+            <card-examples class="bl-u" .width="${200}" .height="${200}"></card-examples>
+            <card-examples class="oran-g" .width="${200}" .height="${200}"></card-examples>
+            <card-examples class="gre-e" .width="${200}" .height="${200}"></card-examples>
+            <card-examples class="purp-l" .width="${200}" .height="${200}"></card-examples>
+            <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
+          </seed-carousel-css>
+        </div>
     `);

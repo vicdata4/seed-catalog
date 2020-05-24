@@ -79,9 +79,9 @@ const seedInput = css`
     border-bottom-right-radius: 10px;
   }
 
-  .sd-input-submit > input[type=text],
-  .sd-input-icon > input[type=text],
-  .sd-input-label > input[type=text] {
+  .sd-input-submit > input[type=text], .sd-input-submit > input[type=password], 
+  .sd-input-icon > input[type=text], .sd-input-icon > input[type=password],
+  .sd-input-label > input[type=text], .sd-input-label > input[type=password] {
     border-radius: 0px;
     padding: 0 10px;
     margin: 0;
