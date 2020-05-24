@@ -68,7 +68,7 @@ storiesOf('Seed Style', module)
 
     <span class="gre"><</span><span class="blu">a </span><span class="light-txt">href</span>=<span class="ora">"/" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn green-mate"</span><span class="gre">></span><span class="gre"></span>Link tag<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
 
-    <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"submit" </span><span class="light-txt">value</span>=<span class="ora">"Submit" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span><span class="gre"></span>blue<span class="gre">${`</`}</span><span class="blu">a</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">input </span><span class="light-txt">type</span>=<span class="ora">"submit" </span><span class="light-txt">value</span>=<span class="ora">"Submit" </span><span class="light-txt">class</span>=<span class="ora">"sd-btn blue"</span><span class="gre">></span>
     </p>
     <br>
     <button class="sd-btn red-mate">Profile</button><button class="sd-btn black">Play now</button><button class="sd-btn blue-mate">Forest</button><button class="sd-btn purple">Podcast</button><a href="/" class="sd-btn green-mate">Link tag</a><input type="submit" value="Submit" class="sd-btn orange"><br><br>
