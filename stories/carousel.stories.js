@@ -57,10 +57,10 @@ storiesOf('Seed Catalog', module)
       }
     </style>
     
-    <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel CSS</button>
+    <button class="sd-btn-mix black title"><i class="material-icons green">settings_overscan</i>Carousel</button>
         <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
-    <span class="purp">import</span> <span class="ora">'seed-catalog/carousel-css.js</span>';
+    <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js</span>';
     <span class="purp">import</span> <span class="ora">'seed-catalog/carousel-stepper.js</span>';
 
     <span class="blu">class</span> <span class="gree">MyComponent</span> <span class="blu">extends</span> <span class="gree">LitElement</span> {
@@ -100,7 +100,7 @@ storiesOf('Seed Catalog', module)
         </div>
 
 <p class="package"> 
-      <span class="ora">seed-carousel-css </span>></span> <span class="ora">img </span><span>${`{`}</span>
+      <span class="ora">seed-carousel </span>></span> <span class="ora">img </span><span>${`{`}</span>
         <span class="light-txt">width: </span><span class="reed">100%</span>;
       <span>${`}`}</span>
 

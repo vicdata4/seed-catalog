@@ -24,6 +24,10 @@ export class SeedCarousel extends LitElement {
           scroll-snap-align: center;
         }
 
+        ::slotted(img) {
+          height: intrinsic;
+        }
+
         .container::-webkit-scrollbar {
           display: none;
         }
