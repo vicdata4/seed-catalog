@@ -61,7 +61,7 @@ storiesOf('Seed Catalog', module)
         <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-icon clear close"</span><span class="gre">></span><span class="gre"><</span><span class="blu">i </span><span class="light-txt">class</span>=<span class="ora">"material-icons blue-mate"</span><span class="gre">></span>close<span class="gre">${`</`}</span><span class="blu">i</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>
       <span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">div </span><span class="light-txt">slot</span>=<span class="ora">"content"</span><span class="gre">></span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       <span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
       <span class="gre"><</span><span class="blu">div </span><span class="light-txt">slot</span>=<span class="ora">"footer"</span> <span class="light-txt">class</span>=<span class="ora">"footer"</span><span class="gre">></span>
         <span class="gre"><</span><span class="blu">button </span><span class="light-txt">class</span>=<span class="ora">"sd-btn black close"</span><span class="gre">></span>Close<span class="gre">${`</`}</span><span class="blu">button</span><span class="gre">></span>

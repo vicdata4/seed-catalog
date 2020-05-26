@@ -1,277 +1,171 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
-import { carouselUtils } from './utils/carousel';
-import { empty, mediaQueryTablet } from './utils/constants';
-import { seedStyle } from '../styles';
-import './seed-stepper.js';
+import { mediaQueryTablet } from './utils/constants';
+import debounce from 'lodash.debounce';
 
 export class SeedCarousel extends LitElement {
   static get styles() {
     return [
-      seedStyle,
       css`
-        :host {
-          position: relative;
-          display: flex;
-          flex-flow: row nowrap;
-          width: 100%;
-          height: auto;
-          margin: 0;
-          overflow: hidden;
-          min-height: 200px;
-        }
-
         .container {
-          flex: 1 1 0;
-          width: inherit;
           display: flex;
           flex-flow: row nowrap;
-          height: auto;
           width: 100%;
-          margin: 0;
-          min-height: 200px;
+
+          overflow-x: scroll;
+          overflow-y: hidden;
+
+          scroll-behavior: smooth;
+
+          scrollbar-width: none;
+          scroll-snap-type: x mandatory;
         }
 
-        ::slotted(div) {
-          min-width: 100%;
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: grey;
-          transform: translateX(0);
-          transition: transform .8s;
+        ::slotted(*) {
+          scroll-snap-align: center;
         }
 
-        ::slotted(img) {
-          width: 100%;
-          height: intrinsic;
-        }
-
-        .arrow-btn {
+        .container::-webkit-scrollbar {
           display: none;
-          height: 100%;
         }
 
-        button:active {
-          border: none;
+        .stepper::slotted(*) {
+          transition: all 1s;
         }
 
-        seed-stepper {
-          position: absolute;
-          bottom: 0;
-        }
-
-        @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {
-          .arrow-btn {
-            position: absolute;
-            display: flex;
-            right: 0;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-            background-color: transparent;
-            border: 1px solid green;
-            min-height: inherit;
-            cursor: pointer;
-            border: none;
-          }
-
-          .arrow-btn-left {
-            left: 0;
-            right: unset;
-          }
-        }
+        @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {}
       `
     ];
   }
 
   static get properties() {
     return {
-      speed: { type: Number },
-      interval: { type: Number },
-      arrowsColor: { type: String },
-      minTouchLength: { type: Number, attribute: false },
-      minTouchAngle: { type: Number, attribute: false },
       index: { type: Number, attribute: false },
-      coordinate: { type: Number, attribute: false },
-      cardsLength: { type: Number, attribute: false },
-      auto: { type: Boolean, attribute: 'auto' },
-      arrows: { type: Boolean, attribute: 'arrows' },
-      stepper: { type: Boolean, attribute: 'stepper' },
-      square: { type: Boolean, attribute: 'square' }
+      length: { type: Number, attribute: false },
+      cardWidth: { type: Number, attribute: false },
+      speed: { type: Number }
     };
   }
 
   constructor() {
     super();
-    this.coordinate = 0;
     this.index = 0;
-    this.cardsLength = 0;
-    this.speed = this.speed || 0.8;
-    this.interval = 5000;
-    this.intervalRef = null;
-    this.minTouchLength = 70;
-    this.minTouchAngle = 30;
-    this._focusEventsActive = [];
-    this.arrowsColor = 'white';
-    this.EVENTS = {
-      mouseenter: 'mouse',
-      mouseleave: 'mouse',
-      focusin: 'focus',
-      focusout: 'focus'
+    this.length = 0;
+    this.cardWidth = 0;
+    this.speed = 200;
+
+    // window.addEventListener('resize', this.moreThanTwoVisibleCards.bind(this));
+  }
+
+  /**
+   * Return carousel params
+   * clientWidth, cardWidth, scrollLeft and sideSpace
+   *
+   * @return {Object}
+   */
+  getCarouselParams() {
+    const cardWidth = this.shadowRoot.querySelector('slot:not([name])').assignedElements()[0].clientWidth;
+    const carousel = this.shadowRoot.querySelector('.container');
+    const { clientWidth, scrollLeft, scrollWidth } = carousel;
+    const sideSpace = (clientWidth - cardWidth) / 2;
+
+    return { clientWidth, cardWidth, scrollLeft, sideSpace, scrollWidth };
+  }
+
+  /**
+   * Set current index property when carousel is scrolling
+   * and set the property to the slotted stepper.
+   *
+   */
+  setCurrentIndex() {
+    const { scrollLeft, cardWidth, sideSpace, scrollWidth, clientWidth } = this.getCarouselParams();
+    this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
+
+    const moreThanTwo = this.moreThanTwoVisibleCards();
+
+    if (moreThanTwo) {
+      if (scrollLeft === 0) this.index = 0;
+      if ((scrollWidth - clientWidth) === scrollLeft) {
+        this.index = this.length - 1;
+      }
+    }
+
+    this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
+  }
+
+  /**
+   * Return true in case more than two cards are visible from the index 0
+   *
+   * @return {Boolean}
+   */
+  moreThanTwoVisibleCards() {
+    const { cardWidth, clientWidth } = this.getCarouselParams();
+    return (cardWidth * 2) < clientWidth;
+  }
+
+  /**
+   * Wait until slot rendering in order to get the first carousel card width
+   */
+  async waitUntilSlotRendering() {
+    this.shadowRoot.querySelector('slot').assignedElements()[0].updateComplete;
+  }
+
+  smoothScroll(start_, end) {
+    const distance = end - start_;
+    const duration = this.speed;
+    let start = null;
+
+    const container = this.shadowRoot.querySelector('.container');
+
+    const linear = function(t, b, c, d) {
+      return c * t / d + b;
     };
 
-    this.addEventListener('set-dot', this.setNewPosition);
-    this.addEventListener('focusin', this._stopAutoplay.bind(this));
-    this.addEventListener('mouseenter', this._stopAutoplay.bind(this));
-    this.addEventListener('mouseleave', this.startInterval.bind(this));
-    this.addEventListener('focusout', this.startInterval.bind(this));
-  }
+    const step = function(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
 
-  showArrows() {
-    return this.arrows
-      ? html`
-          <button
-            id="left"
-            aria-label="left"
-            class="arrow-btn arrow-btn-left clear"
-            .style="color: ${this.arrowsColor}"
-            @click="${this._prev}">
-            <i class="material-icons lg">keyboard_arrow_left</i>
-          </button>
-          <button
-            id="right"
-            aria-label="right"
-            class="arrow-btn clear"
-            .style="color: ${this.arrowsColor}"
-            @click="${this._next}">
-            <i class="material-icons lg">keyboard_arrow_right</i>
-          </button>
-       `
-      : empty;
-  }
+      container.scrollTo(linear(progress, start_, distance, duration), 0);
+      if (progress < duration) window.requestAnimationFrame(step);
+    };
 
-  showStepper() {
-    return this.stepper ? html`
-      <seed-stepper
-        .size="${this.cardsLength}"
-        .index="${this.index}"
-        .colorBack="${'rgba(255,255,255,.5)'}"
-        .square="${this.square}">
-      </seed-stepper>
-     ` : empty;
-  }
-
-  showNext(way) {
-    this.setIndex(way);
-    this.setCard();
-  }
-
-  _next() {
-    this.showNext(true);
-  }
-
-  _prev() {
-    this.showNext(false);
-  }
-
-  setCard() {
-    this.setCoordinate();
-    if (this.auto) this._startAutoplay();
-  }
-
-  getCardsLength() {
-    const divs = this.querySelectorAll('div');
-    const imgs = this.querySelectorAll('img');
-    return divs.length + imgs.length;
-  }
-
-  setIndex(way) {
-    const cards = this.getCardsLength();
-
-    if (this.index === cards - 1 && way) {
-      this.index = 0;
-    } else if (this.index === 0 && !way) {
-      this.index = cards - 1;
-    } else if (way) {
-      this.index++;
-    } else {
-      this.index--;
-    }
+    window.requestAnimationFrame(step);
   }
 
   /**
-   * Set current card by coordinate
+   * Set carrousel card position via javascript
+   * @param {Number} index  Selected index from stepper
    */
-  setCoordinate() {
-    this.coordinate = -(this.shadowRoot.querySelector('#slide').clientWidth * this.index);
+  setCarouselPosition(index) {
+    const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
+    this.index = index;
+
+    const position = (cardWidth * this.index) - sideSpace;
+
+    this.smoothScroll(scrollLeft, position);
+
+    // container.scrollLeft = position;
+    this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
   }
 
-  /**
-   * Set carrousel interval in milliseconds
-   */
-  setAutoInterval() {
-    this.intervalRef = setInterval(() => {
-      this.showNext(true);
-    }, this.interval);
-  }
+  async firstUpdated() {
+    this.length = this.shadowRoot.querySelector('slot:not([name])').assignedElements().length;
 
-  /**
-   * Reset setIInterval()
-   */
-  _startAutoplay() {
-    clearInterval(this.intervalRef);
-    this.setAutoInterval();
-  }
+    await this.waitUntilSlotRendering();
+    this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setCurrentIndex.bind(this), 5));
 
-  /**
-   * @param {Number} index Set selected index / card
-   */
-  setNewPosition(index) {
-    this.index = index.detail;
-    this.setCard();
-  }
+    this.moreThanTwoVisibleCards();
 
-  /**
-   * Stop carousel interval indefinitely
-   * @param {Event} event Event object
-   */
-  _stopAutoplay(event) {
-    this._focusEventsActive.push(this.EVENTS[event.type]);
-    clearInterval(this.intervalRef);
-  }
-
-  /**
-   * Start the carousel interval
-   * @param {Event} event Event object
-   */
-  startInterval(event) {
-    this._focusEventsActive = this._focusEventsActive.filter((ev) => ev !== this.EVENTS[event.type]);
-    if (this._focusEventsActive.length === 0 && this.auto) {
-      this._startAutoplay();
-    }
-  }
-
-  firstUpdated() {
-    carouselUtils(this, '#slide');
-
-    this.cardsLength = this.getCardsLength();
-
-    window.addEventListener('resize', this.setCoordinate.bind(this));
-    if (this.auto) this.setAutoInterval();
+    this.addEventListener('set-selected-step', e => {
+      this.setCarouselPosition(e.detail);
+    });
   }
 
   render() {
     return html` 
-      ${this.showArrows()}
-      <div
-        id="slide"
-        class="container"
-        .style="${`
-          transform: translateX(${this.coordinate}px);
-          transition: transform ${this.speed}s`}"
-      ><slot></slot></div>
-      ${this.showStepper()}
+      <div class="container">
+        <slot></slot>
+      </div>
+      <slot name="stepper" class="stepper"></slot>
     `;
   }
 }
