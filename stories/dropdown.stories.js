@@ -14,6 +14,20 @@ storiesOf('Seed Catalog', module)
 
     <button class="sd-btn-mix black title"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
     <br><br>
+    <p class="package">
+      <span class="gree">// Optional properties/attributes</span>
+
+      <span class="gre"><</span><span class="blu">seed-dropdown</span> <span class="light-txt">rotate</span> <span class="light-txt">clickout</span> <span class="light-txt">maxWidth</span>=<span class="ora">"300"</span> <span class="light-txt">position</span>=<span class="ora">"relative"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+    </p>
+          <seed-dropdown clickout>
+              <button id="loremv" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Default dropdown</button>
+              <p slot="content" class="content">
+              Space Exploration Technologies Corp., doing business as SpaceX, is a private American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars.[7][8][9] SpaceX has developed the Falcon launch vehicle family and the Dragon spacecraft family.
+              </p>
+          </seed-dropdown>
+          <p class="package">
+      <span class="gre"><</span><span class="blu">seed-dropdown </span><span class="light-txt">clickout</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
+          </p>
     <seed-dropdown position="relative">
         <button id="lorem" slot="button" class="sd-btn-mix red-mate"><i class="material-icons">local_library</i>Dropdown relative</button>
         <p slot="content" class="content">
@@ -49,15 +63,6 @@ storiesOf('Seed Catalog', module)
       }
     }
     </p>
-        <seed-dropdown clickout>
-            <button id="loremv" slot="button" class="sd-btn-mix blue"><i class="material-icons">local_library</i>Dropdown absolute (default)</button>
-            <p slot="content" class="content">
-            Space Exploration Technologies Corp., doing business as SpaceX, is a private American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars.[7][8][9] SpaceX has developed the Falcon launch vehicle family and the Dragon spacecraft family.
-            </p>
-        </seed-dropdown>
-        <p class="package">
-    <span class="gre"><</span><span class="blu">seed-dropdown </span><span class="light-txt">clickout</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
-        </p>
         <seed-dropdown rotate clickout>
             <button id="restaurant" slot="button" class="sd-btn-mix green-mate"><i class="material-icons">arrow_drop_down</i>Menu</button>
             <div slot="content" class="dropdown-links">

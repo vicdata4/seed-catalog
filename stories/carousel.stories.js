@@ -31,6 +31,11 @@ storiesOf('Seed Catalog', module)
         
     <button class="sd-btn-mix black title"><i class="material-icons red">settings_overscan</i>Carousel</button>
     <button class="sd-btn black title">Carousel mobile touch</button>
+    <p class="package">
+      <span class="gree">// Optional properties/attributes</span>
+
+      <span class="gre"><</span><span class="blu">seed-carousel</span> <span class="light-txt">stepper</span> <span class="light-txt">arrows</span> <span class="light-txt">square</span> <span class="light-txt">auto</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-carousel</span><span class="gre">></span>
+    </p>
     <seed-carousel arrows stepper>
         <div class="black">Black</div> 
         <div class="red">Red</div>

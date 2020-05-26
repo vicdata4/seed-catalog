@@ -81,6 +81,7 @@ storiesOf('Seed Catalog', module)
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 2<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 3<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 4<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
+            <span class="gree">// Optional slotted stepper</span>
             <span class="gre"><</span><span class="blu">seed-carousel-stepper </span><span class="light-txt">slot</span>=<span class="ora">"stepper"</span><span class="gre">></span>Card 4<span class="gre">${`</`}</span><span class="blu">seed-carousel-stepper</span><span class="gre">></span>
           <span class="gre">${`</`}</span><span class="blu">seed-carousel-css</span><span class="gre">></span>
         <span>\`</span>;
