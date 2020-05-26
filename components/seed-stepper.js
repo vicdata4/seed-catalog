@@ -37,6 +37,7 @@ export class SeedStepper extends LitElement {
     return {
       index: { type: Number },
       array: { type: Array, attribute: false },
+      size: { type: Number },
       square: { type: Boolean },
       colorActive: { type: String },
       colorBack: { type: String }
@@ -50,6 +51,7 @@ export class SeedStepper extends LitElement {
     this.array = [];
     this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
     this.colorActive = this.colorActive || 'white';
+    this.size = 0;
   }
 
   /**
@@ -68,7 +70,7 @@ export class SeedStepper extends LitElement {
   }
 
   firstUpdated() {
-    this.array = new Array(this.parentNode.length).fill(empty);
+    this.array = new Array(this.parentNode.length || this.size).fill(empty);
   }
 
   render() {
