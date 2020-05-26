@@ -1,9 +1,11 @@
 import { LitElement, html, css } from 'lit-element';
 import { empty } from './utils/constants';
+import { seedStyle } from '../styles';
 
-export class SeedCarouselStepper extends LitElement {
+export class SeedStepperOld extends LitElement {
   static get styles() {
     return [
+      seedStyle,
       css`
         :host {
           width: 100%;
@@ -35,7 +37,8 @@ export class SeedCarouselStepper extends LitElement {
 
   static get properties() {
     return {
-      index: { type: Number, attribute: false },
+      index: { type: Number },
+      size: { type: Number, reflect: true },
       array: { type: Array, attribute: false },
       square: { type: Boolean },
       colorActive: { type: String },
@@ -47,6 +50,7 @@ export class SeedCarouselStepper extends LitElement {
     super();
     this.index = 0;
     this.square = false;
+    this.size = 0;
     this.array = [];
     this.colorBack = this.colorBack || 'rgba(255,255,255,.5)';
     this.colorActive = this.colorActive || 'white';
@@ -57,18 +61,15 @@ export class SeedCarouselStepper extends LitElement {
     * @param {Number} index  Selected index
     */
   setPosition(index) {
-    this.dispatchEvent(new CustomEvent('set-selected-step', { detail: index, composed: true, bubbles: true }));
+    this.dispatchEvent(new CustomEvent('set-dot', { detail: index, composed: true }));
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
     super.connectedCallback();
+    this.array = new Array(this.size).fill(empty);
 
     if (name === 'coloractive') this.colorActive = newVal;
     if (name === 'colorback') this.colorBack = newVal;
-  }
-
-  firstUpdated() {
-    this.array = new Array(this.parentNode.length).fill(empty);
   }
 
   render() {

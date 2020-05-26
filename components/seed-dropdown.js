@@ -43,9 +43,9 @@ export class SeedDropdown extends LitElement {
       position: { type: String },
       maxWidth: { type: String },
       backgroundColor: { type: String },
-      clickout: { type: Boolean, attribute: 'clickout' },
-      collapse: { type: Boolean, attribute: 'collapse' },
-      rotate: { type: Boolean, attribute: 'rotate' }
+      clickout: { type: Boolean },
+      collapse: { type: Boolean },
+      rotate: { type: Boolean }
     };
   }
 

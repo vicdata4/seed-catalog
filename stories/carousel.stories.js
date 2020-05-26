@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../carousel';
-import '../carousel-stepper';
+import '../stepper';
 import '../components/utils/card-examples';
 
 storiesOf('Seed Catalog', module)
@@ -95,7 +95,7 @@ storiesOf('Seed Catalog', module)
             <card-examples class="oran-g"></card-examples>
             <card-examples class="gre-e"></card-examples>
             <card-examples class="purp-l"></card-examples>
-            <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
+            <seed-stepper slot="stepper"></seed-stepper>
           </seed-carousel>
         </div>
 
@@ -120,7 +120,7 @@ storiesOf('Seed Catalog', module)
           <img style="width: 100%;" src="https://source.unsplash.com/1600x900/?nature" alt="carousel1">
           <img style="width: 100%;" src="https://source.unsplash.com/1600x900/?water" alt="carousel2">
           <img style="width: 100%;" src="https://source.unsplash.com/1600x900/?nature,water" alt="carousel4">
-          <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
+          <seed-stepper slot="stepper"></seed-stepper>
         </seed-carousel>
 
 
@@ -147,7 +147,7 @@ storiesOf('Seed Catalog', module)
             <card-examples class="oran-g" .width="${200}" .height="${200}"></card-examples>
             <card-examples class="gre-e" .width="${200}" .height="${200}"></card-examples>
             <card-examples class="purp-l" .width="${200}" .height="${200}"></card-examples>
-            <seed-carousel-stepper slot="stepper"></seed-carousel-stepper>
+            <seed-stepper slot="stepper"></seed-stepper>
           </seed-carousel>
         </div>
     `);
