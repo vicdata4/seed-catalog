@@ -45,7 +45,7 @@ storiesOf('Seed', module)
     </button>
     <br>
     <p class="paragraph gree">Seed Catalog is a free and open-source <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" class="sd-btn-mix sm black">web-components</a> library. It contains CSS-styles and standards-based web templates such as buttons, modals, dropdowns and other interface components.</p>
-    <p class="paragraph gree">We use
+    <p class="paragraph gree"> 
       <a href="https://lit-element.polymer-project.org/" target="_blank" class="sd-btn-mix sm black">LitElement</a>,
       <a href="https://javascript.info/" target="_blank" class="sd-btn-mix sm black">Javascript ES6</a>,
       <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" class="sd-btn-mix sm black">HTML5</a>
@@ -56,15 +56,16 @@ storiesOf('Seed', module)
       <button @click="${linkTo('Seed Style', 'Button Group')}" class="sd-btn-mix sm black"><i class="material-icons blue">touch_app</i>Button Group</button>
       <button @click="${linkTo('Seed Style', 'Button Icon')}" class="sd-btn-mix sm black"><i class="material-icons yellow">touch_app</i>Button Icon</button>
       <button @click="${linkTo('Seed Style', 'Button Input')}" class="sd-btn-mix sm black"><i class="material-icons red">edit</i>Input Field</button>
+      <button @click="${linkTo('Seed Catalog', 'Carousel')}" class="sd-btn-mix sm black"><i class="material-icons blue">settings_overscan</i>Carousel</button>
+      <button @click="${linkTo('Seed Catalog', 'Modal')}" class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modal</button>
       <button @click="${linkTo('Seed Catalog', 'Dropdown')}" class="sd-btn-mix sm black"><i class="material-icons blue-mate">keyboard_arrow_down</i>Dropdown</button>
       <button @click="${linkTo('Seed Catalog', 'Collapse')}" class="sd-btn-mix sm black"><i class="material-icons purple">keyboard_arrow_down</i>Collapse</button>
-      <button @click="${linkTo('Seed Catalog', 'Modal')}" class="sd-btn-mix sm black"><i class="material-icons yellow">web_asset</i>Modals</button>
-      <button @click="${linkTo('Seed Catalog', 'Stepper')}" class="sd-btn-mix sm black"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
       <button @click="${linkTo('Seed Catalog', 'Video Player')}" class="sd-btn-mix sm black"><i class="material-icons red">play_arrow</i>Video Player</button>
-      <button @click="${linkTo('Seed Catalog', 'Carousel')}" class="sd-btn-mix sm black"><i class="material-icons blue">settings_overscan</i>Carousel JS</button>
       <button @click="${linkTo('Seed Catalog', 'Progress ring')}" class="sd-btn-mix sm black"><i class="material-icons green">panorama_fish_eye</i>Progress ring</button>
+      <button @click="${linkTo('Seed Catalog', 'Stepper')}" class="sd-btn-mix sm black"><i class="material-icons green-mate">more_horiz</i>Stepper</button>
       <button @click="${linkTo('Seed Catalog', 'Spinner')}" class="sd-btn-mix sm black"><i class="material-icons orange">filter_tilt_shift</i>Spinner</button>
-      <br><br><br><br>
+  
+    <div class="separator"></div>
     <button class="sd-btn-mix black"><i class="material-icons yellow">star_border</i>Quick Start</button>
     <br><br>
     <p class="white-txt">Copy-paste the script near the end of your pages, right before the closing <span class="ora">${`</body>`}</span> tag.</p>

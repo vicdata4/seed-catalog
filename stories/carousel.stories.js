@@ -61,7 +61,7 @@ storiesOf('Seed Catalog', module)
         <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
     <span class="purp">import</span> <span class="ora">'seed-catalog/carousel.js</span>';
-    <span class="purp">import</span> <span class="ora">'seed-catalog/carousel-stepper.js</span>';
+    <span class="purp">import</span> <span class="ora">'seed-catalog/stepper.js</span>';
 
     <span class="blu">class</span> <span class="gree">MyComponent</span> <span class="blu">extends</span> <span class="gree">LitElement</span> {
       <span class="blu">static get</span> <span class="yellou">styles</span>() {
@@ -82,7 +82,7 @@ storiesOf('Seed Catalog', module)
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 3<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
             <span class="gre"><</span><span class="blu">div </span><span class="light-txt">class</span>=<span class="ora">"custom-class"</span><span class="gre">></span>Card 4<span class="gre">${`</`}</span><span class="blu">div</span><span class="gre">></span>
             <span class="gree">// Optional stepper</span>
-            <span class="gre"><</span><span class="blu">seed-carousel-stepper </span><span class="light-txt">slot</span>=<span class="ora">"stepper"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-carousel-stepper</span><span class="gre">></span>
+            <span class="gre"><</span><span class="blu">seed-stepper </span><span class="light-txt">slot</span>=<span class="ora">"stepper"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-stepper</span><span class="gre">></span>
           <span class="gre">${`</`}</span><span class="blu">seed-carousel</span><span class="gre">></span>
         <span>\`</span>;
       }
@@ -109,7 +109,7 @@ storiesOf('Seed Catalog', module)
         <span class="gre"><</span><span class="blu">img </span><span class="light-txt">src</span>=<span class="ora">"assets/photo2.jpg"</span><span class="gre">></span>
         <span class="gre"><</span><span class="blu">img </span><span class="light-txt">src</span>=<span class="ora">"assets/photo3.jpg"</span><span class="gre">></span>
         <span class="gre"><</span><span class="blu">img </span><span class="light-txt">src</span>=<span class="ora">"assets/photo4.jpg"</span><span class="gre">></span>
-        <span class="gre"><</span><span class="blu">seed-carousel-stepper </span><span class="light-txt">slot</span>=<span class="ora">"stepper"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-carousel-stepper</span><span class="gre">></span>
+        <span class="gre"><</span><span class="blu">seed-stepper </span><span class="light-txt">slot</span>=<span class="ora">"stepper"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-stepper</span><span class="gre">></span>
       <span class="gre">${`</`}</span><span class="blu">seed-carousel</span><span class="gre">></span>
 
 

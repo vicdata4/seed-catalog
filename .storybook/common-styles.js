@@ -18,6 +18,12 @@ export const storyCommonStyles = css`
     margin-bottom: 5px;
   }
 
+  .separator {
+    width: 100%;
+    border-bottom: 1px solid #4a4a4a;
+    margin: 40px 0;
+  }
+
   .light-txt {
     color: #53f7ef;
   }
