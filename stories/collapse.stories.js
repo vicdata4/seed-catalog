@@ -147,19 +147,6 @@ storiesOf('Seed Catalog', module)
     <span class="gre">${`</`}</span><span class="blu">seed-collapse</span><span class="gre">></span>
 
 </p>
-    <p class="package">
-    <span class="purp">import</span> <span class="ora">'seed-catalog/accordion.js</span>';
-    <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js</span>';
-
-    <span class="comm">// Alternatively you can use accordion tag</span>
-
-    <span class="gre"><</span><span class="blu">seed-accordion</span><span class="gre">></span>
-      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
-      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
-      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
-      <span class="gre"><</span><span class="blu">seed-dropdown</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-dropdown</span><span class="gre">></span>
-    <span class="gre">${`</`}</span><span class="blu">seed-accordion</span><span class="gre">></span>
-    </p>
         <seed-collapse basic>
             <seed-dropdown>
                 <button id="zlol" slot="button" class="sd-btn-mix black"><i class="material-icons">keyboard_arrow_down</i>Basic mode 1</button>
