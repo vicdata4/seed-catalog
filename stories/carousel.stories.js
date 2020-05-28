@@ -124,8 +124,7 @@ storiesOf('Seed Catalog', module)
         </seed-carousel>
 
 
-        <p class="w-hite">Carousel stepper <b>requirements</b></p>
-        <p class="w-hite">We provide a <b class="white-color">${`<carousel-css-stepper>`}</b> component but you can use whatever you want as long as you respect two rules.</p>
+        <p class="w-hite">Custom stepper <b>requirements</b></p>
         <p class="w-hite">· Slotted stepper component must contains a property called <b>'index'</b> which indicates the current step.</p>
         <p class="w-hite">· Also dispatch an event called <b>'set-selected-step'</b> when clicking on the step-button as below:</p>
         <p class="package">
