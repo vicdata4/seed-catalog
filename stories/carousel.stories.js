@@ -50,6 +50,11 @@ storiesOf('Seed Catalog', module)
         color: white;
       }
 
+      .carousel-width > img {
+        width: 100%;
+        min-width: 100%;
+      }
+
       @media screen and (min-width: 768px) {
         .carousel-container {
           width: 800px;
@@ -115,11 +120,11 @@ storiesOf('Seed Catalog', module)
 
 </p>
 
-        <seed-carousel>
-          <img style="width: 100%;" src="https://source.unsplash.com/1600x900/?random" alt="carousel3">
-          <img style="width: 100%;" src="https://source.unsplash.com/1600x900/?nature" alt="carousel1">
-          <img style="width: 100%;" src="https://source.unsplash.com/1600x900/?water" alt="carousel2">
-          <img style="width: 100%;" src="https://source.unsplash.com/1600x900/?nature,water" alt="carousel4">
+        <seed-carousel class="carousel-width">
+          <img src="https://source.unsplash.com/1600x900/?random" alt="carousel3">
+          <img src="https://source.unsplash.com/1600x900/?nature" alt="carousel1">
+          <img src="https://source.unsplash.com/1600x900/?water" alt="carousel2">
+          <img src="https://source.unsplash.com/1600x900/?nature,water" alt="carousel4">
           <seed-stepper slot="stepper"></seed-stepper>
         </seed-carousel>
 
