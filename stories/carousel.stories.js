@@ -100,7 +100,7 @@ storiesOf('Seed Catalog', module)
         </div>
 
 <p class="package"> 
-      <span class="ora">seed-carousel </span>></span> <span class="ora">img </span><span>${`{`}</span>
+      <span class="yellou">seed-carousel </span>></span> <span class="yellou">img </span><span>${`{`}</span>
         <span class="light-txt">width: </span><span class="reed">100%</span>;
       <span>${`}`}</span>
 

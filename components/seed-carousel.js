@@ -116,12 +116,15 @@ export class SeedCarousel extends LitElement {
    */
   setCarouselPosition(index) {
     const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
-    this.index = index;
 
-    const position = (cardWidth * this.index) - sideSpace;
-    this.smoothScroll(scrollLeft, position);
+    if (this.index !== index) {
+      this.index = index;
 
-    this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
+      const position = (cardWidth * this.index) - sideSpace;
+      this.smoothScroll(scrollLeft, position);
+
+      // this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
+    }
   }
 
   /**
