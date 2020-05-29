@@ -41,7 +41,6 @@ export class SeedCarousel extends LitElement {
     return {
       index: { type: Number, attribute: false },
       length: { type: Number, attribute: false },
-      cardWidth: { type: Number, attribute: false },
       speed: { type: Number }
     };
   }
@@ -50,7 +49,6 @@ export class SeedCarousel extends LitElement {
     super();
     this.index = 0;
     this.length = 0;
-    this.cardWidth = 0;
     this.speed = 200;
   }
 
