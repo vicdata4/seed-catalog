@@ -94,7 +94,7 @@ export class SeedCarousel extends LitElement {
    * and set the property to the slotted stepper.
    *
    */
-  setCurrentIndex() {
+  setIndexWhenScrolling() {
     const { scrollLeft, cardWidth, sideSpace, scrollWidth, clientWidth } = this.getCarouselParams();
     this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
 
@@ -109,10 +109,10 @@ export class SeedCarousel extends LitElement {
   }
 
   /**
-   * Set carrousel card position via javascript
+   * Set carrousel card position to selected index
    * @param {Number} index  Selected index from stepper
    */
-  setCarouselPosition(index) {
+  setPositionByIndex(index) {
     const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
 
     if (this.index !== index) {
@@ -134,10 +134,10 @@ export class SeedCarousel extends LitElement {
     this.length = this.shadowRoot.querySelector('slot:not([name])').assignedElements().length;
 
     await this.waitUntilSlotRendering();
-    this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setCurrentIndex.bind(this), 5));
+    this.shadowRoot.querySelector('.container').addEventListener('scroll', debounce(this.setIndexWhenScrolling.bind(this), 5));
 
     this.addEventListener('set-selected-step', e => {
-      this.setCarouselPosition(e.detail);
+      this.setPositionByIndex(e.detail);
     });
   }
 
