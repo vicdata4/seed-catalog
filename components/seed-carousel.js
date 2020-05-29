@@ -127,7 +127,12 @@ export class SeedCarousel extends LitElement {
    * Wait until slot rendering in order to get the first carousel card width
    */
   async waitUntilSlotRendering() {
-    this.shadowRoot.querySelector('slot').assignedElements()[0].updateComplete;
+    this.shadowRoot.querySelector('slot:not([name])').assignedElements()[0].updateComplete;
+  }
+
+  disconnectedCallback() {
+    this.shadowRoot.querySelector('.container').removeEventListener('scroll', this.setIndexWhenScrolling);
+    super.disconnectedCallback();
   }
 
   async firstUpdated() {
