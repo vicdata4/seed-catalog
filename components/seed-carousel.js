@@ -62,9 +62,9 @@ export class SeedCarousel extends LitElement {
     const cardWidth = this.shadowRoot.querySelector('slot:not([name])').assignedElements()[0].clientWidth;
     const carousel = this.shadowRoot.querySelector('.container');
     const { clientWidth, scrollLeft, scrollWidth } = carousel;
-    const sideSpace = (clientWidth - cardWidth) / 2;
+    const marginLeft = (clientWidth - cardWidth) / 2;
 
-    return { clientWidth, cardWidth, scrollLeft, sideSpace, scrollWidth };
+    return { clientWidth, cardWidth, scrollLeft, marginLeft, scrollWidth };
   }
 
   smoothScroll(start_, end) {
@@ -95,8 +95,8 @@ export class SeedCarousel extends LitElement {
    *
    */
   setIndexWhenScrolling() {
-    const { scrollLeft, cardWidth, sideSpace, scrollWidth, clientWidth } = this.getCarouselParams();
-    this.index = Math.round((scrollLeft + sideSpace) / cardWidth);
+    const { scrollLeft, cardWidth, marginLeft, scrollWidth, clientWidth } = this.getCarouselParams();
+    this.index = Math.round((scrollLeft + marginLeft) / cardWidth);
 
     if ((cardWidth * 2) < clientWidth) {
       if (scrollLeft === 0) this.index = 0;
@@ -113,12 +113,12 @@ export class SeedCarousel extends LitElement {
    * @param {Number} index  Selected index from stepper
    */
   setPositionByIndex(index) {
-    const { scrollLeft, cardWidth, sideSpace } = this.getCarouselParams();
+    const { scrollLeft, cardWidth, marginLeft } = this.getCarouselParams();
 
     if (this.index !== index) {
       this.index = index;
 
-      const position = (cardWidth * this.index) - sideSpace;
+      const position = (cardWidth * this.index) - marginLeft;
       this.smoothScroll(scrollLeft, position);
     }
   }
@@ -146,7 +146,7 @@ export class SeedCarousel extends LitElement {
       <div class="container">
         <slot></slot>
       </div>
-      <slot name="stepper" class="stepper"></slot>
+      <slot name="stepper"></slot>
     `;
   }
 }
