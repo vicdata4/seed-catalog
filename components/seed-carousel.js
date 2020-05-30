@@ -1,6 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
 import { mediaQueryTablet } from './utils/constants';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash-es/debounce';
 
 export class SeedCarousel extends LitElement {
   static get styles() {
@@ -54,7 +54,7 @@ export class SeedCarousel extends LitElement {
 
   /**
    * Return carousel params
-   * clientWidth, cardWidth, scrollLeft and sideSpace
+   * clientWidth, cardWidth, scrollLeft and marginLeft
    *
    * @return {Object}
    */

@@ -1,7 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { spy } from 'sinon';
 import '../../collapse.js';
-import '../../accordion';
 import '../../dropdown.js';
 
 describe('Collapse component', () => {
