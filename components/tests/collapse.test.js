@@ -54,15 +54,26 @@ describe('Collapse component', () => {
     expect(component.basic).to.be.true;
   });
 
-  it('set accordion component', async() => {
+  it('multi-dropdown collapse no-basic | click events', async() => {
     const component = await fixture(html`
-      <seed-accordion>
+      <seed-collapse>
         <seed-dropdown>
-          <button slot="button">Collapse</button>
+          <button id="col1" slot="button">Collapse</button>
           <p slot="content">Lorem ipsum</p>
         </seed-dropdown>
-      </seed-accordion>
-    `);
-    expect(component).not.to.be.null;
+        <seed-dropdown>
+          <button id="col2" slot="button">Collapse</button>
+          <p slot="content">Lorem ipsum</p>
+        </seed-dropdown>
+      </seed-collapse>
+  `);
+
+    const element = component.querySelectorAll('seed-dropdown');
+
+    element[0].shadowRoot.querySelector('slot[name=button]').click();
+    element[1].shadowRoot.querySelector('slot[name=button]').click();
+    element[1].shadowRoot.querySelector('slot[name=button]').click();
+
+    expect(component.basic).to.be.false;
   });
 });

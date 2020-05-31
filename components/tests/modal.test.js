@@ -2,7 +2,7 @@ import { expect, fixture, html, aTimeout } from '@open-wc/testing';
 import '../../modal.js';
 
 describe('Modal component', () => {
-  let el, button, header;
+  let el, button, header, footer;
   before(async() => {
     el = await fixture(html`
       <seed-modal>
@@ -15,13 +15,14 @@ describe('Modal component', () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </div>
         <div slot="footer">
-          <button>Close</button>
+          <button class="close">Close</button>
           <button>Send</button>
         </div>
       </seed-modal>
     `);
 
     header = el.shadowRoot.querySelector('slot[name="header"]');
+    footer = el.shadowRoot.querySelector('slot[name="footer"]');
     button = el.shadowRoot.querySelector('slot[name=button]');
     await header.assignedElements()[0].updateComplete;
   });
@@ -45,6 +46,18 @@ describe('Modal component', () => {
 
   it('close modal', async() => {
     header.assignedElements()[0].querySelector('.close').click();
+    await aTimeout(300);
+    await el.updateComplete;
+    expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;
+  });
+
+  it('open modal', () => {
+    button.click();
+    expect(el.shadowRoot.querySelector('.closed')).to.be.null;
+  });
+
+  it('close modal from footer', async() => {
+    footer.assignedElements()[0].querySelector('.close').click();
     await aTimeout(300);
     await el.updateComplete;
     expect(el.shadowRoot.querySelector('.closed')).not.to.be.null;

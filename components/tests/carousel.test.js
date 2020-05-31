@@ -1,4 +1,4 @@
-import { expect, fixture, html } from '@open-wc/testing';
+import { expect, fixture, html, aTimeout } from '@open-wc/testing';
 import '../../carousel.js';
 import '../../stepper.js';
 
@@ -40,11 +40,11 @@ describe('Carousel arrows stepper', () => {
   before(async() => {
     const component = html`
       <seed-carousel>
-        <div class="custom-class">Carousel 1</div>
-        <div class="custom-class">Carousel 2</div>
-        <div class="custom-class">Carousel 3</div>
-        <div class="custom-class">Carousel 4</div>
-        <div class="custom-class">Carousel 5</div>
+        <div style="width: 100%; height: 100px;">Carousel 1</div>
+        <div style="width: 100%; height: 100px;">Carousel 2</div>
+        <div style="width: 100%; height: 100px;">Carousel 3</div>
+        <div style="width: 100%; height: 100px;">Carousel 4</div>
+        <div style="width: 100%; height: 100px;">Carousel 5</div>
         <seed-stepper slot="stepper"></seed-stepper>
       </seed-carousel>
     `;
@@ -67,14 +67,15 @@ describe('Carousel arrows stepper', () => {
     expect(el.length).to.equal(5);
   });
 
-  it('click to stepper dot', () => {
+  it('click to stepper dot', async() => {
     stepperRef.assignedElements()[0].shadowRoot.querySelectorAll('button')[2].click();
+    await aTimeout(1000);
     expect(el.index).to.equal(2);
   });
 
-  it('dispatch touch move event', () => {
-    const ev = new Event('touchmove');
-    ev.touches = [{ clientX: 800, clientY: 0 }];
-    stepperRef.assignedElements()[0].dispatchEvent(ev);
+  it('carousel scroll left', async() => {
+    el.shadowRoot.querySelector('.container').scrollLeft = -200;
+    el.setIndexWhenScrolling();
+    await el.updateComplete;
   });
 });

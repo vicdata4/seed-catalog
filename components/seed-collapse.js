@@ -16,10 +16,13 @@ export class SeedCollapse extends LitElement {
 
   static get properties() {
     return {
-      speed: { type: String },
-      accordion: { type: Boolean, attribute: 'accordion' },
-      basic: { type: Boolean, attribute: 'basic' }
+      basic: { type: Boolean }
     };
+  }
+
+  constructor() {
+    super();
+    this.basic = false;
   }
 
   /**
@@ -30,7 +33,7 @@ export class SeedCollapse extends LitElement {
    */
   getDropdownList() {
     const dropdownList = this.querySelectorAll('seed-dropdown');
-    let slottedList = this.querySelector('slot');
+    let slottedList = this.querySelector('slot:not([name])');
     slottedList = (slottedList) ? slottedList.assignedElements() : [];
 
     return (dropdownList.length > 0) ? dropdownList : (slottedList.length > 0) ? slottedList : [];
