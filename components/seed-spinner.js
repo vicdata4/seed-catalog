@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element';
-import { spinner } from './utils/svg-icons';
 
 export class SeedSpinner extends LitElement {
   static get styles() {
@@ -35,12 +34,16 @@ export class SeedSpinner extends LitElement {
     this.background = 'rgba(0, 0, 0, 0.4)';
   }
 
-  firstUpdated() {
-    this.shadowRoot.querySelector('svg').style.stroke = this.color;
+  async firstUpdated() {
+    const slot = this.shadowRoot.querySelector('slot:not([name])');
+
+    if (slot.assignedElements()[0].nodeName === 'svg') {
+      this.shadowRoot.querySelector('slot:not([name])').assignedElements()[0].style.stroke = this.color;
+    }
     this.style.backgroundColor = this.background;
   }
 
   render() {
-    return html`${spinner}`;
+    return html`<slot></slot>`;
   }
 }

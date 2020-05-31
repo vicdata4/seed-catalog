@@ -33,18 +33,18 @@ describe('Carousel default mode', () => {
   });
 });
 
-describe('Carousel arrows stepper', () => {
+describe('Carousel stepper', () => {
   let el, stepper;
   let stepperRef;
 
   before(async() => {
     const component = html`
       <seed-carousel>
-        <div style="width: 100%; height: 100px;">Carousel 1</div>
-        <div style="width: 100%; height: 100px;">Carousel 2</div>
-        <div style="width: 100%; height: 100px;">Carousel 3</div>
-        <div style="width: 100%; height: 100px;">Carousel 4</div>
-        <div style="width: 100%; height: 100px;">Carousel 5</div>
+        <div style="width: 200px; height: 100px;">Carousel 1</div>
+        <div style="width: 200px; height: 100px;">Carousel 2</div>
+        <div style="width: 200px; height: 100px;">Carousel 3</div>
+        <div style="width: 200px; height: 100px;">Carousel 4</div>
+        <div style="width: 200px; height: 100px;">Carousel 5</div>
         <seed-stepper slot="stepper"></seed-stepper>
       </seed-carousel>
     `;
@@ -69,8 +69,16 @@ describe('Carousel arrows stepper', () => {
 
   it('click to stepper dot', async() => {
     stepperRef.assignedElements()[0].shadowRoot.querySelectorAll('button')[2].click();
-    await aTimeout(1000);
+    await aTimeout(300);
     expect(el.index).to.equal(2);
+  });
+
+  it('click to stepper dot 0', async() => {
+    const button = stepperRef.assignedElements()[0].shadowRoot.querySelectorAll('button');
+    const length = button.length;
+    button[length - 1].click();
+    await aTimeout(300);
+    expect(el.index).to.equal(4);
   });
 
   it('carousel scroll left', async() => {

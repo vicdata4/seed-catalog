@@ -1,11 +1,9 @@
 import { LitElement, html, css } from 'lit-element';
 import { MAX_DROP_HEIGHT } from './utils/constants';
-import { seedStyle } from '../styles';
 
 export class SeedDropdown extends LitElement {
   static get styles() {
     return [
-      seedStyle,
       css`
         :host {
           display: inline-block;
@@ -117,7 +115,7 @@ export class SeedDropdown extends LitElement {
 
   firstUpdated() {
     this.dropdown = this.shadowRoot.querySelector('.dropdown');
-    this.slotted = this.shadowRoot.querySelector('slot');
+    this.slotted = this.shadowRoot.querySelector('slot[name=button]');
 
     this.dropdownClickListener();
   }
