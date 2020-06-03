@@ -29,17 +29,12 @@ storiesOf('Seed Catalog', module)
     <button class="sd-btn red" @click="${() => { document.querySelector('.redx').style.visibility = 'visible'; }}">Show spinner</button>
     <button class="sd-btn green" @click="${() => { document.querySelector('.greenx').style.visibility = 'visible'; }}">Show spinner</button>
     <br><br>
-    <seed-spinner
-      class="bluex"
-      color="var(--seed-color-blue)"
-      background="#0d1314cf"
-      @click="${() => { document.querySelector('.bluex').style.visibility = 'hidden'; }}">
-      ${spinner}</seed-spinner>
-    <seed-spinner
-      class="redx"
-      color="var(--seed-color-red)"
-      @click="${() => { document.querySelector('.redx').style.visibility = 'hidden'; }}">
-      ${spinner}</seed-spinner>
+    <seed-spinner class="bluex" color="var(--seed-color-blue)" background="#0d1314cf" @click="${() => { document.querySelector('.bluex').style.visibility = 'hidden'; }}">
+      ${spinner}
+    </seed-spinner>
+    <seed-spinner class="redx" color="var(--seed-color-red)" @click="${() => { document.querySelector('.redx').style.visibility = 'hidden'; }}">
+      ${spinner}
+    </seed-spinner>
     <seed-spinner class="greenx" background="rgba(0, 0, 0, 0.2)" color="var(--seed-color-green)" @click="${() => { document.querySelector('.greenx').style.visibility = 'hidden'; }}">
       ${spinner}
     </seed-spinner>
