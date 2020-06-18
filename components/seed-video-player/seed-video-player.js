@@ -82,6 +82,12 @@ export class SeedVideoPlayer extends LitElement {
 
     this.waitingForLoadedDataListeners(video);
 
+    this.addEventListener('keydown', e => {
+      if (this.isFullScreen && e.keyCode === 27) {
+        this.openFullscreen();
+      }
+    });
+
     this.style.setProperty('--video-main-color', this.color);
   }
 
