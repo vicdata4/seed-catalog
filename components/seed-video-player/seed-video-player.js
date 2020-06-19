@@ -61,7 +61,7 @@ export class SeedVideoPlayer extends LitElement {
     this.isFullScreen = false;
 
     this.addEventListener('dblclick', () => {
-      this.openFullscreen();
+      this.fullScreenSwitch();
     });
   }
 
@@ -84,7 +84,7 @@ export class SeedVideoPlayer extends LitElement {
 
     this.addEventListener('keydown', e => {
       if (this.isFullScreen && e.keyCode === 27) {
-        this.openFullscreen();
+        this.fullScreenSwitch();
       }
     });
 
@@ -362,7 +362,7 @@ export class SeedVideoPlayer extends LitElement {
     return `${hours}${minutes}${seconds}`;
   }
 
-  openFullscreen() {
+  fullScreenSwitch() {
     const video = this.shadowRoot.querySelector('.video-container');
 
     if (!this.isFullScreen) {
@@ -447,7 +447,7 @@ export class SeedVideoPlayer extends LitElement {
               </div>
               <div class="controller-options-buttons">
                 <button class="btn-options">${settingsIcon}</button>
-                <button class="btn-options" @click="${this.openFullscreen}">
+                <button class="btn-options" @click="${this.fullScreenSwitch}">
                   ${!this.isFullScreen ? videoFullScreen : videoFullScreenExit}
                 </button>
               </div>
