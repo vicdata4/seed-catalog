@@ -146,6 +146,18 @@ export class SeedModal extends LitElement {
     });
   }
 
+  async waitUntilSlottedButton(slot) {
+    if (slot.assignedElements()[0]) {
+      await slot.assignedElements()[0].updateComplete;
+
+      slot.assignedElements().forEach(element => {
+        if (element.querySelector('.close')) {
+          element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
+        }
+      });
+    }
+  }
+
   /**
    * Set onClickListener to slotted buttons which contain .close class
    */
@@ -153,25 +165,8 @@ export class SeedModal extends LitElement {
     const footer = this.shadowRoot.querySelector('slot[name="footer"]');
     const header = this.shadowRoot.querySelector('slot[name="header"]');
 
-    if (footer.assignedElements()[0]) {
-      await footer.assignedElements()[0].updateComplete;
-
-      footer.assignedElements().forEach(element => {
-        if (element.querySelector('.close')) {
-          element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
-        }
-      });
-    }
-
-    if (header.assignedElements()[0]) {
-      await header.assignedElements()[0].updateComplete;
-
-      header.assignedElements().forEach(element => {
-        if (element.querySelector('.close')) {
-          element.querySelector('.close').addEventListener('click', this.closeModal.bind(this));
-        }
-      });
-    }
+    await this.waitUntilSlottedButton(footer);
+    await this.waitUntilSlottedButton(header);
   }
 
   async firstUpdated() {
