@@ -177,7 +177,7 @@ export class SeedModal extends LitElement {
 
   render() {
     return html`
-      <slot name="button" @click='${this.openModal}'></slot>
+      <slot name="button" @click="${this.openModal}"></slot>
       <div class="modal closed" style="align-items: ${this.centered ? 'center' : 'flex-start'}">
         <div class="modal-content">
           <slot name="header" class="header"></slot>
