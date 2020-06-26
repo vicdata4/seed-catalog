@@ -2,8 +2,8 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
-import '../spinner';
-import { spinner } from '../components/utils/svg-icons';
+import '../packages/spinner/seed-spinner';
+import { spinner } from '../packages/utils/svg-icons';
 
 storiesOf('Seed Catalog', module)
   .add('Spinner', () => html`

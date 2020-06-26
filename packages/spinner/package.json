@@ -1,0 +1,21 @@
+{
+    "name": "seed-spinner",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Spinner custom-element",
+    "author": "vicdata@outlook.com",
+    "main": "index.js",
+    "license": "MIT",
+    "homepage": "https://github.com/vicdata4/seed-catalog#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-spinner.git"
+    },
+    "bugs": {
+      "url": "https://github.com/vicdata4/seed-catalog/tree/master/components/seed-spinner/issues"
+    },
+    "dependencies": {
+      "lit-element": "^2.0.1"
+    }
+  }
+  

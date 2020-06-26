@@ -2,7 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
-import '../stepper';
+import '../packages/stepper/seed-stepper';
 
 storiesOf('Seed Catalog', module)
   .add('Stepper', () => html`

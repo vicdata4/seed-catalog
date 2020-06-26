@@ -1,0 +1,21 @@
+{
+    "name": "seed-progress-ring",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Progress ring custom-element",
+    "author": "vicdata@outlook.com",
+    "main": "index.js",
+    "license": "MIT",
+    "homepage": "https://github.com/vicdata4/seed-catalog#readme",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-progress-ring.git"
+    },
+    "bugs": {
+      "url": "https://github.com/vicdata4/seed-catalog/tree/master/components/seed-progress-ring/issues"
+    },
+    "dependencies": {
+      "lit-element": "^2.0.1"
+    }
+  }
+  

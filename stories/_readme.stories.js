@@ -3,7 +3,6 @@ import { linkTo } from '@storybook/addon-links';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
-import '../components/seed-dropdown';
 
 storiesOf('Seed', module)
   .add('Intro', () => html`

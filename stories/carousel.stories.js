@@ -2,9 +2,9 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
-import '../carousel';
-import '../stepper';
-import '../components/utils/card-examples';
+import '../packages/carousel/seed-carousel';
+import '../packages/stepper/seed-stepper';
+import '../packages/utils/card-examples';
 
 storiesOf('Seed Catalog', module)
   .add('Carousel', () => html`
