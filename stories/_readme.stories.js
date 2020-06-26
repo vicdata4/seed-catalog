@@ -1,7 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { linkTo } from '@storybook/addon-links';
 import { html } from 'lit-html';
-import { seedStyle } from '../styles';
+import { seedStyle } from '../packages/styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 
 storiesOf('Seed', module)

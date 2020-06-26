@@ -1,0 +1,1 @@
+export { seedStyle } from './styles';

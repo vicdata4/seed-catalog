@@ -1,7 +1,7 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
-import { seedStyle } from '../styles';
+import { seedStyle } from '../packages/styles';
 import '../packages/dropdown/seed-dropdown';
 
 storiesOf('Seed Catalog', module)

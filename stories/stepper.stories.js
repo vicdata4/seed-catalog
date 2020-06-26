@@ -1,6 +1,6 @@
 import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
-import { seedStyle } from '../styles';
+import { seedStyle } from '../packages/styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import '../packages/stepper/seed-stepper';
 

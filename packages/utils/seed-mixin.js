@@ -1,4 +1,4 @@
-import { seedStyle } from '../../styles';
+import { seedStyle } from '../styles';
 
 function dedupeMixin(mixin) {
   return superClass => {

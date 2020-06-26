@@ -1,3 +1,3 @@
-![](../../logo.png?v=4&s=100)
+![](../utils/logo.png?v=4&s=100)
 
 ## Seed Collapse
