@@ -1,7 +1,7 @@
 {
   "name": "@seed-catalog/carousel",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Carousel custom-element",
   "author": "vicdata@outlook.com",
   "main": "index.js",
@@ -9,10 +9,8 @@
   "homepage": "https://github.com/vicdata4/seed-catalog#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel/issues"
+    "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel.git",
+    "directory": "packages/carousel"
   },
   "dependencies": {
     "lit-element": "^2.0.1",
@@ -21,6 +19,11 @@
   "directories": {
     "test": "tests"
   },
+  "keywords": [
+    "carousel",
+    "seed-catalog",
+    "web-components"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }

@@ -76,7 +76,7 @@ storiesOf('Seed', module)
     <span class="light-txt">"dependencies"</span>: {
       ...
 
-      <span class="light-txt">"seed-catalog"</span>: <span class="ora">"git://github.com/vicdata4/seed-catalog.git"</span>
+      <span class="light-txt">"@seed-catalog/carousel"</span>: <span class="ora">"1.0.2"</span>
     }
     </p>
     <p class="white-txt">Execute from command line</p>
@@ -85,17 +85,17 @@ storiesOf('Seed', module)
     </p>
     <p class="white-txt">Import styles</p>
     <p class="package">
-    <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
+    <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'@seed-catalog/styles.js'</span>;
     </p>
     <p class="white-txt">Import web-component</p>
     <p class="package">
-    <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js'</span>;
+    <span class="purp">import</span> <span class="ora">'@seed-catalog/dropdown.js'</span>;
     </p>
     <p class="white-txt">Use example</p>
     <p class="package">
     <span class="purp">import</span> { <span class="light-txt">LitElement</span>, <span class="light-txt">html</span>, <span class="light-txt">css</span></span> } <span class="purp">from</span> <span class="ora">'lit-element'</span>;
-    <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'seed-catalog/styles.js'</span>;
-    <span class="purp">import</span> <span class="ora">'seed-catalog/dropdown.js</span>';
+    <span class="purp">import</span> { <span class="light-txt">seedStyle</span> } <span class="purp">from</span> <span class="ora">'@seed-catalog/styles.js'</span>;
+    <span class="purp">import</span> <span class="ora">'@seed-catalog/dropdown.js</span>';
 
     <span class="blu">class</span> <span class="gree">MyComponent</span> <span class="blu">extends</span> <span class="gree">LitElement</span> {
       <span class="blu">static get</span> <span class="yellou">styles</span>() {

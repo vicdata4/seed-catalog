@@ -14,3 +14,5 @@ Npm
 ```
 npm install @seed-catalog/carousel
 ```
+
+Link: https://www.npmjs.com/package/@seed-catalog/carousel

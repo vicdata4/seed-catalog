@@ -27,7 +27,7 @@ Copy-paste the script near the end of your pages, right before the closing `</bo
 ```js
 "dependencies": {
     ...
-    "@seed-catalog/carousel": "1.0.1"
+    "@seed-catalog/carousel": "1.0.2"
 }
 ```
 
@@ -69,8 +69,8 @@ Material icons is integrated as dependency of this class, so you can create more
 ```js
 
 import { LitElement, css } from 'lit-element';
-import { seedStyle } from 'seed-catalog/styles.js';
-import 'seed-catalog/dropdown.js';
+import { seedStyle } from '@seed-catalog/styles.js';
+import '@seed-catalog/dropdown.js';
 
 class MyComponent extends LitElement {
     static get styles() {
