@@ -1,5 +1,4 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
-import { mediaQueryTablet } from '../../utils/constants';
 import debounce from 'lodash-es/debounce';
 
 export class SeedCarousel extends LitElement {
@@ -32,7 +31,7 @@ export class SeedCarousel extends LitElement {
           display: none;
         }
 
-        @media screen and (min-width: ${unsafeCSS(mediaQueryTablet)}) {}
+        @media screen and (min-width: ${unsafeCSS('768px')}) {}
       `
     ];
   }

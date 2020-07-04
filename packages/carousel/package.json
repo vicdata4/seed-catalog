@@ -1,22 +1,27 @@
 {
-    "name": "seed-carousel",
-    "private": true,
-    "version": "1.0.0",
-    "description": "Carousel custom-element",
-    "author": "vicdata@outlook.com",
-    "main": "index.js",
-    "license": "MIT",
-    "homepage": "https://github.com/vicdata4/seed-catalog#readme",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel.git"
-    },
-    "bugs": {
-      "url": "https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel/issues"
-    },
-    "dependencies": {
-      "lit-element": "^2.0.1",
-      "lodash.debounce": "^4.0.8"
-    }
+  "name": "@seed-catalog/carousel",
+  "private": false,
+  "version": "1.0.1",
+  "description": "Carousel custom-element",
+  "author": "vicdata@outlook.com",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/vicdata4/seed-catalog#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.0.1",
+    "lodash.debounce": "^4.0.8"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
-  
+}

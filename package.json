@@ -1,5 +1,5 @@
 {
-  "name": "seed-catalog",
+  "name": "@seed-catalog/root",
   "private": true,
   "version": "1.0.0",
   "description": "Seed-catalog is a free and open-source web-components library. It contains CSS-styles and standards-based web templates such as buttons, modals, dropdowns and other interface components.",
