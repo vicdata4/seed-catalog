@@ -1,5 +1,5 @@
 import { LitElement, html, css, unsafeCSS } from 'lit-element';
-import debounce from 'lodash-es/debounce';
+import debounce from 'lodash.debounce';
 
 export class SeedCarousel extends LitElement {
   static get styles() {

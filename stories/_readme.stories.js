@@ -76,7 +76,7 @@ storiesOf('Seed', module)
     <span class="light-txt">"dependencies"</span>: {
       ...
 
-      <span class="light-txt">"@seed-catalog/carousel"</span>: <span class="ora">"1.0.2"</span>
+      <span class="light-txt">"@seed-catalog/carousel"</span>: <span class="ora">"1.0.3"</span>
     }
     </p>
     <p class="white-txt">Execute from command line</p>

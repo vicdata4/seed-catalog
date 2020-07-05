@@ -27,7 +27,7 @@ Copy-paste the script near the end of your pages, right before the closing `</bo
 ```js
 "dependencies": {
     ...
-    "@seed-catalog/carousel": "1.0.2"
+    "@seed-catalog/carousel": "1.0.3"
 }
 ```
 

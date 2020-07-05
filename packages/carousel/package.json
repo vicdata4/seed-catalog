@@ -1,15 +1,16 @@
 {
   "name": "@seed-catalog/carousel",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Carousel custom-element",
   "author": "vicdata@outlook.com",
   "main": "index.js",
+  "module": "index.js",
   "license": "MIT",
   "homepage": "https://github.com/vicdata4/seed-catalog#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-carousel.git",
+    "url": "https://github.com/vicdata4/seed-catalog",
     "directory": "packages/carousel"
   },
   "dependencies": {
@@ -24,7 +25,10 @@
     "seed-catalog",
     "web-components"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.15"
   }
 }

@@ -15,4 +15,37 @@ Npm
 npm install @seed-catalog/carousel
 ```
 
+How to use
+
+```js
+import { LitElement, html, css } from 'lit-element';
+import '@seed-catalog/carousel.js';
+import '@seed-catalog/stepper.js';
+
+class MyComponent extends LitElement {
+  static get styles() {
+    return [
+      css`
+        .custom-class {
+            ...
+        }
+        `
+    ];
+  }
+
+  render() {
+    return html`
+      <seed-carousel>
+        <div class="custom-class">Card 1</div>
+        <div class="custom-class">Card 2</div>
+        <div class="custom-class">Card 3</div>
+        <div class="custom-class">Card 4</div>
+        // Optional stepper
+        <seed-stepper slot="stepper"></seed-stepper>
+      </seed-carousel>
+    `;
+  }
+}
+```
+
 Link: https://www.npmjs.com/package/@seed-catalog/carousel
