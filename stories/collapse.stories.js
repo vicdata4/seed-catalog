@@ -2,7 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import { seedStyle } from '../packages/styles';
-import '../packages/dropdown/seed-dropdown';
+import '../packages/dropdown';
 import '../packages/collapse/seed-collapse';
 
 storiesOf('Seed Catalog', module)

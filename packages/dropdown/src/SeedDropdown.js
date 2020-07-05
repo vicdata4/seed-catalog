@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element';
-import { MAX_DROP_HEIGHT } from '../../utils/constants';
 
 export class SeedDropdown extends LitElement {
   static get styles() {
@@ -74,7 +73,7 @@ export class SeedDropdown extends LitElement {
     const isOpen = this.dropdown.style.height === 'auto';
 
     this.dropdown.style.height = isOpen ? 'unset' : 'auto';
-    this.dropdown.style.maxHeight = isOpen ? '0' : MAX_DROP_HEIGHT;
+    this.dropdown.style.maxHeight = isOpen ? '0' : '600px';
 
     this.rotateIcon(isOpen ? '0' : '180');
   }
