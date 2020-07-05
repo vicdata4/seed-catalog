@@ -1,21 +1,30 @@
 {
-    "name": "seed-collapse",
-    "private": true,
-    "version": "1.0.0",
-    "description": "Collapse custom-element",
-    "author": "vicdata@outlook.com",
-    "main": "index.js",
-    "license": "MIT",
-    "homepage": "https://github.com/vicdata4/seed-catalog#readme",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-collapse.git"
-    },
-    "bugs": {
-      "url": "https://github.com/vicdata4/seed-catalog/tree/master/components/seed-collapse/issues"
-    },
-    "dependencies": {
-      "lit-element": "^2.0.1"
-    }
+  "name": "@seed-catalog/collapse",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Collapse custom-element",
+  "author": "vicdata@outlook.com",
+  "main": "index.js",
+  "module": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/vicdata4/seed-catalog#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vicdata4/seed-catalog",
+    "directory": "packages/collapse"
+  },
+  "dependencies": {
+    "lit-element": "^2.0.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [
+    "collapse",
+    "seed-catalog",
+    "web-components"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
-  
+}

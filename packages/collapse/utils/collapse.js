@@ -1,4 +1,4 @@
-import { MAX_DROP_HEIGHT } from '../../utils/constants';
+const MAX_DROP_HEIGHT = '600px';
 
 /**
  * Set close-collapse transition values

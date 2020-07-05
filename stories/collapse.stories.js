@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 import { seedStyle } from '../packages/styles';
 import '../packages/dropdown';
-import '../packages/collapse/seed-collapse';
+import '../packages/collapse';
 
 storiesOf('Seed Catalog', module)
   .add('Collapse', () => html`
