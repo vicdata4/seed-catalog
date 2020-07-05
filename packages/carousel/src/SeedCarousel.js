@@ -104,7 +104,11 @@ export class SeedCarousel extends LitElement {
       }
     }
 
-    this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0].index = this.index;
+    const stepper = this.shadowRoot.querySelector('slot[name=stepper]').assignedElements()[0];
+
+    if (stepper) {
+      stepper.index = this.index;
+    }
   }
 
   /**

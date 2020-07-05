@@ -1,7 +1,7 @@
 {
   "name": "@seed-catalog/carousel",
   "private": false,
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Carousel custom-element",
   "author": "vicdata@outlook.com",
   "main": "index.js",
