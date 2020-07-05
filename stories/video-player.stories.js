@@ -2,7 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../packages/styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
-import '../packages/video-player/seed-video-player';
+import '../packages/video-player';
 
 storiesOf('Seed Catalog', module)
   .add('Video Player', () => html`

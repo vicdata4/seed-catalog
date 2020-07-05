@@ -1,21 +1,27 @@
 {
-    "name": "seed-stepper",
-    "private": true,
-    "version": "1.0.0",
-    "description": "Stepper custom-element",
-    "author": "vicdata@outlook.com",
-    "main": "index.js",
-    "license": "MIT",
-    "homepage": "https://github.com/vicdata4/seed-catalog#readme",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/vicdata4/seed-catalog/tree/master/components/seed-stepper.git"
-    },
-    "bugs": {
-      "url": "https://github.com/vicdata4/seed-catalog/tree/master/components/seed-stepper/issues"
-    },
-    "dependencies": {
-      "lit-element": "^2.0.1"
-    }
+  "name": "@seed-catalog/stepper",
+  "private": false,
+  "version": "1.0.1",
+  "description": "Stepper custom-element",
+  "author": "vicdata@outlook.com",
+  "main": "index.js",
+  "module": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/vicdata4/seed-catalog#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vicdata4/seed-catalog",
+    "directory": "packages/stepper"
+  },
+  "dependencies": {
+    "lit-element": "^2.0.1"
+  },
+  "keywords": [
+    "stepper",
+    "seed-catalog",
+    "web-components"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
-  
+}

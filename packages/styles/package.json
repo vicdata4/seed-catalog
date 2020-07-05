@@ -1,8 +1,8 @@
 {
-  "name": "@seed-catalog/spinner",
+  "name": "@seed-catalog/styles",
   "private": false,
   "version": "1.0.0",
-  "description": "Spinner custom-element",
+  "description": "Seed css styles",
   "author": "vicdata@outlook.com",
   "main": "index.js",
   "module": "index.js",
@@ -11,13 +11,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/vicdata4/seed-catalog",
-    "directory": "packages/spinner"
+    "directory": "packages/styles"
   },
   "dependencies": {
     "lit-element": "^2.0.1"
   },
   "keywords": [
-    "spinner",
+    "styles",
+    "css",
     "seed-catalog",
     "web-components"
   ],

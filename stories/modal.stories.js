@@ -3,7 +3,7 @@ import { html } from 'lit-html';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
 
 import { seedStyle } from '../packages/styles';
-import '../packages/modal/seed-modal';
+import '../packages/modal';
 
 storiesOf('Seed Catalog', module)
   .add('Modal', () => html`

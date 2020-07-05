@@ -2,7 +2,7 @@ import { storiesOf } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
 import { seedStyle } from '../packages/styles';
 import { storyCommonStyles, cssTemplateColors } from '../.storybook/common-styles';
-import '../packages/progress-ring/seed-progress-ring';
+import '../packages/progress-ring';
 
 storiesOf('Seed Catalog', module)
   .add('Progress Ring', () => html`

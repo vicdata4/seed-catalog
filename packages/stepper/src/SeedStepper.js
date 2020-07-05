@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element';
-import { empty } from '../../utils/constants';
 
 export class SeedStepper extends LitElement {
   static get styles() {
@@ -70,14 +69,14 @@ export class SeedStepper extends LitElement {
   }
 
   firstUpdated() {
-    this.array = new Array(this.parentNode.length || this.size).fill(empty);
+    this.array = new Array(this.parentNode.length || this.size).fill('');
   }
 
   render() {
     return html`
       ${this.array.map((x, i) => html`
         <button
-          class="dot${this.square ? ' square' : empty}"
+          class="dot${this.square ? ' square' : ''}"
           @click="${() => this.setPosition(i)}" id="${`a${i}`}"
           .style="background-color: ${i === this.index ? (this.colorActive || 'white') : this.colorBack}"
           aria-label="${i}"

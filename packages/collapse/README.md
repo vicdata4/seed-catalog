@@ -19,8 +19,8 @@ How to use
 ```js
 import { LitElement, html, css } from 'lit-element';
 import { seedStyle } from '@seed-catalog/styles.js';
-import 'seed-catalog/collapse';
-import 'seed-catalog/dropdown';
+import '@seed-catalog/collapse';
+import '@seed-catalog/dropdown';
 
 class MyComponent extends LitElement {
   static get styles() {
