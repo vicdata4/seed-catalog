@@ -1,6 +1,6 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { spy } from 'sinon';
-import '../seed-dropdown.js';
+import '../index.js';
 
 describe('Dropdown component', () => {
   let el, button, dropdown;

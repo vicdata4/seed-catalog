@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@open-wc/testing';
-import '../seed-stepper.js';
+import '../index.js';
 
 describe('Stepper component', () => {
   let el, buttons;

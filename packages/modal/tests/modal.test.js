@@ -1,5 +1,5 @@
 import { expect, fixture, html, aTimeout } from '@open-wc/testing';
-import '../seed-modal.js';
+import '../index.js';
 
 describe('Modal component', () => {
   let el, button, header, footer;

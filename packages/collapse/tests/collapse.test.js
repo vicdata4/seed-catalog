@@ -1,7 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { spy } from 'sinon';
-import '../../collapse/seed-collapse';
-import '../../dropdown/seed-dropdown';
+import '../index.js';
+import '../../dropdown';
 
 describe('Collapse component', () => {
   let el, submitSpy;

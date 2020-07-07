@@ -1,6 +1,6 @@
 import { expect, fixture, html, aTimeout } from '@open-wc/testing';
-import '../seed-carousel.js';
-import '../../stepper/seed-stepper.js';
+import '../index.js';
+import '../../stepper';
 
 describe('Carousel default mode', () => {
   let el, stepper;

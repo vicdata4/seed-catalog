@@ -31,12 +31,6 @@ Copy-paste the script near the end of your pages, right before the closing `</bo
 }
 ```
 
-### Run tests
-
-`npm run test`
-
-Karma coverage
-
 ## Styles
 
 - [Button](https://seed-catalog.com/?path=/story/seed-style--button)
