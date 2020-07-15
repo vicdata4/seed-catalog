@@ -63,8 +63,8 @@ Material icons is integrated as dependency of this class, so you can create more
 ```js
 
 import { LitElement, css } from 'lit-element';
-import { seedStyle } from '@seed-catalog/styles.js';
-import '@seed-catalog/dropdown.js';
+import { seedStyle } from '@seed-catalog/styles';
+import '@seed-catalog/dropdown';
 
 class MyComponent extends LitElement {
     static get styles() {
