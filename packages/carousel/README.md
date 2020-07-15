@@ -19,8 +19,8 @@ How to use
 
 ```js
 import { LitElement, html, css } from 'lit-element';
-import '@seed-catalog/carousel.js';
-import '@seed-catalog/stepper.js';
+import '@seed-catalog/carousel';
+import '@seed-catalog/stepper';
 
 class MyComponent extends LitElement {
   static get styles() {

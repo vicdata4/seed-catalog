@@ -1,7 +1,7 @@
 {
   "name": "@seed-catalog/collapse",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Collapse custom-element",
   "author": "vicdata@outlook.com",
   "main": "index.js",
