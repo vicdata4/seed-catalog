@@ -27,6 +27,12 @@ class MyComponent extends LitElement {
       
       <seed-progress-ring .percent="20" text="%"></seed-progress-ring>
 
+      <seed-progress-ring .percent="20" custom>
+        <div slot="custom">
+          ...
+        </div>
+      </seed-progress-ring>
+
       <seed-progress-ring .percent="70" text="Uploading"></seed-progress-ring>
 
       <seed-progress-ring .percent="10" text="Uploading" only-text></seed-progress-ring>
