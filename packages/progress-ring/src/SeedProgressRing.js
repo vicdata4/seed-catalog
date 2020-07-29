@@ -69,7 +69,8 @@ export class SeedProgressRing extends LitElement {
       ringColor: { type: String },
       ringBackground: { type: String },
       background: { type: String },
-      textColor: { type: String }
+      textColor: { type: String },
+      text: { type: String },
     };
   }
 
@@ -81,6 +82,7 @@ export class SeedProgressRing extends LitElement {
     this.background = null;
     this.textColor = 'white';
     this.onlyText = false;
+    this.text = '';
   }
 
   setPercent(percent) {
@@ -111,7 +113,7 @@ export class SeedProgressRing extends LitElement {
         <circle class="progress-ring-bar" cx="100" cy="100" fill="transparent"></circle>
       </svg>
       <div class="percent-progress-value">
-        <div class="percent-value" .style="color: ${this.textColor}">${ !this.onlyText ? this.percent : ''}<slot name="text"></slot></div>
+        <div class="percent-value" .style="color: ${this.textColor}">${ !this.onlyText ? this.percent : ''}${this.text}</div>
       </div>
     `;
   }

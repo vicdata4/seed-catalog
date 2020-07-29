@@ -15,17 +15,15 @@ storiesOf('Seed Catalog', module)
     <button class="sd-btn-mix black title"><i class="material-icons blue">panorama_fish_eye</i>Progress ring</button>
     <br><br>
         <p class="package">
+    <span class="gree">Examples</span>
+
     <span class="gre"><</span><span class="blu">seed-progress-ring</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
     
-    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt">.percent</span>=<span class="ora">"20"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt">.percent</span>=<span class="ora">"20"</span> <span class="light-txt">text</span>=<span class="ora">"%"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
 
-    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt">.percent</span>=<span class="ora">"20"</span><span class="gre">></span>
-      <span class="gre"><</span><span class="blu">span</span> <span class="light-txt">slot</span>=<span class="ora">"text"</span><span class="gre">></span>%<span class="gre">${`</`}</span><span class="blu">span</span><span class="gre">></span>
-    <span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt">.percent</span>=<span class="ora">"70"</span> <span class="light-txt">text</span>=<span class="ora">"Uploading"</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
 
-    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt">.percent</span>=<span class="ora">"20"</span> <span class="light-txt">only-text</span><span class="gre">></span>
-      <span class="gre"><</span><span class="blu">span</span> <span class="light-txt">slot</span>=<span class="ora">"text"</span><span class="gre">></span>%<span class="gre">${`</`}</span><span class="blu">span</span><span class="gre">></span>
-    <span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
+    <span class="gre"><</span><span class="blu">seed-progress-ring </span><span class="light-txt">.percent</span>=<span class="ora">"10"</span> <span class="light-txt">text</span>=<span class="ora">"Uploading"</span> <span class="light-txt">only-text</span><span class="gre">></span><span class="gre">${`</`}</span><span class="blu">seed-progress-ring</span><span class="gre">></span>
     
     <span class="gree">Optional attributes: ringColor / ringBackground / background / textColor</span>
 
@@ -33,10 +31,10 @@ storiesOf('Seed Catalog', module)
         </p>
         <div>
             <seed-progress-ring></seed-progress-ring>
-            <seed-progress-ring .percent="${20}" ringColor="#de3d4c"><span slot="text">%</span></seed-progress-ring>
-            <seed-progress-ring .percent="${40}" ringColor="#3f76b6"></seed-progress-ring>
+            <seed-progress-ring .percent="${20}" ringColor="#de3d4c" text="%"></seed-progress-ring>
+            <seed-progress-ring .percent="${40}" ringColor="#3f76b6" text="%"></seed-progress-ring>
             <seed-progress-ring .percent="${60}" ringColor="#22ac41"></seed-progress-ring>
-            <seed-progress-ring .percent="${80}" ringColor="#e6af0e" only-text><span slot="text">Uploading</span></seed-progress-ring>
+            <seed-progress-ring .percent="${80}" ringColor="#e6af0e" text="Uploading" only-text></seed-progress-ring>
             <seed-progress-ring .percent="${100}"></seed-progress-ring>
         </div> 
     `);

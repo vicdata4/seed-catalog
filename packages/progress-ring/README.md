@@ -24,9 +24,13 @@ class MyComponent extends LitElement {
   render() {
     return html`
       <seed-progress-ring></seed-progress-ring>
-    
-      <seed-progress-ring .percent="20"></seed-progress-ring>
-    
+      
+      <seed-progress-ring .percent="20" text="%"></seed-progress-ring>
+
+      <seed-progress-ring .percent="70" text="Uploading"></seed-progress-ring>
+
+      <seed-progress-ring .percent="10" text="Uploading" only-text></seed-progress-ring>
+      
       Optional attributes: ringColor / ringBackground / background / textColor
 
       <seed-progress-ring 
