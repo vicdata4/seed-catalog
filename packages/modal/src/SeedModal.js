@@ -92,7 +92,7 @@ export class SeedModal extends LitElement {
     return {
       modalBackground: { type: String },
       centered: { type: Boolean },
-      clickOut: { type: Boolean, attribute: 'click-out' }
+      hideClickOut: { type: Boolean, attribute: 'hide-click-out' }
     };
   }
 
@@ -100,7 +100,7 @@ export class SeedModal extends LitElement {
     super();
     this.modalBackground = 'rgba(0, 0, 0, .4)';
     this.centered = false;
-    this.clickOut = false;
+    this.hideClickOut = false;
   }
 
   /**
@@ -172,7 +172,7 @@ export class SeedModal extends LitElement {
 
   async firstUpdated() {
     this.modal = this.shadowRoot.querySelector('.modal');
-    if (!this.clickOut) this.modalClickListener();
+    if (!this.hideClickOut) this.modalClickListener();
     this.closeModalSlottedButton();
   }
 
