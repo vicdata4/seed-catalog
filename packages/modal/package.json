@@ -1,7 +1,7 @@
 {
   "name": "@seed-catalog/modal",
   "private": false,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Modal custom-element",
   "author": "vicdata@outlook.com",
   "main": "index.js",

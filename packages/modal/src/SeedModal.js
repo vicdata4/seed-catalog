@@ -7,6 +7,7 @@ export class SeedModal extends LitElement {
         :host {
           overflow: hidden;
           --modal-content-padding: 0.8rem 1rem;
+          --modal-content-background: white;
         }
 
         .modal {
@@ -28,7 +29,7 @@ export class SeedModal extends LitElement {
         }
 
         .modal-content {
-          background-color: white;
+          background-color: var(--modal-content-background);
           width: 95%;
           margin-top: -50px;
           transition: margin 0.3s;
@@ -92,7 +93,8 @@ export class SeedModal extends LitElement {
     return {
       modalBackground: { type: String },
       centered: { type: Boolean },
-      hideClickOut: { type: Boolean, attribute: 'hide-click-out' }
+      hideClickOut: { type: Boolean, attribute: 'hide-click-out' },
+      noStyles: { type: Boolean, attribute: 'no-styles' }
     };
   }
 
@@ -101,6 +103,7 @@ export class SeedModal extends LitElement {
     this.modalBackground = 'rgba(0, 0, 0, .4)';
     this.centered = false;
     this.hideClickOut = false;
+    this.noStyles = false;
   }
 
   /**
@@ -174,6 +177,11 @@ export class SeedModal extends LitElement {
     this.modal = this.shadowRoot.querySelector('.modal');
     if (!this.hideClickOut) this.modalClickListener();
     this.closeModalSlottedButton();
+
+    if (this.noStyles) {
+      this.style.setProperty('--modal-content-padding', '0');
+      this.style.setProperty('--modal-content-background', 'transparent');
+    }
   }
 
   render() {
