@@ -2,7 +2,7 @@
 
 ## Seed Catalog ![#fff](https://placehold.it/15/fff/000000?text=+)![#bf4545](https://placehold.it/15/bf4545/000000?text=+)![#fff](https://placehold.it/15/fff/000000?text=+)![#3f76b6](https://placehold.it/15/3f76b6/000000?text=+)![#fff](https://placehold.it/15/fff/000000?text=+)![#1C8281](https://placehold.it/15/1C8281/000000?text=+)![#fff](https://placehold.it/15/fff/000000?text=+)![#e6af0e](https://placehold.it/15/e6af0e/000000?text=+)![#fff](https://placehold.it/15/fff/000000?text=+)![#903e8d](https://placehold.it/15/903e8d/000000?text=+)![#fff](https://placehold.it/15/fff/000000?text=+)![#2f2d2d](https://placehold.it/15/2f2d2d/000000?text=+)
 
-### [Storybook](https://seed-catalog.com)
+### [Storybook](https://vicdata4.github.io/seed-catalog)
 
 Seed-catalog is an open-source `web-components library`. It contains CSS-styles and standards-based web templates such as buttons, modals, dropdowns and other interface components.
 
@@ -33,22 +33,22 @@ Copy-paste the script near the end of your pages, right before the closing `</bo
 
 ## Styles
 
-- [Button](https://seed-catalog.com/?path=/story/seed-style--button)
-- [Button Group](https://seed-catalog.com/?path=/story/seed-style--button-group)
-- [Button Icon](https://seed-catalog.com/?path=/story/seed-style--button-icon)
-- [Button Input](https://seed-catalog.com/?path=/story/seed-style--button-input)
+- [Button](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button)
+- [Button Group](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button-group)
+- [Button Icon](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button-icon)
+- [Button Input](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button-input)
 
 
 ## Catalog
 
-- [Carousel](https://seed-catalog.com/?path=/story/seed-catalog--carousel)
-- [Collapse](https://seed-catalog.com/?path=/story/seed-catalog--collapse)
-- [Dropdown](https://seed-catalog.com/?path=/story/seed-catalog--dropdown)
-- [Modal](https://seed-catalog.com/?path=/story/seed-catalog--modal)
-- [Progress ring](https://seed-catalog.com/?path=/story/seed-catalog--progress-ring)
-- [Spinner](https://seed-catalog.com/?path=/story/seed-catalog--spinner)
-- [Stepper](https://seed-catalog.com/?path=/story/seed-catalog--stepper)
-- [Video Player](https://seed-catalog.com/?path=/story/seed-catalog--video-player)
+- [Carousel](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--carousel)
+- [Collapse](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--collapse)
+- [Dropdown](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--dropdown)
+- [Modal](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--modal)
+- [Progress ring](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--progress-ring)
+- [Spinner](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--spinner)
+- [Stepper](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--stepper)
+- [Video Player](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--video-player)
 
 ## Style classes
 
@@ -133,4 +133,4 @@ class MyComponent extends LitElement {
 
 ### How to use
 
-We recommend to see the [storybook documentation](https://seed-catalog.com) to learn more about seed-components catalog and how to use them.
+We recommend to see the [storybook documentation](https://vicdata4.github.io/seed-catalog) to learn more about seed-components catalog and how to use them.
