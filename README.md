@@ -16,13 +16,7 @@ Seed-catalog is an open-source `web-components library`. It contains CSS-styles 
 
 ## Quick start
 
-Copy-paste the script near the end of your pages, right before the closing `</body>` tag.
-
-```js
-<script src="http://cdn.jsdelivr.net/gh/vicdata4/seed-catalog/dist/seed-bundle.min.js"></script>
-```
-
-  Or add as dependency to your `package.json`
+Add as dependency to your `package.json`
 
 ```js
 "dependencies": {
