@@ -4,4 +4,6 @@
 /build
 /coverage
 /src
+/.storybook
+/stories
 index.html
