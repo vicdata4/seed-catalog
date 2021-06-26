@@ -68,7 +68,8 @@ export class SeedStepper extends LitElement {
     if (name === 'colorback') this.colorBack = newVal;
   }
 
-  firstUpdated() {
+  async firstUpdated() {
+    await this.parentNode.updateComplete;
     this.array = new Array(this.parentNode.length || this.size).fill('');
   }
 
