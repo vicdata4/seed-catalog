@@ -64,6 +64,9 @@ export class SeedStepper extends LitElement {
   attributeChangedCallback(name, oldVal, newVal) {
     super.connectedCallback();
 
+    if (name === 'index') this.index = parseInt(newVal);
+    if (name === 'size') this.size = parseInt(newVal);
+
     if (name === 'coloractive') this.colorActive = newVal;
     if (name === 'colorback') this.colorBack = newVal;
   }
