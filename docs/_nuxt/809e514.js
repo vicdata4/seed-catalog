@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9,4],{211:function(t,e,o){"use strict";o.r(e),o.d(e,"pageInit",(function(){return d}));var n=o(213),l=o.n(n),d=(o(214),o(215),o(216),o(217),o(218),o(219),o(220),o(221),o(222),o(223),function(){document.querySelector(".section-container").scrollTo({top:0,behavior:"smooth"}),l.a.highlightAll()})},224:function(t,e,o){"use strict";var n=o(212);class l extends n.a{static get styles(){return[n.b`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9,4],{211:function(t,e,o){"use strict";o.r(e),o.d(e,"pageInit",(function(){return d}));var n=o(213),l=o.n(n),d=(o(214),o(215),o(216),o(217),o(218),o(219),o(220),o(221),o(222),o(223),function(){var menu=document.querySelector(".menu-bar");menu&&menu.classList.remove("show"),document.querySelector(".section-container").scrollTo({top:0,behavior:"smooth"}),l.a.highlightAll()})},224:function(t,e,o){"use strict";var n=o(212);class l extends n.a{static get styles(){return[n.b`
         :host {
           overflow: hidden;
           --modal-content-padding: 0.8rem 1rem;

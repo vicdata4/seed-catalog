@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12,4],{211:function(t,e,r){"use strict";r.r(e),r.d(e,"pageInit",(function(){return c}));var o=r(213),n=r.n(o),c=(r(214),r(215),r(216),r(217),r(218),r(219),r(220),r(221),r(222),r(223),function(){document.querySelector(".section-container").scrollTo({top:0,behavior:"smooth"}),n.a.highlightAll()})},225:function(t,e,r){"use strict";var o=r(212);class n extends o.a{static get styles(){return[o.b`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12,4],{211:function(t,e,r){"use strict";r.r(e),r.d(e,"pageInit",(function(){return c}));var o=r(213),n=r.n(o),c=(r(214),r(215),r(216),r(217),r(218),r(219),r(220),r(221),r(222),r(223),function(){var menu=document.querySelector(".menu-bar");menu&&menu.classList.remove("show"),document.querySelector(".section-container").scrollTo({top:0,behavior:"smooth"}),n.a.highlightAll()})},225:function(t,e,r){"use strict";var o=r(212);class n extends o.a{static get styles(){return[o.b`
         :host {
           width: 100%;
           display: flex;

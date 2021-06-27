@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8,4],{211:function(t,e,o){"use strict";o.r(e),o.d(e,"pageInit",(function(){return l}));var n=o(213),r=o.n(n),l=(o(214),o(215),o(216),o(217),o(218),o(219),o(220),o(221),o(222),o(223),function(){document.querySelector(".section-container").scrollTo({top:0,behavior:"smooth"}),r.a.highlightAll()})},238:function(t,e,o){"use strict";o.r(e);var n=o(212);class r extends n.a{static get styles(){return[n.b`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8,4],{211:function(t,e,o){"use strict";o.r(e),o.d(e,"pageInit",(function(){return l}));var n=o(213),r=o.n(n),l=(o(214),o(215),o(216),o(217),o(218),o(219),o(220),o(221),o(222),o(223),function(){var menu=document.querySelector(".menu-bar");menu&&menu.classList.remove("show"),document.querySelector(".section-container").scrollTo({top:0,behavior:"smooth"}),r.a.highlightAll()})},238:function(t,e,o){"use strict";o.r(e);var n=o(212);class r extends n.a{static get styles(){return[n.b`
         :host {
           display: inline-block;
           position: relative;
