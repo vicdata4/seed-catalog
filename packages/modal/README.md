@@ -2,11 +2,7 @@
 
 ## Seed Modal
 
-### [Storybook](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--modal)
-
-### [Dependencies](package.json)
-
-- [LitElement](https://lit-element.polymer-project.org) Web Components
+### [Documentation](https://vicdata4.github.io/seed-catalog/seed/modal)
 
 Npm
 

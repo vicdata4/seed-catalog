@@ -2,11 +2,7 @@
 
 ## Seed Progress Ring
 
-### [Storybook](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--progress-ring)
-
-### [Dependencies](package.json)
-
-- [LitElement](https://lit-element.polymer-project.org) Web Components
+### [Documentation](https://vicdata4.github.io/seed-catalog/seed/ring)
 
 Npm
 

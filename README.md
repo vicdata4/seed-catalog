@@ -2,7 +2,7 @@
 
 ## Seed Catalog
 
-### [Storybook](https://vicdata4.github.io/seed-catalog)
+### [Website](https://vicdata4.github.io/seed-catalog)
 
 Seed-catalog is an open-source `web-components library`. It contains CSS-styles and standards-based web templates such as buttons, modals, dropdowns and other interface components.
 
@@ -27,22 +27,19 @@ Add as dependency to your `package.json`
 
 ## Styles
 
-- [Button](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button)
-- [Button Group](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button-group)
-- [Button Icon](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button-icon)
-- [Button Input](https://vicdata4.github.io/seed-catalog/?path=/story/seed-style--button-input)
+- [Button]()
+- [Button Group]()
+- [Button Icon]()
+- [Button Input]()
 
 
 ## Catalog
 
-- [Carousel](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--carousel)
-- [Collapse](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--collapse)
-- [Dropdown](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--dropdown)
-- [Modal](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--modal)
-- [Progress ring](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--progress-ring)
-- [Spinner](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--spinner)
-- [Stepper](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--stepper)
-- [Video Player](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--video-player)
+- [Carousel](https://vicdata4.github.io/seed-catalog/seed/carousel)
+- [Dropdown](https://vicdata4.github.io/seed-catalog/seed/dropdown)
+- [Modal](https://vicdata4.github.io/seed-catalog/seed/modal)
+- [Progress ring](https://vicdata4.github.io/seed-catalog/seed/ring)
+- [Stepper](https://vicdata4.github.io/seed-catalog/seed/stepper)
 
 ## Style classes
 

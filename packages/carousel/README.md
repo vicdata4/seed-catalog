@@ -1,12 +1,7 @@
 <img src="https://cdn.jsdelivr.net/gh/vicdata4/doc-template/assets/seed-icon.png" width="40">
 
 ## Seed Carousel
-### [Storybook](https://vicdata4.github.io/seed-catalog/?path=/story/seed-catalog--carousel)
-
-### [Dependencies](package.json)
-
-- [LitElement](https://lit-element.polymer-project.org) Web Components
-- [Lodash debounce]()
+### [Documentation](https://vicdata4.github.io/seed-catalog/seed/carousel)
 
 Npm
 
