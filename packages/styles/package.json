@@ -1,7 +1,7 @@
 {
   "name": "@seed-catalog/styles",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Seed css styles",
   "author": "vicdata@outlook.com",
   "main": "index.js",
