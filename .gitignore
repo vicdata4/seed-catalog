@@ -6,6 +6,5 @@
 /src
 /.storybook
 /stories
-/packages/collapse
 /packages/spinner
 /packages/video-player
