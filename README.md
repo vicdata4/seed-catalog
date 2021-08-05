@@ -2,6 +2,9 @@
 
 ## Seed Catalog
 
+![npm](https://img.shields.io/badge/npm-v1.1.0-blue.svg)
+![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ### [Website](https://vicdata4.github.io/seed-catalog)
 
 Seed-catalog is an open-source `web-components library`. It contains CSS-styles and standards-based web templates such as buttons, modals, dropdowns and other interface components.
