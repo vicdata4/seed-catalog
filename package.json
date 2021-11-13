@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "test": "karma start --coverage",
-    "lint": "eslint",
+    "lint": "eslint ./packages/*",
     "build": "webpack"
   },
   "repository": "git+https://github.com/vicdata4/seed-catalog.git",

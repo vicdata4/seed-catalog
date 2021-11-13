@@ -71,7 +71,7 @@ export class SeedProgressRing extends LitElement {
       ringBackground: { type: String },
       background: { type: String },
       textColor: { type: String },
-      text: { type: String },
+      text: { type: String }
     };
   }
 
@@ -117,9 +117,9 @@ export class SeedProgressRing extends LitElement {
       <div class="percent-progress-value">
         ${!this.custom ? html`
           <div class="percent-value" .style="color: ${this.textColor}">
-            ${ !this.onlyText ? this.percent : ''}${this.text}
+            ${!this.onlyText ? this.percent : ''}${this.text}
           </div>
-        `: html`
+        ` : html`
           <slot name="custom"></slot>
         `}
       </div>
