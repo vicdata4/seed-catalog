@@ -24,17 +24,9 @@ Add as dependency to your `package.json`
 ```js
 "dependencies": {
     ...
-    "@seed-catalog/carousel": "1.0.3"
+    "@seed-catalog/carousel": "^1.0.3"
 }
 ```
-
-## Styles
-
-- [Button]()
-- [Button Group]()
-- [Button Icon]()
-- [Button Input]()
-
 
 ## Catalog
 
@@ -43,6 +35,13 @@ Add as dependency to your `package.json`
 - [Modal](https://vicdata4.github.io/seed-catalog/seed/modal)
 - [Progress ring](https://vicdata4.github.io/seed-catalog/seed/ring)
 - [Stepper](https://vicdata4.github.io/seed-catalog/seed/stepper)
+
+## Styles
+
+- [Button]()
+- [Button Group]()
+- [Button Icon]()
+- [Button Input]()
 
 ## Style classes
 
