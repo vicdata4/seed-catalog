@@ -1,4 +1,3 @@
-/*
 import { expect, fixture, html, aTimeout } from '@open-wc/testing';
 import '../index.js';
 import '../../stepper';
@@ -88,4 +87,3 @@ describe('Carousel stepper', () => {
     await el.updateComplete;
   });
 });
-*/

@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "lit-element": "^2.0.1",
-    "lodash.debounce": "^4.0.8"
+    "lodash-es": "^4.17.21"
+    
   },
   "directories": {
     "test": "tests"
