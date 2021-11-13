@@ -12,8 +12,6 @@
   ],
   "scripts": {
     "test": "karma start --coverage",
-    "storybook": "start-storybook -s ./build -p 9001",
-    "storybook:build": "build-storybook -o build -s storybook-static",
     "lint": "eslint",
     "build": "webpack"
   },
