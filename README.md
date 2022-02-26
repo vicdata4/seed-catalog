@@ -19,13 +19,10 @@ Seed-catalog is an open-source `web-components library`. It contains CSS-styles 
 
 ## Quick start
 
-Add as dependency to your `package.json`
+Install via npm
 
-```js
-"dependencies": {
-    ...
-    "@seed-catalog/carousel": "^1.0.3"
-}
+```
+npm i @seed-catalog/modal
 ```
 
 ## Catalog
@@ -126,4 +123,4 @@ class MyComponent extends LitElement {
 
 ### How to use
 
-We recommend to see the [storybook documentation](https://vicdata4.github.io/seed-catalog) to learn more about seed-components catalog and how to use them.
+We recommend to see the [website documentation](https://vicdata4.github.io/seed-catalog) to learn more about seed-components catalog and how to use them.
